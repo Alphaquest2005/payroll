@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PayrollDataStoreContainer" CdmEntityContainer="PayrollDB">
+    <EntitySetMapping Name="PayrollJobs">
+      <EntityTypeMapping TypeName="IsTypeOf(PayrollData.PayrollJob)">
+        <MappingFragment StoreEntitySet="PayrollJobs">
+          <ScalarProperty Name="PayrollJobId" ColumnName="PayrollJobId" />
+          <ScalarProperty Name="CheckedBy" ColumnName="CheckedBy" />
+          <ScalarProperty Name="PreparedBy" ColumnName="PreparedBy" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="PayrollJobTypeId" ColumnName="PayrollJobTypeId" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+          <ScalarProperty Name="BranchId" ColumnName="BranchId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="IsTypeOf(PayrollData.Employee)">
+        <MappingFragment StoreEntitySet="Employees">
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="BranchId" ColumnName="BranchId" />
+          <ScalarProperty Name="SupervisorId" ColumnName="SupervisorId" />
+          <ScalarProperty Name="EmploymentStartDate" ColumnName="EmploymentStartDate" />
+          <ScalarProperty Name="UnionMember" ColumnName="UnionMember" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(PayrollData.User)">
+        <MappingFragment StoreEntitySet="Employees_User">
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Branches">
+      <EntityTypeMapping TypeName="IsTypeOf(PayrollData.Branch)">
+        <MappingFragment StoreEntitySet="Branches">
+          <ScalarProperty Name="BranchId" ColumnName="BranchId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="CurrentPayrollJobId" ColumnName="CurrentPayrollJobId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Institutions">
+      <EntityTypeMapping TypeName="IsTypeOf(PayrollData.Institution)">
+        <MappingFragment StoreEntitySet="Institutions">
+          <ScalarProperty Name="InstitutionId" ColumnName="InstitutionId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PayrollItems">
+      <EntityTypeMapping TypeName="IsTypeOf(PayrollData.PayrollItem)">
+        <MappingFragment StoreEntitySet="PayrollItems">
+          <ScalarProperty Name="PayrollItemId" ColumnName="PayrollItemId" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="CreditAccountId" ColumnName="CreditAccountId" />
+          <ScalarProperty Name="DebitAccountId" ColumnName="DebitAccountId" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="PayrollJobId" ColumnName="PayrollJobId" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="BaseAmount" ColumnName="BaseAmount" />
+          <ScalarProperty Name="IncomeDeduction" ColumnName="IncomeDeduction" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="PayrollSetupItemId" ColumnName="PayrollSetupItemId" />
+          <ScalarProperty Name="ParentPayrollItemId" ColumnName="ParentPayrollItemId" />
+          <ScalarProperty Name="RateRounding" ColumnName="RateRounding" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PayrollSetupItems">
+      <EntityTypeMapping TypeName="IsTypeOf(PayrollData.PayrollSetupItem)">
+        <MappingFragment StoreEntitySet="PayrollSetupItems">
+          <ScalarProperty Name="RateCeilingCompanyAmount" ColumnName="RateCeilingCompanyAmount" />
+          <ScalarProperty Name="RateCeilingAmount" ColumnName="RateCeilingAmount" />
+          <ScalarProperty Name="RateCeiling" ColumnName="RateCeiling" />
+          <ScalarProperty Name="CompanyRate" ColumnName="CompanyRate" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="PayrollSetupItemId" ColumnName="PayrollSetupItemId" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CompanyLineItemDescription" ColumnName="CompanyLineItemDescription" />
+          <ScalarProperty Name="DebitCredit" ColumnName="DebitCredit" />
+          <ScalarProperty Name="RecuranceDays" ColumnName="RecuranceDays" />
+          <ScalarProperty Name="EmployeeAccountType" ColumnName="EmployeeAccountType" />
+          <ScalarProperty Name="IncomeDeduction" ColumnName="IncomeDeduction" />
+          <ScalarProperty Name="PayrollItemAccountId" ColumnName="PayrollItemAccountId" />
+          <ScalarProperty Name="CompanyAccountId" ColumnName="CompanyAccountId" />
+          <ScalarProperty Name="RateRounding" ColumnName="RateRounding" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PayrollEmployeeSetup">
+      <EntityTypeMapping TypeName="IsTypeOf(PayrollData.PayrollEmployeeSetup)">
+        <MappingFragment StoreEntitySet="PayrollEmployeeSetup">
+          <ScalarProperty Name="PayrollEmployeeSetupId" ColumnName="PayrollEmployeeSetupId" />
+          <ScalarProperty Name="PayrollSetupItemId" ColumnName="PayrollSetupItemId" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EmployeeAccountId" ColumnName="EmployeeAccountId" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="CompanyAmount" ColumnName="CompanyAmount" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="CompanyRate" ColumnName="CompanyRate" />
+          <ScalarProperty Name="ChargeType" ColumnName="ChargeType" />
+          <ScalarProperty Name="PayrollJobTypeId" ColumnName="PayrollJobTypeId" />
+          <ScalarProperty Name="RateRounding" ColumnName="RateRounding" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PayrollJobTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(PayrollData.PayrollJobType)">
+        <MappingFragment StoreEntitySet="PayrollJobTypes">
+          <ScalarProperty Name="PayrollJobTypeId" ColumnName="PayrollJobTypeId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountEntries">
+      <EntityTypeMapping TypeName="IsTypeOf(PayrollData.AccountEntry)">
+        <MappingFragment StoreEntitySet="AccountEntries">
+          <ScalarProperty Name="AccountEntryId" ColumnName="AccountEntryId" />
+          <ScalarProperty Name="EntryTime" ColumnName="EntryTime" />
+          <ScalarProperty Name="TradeDate" ColumnName="TradeDate" />
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+          <ScalarProperty Name="DebitAmount" ColumnName="DebitAmount" />
+          <ScalarProperty Name="CreditAmount" ColumnName="CreditAmount" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+          <ScalarProperty Name="PayrollItemId" ColumnName="PayrollItemId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Accounts">
+      <EntityTypeMapping TypeName="IsTypeOf(PayrollData.Account)">
+        <MappingFragment StoreEntitySet="Accounts">
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+          <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+          <ScalarProperty Name="InstitutionId" ColumnName="InstitutionId" />
+          <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+          <ScalarProperty Name="AccountType" ColumnName="AccountType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(PayrollData.EmployeeAccount)">
+        <MappingFragment StoreEntitySet="Accounts_EmployeeAccount">
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="SalaryAssignment" ColumnName="SalaryAssignment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(PayrollData.InstitutionAccount)">
+        <MappingFragment StoreEntitySet="Accounts_InstitutionAccount">
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+          <ScalarProperty Name="PayeeInstitutionId" ColumnName="PayeeInstitutionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(PayrollData.AccountType)">
+        <MappingFragment StoreEntitySet="AccountTypes">
+          <ScalarProperty Name="AccountTypeId" ColumnName="AccountTypeId" />
+          <ScalarProperty Name="AccountTypeName" ColumnName="AccountTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChargeTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(PayrollData.ChargeType)">
+        <MappingFragment StoreEntitySet="ChargeTypes">
+          <ScalarProperty Name="ChargeTypeId" ColumnName="ChargeTypeId" />
+          <ScalarProperty Name="ChargeTypeName" ColumnName="ChargeTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Accounts_InstitutionAccount" TypeName="PayrollData.Accounts_InstitutionAccount" StoreEntitySet="Accounts_InstitutionAccount">
+      <EndProperty Name="Institution">
+        <ScalarProperty Name="InstitutionId" ColumnName="PayeeInstitutionId" />
+      </EndProperty>
+      <EndProperty Name="Account">
+        <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+      </EndProperty>
+      <Condition ColumnName="PayeeInstitutionId" IsNull="false" />
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

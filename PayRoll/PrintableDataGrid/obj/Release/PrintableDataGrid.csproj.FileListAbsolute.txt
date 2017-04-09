@@ -1,0 +1,7 @@
+C:\prism\Printing\ICP.Controls.PrintableListView\ICP.Controls.PrintableListView\bin\Release\PrintableDataGrid.dll
+C:\prism\Printing\ICP.Controls.PrintableListView\ICP.Controls.PrintableListView\bin\Release\PrintableDataGrid.pdb
+C:\prism\Printing\ICP.Controls.PrintableListView\ICP.Controls.PrintableListView\bin\Release\LinqLib.dll
+C:\prism\Printing\ICP.Controls.PrintableListView\ICP.Controls.PrintableListView\bin\Release\LinqLib.pdb
+C:\prism\Printing\ICP.Controls.PrintableListView\ICP.Controls.PrintableListView\obj\Release\PrintableDataGrid.csprojResolveAssemblyReference.cache
+C:\prism\Printing\ICP.Controls.PrintableListView\ICP.Controls.PrintableListView\obj\Release\PrintableDataGrid.dll
+C:\prism\Printing\ICP.Controls.PrintableListView\ICP.Controls.PrintableListView\obj\Release\PrintableDataGrid.pdb

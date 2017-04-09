@@ -1,0 +1,11 @@
+C:\prism\LinqLibSource\LinqLib\bin\Release\LinqLib.dll
+C:\prism\LinqLibSource\LinqLib\bin\Release\LinqLib.pdb
+C:\prism\LinqLibSource\LinqLib\bin\Release\EntityFramework.dll
+C:\prism\LinqLibSource\LinqLib\bin\Release\System.Data.Entity.dll
+C:\prism\LinqLibSource\LinqLib\bin\Release\WindowsBase.dll
+C:\prism\LinqLibSource\LinqLib\bin\Release\EntityFramework.xml
+C:\prism\LinqLibSource\LinqLib\obj\Release\LinqLib.Properties.Resources.resources
+C:\prism\LinqLibSource\LinqLib\obj\Release\LinqLib.csproj.GenerateResource.Cache
+C:\prism\LinqLibSource\LinqLib\obj\Release\LinqLib.dll
+C:\prism\LinqLibSource\LinqLib\obj\Release\LinqLib.pdb
+C:\prism\LinqLibSource\LinqLib\obj\Release\LinqLib.csprojResolveAssemblyReference.cache

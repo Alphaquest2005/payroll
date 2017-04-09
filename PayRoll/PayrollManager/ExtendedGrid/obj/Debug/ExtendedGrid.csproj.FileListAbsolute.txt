@@ -1,0 +1,129 @@
+D:\Users\joeseph\Downloads\wpfextendeddatagrid-21808\ExtendedGrid\bin\Debug\ExtendedGrid.dll
+D:\Users\joeseph\Downloads\wpfextendeddatagrid-21808\ExtendedGrid\bin\Debug\ExtendedGrid.pdb
+D:\Users\joeseph\Downloads\wpfextendeddatagrid-21808\ExtendedGrid\obj\Debug\ExtendedGrid.csprojResolveAssemblyReference.cache
+D:\Users\joeseph\Downloads\wpfextendeddatagrid-21808\ExtendedGrid\obj\Debug\ExtendedGrid.csproj.ResolveComReference.cache
+D:\Users\joeseph\Downloads\wpfextendeddatagrid-21808\ExtendedGrid\obj\Debug\DataGridThemes\ControlsTheme\ControlLiveExplorer.baml
+D:\Users\joeseph\Downloads\wpfextendeddatagrid-21808\ExtendedGrid\obj\Debug\DataGridThemes\ControlsTheme\ControlMedia.baml
+D:\Users\joeseph\Downloads\wpfextendeddatagrid-21808\ExtendedGrid\obj\Debug\DataGridThemes\ControlsTheme\ControlOffice2007Black.baml
+D:\Users\joeseph\Downloads\wpfextendeddatagrid-21808\ExtendedGrid\obj\Debug\DataGridThemes\ControlsTheme\ControlOffice2007Blue.baml
+D:\Users\joeseph\Downloads\wpfextendeddatagrid-21808\ExtendedGrid\obj\Debug\DataGridThemes\ControlsTheme\ControlOffice2007Silver.baml
+D:\Users\joeseph\Downloads\wpfextendeddatagrid-21808\ExtendedGrid\obj\Debug\DataGridThemes\System.baml
+D:\Users\joeseph\Downloads\wpfextendeddatagrid-21808\ExtendedGrid\obj\Debug\DataGridThemes\Windows7.baml
+D:\Users\joeseph\Downloads\wpfextendeddatagrid-21808\ExtendedGrid\obj\Debug\DataGridThemes\LiveExplorer.baml
+D:\Users\joeseph\Downloads\wpfextendeddatagrid-21808\ExtendedGrid\obj\Debug\DataGridThemes\Media.baml
+D:\Users\joeseph\Downloads\wpfextendeddatagrid-21808\ExtendedGrid\obj\Debug\DataGridThemes\Office2007Black.baml
+D:\Users\joeseph\Downloads\wpfextendeddatagrid-21808\ExtendedGrid\obj\Debug\DataGridThemes\Office2007Blue.baml
+D:\Users\joeseph\Downloads\wpfextendeddatagrid-21808\ExtendedGrid\obj\Debug\DataGridThemes\Office2007Silver.baml
+D:\Users\joeseph\Downloads\wpfextendeddatagrid-21808\ExtendedGrid\obj\Debug\DataGridThemes\Default.baml
+D:\Users\joeseph\Downloads\wpfextendeddatagrid-21808\ExtendedGrid\obj\Debug\Styles\Brushes.baml
+D:\Users\joeseph\Downloads\wpfextendeddatagrid-21808\ExtendedGrid\obj\Debug\Themes\Aero.NormalColor.baml
+D:\Users\joeseph\Downloads\wpfextendeddatagrid-21808\ExtendedGrid\obj\Debug\Themes\Classic.baml
+D:\Users\joeseph\Downloads\wpfextendeddatagrid-21808\ExtendedGrid\obj\Debug\Themes\Generic.baml
+D:\Users\joeseph\Downloads\wpfextendeddatagrid-21808\ExtendedGrid\obj\Debug\Themes\Luna.HomeStead.baml
+D:\Users\joeseph\Downloads\wpfextendeddatagrid-21808\ExtendedGrid\obj\Debug\Themes\Luna.Metallic.baml
+D:\Users\joeseph\Downloads\wpfextendeddatagrid-21808\ExtendedGrid\obj\Debug\Themes\Luna.NormalColor.baml
+D:\Users\joeseph\Downloads\wpfextendeddatagrid-21808\ExtendedGrid\obj\Debug\Themes\Royale.NormalColor.baml
+D:\Users\joeseph\Downloads\wpfextendeddatagrid-21808\ExtendedGrid\obj\Debug\Styles\DataGrid.Generic.g.cs
+D:\Users\joeseph\Downloads\wpfextendeddatagrid-21808\ExtendedGrid\obj\Debug\UserControls\ColumnChooserControl.g.cs
+D:\Users\joeseph\Downloads\wpfextendeddatagrid-21808\ExtendedGrid\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Users\joeseph\Downloads\wpfextendeddatagrid-21808\ExtendedGrid\obj\Debug\ExtendedGrid_MarkupCompile.cache
+D:\Users\joeseph\Downloads\wpfextendeddatagrid-21808\ExtendedGrid\obj\Debug\ExtendedGrid_MarkupCompile.lref
+D:\Users\joeseph\Downloads\wpfextendeddatagrid-21808\ExtendedGrid\obj\Debug\DataGridThemes\ControlsTheme\ControlWindows7.baml
+D:\Users\joeseph\Downloads\wpfextendeddatagrid-21808\ExtendedGrid\obj\Debug\DataGrid\Themes\Aero.NormalColor.baml
+D:\Users\joeseph\Downloads\wpfextendeddatagrid-21808\ExtendedGrid\obj\Debug\DataGrid\Themes\Classic.baml
+D:\Users\joeseph\Downloads\wpfextendeddatagrid-21808\ExtendedGrid\obj\Debug\DataGrid\Themes\Generic.baml
+D:\Users\joeseph\Downloads\wpfextendeddatagrid-21808\ExtendedGrid\obj\Debug\DataGrid\Themes\Luna.HomeStead.baml
+D:\Users\joeseph\Downloads\wpfextendeddatagrid-21808\ExtendedGrid\obj\Debug\DataGrid\Themes\Luna.Metallic.baml
+D:\Users\joeseph\Downloads\wpfextendeddatagrid-21808\ExtendedGrid\obj\Debug\DataGrid\Themes\Luna.NormalColor.baml
+D:\Users\joeseph\Downloads\wpfextendeddatagrid-21808\ExtendedGrid\obj\Debug\DataGrid\Themes\Royale.NormalColor.baml
+D:\Users\joeseph\Downloads\wpfextendeddatagrid-21808\ExtendedGrid\obj\Debug\Styles\DataGrid.Generic.baml
+D:\Users\joeseph\Downloads\wpfextendeddatagrid-21808\ExtendedGrid\obj\Debug\UserControls\ColumnChooserControl.baml
+D:\Users\joeseph\Downloads\wpfextendeddatagrid-21808\ExtendedGrid\obj\Debug\ExtendedGrid.g.resources
+D:\Users\joeseph\Downloads\wpfextendeddatagrid-21808\ExtendedGrid\obj\Debug\ExtendedGrid.dll
+D:\Users\joeseph\Downloads\wpfextendeddatagrid-21808\ExtendedGrid\obj\Debug\ExtendedGrid.pdb
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\bin\Debug\ExtendedGrid.dll
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\bin\Debug\ExtendedGrid.pdb
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\ExtendedGrid.csprojResolveAssemblyReference.cache
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\ExtendedGrid.csproj.ResolveComReference.cache
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\DataGridThemes\ControlsTheme\ControlLiveExplorer.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\DataGridThemes\ControlsTheme\ControlMedia.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\DataGridThemes\ControlsTheme\ControlOffice2007Black.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\DataGridThemes\ControlsTheme\ControlOffice2007Blue.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\DataGridThemes\ControlsTheme\ControlOffice2007Silver.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\DataGridThemes\System.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\DataGridThemes\Windows7.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\DataGridThemes\LiveExplorer.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\DataGridThemes\Media.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\DataGridThemes\Office2007Black.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\DataGridThemes\Office2007Blue.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\DataGridThemes\Office2007Silver.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\DataGridThemes\Default.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\Styles\Brushes.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\Themes\Aero.NormalColor.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\Themes\Classic.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\Themes\Generic.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\Themes\Luna.HomeStead.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\Themes\Luna.Metallic.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\Themes\Luna.NormalColor.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\Themes\Royale.NormalColor.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\Styles\DataGrid.Generic.g.cs
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\UserControls\ColumnChooserControl.g.cs
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\ExtendedGrid_MarkupCompile.cache
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\ExtendedGrid_MarkupCompile.lref
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\DataGridThemes\ControlsTheme\ControlWindows7.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\DataGrid\Themes\Aero.NormalColor.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\DataGrid\Themes\Classic.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\DataGrid\Themes\Generic.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\DataGrid\Themes\Luna.HomeStead.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\DataGrid\Themes\Luna.Metallic.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\DataGrid\Themes\Luna.NormalColor.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\DataGrid\Themes\Royale.NormalColor.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\Styles\DataGrid.Generic.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\UserControls\ColumnChooserControl.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\ExtendedGrid.g.resources
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\ExtendedGrid.dll
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\ExtendedGrid.pdb
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\bin\Debug\ExtendedGrid.dll
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\bin\Debug\ExtendedGrid.pdb
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\ExtendedGrid.csprojResolveAssemblyReference.cache
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\ExtendedGrid.csproj.ResolveComReference.cache
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\DataGridThemes\ControlsTheme\ControlLiveExplorer.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\DataGridThemes\ControlsTheme\ControlMedia.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\DataGridThemes\ControlsTheme\ControlOffice2007Black.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\DataGridThemes\ControlsTheme\ControlOffice2007Blue.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\DataGridThemes\ControlsTheme\ControlOffice2007Silver.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\DataGridThemes\System.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\DataGridThemes\Windows7.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\DataGridThemes\LiveExplorer.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\DataGridThemes\Media.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\DataGridThemes\Office2007Black.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\DataGridThemes\Office2007Blue.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\DataGridThemes\Office2007Silver.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\DataGridThemes\Default.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\Styles\Brushes.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\Themes\Aero.NormalColor.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\Themes\Classic.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\Themes\Generic.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\Themes\Luna.HomeStead.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\Themes\Luna.Metallic.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\Themes\Luna.NormalColor.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\Themes\Royale.NormalColor.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\Styles\DataGrid.Generic.g.cs
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\UserControls\ColumnChooserControl.g.cs
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\ExtendedGrid_MarkupCompile.cache
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\ExtendedGrid_MarkupCompile.lref
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\DataGridThemes\ControlsTheme\ControlWindows7.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\DataGrid\Themes\Aero.NormalColor.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\DataGrid\Themes\Classic.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\DataGrid\Themes\Generic.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\DataGrid\Themes\Luna.HomeStead.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\DataGrid\Themes\Luna.Metallic.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\DataGrid\Themes\Luna.NormalColor.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\DataGrid\Themes\Royale.NormalColor.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\Styles\DataGrid.Generic.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\UserControls\ColumnChooserControl.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\ExtendedGrid.g.resources
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\ExtendedGrid.dll
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\ExtendedGrid\obj\Debug\ExtendedGrid.pdb

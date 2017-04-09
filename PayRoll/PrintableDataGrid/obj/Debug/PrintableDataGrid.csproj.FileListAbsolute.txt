@@ -1,0 +1,16 @@
+C:\prism\Printing\ICP.Controls.PrintableListView\ICP.Controls.PrintableListView\bin\Debug\PrintableDataGrid.dll
+C:\prism\Printing\ICP.Controls.PrintableListView\ICP.Controls.PrintableListView\bin\Debug\PrintableDataGrid.pdb
+C:\prism\Printing\ICP.Controls.PrintableListView\ICP.Controls.PrintableListView\obj\Debug\PrintableDataGrid.dll
+C:\prism\Printing\ICP.Controls.PrintableListView\ICP.Controls.PrintableListView\obj\Debug\PrintableDataGrid.pdb
+C:\prism\Printing\ICP.Controls.PrintableListView\ICP.Controls.PrintableListView\obj\Debug\PrintableDataGrid.csprojResolveAssemblyReference.cache
+C:\prism\Printing\ICP.Controls.PrintableListView\ICP.Controls.PrintableListView\bin\Debug\LinqLib.dll
+C:\prism\Printing\ICP.Controls.PrintableListView\ICP.Controls.PrintableListView\bin\Debug\LinqLib.pdb
+C:\prism\Printing\ICP.Controls.PrintableListView\ICP.Controls.PrintableListView\bin\Debug\LinqLib.xml
+C:\Prism\GitRepositiory\payroll\PayRoll\PrintableDataGrid\bin\Debug\PrintableDataGrid.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PrintableDataGrid\bin\Debug\PrintableDataGrid.pdb
+C:\Prism\GitRepositiory\payroll\PayRoll\PrintableDataGrid\bin\Debug\LinqLib.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PrintableDataGrid\bin\Debug\LinqLib.pdb
+C:\Prism\GitRepositiory\payroll\PayRoll\PrintableDataGrid\bin\Debug\LinqLib.xml
+C:\Prism\GitRepositiory\payroll\PayRoll\PrintableDataGrid\obj\Debug\PrintableDataGrid.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\payroll\PayRoll\PrintableDataGrid\obj\Debug\PrintableDataGrid.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PrintableDataGrid\obj\Debug\PrintableDataGrid.pdb

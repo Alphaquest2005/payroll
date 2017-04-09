@@ -1,0 +1,15 @@
+C:\Prism Projects\Payroll\PayRoll\Outlook\bin\Debug\Outlook.dll
+C:\Prism Projects\Payroll\PayRoll\Outlook\bin\Debug\Outlook.pdb
+C:\Prism Projects\Payroll\PayRoll\Outlook\obj\Debug\Outlook.dll
+C:\Prism Projects\Payroll\PayRoll\Outlook\obj\Debug\Outlook.pdb
+C:\Prism Projects\Payroll\PayRoll\Outlook\obj\Debug\Outlook.csprojResolveAssemblyReference.cache
+C:\prism\Payroll\PayRoll\Outlook\bin\Debug\Outlook.dll
+C:\prism\Payroll\PayRoll\Outlook\bin\Debug\Outlook.pdb
+C:\prism\Payroll\PayRoll\Outlook\obj\Debug\Outlook.csprojResolveAssemblyReference.cache
+C:\prism\Payroll\PayRoll\Outlook\obj\Debug\Outlook.dll
+C:\prism\Payroll\PayRoll\Outlook\obj\Debug\Outlook.pdb
+C:\Prism\GitRepositiory\payroll\PayRoll\Outlook\bin\Debug\Outlook.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\Outlook\bin\Debug\Outlook.pdb
+C:\Prism\GitRepositiory\payroll\PayRoll\Outlook\obj\Debug\Outlook.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\payroll\PayRoll\Outlook\obj\Debug\Outlook.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\Outlook\obj\Debug\Outlook.pdb

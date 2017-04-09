@@ -1,0 +1,23 @@
+C:\Prism Projects\Emailing\bin\Debug\EmailLogger.dll.config
+C:\Prism Projects\Emailing\bin\Debug\EmailLogger.dll
+C:\Prism Projects\Emailing\bin\Debug\EmailLogger.pdb
+C:\Prism Projects\Emailing\obj\Debug\EmailLogger.dll
+C:\Prism Projects\Emailing\obj\Debug\EmailLogger.pdb
+C:\Prism Projects\Emailing\obj\Debug\EmailLogger.csprojResolveAssemblyReference.cache
+C:\prism\Emailing\bin\Debug\EmailLogger.dll.config
+C:\prism\Emailing\bin\Debug\EmailLogger.dll
+C:\prism\Emailing\bin\Debug\EmailLogger.pdb
+C:\prism\Emailing\bin\Debug\PostSharp.dll
+C:\prism\Emailing\bin\Debug\PostSharp.xml
+C:\prism\Emailing\bin\Debug\EmailLogger.pssym
+C:\prism\Emailing\obj\Debug\EmailLogger.csprojResolveAssemblyReference.cache
+C:\prism\Emailing\obj\Debug\EmailLogger.dll.postsharp
+C:\prism\Emailing\obj\Debug\EmailLogger.dll
+C:\prism\Emailing\obj\Debug\EmailLogger.pdb
+C:\Prism\GitRepositiory\payroll\PayRoll\Emailing\bin\Debug\EmailLogger.dll.config
+C:\Prism\GitRepositiory\payroll\PayRoll\Emailing\bin\Debug\EmailLogger.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\Emailing\bin\Debug\EmailLogger.pdb
+C:\Prism\GitRepositiory\payroll\PayRoll\Emailing\bin\Debug\PostSharp.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\Emailing\obj\Debug\EmailLogger.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\payroll\PayRoll\Emailing\obj\Debug\EmailLogger.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\Emailing\obj\Debug\EmailLogger.pdb

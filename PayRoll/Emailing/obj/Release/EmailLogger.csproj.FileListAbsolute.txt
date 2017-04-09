@@ -1,0 +1,8 @@
+C:\prism\Emailing\bin\Release\EmailLogger.dll.config
+C:\prism\Emailing\bin\Release\EmailLogger.dll
+C:\prism\Emailing\bin\Release\EmailLogger.pdb
+C:\prism\Emailing\bin\Release\EmailLogger.pssym
+C:\prism\Emailing\obj\Release\EmailLogger.csprojResolveAssemblyReference.cache
+C:\prism\Emailing\obj\Release\EmailLogger.dll
+C:\prism\Emailing\obj\Release\EmailLogger.pdb
+C:\prism\Emailing\obj\Release\EmailLogger.dll.postsharp

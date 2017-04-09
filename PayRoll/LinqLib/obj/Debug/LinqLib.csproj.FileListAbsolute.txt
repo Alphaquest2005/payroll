@@ -1,0 +1,34 @@
+C:\Prism Projects\LinqLibSource\LinqLib\bin\Debug\LinqLib.XML
+C:\Prism Projects\LinqLibSource\LinqLib\bin\Debug\LinqLib.dll
+C:\Prism Projects\LinqLibSource\LinqLib\bin\Debug\LinqLib.pdb
+C:\Prism Projects\LinqLibSource\LinqLib\bin\Debug\EntityFramework.dll
+C:\Prism Projects\LinqLibSource\LinqLib\bin\Debug\System.Data.Entity.dll
+C:\Prism Projects\LinqLibSource\LinqLib\bin\Debug\WindowsBase.dll
+C:\Prism Projects\LinqLibSource\LinqLib\bin\Debug\EntityFramework.xml
+C:\Prism Projects\LinqLibSource\LinqLib\obj\Debug\LinqLib.Properties.Resources.resources
+C:\Prism Projects\LinqLibSource\LinqLib\obj\Debug\LinqLib.csproj.GenerateResource.Cache
+C:\Prism Projects\LinqLibSource\LinqLib\obj\Debug\LinqLib.dll
+C:\Prism Projects\LinqLibSource\LinqLib\obj\Debug\LinqLib.pdb
+C:\Prism Projects\LinqLibSource\LinqLib\obj\Debug\LinqLib.csprojResolveAssemblyReference.cache
+C:\prism\LinqLibSource\LinqLib\bin\Debug\LinqLib.XML
+C:\prism\LinqLibSource\LinqLib\bin\Debug\LinqLib.dll
+C:\prism\LinqLibSource\LinqLib\bin\Debug\LinqLib.pdb
+C:\prism\LinqLibSource\LinqLib\bin\Debug\EntityFramework.dll
+C:\prism\LinqLibSource\LinqLib\bin\Debug\System.Data.Entity.dll
+C:\prism\LinqLibSource\LinqLib\bin\Debug\WindowsBase.dll
+C:\prism\LinqLibSource\LinqLib\bin\Debug\EntityFramework.xml
+C:\prism\LinqLibSource\LinqLib\obj\Debug\LinqLib.Properties.Resources.resources
+C:\prism\LinqLibSource\LinqLib\obj\Debug\LinqLib.csproj.GenerateResource.Cache
+C:\prism\LinqLibSource\LinqLib\obj\Debug\LinqLib.dll
+C:\prism\LinqLibSource\LinqLib\obj\Debug\LinqLib.pdb
+C:\prism\LinqLibSource\LinqLib\obj\Debug\LinqLib.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\payroll\PayRoll\LinqLib\bin\Debug\LinqLib.XML
+C:\Prism\GitRepositiory\payroll\PayRoll\LinqLib\bin\Debug\LinqLib.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\LinqLib\bin\Debug\LinqLib.pdb
+C:\Prism\GitRepositiory\payroll\PayRoll\LinqLib\bin\Debug\System.Data.Entity.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\LinqLib\bin\Debug\WindowsBase.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\LinqLib\obj\Debug\LinqLib.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\payroll\PayRoll\LinqLib\obj\Debug\LinqLib.Properties.Resources.resources
+C:\Prism\GitRepositiory\payroll\PayRoll\LinqLib\obj\Debug\LinqLib.csproj.GenerateResource.Cache
+C:\Prism\GitRepositiory\payroll\PayRoll\LinqLib\obj\Debug\LinqLib.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\LinqLib\obj\Debug\LinqLib.pdb

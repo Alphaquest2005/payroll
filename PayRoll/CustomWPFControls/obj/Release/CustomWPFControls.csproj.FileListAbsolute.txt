@@ -1,0 +1,12 @@
+C:\prism\Payroll\PayRoll\CustomWPFControls\bin\Release\CustomWPFControls.dll
+C:\prism\Payroll\PayRoll\CustomWPFControls\bin\Release\CustomWPFControls.pdb
+C:\prism\Payroll\PayRoll\CustomWPFControls\obj\Release\CustomWPFControls.csprojResolveAssemblyReference.cache
+C:\prism\Payroll\PayRoll\CustomWPFControls\obj\Release\GeneratedInternalTypeHelper.g.cs
+C:\prism\Payroll\PayRoll\CustomWPFControls\obj\Release\CustomWPFControls_MarkupCompile.cache
+C:\prism\Payroll\PayRoll\CustomWPFControls\obj\Release\CustomWPFControls_MarkupCompile.lref
+C:\prism\Payroll\PayRoll\CustomWPFControls\obj\Release\Themes\Generic.baml
+C:\prism\Payroll\PayRoll\CustomWPFControls\obj\Release\CustomWPFControls.g.resources
+C:\prism\Payroll\PayRoll\CustomWPFControls\obj\Release\CustomWPFControls.Properties.Resources.resources
+C:\prism\Payroll\PayRoll\CustomWPFControls\obj\Release\CustomWPFControls.csproj.GenerateResource.Cache
+C:\prism\Payroll\PayRoll\CustomWPFControls\obj\Release\CustomWPFControls.dll
+C:\prism\Payroll\PayRoll\CustomWPFControls\obj\Release\CustomWPFControls.pdb

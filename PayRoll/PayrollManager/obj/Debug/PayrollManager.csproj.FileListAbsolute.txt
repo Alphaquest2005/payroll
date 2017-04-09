@@ -1,0 +1,557 @@
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\QuickSalesManager.exe.config
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\QuickSalesManager.exe
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\QuickSalesManager.pdb
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\EntityFramework.dll
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\Microsoft.Expression.Interactions.dll
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.dll
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\System.Windows.Interactivity.dll
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\WPFToolkit.dll
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\EntityFramework.xml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.pdb
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\Microsoft.Expression.Interactions.xml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\System.Windows.Interactivity.xml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\WPFToolkit.pdb
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\de\Microsoft.Expression.Interactions.resources.dll
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\en\Microsoft.Expression.Interactions.resources.dll
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\es\Microsoft.Expression.Interactions.resources.dll
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\fr\Microsoft.Expression.Interactions.resources.dll
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\it\Microsoft.Expression.Interactions.resources.dll
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\ja\Microsoft.Expression.Interactions.resources.dll
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\ko\Microsoft.Expression.Interactions.resources.dll
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\ru\Microsoft.Expression.Interactions.resources.dll
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\zh-Hans\Microsoft.Expression.Interactions.resources.dll
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\zh-Hant\Microsoft.Expression.Interactions.resources.dll
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\de\System.Windows.Interactivity.resources.dll
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\en\System.Windows.Interactivity.resources.dll
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\es\System.Windows.Interactivity.resources.dll
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\it\System.Windows.Interactivity.resources.dll
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\ru\System.Windows.Interactivity.resources.dll
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\Theme.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\ButtonStyles.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\ComboBoxStyles.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\CheckBoxStyles.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\DataGridCustomizations.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\TextBlockStyles.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\DataGridStyles.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\GroupBoxStyles.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\ListBoxStyles.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\MenuStyles.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\Resources.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\ScrollBarStyles.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\Styles.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\TabControlStyles.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\TextBoxStyles.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\WindowStyles.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\App.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\MainWindow.g.cs
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeePayrollItemsList.g.cs
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\IntroScreen.g.cs
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\MonthSales.g.cs
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\PayCheckView.g.cs
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollItemDetails.g.cs
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollJob.g.cs
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\Cashiers.g.cs
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\MainView.g.cs
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\App.g.cs
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\QuickSalesManager_Content.g.cs
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\QuickSalesManager_MarkupCompile.cache
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\QuickSalesManager_MarkupCompile.lref
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\MainWindow.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeePayrollItemsList.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\IntroScreen.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\MonthSales.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\PayCheckView.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollItemDetails.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollJob.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\Cashiers.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\MainView.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\QuickSalesManager.g.resources
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\QuickSalesManager.exe
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\QuickSalesManager.pdb
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\PayrollManager.csprojResolveAssemblyReference.cache
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeeDetails.g.cs
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeeDetails.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\AccountDetails.g.cs
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\AccountDetails.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollSetupItems.g.cs
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollSetupItems.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollEmployeeSetupDetails.g.cs
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollEmployeeSetupDetails.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\ExtendedGrid.dll
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\ExtendedGrid.pdb
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollSetupSummary.g.cs
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollSetupSummary.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\CustomWPFControls.dll
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\CustomWPFControls.pdb
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\Paysub.g.cs
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\Paysub.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\AccountsSummary.g.cs
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\AccountsSummary.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeeAccountDetails.g.cs
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeeAccountDetails.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeeAccountSummaryList.g.cs
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeeAccountSummaryList.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\InstitutionCheckView.g.cs
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\InstitutionCheckView.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\InstitutionSummaryList.g.cs
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\InstitutionSummaryList.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeeSummaryList.g.cs
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeeSummaryList.baml
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeePaysub.g.cs
+D:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeePaysub.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\SUT.PrintEngine.App.config
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\CustomWPFControls.dll
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\EntityFramework.dll
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\LinqLib.dll
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\Microsoft.Expression.Interactions.dll
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\SUT.PrintEngine.dll
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\System.Data.DataSetExtensions.dll
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\System.Data.dll
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\System.Data.Entity.dll
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\System.Printing.dll
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\System.Windows.Interactivity.dll
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\WindowsBase.dll
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\Microsoft.Practices.Composite.dll
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Caching.dll
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\Microsoft.Practices.Composite.Presentation.dll
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\LinqLib.pdb
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\LinqLib.xml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\SUT.PrintEngine.pdb
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\CustomWPFControls.pdb
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\EntityFramework.xml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Caching.xml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\de\Microsoft.Expression.Interactions.resources.dll
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\en\Microsoft.Expression.Interactions.resources.dll
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\es\Microsoft.Expression.Interactions.resources.dll
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\fr\Microsoft.Expression.Interactions.resources.dll
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\it\Microsoft.Expression.Interactions.resources.dll
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\ja\Microsoft.Expression.Interactions.resources.dll
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\ko\Microsoft.Expression.Interactions.resources.dll
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\ru\Microsoft.Expression.Interactions.resources.dll
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\zh-Hans\Microsoft.Expression.Interactions.resources.dll
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\zh-Hant\Microsoft.Expression.Interactions.resources.dll
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\PayrollManager.csprojResolveAssemblyReference.cache
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\Theme.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\ButtonStyles.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\ComboBoxStyles.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\CheckBoxStyles.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\DataGridCustomizations.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\TextBlockStyles.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\DataGridStyles.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\GroupBoxStyles.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\ListBoxStyles.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\MenuStyles.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\Resources.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\ScrollBarStyles.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\Styles.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\TabControlStyles.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\TextBoxStyles.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\WindowStyles.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\App.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\MainWindow.g.cs
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\AccountDetails.g.cs
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\AccountsSummary.g.cs
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\BranchPayrollItemBreakDown.g.cs
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeeBreakDownReport.g.cs
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeePaysub.g.cs
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeeSummaryList.g.cs
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\InstitutionCheckView.g.cs
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeeAccountDetails.g.cs
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeeAccountSummaryList.g.cs
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeeDetails.g.cs
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeePayrollItemsList.g.cs
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\InstitutionSummaryList.g.cs
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\IntroScreen.g.cs
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\PayCheckView.g.cs
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollEmployeeSetupDetails.g.cs
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollItemDetails.g.cs
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollItemsReport.g.cs
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollJob.g.cs
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollSetupItems.g.cs
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollSetupSummary.g.cs
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\MainView.g.cs
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\App.g.cs
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\MainWindow.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\AccountDetails.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\AccountsSummary.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\BranchPayrollItemBreakDown.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeeBreakDownReport.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeePaysub.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeeSummaryList.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\InstitutionCheckView.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeeAccountDetails.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeeAccountSummaryList.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeeDetails.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeePayrollItemsList.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\InstitutionSummaryList.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\IntroScreen.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\PayCheckView.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollEmployeeSetupDetails.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollItemDetails.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollItemsReport.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollJob.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollSetupItems.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollSetupSummary.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\MainView.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\LogInScreen.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\LogInScreen.g.cs
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\Outlook.dll
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\PdfSharp-WPF.dll
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\PdfSharp.Xps.dll
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\Outlook.pdb
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\PdfSharp-WPF.xml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\PdfSharp.Xps.xml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\AccountsSummaryReport.g.cs
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\AccountsSummaryReport.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\PayrollManager.exe.config
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\PayrollManager_Content.g.cs
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\PayrollManager_MarkupCompile.cache
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\PayrollManager_MarkupCompile.lref
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\PayrollManager.exe
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\PayrollManager.pdb
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\PayrollManager.g.resources
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\PayrollManager.exe
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\PayrollManager.pdb
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\ru\System.Windows.Interactivity.resources.dll
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\EmailLogger.dll
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\PostSharp.dll
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\EmailLogger.pdb
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\PostSharp.xml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\PayrollManager.exe.manifest
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\PayrollManager.application
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\PayrollManager.exe.manifest
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\PayrollManager.application
+C:\Users\joeseph\Desktop\PayRoll\PayrollManager\bin\Debug\PayrollManager.exe.config
+C:\Users\joeseph\Desktop\PayRoll\PayrollManager\obj\Debug\PayrollManager.exe
+C:\Users\joeseph\Desktop\PayRoll\PayrollManager\obj\Debug\PayrollManager.pdb
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\PaymentReport.g.cs
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\PaymentReport.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\BranchEmployeeInstitutions.g.cs
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\BranchEmployeeInstitutions.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\bin\Debug\PayrollManager.pssym
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\PayrollManager.exe.postsharp
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\HeaderTemplate.baml
+C:\Prism Projects\Payroll\PayRoll\PayrollManager\obj\Debug\Views\HeaderTemplate.g.cs
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\PayrollManager.exe.config
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\PayrollManager.exe
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\PayrollManager.pdb
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\CustomWPFControls.dll
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\EmailLogger.dll
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\EntityFramework.dll
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\LinqLib.dll
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\Microsoft.Expression.Interactions.dll
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\Outlook.dll
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\PdfSharp-WPF.dll
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\PdfSharp.Xps.dll
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\PostSharp.dll
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\SUT.PrintEngine.dll
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\System.Data.DataSetExtensions.dll
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\System.Data.dll
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\System.Data.Entity.dll
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\System.Printing.dll
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\System.Windows.Interactivity.dll
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\WindowsBase.dll
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\Microsoft.Practices.Composite.dll
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Caching.dll
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\Microsoft.Practices.Composite.Presentation.dll
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\EmailLogger.pdb
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\LinqLib.pdb
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\LinqLib.xml
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\SUT.PrintEngine.pdb
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\CustomWPFControls.pdb
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\Outlook.pdb
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\EntityFramework.xml
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\PdfSharp-WPF.xml
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\PdfSharp.Xps.xml
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\PostSharp.xml
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Caching.xml
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\de\Microsoft.Expression.Interactions.resources.dll
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\en\Microsoft.Expression.Interactions.resources.dll
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\es\Microsoft.Expression.Interactions.resources.dll
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\fr\Microsoft.Expression.Interactions.resources.dll
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\it\Microsoft.Expression.Interactions.resources.dll
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\ja\Microsoft.Expression.Interactions.resources.dll
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\ko\Microsoft.Expression.Interactions.resources.dll
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\ru\Microsoft.Expression.Interactions.resources.dll
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\zh-Hans\Microsoft.Expression.Interactions.resources.dll
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\zh-Hant\Microsoft.Expression.Interactions.resources.dll
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\ru\System.Windows.Interactivity.resources.dll
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\PayrollManager.csprojResolveAssemblyReference.cache
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\LogInScreen.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\Theme.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\HeaderTemplate.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\ButtonStyles.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\ComboBoxStyles.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\CheckBoxStyles.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\DataGridCustomizations.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\TextBlockStyles.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\DataGridStyles.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\GroupBoxStyles.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\ListBoxStyles.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\MenuStyles.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\Resources.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\ScrollBarStyles.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\Styles.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\TabControlStyles.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\TextBoxStyles.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Styles\WindowStyles.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\App.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\LogInScreen.g.cs
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\MainWindow.g.cs
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\AccountDetails.g.cs
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\AccountsSummary.g.cs
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\AccountsSummaryReport.g.cs
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\BranchPayrollItemBreakDown.g.cs
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\BranchEmployeeInstitutions.g.cs
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeeBreakDownReport.g.cs
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeePaysub.g.cs
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeeSummaryList.g.cs
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\HeaderTemplate.g.cs
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\InstitutionCheckView.g.cs
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeeAccountDetails.g.cs
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeeAccountSummaryList.g.cs
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeeDetails.g.cs
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeePayrollItemsList.g.cs
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\InstitutionSummaryList.g.cs
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\IntroScreen.g.cs
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\PayCheckView.g.cs
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollEmployeeSetupDetails.g.cs
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollItemDetails.g.cs
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollItemsReport.g.cs
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollJob.g.cs
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollSetupItems.g.cs
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollSetupSummary.g.cs
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\PaymentReport.g.cs
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\MainView.g.cs
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\App.g.cs
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\PayrollManager_Content.g.cs
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\PayrollManager_MarkupCompile.cache
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\PayrollManager_MarkupCompile.lref
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\MainWindow.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\AccountDetails.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\AccountsSummary.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\AccountsSummaryReport.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\BranchPayrollItemBreakDown.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\BranchEmployeeInstitutions.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeeBreakDownReport.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeePaysub.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeeSummaryList.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\InstitutionCheckView.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeeAccountDetails.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeeAccountSummaryList.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeeDetails.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeePayrollItemsList.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\InstitutionSummaryList.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\IntroScreen.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\PayCheckView.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollEmployeeSetupDetails.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollItemDetails.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollItemsReport.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollJob.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollSetupItems.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollSetupSummary.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\PaymentReport.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\MainView.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\PayrollManager.g.resources
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\SUT.PrintEngine.App.config
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\PayrollManager.exe.manifest
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\PayrollManager.application
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\PayrollManager.exe
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\PayrollManager.pdb
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\PayrollManager.exe.manifest
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\PayrollManager.application
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\PrintableDataGrid.dll
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\PrintableDataGrid.pdb
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\PayrollDB.mdf
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\PayrollDB_log.ldf
+C:\prism\Payroll\PayRoll\PayrollManager\bin\Debug\PayrollManager.pssym
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\InstitutionDetails.g.cs
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\Views\InstitutionDetails.baml
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\RdlCompile.cache
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\RdlCompile.compiled
+C:\prism\Payroll\PayRoll\PayrollManager\obj\Debug\PayrollManager.exe.postsharp
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\PayrollManager.exe.config
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\PayrollManager.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\LogInScreen.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Styles\Theme.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\HeaderTemplate.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Styles\ButtonStyles.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Styles\ComboBoxStyles.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Styles\CheckBoxStyles.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Styles\DataGridCustomizations.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Styles\TextBlockStyles.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Styles\DataGridStyles.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Styles\GroupBoxStyles.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Styles\ListBoxStyles.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Styles\MenuStyles.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Styles\Resources.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Styles\ScrollBarStyles.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Styles\Styles.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Styles\TabControlStyles.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Styles\TextBoxStyles.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Styles\WindowStyles.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\App.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\LogInScreen.g.cs
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\MainWindow.g.cs
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\AccountDetails.g.cs
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\AccountsSummary.g.cs
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\AccountsSummaryReport.g.cs
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\BranchPayrollItemBreakDown.g.cs
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\BranchEmployeeInstitutions.g.cs
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\InstitutionDetails.g.cs
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeeBreakDownReport.g.cs
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeePaysub.g.cs
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeeSummaryList.g.cs
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\HeaderTemplate.g.cs
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\InstitutionCheckView.g.cs
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeeAccountDetails.g.cs
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeeAccountSummaryList.g.cs
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeeDetails.g.cs
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeePayrollItemsList.g.cs
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\InstitutionSummaryList.g.cs
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\IntroScreen.g.cs
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\PayCheckView.g.cs
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollEmployeeSetupDetails.g.cs
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollItemDetails.g.cs
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollItemsReport.g.cs
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollJob.g.cs
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollSetupItems.g.cs
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollSetupSummary.g.cs
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\PaymentReport.g.cs
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\MainView.g.cs
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\App.g.cs
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\PayrollManager_Content.g.cs
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\PayrollManager_MarkupCompile.cache
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\PayrollManager_MarkupCompile.lref
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\SUT.PrintEngine.App.config
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\PayrollDB.mdf
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\PayrollDB_log.ldf
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\PayrollManager.exe.manifest
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\PayrollManager.application
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\PayrollManager.exe
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\PayrollManager.pdb
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Caching.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\EntityFramework.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\PostSharp.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\Microsoft.Practices.Unity.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\Microsoft.Practices.Unity.Interception.Configuration.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\CustomWPFControls.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\EmailLogger.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\LinqLib.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\Microsoft.Expression.Interactions.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\Outlook.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\PdfSharp-WPF.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\PdfSharp.Xps.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\PrintableDataGrid.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\SUT.PrintEngine.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\System.Data.DataSetExtensions.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\System.Data.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\System.Printing.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\System.Windows.Interactivity.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\WindowsBase.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\Microsoft.Practices.Composite.Presentation.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\Microsoft.Practices.Composite.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\CustomWPFControls.pdb
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\EmailLogger.pdb
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\LinqLib.pdb
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\LinqLib.xml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\Outlook.pdb
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\PrintableDataGrid.pdb
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\SUT.PrintEngine.pdb
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\PdfSharp-WPF.xml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\PdfSharp.Xps.xml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\de\Microsoft.Expression.Interactions.resources.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\en\Microsoft.Expression.Interactions.resources.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\es\Microsoft.Expression.Interactions.resources.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\fr\Microsoft.Expression.Interactions.resources.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\it\Microsoft.Expression.Interactions.resources.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\ja\Microsoft.Expression.Interactions.resources.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\ko\Microsoft.Expression.Interactions.resources.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\ru\Microsoft.Expression.Interactions.resources.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\zh-Hans\Microsoft.Expression.Interactions.resources.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\zh-Hant\Microsoft.Expression.Interactions.resources.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\ru\System.Windows.Interactivity.resources.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\MainWindow.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\AccountDetails.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\AccountsSummary.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\AccountsSummaryReport.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\BranchPayrollItemBreakDown.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\BranchEmployeeInstitutions.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\InstitutionDetails.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeeBreakDownReport.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeePaysub.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeeSummaryList.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\InstitutionCheckView.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeeAccountDetails.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeeAccountSummaryList.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeeDetails.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\EmployeePayrollItemsList.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\InstitutionSummaryList.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\IntroScreen.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\PayCheckView.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollEmployeeSetupDetails.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollItemDetails.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollItemsReport.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollJob.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollSetupItems.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollSetupSummary.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\PaymentReport.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\MainView.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\PayrollManager.g.resources
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\RdlCompile.cache
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\RdlCompile.compiled
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\PayrollManager.exe.manifest
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\PayrollManager.application
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\PayrollManager.exe
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\PayrollManager.pdb

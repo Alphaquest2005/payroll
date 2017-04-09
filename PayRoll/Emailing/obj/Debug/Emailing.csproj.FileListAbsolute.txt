@@ -1,0 +1,5 @@
+C:\Users\joeseph\Downloads\Emailing_src\Emailing\Emailing\bin\Debug\Emailing.dll
+C:\Users\joeseph\Downloads\Emailing_src\Emailing\Emailing\bin\Debug\Emailing.pdb
+C:\Users\joeseph\Downloads\Emailing_src\Emailing\Emailing\obj\Debug\Emailing.csprojResolveAssemblyReference.cache
+C:\Users\joeseph\Downloads\Emailing_src\Emailing\Emailing\obj\Debug\Emailing.dll
+C:\Users\joeseph\Downloads\Emailing_src\Emailing\Emailing\obj\Debug\Emailing.pdb

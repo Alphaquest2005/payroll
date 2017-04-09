@@ -1,0 +1,5 @@
+C:\prism\Payroll\PayRoll\Outlook\bin\Release\Outlook.dll
+C:\prism\Payroll\PayRoll\Outlook\bin\Release\Outlook.pdb
+C:\prism\Payroll\PayRoll\Outlook\obj\Release\Outlook.dll
+C:\prism\Payroll\PayRoll\Outlook\obj\Release\Outlook.pdb
+C:\prism\Payroll\PayRoll\Outlook\obj\Release\Outlook.csprojResolveAssemblyReference.cache

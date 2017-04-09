@@ -1,0 +1,617 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DataLayer" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="PayrollDB" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="AccountEntries" EntityType="DataLayer.AccountEntry" />
+    <EntitySet Name="Accounts" EntityType="DataLayer.Account" />
+    <EntitySet Name="AccountTypes" EntityType="DataLayer.AccountType" />
+    <EntitySet Name="Branches" EntityType="DataLayer.Branch" />
+    <EntitySet Name="ChargeTypes" EntityType="DataLayer.ChargeType" />
+    <EntitySet Name="Employees" EntityType="DataLayer.Employee" />
+    <EntitySet Name="Institutions" EntityType="DataLayer.Institution" />
+    <EntitySet Name="PayrollEmployeeSetup" EntityType="DataLayer.PayrollEmployeeSetup" />
+    <EntitySet Name="PayrollItems" EntityType="DataLayer.PayrollItem" />
+    <EntitySet Name="PayrollJobs" EntityType="DataLayer.PayrollJob" />
+    <EntitySet Name="PayrollJobTypes" EntityType="DataLayer.PayrollJobType" />
+    <EntitySet Name="PayrollSetupItems" EntityType="DataLayer.PayrollSetupItem" />
+    <EntitySet Name="tmpEmployeeBank" EntityType="DataLayer.tmpEmployeeBank" />
+    <AssociationSet Name="FK_AccountAccountEntry" Association="DataLayer.FK_AccountAccountEntry">
+      <End Role="Accounts" EntitySet="Accounts" />
+      <End Role="AccountEntries" EntitySet="AccountEntries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PayrollItemAccountEntry" Association="DataLayer.FK_PayrollItemAccountEntry">
+      <End Role="PayrollItems" EntitySet="PayrollItems" />
+      <End Role="AccountEntries" EntitySet="AccountEntries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AccountPayrollItem" Association="DataLayer.FK_AccountPayrollItem">
+      <End Role="Accounts" EntitySet="Accounts" />
+      <End Role="PayrollItems" EntitySet="PayrollItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AccountPayrollItem1" Association="DataLayer.FK_AccountPayrollItem1">
+      <End Role="Accounts" EntitySet="Accounts" />
+      <End Role="PayrollItems" EntitySet="PayrollItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AccountPayrollSetupItem" Association="DataLayer.FK_AccountPayrollSetupItem">
+      <End Role="Accounts" EntitySet="Accounts" />
+      <End Role="PayrollSetupItems" EntitySet="PayrollSetupItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InstitutionAccountASN" Association="DataLayer.FK_InstitutionAccountASN">
+      <End Role="Institutions" EntitySet="Institutions" />
+      <End Role="Accounts" EntitySet="Accounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BranchEmployee" Association="DataLayer.FK_BranchEmployee">
+      <End Role="Branches" EntitySet="Branches" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BranchPayrollJob" Association="DataLayer.FK_BranchPayrollJob">
+      <End Role="Branches" EntitySet="Branches" />
+      <End Role="PayrollJobs" EntitySet="PayrollJobs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PayrollJobBranch" Association="DataLayer.FK_PayrollJobBranch">
+      <End Role="PayrollJobs" EntitySet="PayrollJobs" />
+      <End Role="Branches" EntitySet="Branches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeEmployee" Association="DataLayer.FK_EmployeeEmployee">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Employees1" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeePayrollEmployeeSetup" Association="DataLayer.FK_EmployeePayrollEmployeeSetup">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="PayrollEmployeeSetup" EntitySet="PayrollEmployeeSetup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeePayrollItem" Association="DataLayer.FK_EmployeePayrollItem">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="PayrollItems" EntitySet="PayrollItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PayrollJobTypePayrollEmployeeSetup" Association="DataLayer.FK_PayrollJobTypePayrollEmployeeSetup">
+      <End Role="PayrollJobTypes" EntitySet="PayrollJobTypes" />
+      <End Role="PayrollEmployeeSetup" EntitySet="PayrollEmployeeSetup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PayrollSetupItemPayrollEmployeeSetup" Association="DataLayer.FK_PayrollSetupItemPayrollEmployeeSetup">
+      <End Role="PayrollSetupItems" EntitySet="PayrollSetupItems" />
+      <End Role="PayrollEmployeeSetup" EntitySet="PayrollEmployeeSetup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PayrollItemPayrollItem" Association="DataLayer.FK_PayrollItemPayrollItem">
+      <End Role="PayrollItems" EntitySet="PayrollItems" />
+      <End Role="PayrollItems1" EntitySet="PayrollItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PayrollJobPayrollItem" Association="DataLayer.FK_PayrollJobPayrollItem">
+      <End Role="PayrollJobs" EntitySet="PayrollJobs" />
+      <End Role="PayrollItems" EntitySet="PayrollItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PayrollSetupItemPayrollItem" Association="DataLayer.FK_PayrollSetupItemPayrollItem">
+      <End Role="PayrollSetupItems" EntitySet="PayrollSetupItems" />
+      <End Role="PayrollItems" EntitySet="PayrollItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PayrollJobTypePayrollJob" Association="DataLayer.FK_PayrollJobTypePayrollJob">
+      <End Role="PayrollJobTypes" EntitySet="PayrollJobTypes" />
+      <End Role="PayrollJobs" EntitySet="PayrollJobs" />
+    </AssociationSet>
+    <AssociationSet Name="EmployeeEmployeeAccount" Association="DataLayer.EmployeeEmployeeAccount">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="EmployeeAccount" EntitySet="Accounts" />
+    </AssociationSet>
+    <AssociationSet Name="InstitutionInstitutionAccount" Association="DataLayer.InstitutionInstitutionAccount">
+      <End Role="Institution" EntitySet="Institutions" />
+      <End Role="InstitutionAccount" EntitySet="Accounts" />
+    </AssociationSet>
+    <EntitySet Name="EmailTemplate" EntityType="DataLayer.EmailTemplate" />
+    <AssociationSet Name="AccountPayrollEmployeeSetup" Association="DataLayer.AccountPayrollEmployeeSetup">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="PayrollEmployeeSetup" EntitySet="PayrollEmployeeSetup" />
+    </AssociationSet>
+    <AssociationSet Name="AccountPayrollEmployeeSetup1" Association="DataLayer.AccountPayrollEmployeeSetup1">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="PayrollEmployeeSetup" EntitySet="PayrollEmployeeSetup" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AccountEntry">
+    <Key>
+      <PropertyRef Name="AccountEntryId" />
+    </Key>
+    <Property Type="Int32" Name="AccountEntryId" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="EntryTime" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="TradeDate" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="AccountId" Nullable="false" />
+    <Property Type="Double" Name="DebitAmount" Nullable="false" />
+    <Property Type="Double" Name="CreditAmount" Nullable="false" />
+    <Property Type="String" Name="Memo" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="PayrollItemId" Nullable="false" />
+    <NavigationProperty Name="Accounts" Relationship="DataLayer.FK_AccountAccountEntry" FromRole="AccountEntries" ToRole="Accounts" />
+    <NavigationProperty Name="PayrollItem" Relationship="DataLayer.FK_PayrollItemAccountEntry" FromRole="AccountEntries" ToRole="PayrollItems" />
+  </EntityType>
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="AccountId" />
+    </Key>
+    <Property Type="Int32" Name="AccountId" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="AccountNumber" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="InstitutionId" Nullable="false" />
+    <Property Type="String" Name="AccountName" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="AccountType" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="RealAccountEntries" Relationship="DataLayer.FK_AccountAccountEntry" FromRole="Accounts" ToRole="AccountEntries" />
+    <NavigationProperty Name="PayrollItems" Relationship="DataLayer.FK_AccountPayrollItem" FromRole="Accounts" ToRole="PayrollItems" />
+    <NavigationProperty Name="PayrollItems1" Relationship="DataLayer.FK_AccountPayrollItem1" FromRole="Accounts" ToRole="PayrollItems" />
+    <NavigationProperty Name="PayrollSetupItems" Relationship="DataLayer.FK_AccountPayrollSetupItem" FromRole="Accounts" ToRole="PayrollSetupItems" />
+    <NavigationProperty Name="Institution" Relationship="DataLayer.FK_InstitutionAccountASN" FromRole="Accounts" ToRole="Institutions" />
+    <NavigationProperty Name="PayrollEmployeeSetup1" Relationship="DataLayer.AccountPayrollEmployeeSetup" FromRole="Account" ToRole="PayrollEmployeeSetup" />
+    <NavigationProperty Name="PayrollEmployeeSetup2" Relationship="DataLayer.AccountPayrollEmployeeSetup1" FromRole="Account" ToRole="PayrollEmployeeSetup" />
+  </EntityType>
+  <EntityType Name="AccountType">
+    <Key>
+      <PropertyRef Name="AccountTypeId" />
+    </Key>
+    <Property Type="Int32" Name="AccountTypeId" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="AccountTypeName" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Branch">
+    <Key>
+      <PropertyRef Name="BranchId" />
+    </Key>
+    <Property Type="Int32" Name="BranchId" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Type="String" Name="Address" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Type="String" Name="PhoneNumber" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Type="Int32" Name="CurrentPayrollJobId" />
+    <NavigationProperty Name="Employees" Relationship="DataLayer.FK_BranchEmployee" FromRole="Branches" ToRole="Employees" />
+    <NavigationProperty Name="PayrollJobs" Relationship="DataLayer.FK_BranchPayrollJob" FromRole="Branches" ToRole="PayrollJobs" />
+    <NavigationProperty Name="CurrentPayrollJob" Relationship="DataLayer.FK_PayrollJobBranch" FromRole="Branches" ToRole="PayrollJobs" />
+    <Property Type="String" Name="ShortName" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ChargeType">
+    <Key>
+      <PropertyRef Name="ChargeTypeId" />
+    </Key>
+    <Property Type="Int32" Name="ChargeTypeId" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="ChargeTypeName" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Type="Int32" Name="EmployeeId" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LastName" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MiddleName" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="BranchId" Nullable="false" />
+    <Property Type="Int32" Name="SupervisorId" />
+    <Property Type="DateTime" Name="EmploymentStartDate" Precision="3" Nullable="false" />
+    <Property Type="Boolean" Name="UnionMember" />
+    <NavigationProperty Name="Branch" Relationship="DataLayer.FK_BranchEmployee" FromRole="Employees" ToRole="Branches" />
+    <NavigationProperty Name="Employees" Relationship="DataLayer.FK_EmployeeEmployee" FromRole="Employees" ToRole="Employees1" />
+    <NavigationProperty Name="Supervisors" Relationship="DataLayer.FK_EmployeeEmployee" FromRole="Employees1" ToRole="Employees" />
+    <NavigationProperty Name="PayrollEmployeeSetups" Relationship="DataLayer.FK_EmployeePayrollEmployeeSetup" FromRole="Employees" ToRole="PayrollEmployeeSetup" />
+    <NavigationProperty Name="PayrollItems" Relationship="DataLayer.FK_EmployeePayrollItem" FromRole="Employees" ToRole="PayrollItems" />
+    <NavigationProperty Name="EmployeeAccounts" Relationship="DataLayer.EmployeeEmployeeAccount" FromRole="Employee" ToRole="EmployeeAccount" />
+    <Property Type="String" Name="EmailAddress" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Type="DateTime" Name="EmploymentEndDate" Precision="3" />
+    <Property Type="DateTime" Name="EntryDateTime" Precision="3" />
+    <Property Type="String" Name="DriversLicence" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DriversLicenceClass" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="SexId" />
+  </EntityType>
+  <EntityType Name="User" BaseType="DataLayer.Employee">
+    <Property Type="String" Name="Username" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Institution">
+    <Key>
+      <PropertyRef Name="InstitutionId" />
+    </Key>
+    <Property Type="Int32" Name="InstitutionId" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ShortName" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Accounts" Relationship="DataLayer.FK_InstitutionAccountASN" FromRole="Institutions" ToRole="Accounts" />
+    <NavigationProperty Name="InstitutionAccounts" Relationship="DataLayer.InstitutionInstitutionAccount" FromRole="Institution" ToRole="InstitutionAccount" />
+  </EntityType>
+  <EntityType Name="PayrollEmployeeSetup">
+    <Key>
+      <PropertyRef Name="PayrollEmployeeSetupId" />
+    </Key>
+    <Property Type="Int32" Name="PayrollEmployeeSetupId" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="PayrollSetupItemId" Nullable="false" />
+    <Property Type="Int32" Name="EmployeeId" Nullable="false" />
+    <Property Type="DateTime" Name="EndDate" Precision="3" />
+    <Property Type="DateTime" Name="StartDate" Precision="3" />
+    <Property Type="Double" Name="Amount" />
+    <Property Type="Double" Name="BaseAmount" />
+    <Property Type="Double" Name="CompanyAmount" />
+    <Property Type="Single" Name="Rate" />
+    <Property Type="Single" Name="CompanyRate" />
+    <Property Type="String" Name="ChargeType" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="PayrollJobTypeId" Nullable="false" />
+    <Property Type="String" Name="RateRounding" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Employee" Relationship="DataLayer.FK_EmployeePayrollEmployeeSetup" FromRole="PayrollEmployeeSetup" ToRole="Employees" />
+    <NavigationProperty Name="PayrollJobType" Relationship="DataLayer.FK_PayrollJobTypePayrollEmployeeSetup" FromRole="PayrollEmployeeSetup" ToRole="PayrollJobTypes" />
+    <NavigationProperty Name="PayrollSetupItem" Relationship="DataLayer.FK_PayrollSetupItemPayrollEmployeeSetup" FromRole="PayrollEmployeeSetup" ToRole="PayrollSetupItems" />
+    <Property Type="Int32" Name="CreditAccountId" Nullable="false" />
+    <Property Type="Int32" Name="DebitAccountId" Nullable="false" />
+    <NavigationProperty Name="CreditAccount" Relationship="DataLayer.AccountPayrollEmployeeSetup" FromRole="PayrollEmployeeSetup" ToRole="Account" />
+    <NavigationProperty Name="DebitAccount" Relationship="DataLayer.AccountPayrollEmployeeSetup1" FromRole="PayrollEmployeeSetup" ToRole="Account" />
+  </EntityType>
+  <EntityType Name="PayrollItem">
+    <Key>
+      <PropertyRef Name="PayrollItemId" />
+    </Key>
+    <Property Type="Int32" Name="PayrollItemId" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="EmployeeId" Nullable="false" />
+    <Property Type="Int32" Name="CreditAccountId" Nullable="false" />
+    <Property Type="Int32" Name="DebitAccountId" Nullable="false" />
+    <Property Type="Int32" Name="Priority" Nullable="false" />
+    <Property Type="Int32" Name="PayrollJobId" Nullable="false" />
+    <Property Type="Double" Name="Amount" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Single" Name="Rate" Nullable="false" />
+    <Property Type="Double" Name="BaseAmount" Nullable="false" />
+    <Property Type="Boolean" Name="IncomeDeduction" Nullable="false" />
+    <Property Type="String" Name="Status" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="PayrollSetupItemId" />
+    <Property Type="Int32" Name="ParentPayrollItemId" />
+    <Property Type="String" Name="RateRounding" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AccountEntries" Relationship="DataLayer.FK_PayrollItemAccountEntry" FromRole="PayrollItems" ToRole="AccountEntries" />
+    <NavigationProperty Name="CreditAccount" Relationship="DataLayer.FK_AccountPayrollItem" FromRole="PayrollItems" ToRole="Accounts" />
+    <NavigationProperty Name="DebitAccount" Relationship="DataLayer.FK_AccountPayrollItem1" FromRole="PayrollItems" ToRole="Accounts" />
+    <NavigationProperty Name="Employee" Relationship="DataLayer.FK_EmployeePayrollItem" FromRole="PayrollItems" ToRole="Employees" />
+    <NavigationProperty Name="ChildPayrollItems" Relationship="DataLayer.FK_PayrollItemPayrollItem" FromRole="PayrollItems" ToRole="PayrollItems1" />
+    <NavigationProperty Name="ParentPayrollItem" Relationship="DataLayer.FK_PayrollItemPayrollItem" FromRole="PayrollItems1" ToRole="PayrollItems" />
+    <NavigationProperty Name="PayrollJob" Relationship="DataLayer.FK_PayrollJobPayrollItem" FromRole="PayrollItems" ToRole="PayrollJobs" />
+    <NavigationProperty Name="PayrollSetupItem" Relationship="DataLayer.FK_PayrollSetupItemPayrollItem" FromRole="PayrollItems" ToRole="PayrollSetupItems" />
+    <Property Type="Boolean" Name="IsTaxableBenefit" />
+    <Property Type="Boolean" Name="ApplyToTaxableBenefits" />
+  </EntityType>
+  <EntityType Name="PayrollJob">
+    <Key>
+      <PropertyRef Name="PayrollJobId" />
+    </Key>
+    <Property Type="Int32" Name="PayrollJobId" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="CheckedBy" />
+    <Property Type="String" Name="PreparedBy" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Type="DateTime" Name="StartDate" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="EndDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Status" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="PayrollJobTypeId" Nullable="false" />
+    <Property Type="DateTime" Name="PaymentDate" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="BranchId" Nullable="false" />
+    <NavigationProperty Name="Branch" Relationship="DataLayer.FK_BranchPayrollJob" FromRole="PayrollJobs" ToRole="Branches" />
+    <NavigationProperty Name="Branches" Relationship="DataLayer.FK_PayrollJobBranch" FromRole="PayrollJobs" ToRole="Branches" />
+    <NavigationProperty Name="PayrollItems" Relationship="DataLayer.FK_PayrollJobPayrollItem" FromRole="PayrollJobs" ToRole="PayrollItems" />
+    <NavigationProperty Name="PayrollJobType" Relationship="DataLayer.FK_PayrollJobTypePayrollJob" FromRole="PayrollJobs" ToRole="PayrollJobTypes" />
+  </EntityType>
+  <EntityType Name="PayrollJobType">
+    <Key>
+      <PropertyRef Name="PayrollJobTypeId" />
+    </Key>
+    <Property Type="Int32" Name="PayrollJobTypeId" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PayrollEmployeeSetup" Relationship="DataLayer.FK_PayrollJobTypePayrollEmployeeSetup" FromRole="PayrollJobTypes" ToRole="PayrollEmployeeSetup" />
+    <NavigationProperty Name="PayrollJobs" Relationship="DataLayer.FK_PayrollJobTypePayrollJob" FromRole="PayrollJobTypes" ToRole="PayrollJobs" />
+    <Property Type="Int32" Name="PayPeriods" Nullable="true" />
+  </EntityType>
+  <EntityType Name="PayrollSetupItem">
+    <Key>
+      <PropertyRef Name="PayrollSetupItemId" />
+    </Key>
+    <Property Type="Int32" Name="PayrollSetupItemId" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="Priority" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CompanyLineItemDescription" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="DebitCredit" Nullable="false" />
+    <Property Type="String" Name="RecuranceDays" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EmployeeAccountType" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IncomeDeduction" Nullable="false" />
+    <Property Type="Int32" Name="PayrollItemAccountId" Nullable="false" />
+    <Property Type="Int32" Name="CompanyAccountId" />
+    <Property Type="String" Name="RateRounding" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Double" Name="Rate" />
+    <Property Type="Double" Name="CompanyRate" />
+    <Property Type="Double" Name="RateCeiling" />
+    <Property Type="Double" Name="RateCeilingAmount" />
+    <Property Type="Double" Name="RateCeilingCompanyAmount" />
+    <NavigationProperty Name="PayrollItemAccount" Relationship="DataLayer.FK_AccountPayrollSetupItem" FromRole="PayrollSetupItems" ToRole="Accounts" />
+    <NavigationProperty Name="PayrollEmployeeSetup" Relationship="DataLayer.FK_PayrollSetupItemPayrollEmployeeSetup" FromRole="PayrollSetupItems" ToRole="PayrollEmployeeSetup" />
+    <NavigationProperty Name="PayrollItems" Relationship="DataLayer.FK_PayrollSetupItemPayrollItem" FromRole="PayrollSetupItems" ToRole="PayrollItems" />
+    <Property Type="Double" Name="Amount" />
+    <Property Type="Double" Name="CompanyAmount" />
+    <Property Type="Double" Name="MiniumBaseAmount" />
+    <Property Type="Double" Name="AmountFlooring" />
+    <Property Type="Boolean" Name="IsTaxableBenefit" />
+    <Property Type="Boolean" Name="ApplyToTaxableBenefits" />
+  </EntityType>
+  <EntityType Name="tmpEmployeeBank">
+    <Key>
+      <PropertyRef Name="Employee" />
+      <PropertyRef Name="Bank" />
+    </Key>
+    <Property Type="String" Name="Employee" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Bank" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_AccountAccountEntry">
+    <End Type="DataLayer.Account" Role="Accounts" Multiplicity="1" />
+    <End Type="DataLayer.AccountEntry" Role="AccountEntries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Accounts">
+        <PropertyRef Name="AccountId" />
+      </Principal>
+      <Dependent Role="AccountEntries">
+        <PropertyRef Name="AccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PayrollItemAccountEntry">
+    <End Type="DataLayer.PayrollItem" Role="PayrollItems" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="DataLayer.AccountEntry" Role="AccountEntries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PayrollItems">
+        <PropertyRef Name="PayrollItemId" />
+      </Principal>
+      <Dependent Role="AccountEntries">
+        <PropertyRef Name="PayrollItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AccountPayrollItem">
+    <End Type="DataLayer.Account" Role="Accounts" Multiplicity="1" />
+    <End Type="DataLayer.PayrollItem" Role="PayrollItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Accounts">
+        <PropertyRef Name="AccountId" />
+      </Principal>
+      <Dependent Role="PayrollItems">
+        <PropertyRef Name="CreditAccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AccountPayrollItem1">
+    <End Type="DataLayer.Account" Role="Accounts" Multiplicity="1" />
+    <End Type="DataLayer.PayrollItem" Role="PayrollItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Accounts">
+        <PropertyRef Name="AccountId" />
+      </Principal>
+      <Dependent Role="PayrollItems">
+        <PropertyRef Name="DebitAccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AccountPayrollSetupItem">
+    <End Type="DataLayer.Account" Role="Accounts" Multiplicity="1" />
+    <End Type="DataLayer.PayrollSetupItem" Role="PayrollSetupItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Accounts">
+        <PropertyRef Name="AccountId" />
+      </Principal>
+      <Dependent Role="PayrollSetupItems">
+        <PropertyRef Name="PayrollItemAccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InstitutionAccountASN">
+    <End Type="DataLayer.Institution" Role="Institutions" Multiplicity="1" />
+    <End Type="DataLayer.Account" Role="Accounts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institutions">
+        <PropertyRef Name="InstitutionId" />
+      </Principal>
+      <Dependent Role="Accounts">
+        <PropertyRef Name="InstitutionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BranchEmployee">
+    <End Type="DataLayer.Branch" Role="Branches" Multiplicity="1" />
+    <End Type="DataLayer.Employee" Role="Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branches">
+        <PropertyRef Name="BranchId" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="BranchId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BranchPayrollJob">
+    <End Type="DataLayer.Branch" Role="Branches" Multiplicity="1" />
+    <End Type="DataLayer.PayrollJob" Role="PayrollJobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branches">
+        <PropertyRef Name="BranchId" />
+      </Principal>
+      <Dependent Role="PayrollJobs">
+        <PropertyRef Name="BranchId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PayrollJobBranch">
+    <End Type="DataLayer.PayrollJob" Role="PayrollJobs" Multiplicity="0..1" />
+    <End Type="DataLayer.Branch" Role="Branches" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PayrollJobs">
+        <PropertyRef Name="PayrollJobId" />
+      </Principal>
+      <Dependent Role="Branches">
+        <PropertyRef Name="CurrentPayrollJobId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeEmployee">
+    <End Type="DataLayer.Employee" Role="Employees" Multiplicity="0..1" />
+    <End Type="DataLayer.Employee" Role="Employees1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="EmployeeId" />
+      </Principal>
+      <Dependent Role="Employees1">
+        <PropertyRef Name="SupervisorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeePayrollEmployeeSetup">
+    <End Type="DataLayer.Employee" Role="Employees" Multiplicity="1" />
+    <End Type="DataLayer.PayrollEmployeeSetup" Role="PayrollEmployeeSetup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="EmployeeId" />
+      </Principal>
+      <Dependent Role="PayrollEmployeeSetup">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeePayrollItem">
+    <End Type="DataLayer.Employee" Role="Employees" Multiplicity="1" />
+    <End Type="DataLayer.PayrollItem" Role="PayrollItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="EmployeeId" />
+      </Principal>
+      <Dependent Role="PayrollItems">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PayrollJobTypePayrollEmployeeSetup">
+    <End Type="DataLayer.PayrollJobType" Role="PayrollJobTypes" Multiplicity="1" />
+    <End Type="DataLayer.PayrollEmployeeSetup" Role="PayrollEmployeeSetup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PayrollJobTypes">
+        <PropertyRef Name="PayrollJobTypeId" />
+      </Principal>
+      <Dependent Role="PayrollEmployeeSetup">
+        <PropertyRef Name="PayrollJobTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PayrollSetupItemPayrollEmployeeSetup">
+    <End Type="DataLayer.PayrollSetupItem" Role="PayrollSetupItems" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="DataLayer.PayrollEmployeeSetup" Role="PayrollEmployeeSetup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PayrollSetupItems">
+        <PropertyRef Name="PayrollSetupItemId" />
+      </Principal>
+      <Dependent Role="PayrollEmployeeSetup">
+        <PropertyRef Name="PayrollSetupItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PayrollItemPayrollItem">
+    <End Type="DataLayer.PayrollItem" Role="PayrollItems" Multiplicity="0..1" />
+    <End Type="DataLayer.PayrollItem" Role="PayrollItems1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PayrollItems">
+        <PropertyRef Name="PayrollItemId" />
+      </Principal>
+      <Dependent Role="PayrollItems1">
+        <PropertyRef Name="ParentPayrollItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PayrollJobPayrollItem">
+    <End Type="DataLayer.PayrollJob" Role="PayrollJobs" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="DataLayer.PayrollItem" Role="PayrollItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PayrollJobs">
+        <PropertyRef Name="PayrollJobId" />
+      </Principal>
+      <Dependent Role="PayrollItems">
+        <PropertyRef Name="PayrollJobId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PayrollSetupItemPayrollItem">
+    <End Type="DataLayer.PayrollSetupItem" Role="PayrollSetupItems" Multiplicity="0..1" />
+    <End Type="DataLayer.PayrollItem" Role="PayrollItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PayrollSetupItems">
+        <PropertyRef Name="PayrollSetupItemId" />
+      </Principal>
+      <Dependent Role="PayrollItems">
+        <PropertyRef Name="PayrollSetupItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PayrollJobTypePayrollJob">
+    <End Type="DataLayer.PayrollJobType" Role="PayrollJobTypes" Multiplicity="1" />
+    <End Type="DataLayer.PayrollJob" Role="PayrollJobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PayrollJobTypes">
+        <PropertyRef Name="PayrollJobTypeId" />
+      </Principal>
+      <Dependent Role="PayrollJobs">
+        <PropertyRef Name="PayrollJobTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="EmployeeAccount" BaseType="DataLayer.Account">
+    <Property Type="Double" Name="SalaryAssignment" />
+    <Property Type="Int32" Name="EmployeeId" Nullable="false" p1:StoreGeneratedPattern="None" />
+    <NavigationProperty Name="Employee" Relationship="DataLayer.EmployeeEmployeeAccount" FromRole="EmployeeAccount" ToRole="Employee" />
+  </EntityType>
+  <Association Name="EmployeeEmployeeAccount">
+    <End Type="DataLayer.Employee" Role="Employee" Multiplicity="1" />
+    <End Type="DataLayer.EmployeeAccount" Role="EmployeeAccount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeId" />
+      </Principal>
+      <Dependent Role="EmployeeAccount">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="InstitutionAccount" BaseType="DataLayer.Account">
+    <Property Type="Int32" Name="PayeeInstitutionId" Nullable="false" />
+    <NavigationProperty Name="PayeeInstitution" Relationship="DataLayer.InstitutionInstitutionAccount" FromRole="InstitutionAccount" ToRole="Institution" />
+  </EntityType>
+  <Association Name="InstitutionInstitutionAccount">
+    <End Type="DataLayer.Institution" Role="Institution" Multiplicity="1" />
+    <End Type="DataLayer.InstitutionAccount" Role="InstitutionAccount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution">
+        <PropertyRef Name="InstitutionId" />
+      </Principal>
+      <Dependent Role="InstitutionAccount">
+        <PropertyRef Name="PayeeInstitutionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="EmailTemplate">
+    <Key>
+      <PropertyRef Name="EmailTemplateId" />
+    </Key>
+    <Property Type="Int32" Name="EmailTemplateId" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="FromEmailAddress" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Type="String" Name="EmailBody" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Type="String" Name="ToEmailAddress" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Type="String" Name="Key" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Type="String" Name="Subject" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <Association Name="AccountPayrollEmployeeSetup">
+    <End Type="DataLayer.Account" Role="Account" Multiplicity="1" />
+    <End Type="DataLayer.PayrollEmployeeSetup" Role="PayrollEmployeeSetup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="AccountId" />
+      </Principal>
+      <Dependent Role="PayrollEmployeeSetup">
+        <PropertyRef Name="CreditAccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AccountPayrollEmployeeSetup1">
+    <End Type="DataLayer.Account" Role="Account" Multiplicity="1" />
+    <End Type="DataLayer.PayrollEmployeeSetup" Role="PayrollEmployeeSetup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="AccountId" />
+      </Principal>
+      <Dependent Role="PayrollEmployeeSetup">
+        <PropertyRef Name="DebitAccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,56 @@
+{
+  "locked": false,
+  "version": 2,
+  "targets": {
+    ".NETFramework,Version=v4.5": {
+      "PostSharp/4.3.31": {
+        "type": "package",
+        "compile": {
+          "lib/net35-client/PostSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net35-client/PostSharp.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.5/win": {
+      "PostSharp/4.3.31": {
+        "type": "package",
+        "compile": {
+          "lib/net35-client/PostSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net35-client/PostSharp.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PostSharp/4.3.31": {
+      "sha512": "SU3UV33EVCVrwVG+DR84//hHrnH5T1FvAB+d2YZODCOQJKLHv++GA2r8q7cN5BTGu4EcWc3grXNA2ySsdWUo9w==",
+      "type": "package",
+      "files": [
+        "PostSharp.4.3.31.nupkg.sha512",
+        "PostSharp.nuspec",
+        "lib/net35-client/PostSharp.dll",
+        "lib/net35-client/PostSharp.xml",
+        "lib/portable-net4+sl5+netcore45+wpa81+wp8/PostSharp.dll",
+        "lib/portable-net4+sl5+netcore45+wpa81+wp8/PostSharp.xml",
+        "tools/PostSharp-Tools.exe",
+        "tools/PostSharp.MSBuild.v4.3.31.Release.dll",
+        "tools/PostSharp.Version.properties",
+        "tools/PostSharp.properties",
+        "tools/PostSharp.targets",
+        "tools/PostSharp.tasks",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "": [
+      "PostSharp >= 4.3.31"
+    ],
+    ".NETFramework,Version=v4.5": []
+  }
+}

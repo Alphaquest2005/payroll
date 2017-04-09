@@ -1,0 +1,468 @@
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\QuickSalesManager.exe
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\QuickSalesManager.pdb
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Expression.Interactions.dll
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\System.Windows.Interactivity.dll
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Expression.Interactions.xml
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\System.Windows.Interactivity.xml
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\de\Microsoft.Expression.Interactions.resources.dll
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\en\Microsoft.Expression.Interactions.resources.dll
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\es\Microsoft.Expression.Interactions.resources.dll
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\fr\Microsoft.Expression.Interactions.resources.dll
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\it\Microsoft.Expression.Interactions.resources.dll
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\ja\Microsoft.Expression.Interactions.resources.dll
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\ko\Microsoft.Expression.Interactions.resources.dll
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\ru\Microsoft.Expression.Interactions.resources.dll
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\zh-Hans\Microsoft.Expression.Interactions.resources.dll
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\zh-Hant\Microsoft.Expression.Interactions.resources.dll
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\de\System.Windows.Interactivity.resources.dll
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\en\System.Windows.Interactivity.resources.dll
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\es\System.Windows.Interactivity.resources.dll
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\it\System.Windows.Interactivity.resources.dll
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\ru\System.Windows.Interactivity.resources.dll
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\QuickSalesManager.csprojResolveAssemblyReference.cache
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\MainWindow.g.cs
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\MainView.g.cs
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\App.g.cs
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\QuickSalesManager_MarkupCompile.cache
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\QuickSalesManager_MarkupCompile.lref
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\MainWindow.baml
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\MainView.baml
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\QuickSalesManager.g.resources
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\QuickSalesManager.exe
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\QuickSalesManager.pdb
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\ButtonStyles.baml
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\ComboBoxStyles.baml
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\DataGridStyles.baml
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\GroupBoxStyles.baml
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\ListBoxStyles.baml
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\MenuStyles.baml
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\Resources.baml
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\ScrollBarStyles.baml
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\Styles.baml
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\TabControlStyles.baml
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\TextBoxStyles.baml
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\WindowStyles.baml
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\TextBlockStyles.baml
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\QuickSalesManager.exe.config
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\RMSDataAccessLayer.dll
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\RMSDataAccessLayer.pdb
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\Cashiers.g.cs
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\Cashiers.baml
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\CheckBoxStyles.baml
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\CustomerList.g.cs
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\CustomerList.baml
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\CustomerDetails.g.cs
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\CustomerDetails.baml
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\CustomerPass.g.cs
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\CustomerPass.baml
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\App.baml
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\DataGridCustomizations.baml
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Practices.Prism.dll
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\PrismMVVMLibrary.dll
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.dll
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\WPFToolkit.dll
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Practices.Prism.xml
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.pdb
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\WPFToolkit.pdb
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\MonthSales.g.cs
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\MonthSales.baml
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Practices.Unity.dll
+D:\Prism Projects\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Practices.Unity.xml
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\QuickSalesManager.exe.config
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\QuickSalesManager.exe
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\QuickSalesManager.pdb
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Elysium.dll
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Elysium.Notifications.dll
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Practices.Prism.dll
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Practices.Unity.dll
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\PrismMVVMLibrary.dll
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\RMSDataAccessLayer.dll
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Expression.Drawing.dll
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\WPFToolkit.dll
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\RMSDataAccessLayer.pdb
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Practices.Prism.xml
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Practices.Unity.xml
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.pdb
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Expression.Interactions.xml
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\System.Windows.Interactivity.xml
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\WPFToolkit.pdb
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\de\Microsoft.Expression.Interactions.resources.dll
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\en\Microsoft.Expression.Interactions.resources.dll
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\es\Microsoft.Expression.Interactions.resources.dll
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\fr\Microsoft.Expression.Interactions.resources.dll
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\it\Microsoft.Expression.Interactions.resources.dll
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\ja\Microsoft.Expression.Interactions.resources.dll
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\ko\Microsoft.Expression.Interactions.resources.dll
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\ru\Microsoft.Expression.Interactions.resources.dll
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\zh-Hans\Microsoft.Expression.Interactions.resources.dll
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\zh-Hant\Microsoft.Expression.Interactions.resources.dll
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\ru\System.Windows.Interactivity.resources.dll
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\QuickSalesManager.csprojResolveAssemblyReference.cache
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\ButtonStyles.baml
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\ComboBoxStyles.baml
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\CheckBoxStyles.baml
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\DataGridCustomizations.baml
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\TextBlockStyles.baml
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\DataGridStyles.baml
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\GroupBoxStyles.baml
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\ListBoxStyles.baml
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\MenuStyles.baml
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\Resources.baml
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\ScrollBarStyles.baml
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\Styles.baml
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\TabControlStyles.baml
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\TextBoxStyles.baml
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\WindowStyles.baml
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\App.baml
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\MainWindow.g.cs
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\MonthSales.g.cs
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\Cashiers.g.cs
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\CustomerDetails.g.cs
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\CustomerList.g.cs
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\CustomerPass.g.cs
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\MainView.g.cs
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\App.g.cs
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\QuickSalesManager_MarkupCompile.cache
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\QuickSalesManager_MarkupCompile.lref
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\MainWindow.baml
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\MonthSales.baml
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\Cashiers.baml
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\CustomerDetails.baml
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\CustomerList.baml
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\CustomerPass.baml
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\MainView.baml
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\QuickSalesManager.g.resources
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\QuickSalesManager.exe
+C:\prism\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\QuickSalesManager.pdb
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\QuickSalesManager.exe.config
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\QuickSalesManager.exe
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\QuickSalesManager.pdb
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Elysium.dll
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Elysium.Notifications.dll
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Practices.Prism.dll
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Practices.Unity.dll
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\PrismMVVMLibrary.dll
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\RMSDataAccessLayer.dll
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Expression.Drawing.dll
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\WPFToolkit.dll
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\RMSDataAccessLayer.pdb
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Practices.Prism.xml
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Practices.Unity.xml
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.pdb
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Expression.Interactions.xml
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\System.Windows.Interactivity.xml
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\WPFToolkit.pdb
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\de\Microsoft.Expression.Interactions.resources.dll
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\en\Microsoft.Expression.Interactions.resources.dll
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\es\Microsoft.Expression.Interactions.resources.dll
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\fr\Microsoft.Expression.Interactions.resources.dll
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\it\Microsoft.Expression.Interactions.resources.dll
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\ja\Microsoft.Expression.Interactions.resources.dll
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\ko\Microsoft.Expression.Interactions.resources.dll
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\ru\Microsoft.Expression.Interactions.resources.dll
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\zh-Hans\Microsoft.Expression.Interactions.resources.dll
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\zh-Hant\Microsoft.Expression.Interactions.resources.dll
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\ru\System.Windows.Interactivity.resources.dll
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\QuickSalesManager.csprojResolveAssemblyReference.cache
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\ButtonStyles.baml
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\ComboBoxStyles.baml
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\CheckBoxStyles.baml
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\DataGridCustomizations.baml
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\TextBlockStyles.baml
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\DataGridStyles.baml
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\GroupBoxStyles.baml
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\ListBoxStyles.baml
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\MenuStyles.baml
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\Resources.baml
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\ScrollBarStyles.baml
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\Styles.baml
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\TabControlStyles.baml
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\TextBoxStyles.baml
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\WindowStyles.baml
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\App.baml
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\MainWindow.g.cs
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\MonthSales.g.cs
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\Cashiers.g.cs
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\CustomerDetails.g.cs
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\CustomerList.g.cs
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\CustomerPass.g.cs
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\MainView.g.cs
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\App.g.cs
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\QuickSalesManager_MarkupCompile.cache
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\QuickSalesManager_MarkupCompile.lref
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\MainWindow.baml
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\MonthSales.baml
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\Cashiers.baml
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\CustomerDetails.baml
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\CustomerList.baml
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\CustomerPass.baml
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\MainView.baml
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\QuickSalesManager.g.resources
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\QuickSalesManager.exe
+C:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\QuickSalesManager.pdb
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\QuickSalesManager.exe.config
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\QuickSalesManager.exe
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\QuickSalesManager.pdb
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Elysium.dll
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Elysium.Notifications.dll
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Practices.Prism.dll
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Practices.Unity.dll
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\PrismMVVMLibrary.dll
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\RMSDataAccessLayer.dll
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Expression.Drawing.dll
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\WPFToolkit.dll
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\RMSDataAccessLayer.pdb
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Practices.Prism.xml
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Practices.Unity.xml
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.pdb
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Expression.Interactions.xml
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\System.Windows.Interactivity.xml
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\WPFToolkit.pdb
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\de\Microsoft.Expression.Interactions.resources.dll
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\en\Microsoft.Expression.Interactions.resources.dll
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\es\Microsoft.Expression.Interactions.resources.dll
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\fr\Microsoft.Expression.Interactions.resources.dll
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\it\Microsoft.Expression.Interactions.resources.dll
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\ja\Microsoft.Expression.Interactions.resources.dll
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\ko\Microsoft.Expression.Interactions.resources.dll
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\ru\Microsoft.Expression.Interactions.resources.dll
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\zh-Hans\Microsoft.Expression.Interactions.resources.dll
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\zh-Hant\Microsoft.Expression.Interactions.resources.dll
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\de\System.Windows.Interactivity.resources.dll
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\en\System.Windows.Interactivity.resources.dll
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\es\System.Windows.Interactivity.resources.dll
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\it\System.Windows.Interactivity.resources.dll
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\ru\System.Windows.Interactivity.resources.dll
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\QuickSalesManager.csprojResolveAssemblyReference.cache
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\ButtonStyles.baml
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\ComboBoxStyles.baml
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\CheckBoxStyles.baml
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\DataGridCustomizations.baml
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\TextBlockStyles.baml
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\DataGridStyles.baml
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\GroupBoxStyles.baml
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\ListBoxStyles.baml
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\MenuStyles.baml
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\Resources.baml
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\ScrollBarStyles.baml
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\Styles.baml
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\TabControlStyles.baml
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\TextBoxStyles.baml
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\WindowStyles.baml
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\App.baml
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\MainWindow.g.cs
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\MonthSales.g.cs
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\Cashiers.g.cs
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\CustomerDetails.g.cs
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\CustomerList.g.cs
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\CustomerPass.g.cs
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\MainView.g.cs
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\App.g.cs
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\GeneratedInternalTypeHelper.g.cs
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\QuickSalesManager_MarkupCompile.cache
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\QuickSalesManager_MarkupCompile.lref
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\MainWindow.baml
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\MonthSales.baml
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\Cashiers.baml
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\CustomerDetails.baml
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\CustomerList.baml
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\CustomerPass.baml
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\MainView.baml
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\QuickSalesManager.g.resources
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\QuickSalesManager.exe
+G:\Insight\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\QuickSalesManager.pdb
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\QuickSalesManager.exe.config
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\QuickSalesManager.exe
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\QuickSalesManager.pdb
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Expression.Interactions.dll
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Practices.Prism.dll
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Practices.Unity.dll
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\PrismMVVMLibrary.dll
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\RMSDataAccessLayer.dll
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.dll
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\System.Windows.Interactivity.dll
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\WPFToolkit.dll
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\RMSDataAccessLayer.pdb
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Practices.Prism.xml
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Practices.Unity.xml
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.pdb
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Expression.Interactions.xml
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\System.Windows.Interactivity.xml
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\WPFToolkit.pdb
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\de\Microsoft.Expression.Interactions.resources.dll
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\en\Microsoft.Expression.Interactions.resources.dll
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\es\Microsoft.Expression.Interactions.resources.dll
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\fr\Microsoft.Expression.Interactions.resources.dll
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\it\Microsoft.Expression.Interactions.resources.dll
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\ja\Microsoft.Expression.Interactions.resources.dll
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\ko\Microsoft.Expression.Interactions.resources.dll
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\ru\Microsoft.Expression.Interactions.resources.dll
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\zh-Hans\Microsoft.Expression.Interactions.resources.dll
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\zh-Hant\Microsoft.Expression.Interactions.resources.dll
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\de\System.Windows.Interactivity.resources.dll
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\en\System.Windows.Interactivity.resources.dll
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\es\System.Windows.Interactivity.resources.dll
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\it\System.Windows.Interactivity.resources.dll
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\ru\System.Windows.Interactivity.resources.dll
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\QuickSalesManager.csprojResolveAssemblyReference.cache
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\ButtonStyles.baml
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\ComboBoxStyles.baml
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\CheckBoxStyles.baml
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\DataGridCustomizations.baml
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\TextBlockStyles.baml
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\DataGridStyles.baml
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\GroupBoxStyles.baml
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\ListBoxStyles.baml
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\MenuStyles.baml
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\Resources.baml
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\ScrollBarStyles.baml
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\Styles.baml
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\TabControlStyles.baml
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\TextBoxStyles.baml
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\WindowStyles.baml
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\App.baml
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\MainWindow.g.cs
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\MonthSales.g.cs
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\Cashiers.g.cs
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\CustomerDetails.g.cs
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\CustomerList.g.cs
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\CustomerPass.g.cs
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\MainView.g.cs
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\App.g.cs
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\QuickSalesManager_MarkupCompile.cache
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\QuickSalesManager_MarkupCompile.lref
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\MainWindow.baml
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\MonthSales.baml
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\Cashiers.baml
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\CustomerDetails.baml
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\CustomerList.baml
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\CustomerPass.baml
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\Views\MainView.baml
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\QuickSalesManager.g.resources
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\QuickSalesManager.exe
+D:\Prism Projects\live\PrismApplication1\QuickSalesManager\QuickSalesManager\obj\Debug\QuickSalesManager.pdb
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\bin\Debug\QuickSalesManager.exe.config
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\bin\Debug\QuickSalesManager.exe
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\bin\Debug\QuickSalesManager.pdb
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\bin\Debug\Elysium.dll
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\bin\Debug\Elysium.Notifications.dll
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Practices.Prism.dll
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Practices.Unity.dll
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\bin\Debug\PrismMVVMLibrary.dll
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\bin\Debug\RMSDataAccessLayer.dll
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Expression.Drawing.dll
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\bin\Debug\WPFToolkit.dll
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\bin\Debug\RMSDataAccessLayer.pdb
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Practices.Prism.xml
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Practices.Unity.xml
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.pdb
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Expression.Interactions.xml
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\bin\Debug\System.Windows.Interactivity.xml
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\bin\Debug\WPFToolkit.pdb
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\bin\Debug\de\Microsoft.Expression.Interactions.resources.dll
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\bin\Debug\en\Microsoft.Expression.Interactions.resources.dll
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\bin\Debug\es\Microsoft.Expression.Interactions.resources.dll
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\bin\Debug\fr\Microsoft.Expression.Interactions.resources.dll
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\bin\Debug\it\Microsoft.Expression.Interactions.resources.dll
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\bin\Debug\ja\Microsoft.Expression.Interactions.resources.dll
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\bin\Debug\ko\Microsoft.Expression.Interactions.resources.dll
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\bin\Debug\ru\Microsoft.Expression.Interactions.resources.dll
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\bin\Debug\zh-Hans\Microsoft.Expression.Interactions.resources.dll
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\bin\Debug\zh-Hant\Microsoft.Expression.Interactions.resources.dll
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\bin\Debug\de\System.Windows.Interactivity.resources.dll
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\bin\Debug\en\System.Windows.Interactivity.resources.dll
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\bin\Debug\es\System.Windows.Interactivity.resources.dll
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\bin\Debug\it\System.Windows.Interactivity.resources.dll
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\bin\Debug\ru\System.Windows.Interactivity.resources.dll
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\obj\Debug\QuickSalesManager.csprojResolveAssemblyReference.cache
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\ButtonStyles.baml
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\ComboBoxStyles.baml
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\CheckBoxStyles.baml
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\DataGridCustomizations.baml
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\TextBlockStyles.baml
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\DataGridStyles.baml
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\GroupBoxStyles.baml
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\ListBoxStyles.baml
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\MenuStyles.baml
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\Resources.baml
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\ScrollBarStyles.baml
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\Styles.baml
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\TabControlStyles.baml
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\TextBoxStyles.baml
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\obj\Debug\Styles\WindowStyles.baml
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\obj\Debug\App.baml
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\obj\Debug\MainWindow.g.cs
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\obj\Debug\Views\MonthSales.g.cs
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\obj\Debug\Views\Cashiers.g.cs
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\obj\Debug\Views\CustomerDetails.g.cs
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\obj\Debug\Views\CustomerList.g.cs
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\obj\Debug\Views\CustomerPass.g.cs
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\obj\Debug\Views\MainView.g.cs
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\obj\Debug\App.g.cs
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\obj\Debug\GeneratedInternalTypeHelper.g.cs
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\obj\Debug\QuickSalesManager_MarkupCompile.cache
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\obj\Debug\QuickSalesManager_MarkupCompile.lref
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\obj\Debug\MainWindow.baml
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\obj\Debug\Views\MonthSales.baml
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\obj\Debug\Views\Cashiers.baml
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\obj\Debug\Views\CustomerDetails.baml
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\obj\Debug\Views\CustomerList.baml
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\obj\Debug\Views\CustomerPass.baml
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\obj\Debug\Views\MainView.baml
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\obj\Debug\QuickSalesManager.g.resources
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\obj\Debug\QuickSalesManager.exe
+G:\Insight\PrismApplication1 - Copy\QuickSalesManager\QuickSalesManager\obj\Debug\QuickSalesManager.pdb

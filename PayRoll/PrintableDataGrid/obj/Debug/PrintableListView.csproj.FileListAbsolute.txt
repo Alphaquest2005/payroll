@@ -1,0 +1,5 @@
+C:\prism\Printing\ICP.Controls.PrintableListView\ICP.Controls.PrintableListView\obj\Debug\PrintableListView.csprojResolveAssemblyReference.cache
+C:\prism\Printing\ICP.Controls.PrintableListView\ICP.Controls.PrintableListView\bin\Debug\PrintableListView.dll
+C:\prism\Printing\ICP.Controls.PrintableListView\ICP.Controls.PrintableListView\bin\Debug\PrintableListView.pdb
+C:\prism\Printing\ICP.Controls.PrintableListView\ICP.Controls.PrintableListView\obj\Debug\PrintableListView.dll
+C:\prism\Printing\ICP.Controls.PrintableListView\ICP.Controls.PrintableListView\obj\Debug\PrintableListView.pdb

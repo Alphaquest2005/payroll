@@ -1,0 +1,237 @@
+{
+  "locked": false,
+  "version": 2,
+  "targets": {
+    ".NETFramework,Version=v3.5": {
+      "CommonServiceLocator/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/NET35/Microsoft.Practices.ServiceLocation.dll": {}
+        },
+        "runtime": {
+          "lib/NET35/Microsoft.Practices.ServiceLocation.dll": {}
+        }
+      },
+      "EnterpriseLibrary.Caching/5.0.505": {
+        "type": "package",
+        "dependencies": {
+          "EnterpriseLibrary.Common": "5.0.0"
+        },
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
+        "compile": {
+          "lib/NET35/Microsoft.Practices.EnterpriseLibrary.Caching.dll": {}
+        },
+        "runtime": {
+          "lib/NET35/Microsoft.Practices.EnterpriseLibrary.Caching.dll": {}
+        }
+      },
+      "EnterpriseLibrary.Common/5.0.505": {
+        "type": "package",
+        "dependencies": {
+          "Unity.Interception": "2.1.0"
+        },
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
+        "compile": {
+          "lib/NET35/Microsoft.Practices.EnterpriseLibrary.Common.dll": {}
+        },
+        "runtime": {
+          "lib/NET35/Microsoft.Practices.EnterpriseLibrary.Common.dll": {}
+        }
+      },
+      "Unity/2.1.505": {
+        "type": "package",
+        "dependencies": {
+          "CommonServiceLocator": "1.0.0"
+        },
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
+        "compile": {
+          "lib/NET35/Microsoft.Practices.Unity.Configuration.dll": {},
+          "lib/NET35/Microsoft.Practices.Unity.dll": {}
+        },
+        "runtime": {
+          "lib/NET35/Microsoft.Practices.Unity.Configuration.dll": {},
+          "lib/NET35/Microsoft.Practices.Unity.dll": {}
+        }
+      },
+      "Unity.Interception/2.1.505": {
+        "type": "package",
+        "dependencies": {
+          "Unity": "2.1.0"
+        },
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
+        "compile": {
+          "lib/NET35/Microsoft.Practices.Unity.Interception.Configuration.dll": {},
+          "lib/NET35/Microsoft.Practices.Unity.Interception.dll": {}
+        },
+        "runtime": {
+          "lib/NET35/Microsoft.Practices.Unity.Interception.Configuration.dll": {},
+          "lib/NET35/Microsoft.Practices.Unity.Interception.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v3.5/win": {
+      "CommonServiceLocator/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/NET35/Microsoft.Practices.ServiceLocation.dll": {}
+        },
+        "runtime": {
+          "lib/NET35/Microsoft.Practices.ServiceLocation.dll": {}
+        }
+      },
+      "EnterpriseLibrary.Caching/5.0.505": {
+        "type": "package",
+        "dependencies": {
+          "EnterpriseLibrary.Common": "5.0.0"
+        },
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
+        "compile": {
+          "lib/NET35/Microsoft.Practices.EnterpriseLibrary.Caching.dll": {}
+        },
+        "runtime": {
+          "lib/NET35/Microsoft.Practices.EnterpriseLibrary.Caching.dll": {}
+        }
+      },
+      "EnterpriseLibrary.Common/5.0.505": {
+        "type": "package",
+        "dependencies": {
+          "Unity.Interception": "2.1.0"
+        },
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
+        "compile": {
+          "lib/NET35/Microsoft.Practices.EnterpriseLibrary.Common.dll": {}
+        },
+        "runtime": {
+          "lib/NET35/Microsoft.Practices.EnterpriseLibrary.Common.dll": {}
+        }
+      },
+      "Unity/2.1.505": {
+        "type": "package",
+        "dependencies": {
+          "CommonServiceLocator": "1.0.0"
+        },
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
+        "compile": {
+          "lib/NET35/Microsoft.Practices.Unity.Configuration.dll": {},
+          "lib/NET35/Microsoft.Practices.Unity.dll": {}
+        },
+        "runtime": {
+          "lib/NET35/Microsoft.Practices.Unity.Configuration.dll": {},
+          "lib/NET35/Microsoft.Practices.Unity.dll": {}
+        }
+      },
+      "Unity.Interception/2.1.505": {
+        "type": "package",
+        "dependencies": {
+          "Unity": "2.1.0"
+        },
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
+        "compile": {
+          "lib/NET35/Microsoft.Practices.Unity.Interception.Configuration.dll": {},
+          "lib/NET35/Microsoft.Practices.Unity.Interception.dll": {}
+        },
+        "runtime": {
+          "lib/NET35/Microsoft.Practices.Unity.Interception.Configuration.dll": {},
+          "lib/NET35/Microsoft.Practices.Unity.Interception.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CommonServiceLocator/1.0.0": {
+      "sha512": "RJjv0yxm+Fk/ak/CVMTGr0ng7g/nudkVYos4eQrIDpth3BdE1j7J2ddRm8FXtOoIZbgDqTU6hKq5zoackwL3HQ==",
+      "type": "package",
+      "files": [
+        "CommonServiceLocator.1.0.0.nupkg.sha512",
+        "CommonServiceLocator.nuspec",
+        "lib/NET35/Microsoft.Practices.ServiceLocation.XML",
+        "lib/NET35/Microsoft.Practices.ServiceLocation.dll",
+        "lib/NET35/Microsoft.Practices.ServiceLocation.pdb",
+        "lib/SL30/Microsoft.Practices.ServiceLocation.XML",
+        "lib/SL30/Microsoft.Practices.ServiceLocation.dll"
+      ]
+    },
+    "EnterpriseLibrary.Caching/5.0.505": {
+      "sha512": "9aO3yZTTJCfnP9jBhiLt7xX+UCA9wGpw3Q4zpaLmkIoEn0k8XwU6pRP8FUT3USLGeMpUwJh4t6F8nyIojKchXA==",
+      "type": "package",
+      "files": [
+        "EnterpriseLibrary.Caching.5.0.505.nupkg.sha512",
+        "EnterpriseLibrary.Caching.nuspec",
+        "lib/NET35/Microsoft.Practices.EnterpriseLibrary.Caching.dll",
+        "lib/NET35/Microsoft.Practices.EnterpriseLibrary.Caching.xml",
+        "lib/SL40/Microsoft.Practices.EnterpriseLibrary.Caching.Silverlight.dll",
+        "lib/SL40/Microsoft.Practices.EnterpriseLibrary.Caching.Silverlight.xml",
+        "tools/Utils.psm1",
+        "tools/install.ps1"
+      ]
+    },
+    "EnterpriseLibrary.Common/5.0.505": {
+      "sha512": "56ohaIm5TXzb6oR6QkUI3VtzI2fFVdAfhQaAanTZ9j/RrTAL1JvvN1d4qmAPc3mb9e+6zJUp1F+n4yA3ILHhpw==",
+      "type": "package",
+      "files": [
+        "EnterpriseLibrary.Common.5.0.505.nupkg.sha512",
+        "EnterpriseLibrary.Common.nuspec",
+        "lib/NET35/Microsoft.Practices.EnterpriseLibrary.Common.dll",
+        "lib/NET35/Microsoft.Practices.EnterpriseLibrary.Common.xml",
+        "lib/SL40/Microsoft.Practices.EnterpriseLibrary.Common.Silverlight.dll",
+        "lib/SL40/Microsoft.Practices.EnterpriseLibrary.Common.Silverlight.xml",
+        "tools/Utils.psm1",
+        "tools/install.ps1"
+      ]
+    },
+    "Unity/2.1.505": {
+      "sha512": "nln8FUuLPocfHTGiXsCDSFCr/K5yCTIkrQdhWy9DPfGQea++hU5Ko84mpuTL6BzhT/SfIhhBrGMhlxzN59bY/A==",
+      "type": "package",
+      "files": [
+        "Unity.2.1.505.nupkg.sha512",
+        "Unity.nuspec",
+        "lib/NET35/Microsoft.Practices.Unity.Configuration.dll",
+        "lib/NET35/Microsoft.Practices.Unity.Configuration.xml",
+        "lib/NET35/Microsoft.Practices.Unity.dll",
+        "lib/NET35/Microsoft.Practices.Unity.xml",
+        "lib/SL30/Microsoft.Practices.Unity.Silverlight.dll",
+        "lib/SL30/Microsoft.Practices.Unity.Silverlight.xml",
+        "tools/Utils.psm1",
+        "tools/install.ps1"
+      ]
+    },
+    "Unity.Interception/2.1.505": {
+      "sha512": "5Ri8/+kEr98AsRzQHSe3Zay4NyxsdsbW7qgWr+pCiVTC0kCaAe0oy2TyUdPIaCtVtV9Ruf89buduWw0PKRbLEA==",
+      "type": "package",
+      "files": [
+        "Unity.Interception.2.1.505.nupkg.sha512",
+        "Unity.Interception.nuspec",
+        "lib/NET35/Microsoft.Practices.Unity.Interception.Configuration.dll",
+        "lib/NET35/Microsoft.Practices.Unity.Interception.Configuration.xml",
+        "lib/NET35/Microsoft.Practices.Unity.Interception.dll",
+        "lib/NET35/Microsoft.Practices.Unity.Interception.xml",
+        "lib/SL40/Microsoft.Practices.Unity.Interception.Silverlight.dll",
+        "lib/SL40/Microsoft.Practices.Unity.Interception.Silverlight.xml",
+        "tools/Utils.psm1",
+        "tools/install.ps1"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "": [
+      "EnterpriseLibrary.Caching >= 5.0.505"
+    ],
+    ".NETFramework,Version=v3.5": []
+  }
+}

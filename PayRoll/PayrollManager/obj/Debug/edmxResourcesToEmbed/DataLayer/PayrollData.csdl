@@ -1,0 +1,603 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="PayrollData" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="PayrollDB" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="PayrollJobs" EntityType="PayrollData.PayrollJob" />
+    <AssociationSet Name="PayrollJobUser" Association="PayrollData.PayrollJobUser">
+      <End Role="PayrollJob" EntitySet="PayrollJobs" />
+      <End Role="User" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="UserPayrollJob" Association="PayrollData.UserPayrollJob">
+      <End Role="User" EntitySet="Employees" />
+      <End Role="PayrollJob" EntitySet="PayrollJobs" />
+    </AssociationSet>
+    <EntitySet Name="Employees" EntityType="PayrollData.Employee" />
+    <EntitySet Name="Branches" EntityType="PayrollData.Branch" />
+    <AssociationSet Name="BranchEmployee" Association="PayrollData.BranchEmployee">
+      <End Role="Branch" EntitySet="Branches" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <EntitySet Name="Institutions" EntityType="PayrollData.Institution" />
+    <AssociationSet Name="InstitutionAccountASN" Association="PayrollData.InstitutionAccountASN">
+      <End Role="Institution" EntitySet="Institutions" />
+      <End Role="Account" EntitySet="Accounts" />
+    </AssociationSet>
+    <AssociationSet Name="EmployeeEmployeeAccount" Association="PayrollData.EmployeeEmployeeAccount">
+      <End EntitySet="Employees" Role="Employee" />
+      <End EntitySet="Accounts" Role="EmployeeAccount" />
+    </AssociationSet>
+    <AssociationSet Name="EmployeeEmployee" Association="PayrollData.EmployeeEmployee">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="Employee1" EntitySet="Employees" />
+    </AssociationSet>
+    <EntitySet Name="PayrollItems" EntityType="PayrollData.PayrollItem" />
+    <AssociationSet Name="EmployeePayrollItem" Association="PayrollData.EmployeePayrollItem">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="PayrollItem" EntitySet="PayrollItems" />
+    </AssociationSet>
+    <AssociationSet Name="PayrollJobPayrollItem" Association="PayrollData.PayrollJobPayrollItem">
+      <End Role="PayrollJob" EntitySet="PayrollJobs" />
+      <End Role="PayrollItem" EntitySet="PayrollItems" />
+    </AssociationSet>
+    <AssociationSet Name="AccountPayrollItem" Association="PayrollData.AccountPayrollItem">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="PayrollItem" EntitySet="PayrollItems" />
+    </AssociationSet>
+    <AssociationSet Name="AccountPayrollItem1" Association="PayrollData.AccountPayrollItem1">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="PayrollItem" EntitySet="PayrollItems" />
+    </AssociationSet>
+    <EntitySet Name="PayrollSetupItems" EntityType="PayrollData.PayrollSetupItem" />
+    <EntitySet Name="PayrollEmployeeSetup" EntityType="PayrollData.PayrollEmployeeSetup" />
+    <AssociationSet Name="PayrollSetupItemPayrollEmployeeSetup" Association="PayrollData.PayrollSetupItemPayrollEmployeeSetup">
+      <End Role="PayrollSetupItem" EntitySet="PayrollSetupItems" />
+      <End Role="PayrollEmployeeSetup" EntitySet="PayrollEmployeeSetup" />
+    </AssociationSet>
+    <AssociationSet Name="EmployeePayrollEmployeeSetup" Association="PayrollData.EmployeePayrollEmployeeSetup">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="PayrollEmployeeSetup" EntitySet="PayrollEmployeeSetup" />
+    </AssociationSet>
+    <EntitySet Name="PayrollJobTypes" EntityType="PayrollData.PayrollJobType" />
+    <AssociationSet Name="PayrollJobTypePayrollJob" Association="PayrollData.PayrollJobTypePayrollJob">
+      <End Role="PayrollJobType" EntitySet="PayrollJobTypes" />
+      <End Role="PayrollJob" EntitySet="PayrollJobs" />
+    </AssociationSet>
+    <EntitySet Name="AccountEntries" EntityType="PayrollData.AccountEntry" />
+    <AssociationSet Name="AccountAccountEntry" Association="PayrollData.AccountAccountEntry">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="AccountEntry" EntitySet="AccountEntries" />
+    </AssociationSet>
+    <AssociationSet Name="PayrollItemAccountEntry" Association="PayrollData.PayrollItemAccountEntry">
+      <End Role="PayrollItem" EntitySet="PayrollItems" />
+      <End Role="AccountEntry" EntitySet="AccountEntries" />
+    </AssociationSet>
+    <EntitySet Name="Accounts" EntityType="PayrollData.Account" />
+    <AssociationSet Name="EmployeeAccountPayrollEmployeeSetup" Association="PayrollData.EmployeeAccountPayrollEmployeeSetup">
+      <End EntitySet="Accounts" Role="EmployeeAccount" />
+      <End EntitySet="PayrollEmployeeSetup" Role="PayrollEmployeeSetup" />
+    </AssociationSet>
+    <AssociationSet Name="AccountPayrollSetupItem" Association="PayrollData.AccountPayrollSetupItem">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="PayrollSetupItem" EntitySet="PayrollSetupItems" />
+    </AssociationSet>
+    <AssociationSet Name="InstitutionInstitutionAccount" Association="PayrollData.InstitutionInstitutionAccount">
+      <End Role="Institution" EntitySet="Institutions" />
+      <End Role="InstitutionAccount" EntitySet="Accounts" />
+    </AssociationSet>
+    <EntitySet Name="AccountTypes" EntityType="PayrollData.AccountType" />
+    <AssociationSet Name="PayrollSetupItemPayrollItem" Association="PayrollData.PayrollSetupItemPayrollItem">
+      <End Role="PayrollSetupItem" EntitySet="PayrollSetupItems" />
+      <End Role="PayrollItem" EntitySet="PayrollItems" />
+    </AssociationSet>
+    <EntitySet Name="ChargeTypes" EntityType="PayrollData.ChargeType" />
+    <AssociationSet Name="PayrollItemPayrollItem" Association="PayrollData.PayrollItemPayrollItem">
+      <End Role="PayrollItem" EntitySet="PayrollItems" />
+      <End Role="PayrollItem1" EntitySet="PayrollItems" />
+    </AssociationSet>
+    <AssociationSet Name="PayrollJobTypePayrollEmployeeSetup" Association="PayrollData.PayrollJobTypePayrollEmployeeSetup">
+      <End Role="PayrollJobType" EntitySet="PayrollJobTypes" />
+      <End Role="PayrollEmployeeSetup" EntitySet="PayrollEmployeeSetup" />
+    </AssociationSet>
+    <AssociationSet Name="BranchPayrollJob" Association="PayrollData.BranchPayrollJob">
+      <End Role="Branch" EntitySet="Branches" />
+      <End Role="PayrollJob" EntitySet="PayrollJobs" />
+    </AssociationSet>
+    <AssociationSet Name="PayrollJobBranch" Association="PayrollData.PayrollJobBranch">
+      <End Role="PayrollJob" EntitySet="PayrollJobs" />
+      <End Role="Branch" EntitySet="Branches" />
+    </AssociationSet>
+    <AssociationSet Name="Accounts_InstitutionAccount" Association="PayrollData.Accounts_InstitutionAccount">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="Institution" EntitySet="Institutions" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="PayrollJob">
+    <Key>
+      <PropertyRef Name="PayrollJobId" />
+    </Key>
+    <Property Type="Int32" Name="PayrollJobId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="CheckedBy" Nullable="true" />
+    <Property Type="Int32" Name="PreparedBy" Nullable="false" />
+    <Property Type="DateTime" Name="StartDate" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="EndDate" Nullable="false" Precision="3" />
+    <NavigationProperty Name="CheckedByUser" Relationship="PayrollData.PayrollJobUser" FromRole="PayrollJob" ToRole="User" />
+    <NavigationProperty Name="PreparedByUser" Relationship="PayrollData.UserPayrollJob" FromRole="PayrollJob" ToRole="User" />
+    <NavigationProperty Name="PayrollItems" Relationship="PayrollData.PayrollJobPayrollItem" FromRole="PayrollJob" ToRole="PayrollItem" />
+    <Property Type="String" Name="Status" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Type="Int32" Name="PayrollJobTypeId" Nullable="false" annotation:StoreGeneratedPattern="None" />
+    <NavigationProperty Name="PayrollJobType" Relationship="PayrollData.PayrollJobTypePayrollJob" FromRole="PayrollJob" ToRole="PayrollJobType" />
+    <Property Type="DateTime" Name="PaymentDate" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="BranchId" Nullable="false" />
+    <NavigationProperty Name="Branch" Relationship="PayrollData.BranchPayrollJob" FromRole="PayrollJob" ToRole="Branch" />
+    <NavigationProperty Name="Branches" Relationship="PayrollData.PayrollJobBranch" FromRole="PayrollJob" ToRole="Branch" />
+  </EntityType>
+  <EntityType Name="User" BaseType="PayrollData.Employee">
+    <Property Type="String" Name="Username" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="JobsChecked" Relationship="PayrollData.PayrollJobUser" FromRole="User" ToRole="PayrollJob" />
+    <NavigationProperty Name="JobsPrepared" Relationship="PayrollData.UserPayrollJob" FromRole="User" ToRole="PayrollJob" />
+  </EntityType>
+  <Association Name="PayrollJobUser">
+    <End Type="PayrollData.PayrollJob" Role="PayrollJob" Multiplicity="*" />
+    <End Type="PayrollData.User" Role="User" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="EmployeeId" />
+      </Principal>
+      <Dependent Role="PayrollJob">
+        <PropertyRef Name="CheckedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserPayrollJob">
+    <End Type="PayrollData.User" Role="User" Multiplicity="1" />
+    <End Type="PayrollData.PayrollJob" Role="PayrollJob" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="EmployeeId" />
+      </Principal>
+      <Dependent Role="PayrollJob">
+        <PropertyRef Name="PreparedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="EmployeeId" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Type="String" Name="LastName" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Type="Int32" Name="BranchId" Nullable="false" />
+    <NavigationProperty Name="Branch" Relationship="PayrollData.BranchEmployee" FromRole="Employee" ToRole="Branch" />
+    <NavigationProperty Name="EmployeeAccounts" Relationship="PayrollData.EmployeeEmployeeAccount" FromRole="Employee" ToRole="EmployeeAccount" />
+    <Property Type="Int32" Name="SupervisorId" Nullable="true" />
+    <NavigationProperty Name="Employees" Relationship="PayrollData.EmployeeEmployee" FromRole="Employee" ToRole="Employee1" />
+    <NavigationProperty Name="Supervisors" Relationship="PayrollData.EmployeeEmployee" FromRole="Employee1" ToRole="Employee" />
+    <NavigationProperty Name="PayrollItems" Relationship="PayrollData.EmployeePayrollItem" FromRole="Employee" ToRole="PayrollItem" />
+    <NavigationProperty Name="PayrollEmployeeSetups" Relationship="PayrollData.EmployeePayrollEmployeeSetup" FromRole="Employee" ToRole="PayrollEmployeeSetup" />
+    <Property Type="DateTime" Name="EmploymentStartDate" Nullable="false" Precision="3" />
+    <Property Type="Boolean" Name="UnionMember" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Branch">
+    <Key>
+      <PropertyRef Name="BranchId" />
+    </Key>
+    <Property Type="Int32" Name="BranchId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Employees" Relationship="PayrollData.BranchEmployee" FromRole="Branch" ToRole="Employee" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Type="String" Name="Address" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Type="String" Name="PhoneNumber" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="PayrollJobs" Relationship="PayrollData.BranchPayrollJob" FromRole="Branch" ToRole="PayrollJob" />
+    <Property Type="Int32" Name="CurrentPayrollJobId" Nullable="true" />
+    <NavigationProperty Name="CurrentPayrollJob" Relationship="PayrollData.PayrollJobBranch" FromRole="Branch" ToRole="PayrollJob" />
+  </EntityType>
+  <Association Name="BranchEmployee">
+    <End Type="PayrollData.Branch" Role="Branch" Multiplicity="1" />
+    <End Type="PayrollData.Employee" Role="Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branch">
+        <PropertyRef Name="BranchId" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="BranchId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="AccountId" />
+    </Key>
+    <Property Type="Int32" Name="AccountId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="AccountNumber" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Type="Int32" Name="InstitutionId" Nullable="false" />
+    <NavigationProperty Name="Institution" Relationship="PayrollData.InstitutionAccountASN" FromRole="Account" ToRole="Institution" />
+    <NavigationProperty Name="CreditPayrollItems" Relationship="PayrollData.AccountPayrollItem" FromRole="Account" ToRole="PayrollItem" />
+    <NavigationProperty Name="DebitPayrollItems" Relationship="PayrollData.AccountPayrollItem1" FromRole="Account" ToRole="PayrollItem" />
+    <Property Type="String" Name="AccountName" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="AccountEntries" Relationship="PayrollData.AccountAccountEntry" FromRole="Account" ToRole="AccountEntry" />
+    <Property Name="AccountType" Nullable="false" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="PayrollSetupItems" Relationship="PayrollData.AccountPayrollSetupItem" FromRole="Account" ToRole="PayrollSetupItem" />
+    <NavigationProperty Name="Institution11" Relationship="PayrollData.Accounts_InstitutionAccount" FromRole="Account" ToRole="Institution" />
+  </EntityType>
+  <EntityType Name="Institution">
+    <Key>
+      <PropertyRef Name="InstitutionId" />
+    </Key>
+    <Property Name="InstitutionId" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+    <NavigationProperty Name="InstitutionAccounts" Relationship="PayrollData.InstitutionAccountASN" FromRole="Institution" ToRole="Account" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Accounts" Relationship="PayrollData.InstitutionInstitutionAccount" FromRole="Institution" ToRole="InstitutionAccount" />
+    <Property Type="String" Name="ShortName" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Accounts1" Relationship="PayrollData.Accounts_InstitutionAccount" FromRole="Institution" ToRole="Account" />
+  </EntityType>
+  <Association Name="InstitutionAccountASN">
+    <End Type="PayrollData.Institution" Role="Institution" Multiplicity="1" />
+    <End Type="PayrollData.Account" Role="Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution">
+        <PropertyRef Name="InstitutionId" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="InstitutionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="EmployeeAccount" BaseType="PayrollData.Account">
+    <Property Name="EmployeeId" Nullable="false" annotation:StoreGeneratedPattern="None" Type="Int32" />
+    <NavigationProperty Name="Employee" Relationship="PayrollData.EmployeeEmployeeAccount" FromRole="EmployeeAccount" ToRole="Employee" />
+    <NavigationProperty Name="PayrollEmployeeSetups" Relationship="PayrollData.EmployeeAccountPayrollEmployeeSetup" FromRole="EmployeeAccount" ToRole="PayrollEmployeeSetup" />
+    <Property Type="Double" Name="SalaryAssignment" Nullable="true" />
+  </EntityType>
+  <Association Name="EmployeeEmployeeAccount">
+    <End Type="PayrollData.Employee" Multiplicity="1" Role="Employee" />
+    <End Type="PayrollData.EmployeeAccount" Multiplicity="*" Role="EmployeeAccount" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeId" />
+      </Principal>
+      <Dependent Role="EmployeeAccount">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmployeeEmployee">
+    <End Type="PayrollData.Employee" Role="Employee" Multiplicity="0..1" />
+    <End Type="PayrollData.Employee" Role="Employee1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeId" />
+      </Principal>
+      <Dependent Role="Employee1">
+        <PropertyRef Name="SupervisorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="PayrollItem">
+    <Key>
+      <PropertyRef Name="PayrollItemId" />
+    </Key>
+    <Property Type="Int32" Name="PayrollItemId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="EmployeeId" Nullable="false" />
+    <Property Type="Int32" Name="CreditAccountId" Nullable="false" />
+    <Property Type="Int32" Name="DebitAccountId" Nullable="false" />
+    <Property Type="Int32" Name="Priority" Nullable="false" />
+    <Property Type="Int32" Name="PayrollJobId" Nullable="false" />
+    <Property Type="Double" Name="Amount" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Type="Single" Name="Rate" Nullable="false" />
+    <Property Type="Double" Name="BaseAmount" Nullable="false" />
+    <Property Type="Boolean" Name="IncomeDeduction" Nullable="false" />
+    <NavigationProperty Name="Employee" Relationship="PayrollData.EmployeePayrollItem" FromRole="PayrollItem" ToRole="Employee" />
+    <NavigationProperty Name="PayrollJob" Relationship="PayrollData.PayrollJobPayrollItem" FromRole="PayrollItem" ToRole="PayrollJob" />
+    <NavigationProperty Name="CreditAccount" Relationship="PayrollData.AccountPayrollItem" FromRole="PayrollItem" ToRole="Account" />
+    <NavigationProperty Name="DebitAccount" Relationship="PayrollData.AccountPayrollItem1" FromRole="PayrollItem" ToRole="Account" />
+    <NavigationProperty Name="AccountEntries" Relationship="PayrollData.PayrollItemAccountEntry" FromRole="PayrollItem" ToRole="AccountEntry" />
+    <Property Type="String" Name="Status" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Type="Int32" Name="PayrollSetupItemId" Nullable="true" annotation:StoreGeneratedPattern="None" />
+    <Property Type="Int32" Name="ParentPayrollItemId" Nullable="true" annotation:StoreGeneratedPattern="None" />
+    <Property Type="String" Name="RateRounding" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="PayrollSetupItem" Relationship="PayrollData.PayrollSetupItemPayrollItem" FromRole="PayrollItem" ToRole="PayrollSetupItem" />
+    <NavigationProperty Name="ChildPayrollItems" Relationship="PayrollData.PayrollItemPayrollItem" FromRole="PayrollItem" ToRole="PayrollItem1" />
+    <NavigationProperty Name="ParentPayrollItem" Relationship="PayrollData.PayrollItemPayrollItem" FromRole="PayrollItem1" ToRole="PayrollItem" />
+  </EntityType>
+  <Association Name="EmployeePayrollItem">
+    <End Type="PayrollData.Employee" Role="Employee" Multiplicity="1" />
+    <End Type="PayrollData.PayrollItem" Role="PayrollItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeId" />
+      </Principal>
+      <Dependent Role="PayrollItem">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PayrollJobPayrollItem">
+    <End Type="PayrollData.PayrollJob" Role="PayrollJob" Multiplicity="1" />
+    <End Type="PayrollData.PayrollItem" Role="PayrollItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PayrollJob">
+        <PropertyRef Name="PayrollJobId" />
+      </Principal>
+      <Dependent Role="PayrollItem">
+        <PropertyRef Name="PayrollJobId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AccountPayrollItem">
+    <End Type="PayrollData.Account" Role="Account" Multiplicity="1" />
+    <End Type="PayrollData.PayrollItem" Role="PayrollItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="AccountId" />
+      </Principal>
+      <Dependent Role="PayrollItem">
+        <PropertyRef Name="CreditAccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AccountPayrollItem1">
+    <End Type="PayrollData.Account" Role="Account" Multiplicity="1" />
+    <End Type="PayrollData.PayrollItem" Role="PayrollItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="AccountId" />
+      </Principal>
+      <Dependent Role="PayrollItem">
+        <PropertyRef Name="DebitAccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="PayrollSetupItem">
+    <Key>
+      <PropertyRef Name="PayrollSetupItemId" />
+    </Key>
+    <Property Type="Int32" Name="PayrollSetupItemId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="Priority" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Type="String" Name="CompanyLineItemDescription" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Type="Boolean" Name="DebitCredit" Nullable="false" />
+    <Property Type="String" Name="RecuranceDays" Nullable="true" DefaultValue="0" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Type="String" Name="EmployeeAccountType" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="PayrollEmployeeSetups" Relationship="PayrollData.PayrollSetupItemPayrollEmployeeSetup" FromRole="PayrollSetupItem" ToRole="PayrollEmployeeSetup" />
+    <Property Type="Boolean" Name="IncomeDeduction" Nullable="false" />
+    <Property Type="Int32" Name="PayrollItemAccountId" Nullable="false" />
+    <Property Type="Int32" Name="CompanyAccountId" Nullable="true" />
+    <NavigationProperty Name="Account" Relationship="PayrollData.AccountPayrollSetupItem" FromRole="PayrollSetupItem" ToRole="Account" />
+    <NavigationProperty Name="PayrollItems" Relationship="PayrollData.PayrollSetupItemPayrollItem" FromRole="PayrollSetupItem" ToRole="PayrollItem" />
+    <Property Type="String" Name="RateRounding" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Type="Double" Name="Rate" />
+    <Property Type="Double" Name="CompanyRate" />
+    <Property Type="Double" Name="RateCeiling" />
+    <Property Type="Double" Name="RateCeilingAmount" />
+    <Property Type="Double" Name="RateCeilingCompanyAmount" />
+  </EntityType>
+  <EntityType Name="PayrollEmployeeSetup">
+    <Key>
+      <PropertyRef Name="PayrollEmployeeSetupId" />
+    </Key>
+    <Property Type="Int32" Name="PayrollEmployeeSetupId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="PayrollSetupItemId" Nullable="false" annotation:StoreGeneratedPattern="None" />
+    <Property Type="Int32" Name="EmployeeId" Nullable="false" annotation:StoreGeneratedPattern="None" />
+    <NavigationProperty Name="PayrollSetupItem" Relationship="PayrollData.PayrollSetupItemPayrollEmployeeSetup" FromRole="PayrollEmployeeSetup" ToRole="PayrollSetupItem" />
+    <NavigationProperty Name="Employee" Relationship="PayrollData.EmployeePayrollEmployeeSetup" FromRole="PayrollEmployeeSetup" ToRole="Employee" />
+    <Property Type="DateTime" Name="EndDate" Nullable="true" Precision="3" />
+    <Property Type="DateTime" Name="StartDate" Nullable="true" Precision="3" />
+    <Property Type="Int32" Name="EmployeeAccountId" Nullable="false" />
+    <Property Type="Double" Name="Amount" Nullable="true" DefaultValue="0" />
+    <Property Type="Double" Name="CompanyAmount" Nullable="true" DefaultValue="0" />
+    <Property Type="Single" Name="Rate" Nullable="true" DefaultValue="0" />
+    <Property Type="Single" Name="CompanyRate" Nullable="true" DefaultValue="0" />
+    <NavigationProperty Name="EmployeeAccount" Relationship="PayrollData.EmployeeAccountPayrollEmployeeSetup" FromRole="PayrollEmployeeSetup" ToRole="EmployeeAccount" />
+    <Property Type="String" Name="ChargeType" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Type="Int32" Name="PayrollJobTypeId" Nullable="false" annotation:StoreGeneratedPattern="None" />
+    <Property Type="String" Name="RateRounding" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="PayrollJobType" Relationship="PayrollData.PayrollJobTypePayrollEmployeeSetup" FromRole="PayrollEmployeeSetup" ToRole="PayrollJobType" />
+  </EntityType>
+  <Association Name="PayrollSetupItemPayrollEmployeeSetup">
+    <End Type="PayrollData.PayrollSetupItem" Role="PayrollSetupItem" Multiplicity="1" />
+    <End Type="PayrollData.PayrollEmployeeSetup" Role="PayrollEmployeeSetup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PayrollSetupItem">
+        <PropertyRef Name="PayrollSetupItemId" />
+      </Principal>
+      <Dependent Role="PayrollEmployeeSetup">
+        <PropertyRef Name="PayrollSetupItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmployeePayrollEmployeeSetup">
+    <End Type="PayrollData.Employee" Role="Employee" Multiplicity="1" />
+    <End Type="PayrollData.PayrollEmployeeSetup" Role="PayrollEmployeeSetup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeId" />
+      </Principal>
+      <Dependent Role="PayrollEmployeeSetup">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="PayrollJobType">
+    <Key>
+      <PropertyRef Name="PayrollJobTypeId" />
+    </Key>
+    <Property Type="Int32" Name="PayrollJobTypeId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="PayrollJobs" Relationship="PayrollData.PayrollJobTypePayrollJob" FromRole="PayrollJobType" ToRole="PayrollJob" />
+    <NavigationProperty Name="PayrollEmployeeSetups" Relationship="PayrollData.PayrollJobTypePayrollEmployeeSetup" FromRole="PayrollJobType" ToRole="PayrollEmployeeSetup" />
+  </EntityType>
+  <Association Name="PayrollJobTypePayrollJob">
+    <End Type="PayrollData.PayrollJobType" Role="PayrollJobType" Multiplicity="1" />
+    <End Type="PayrollData.PayrollJob" Role="PayrollJob" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PayrollJobType">
+        <PropertyRef Name="PayrollJobTypeId" />
+      </Principal>
+      <Dependent Role="PayrollJob">
+        <PropertyRef Name="PayrollJobTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="AccountEntry">
+    <Key>
+      <PropertyRef Name="AccountEntryId" />
+    </Key>
+    <Property Type="Int32" Name="AccountEntryId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="EntryTime" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="TradeDate" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="AccountId" Nullable="false" />
+    <Property Type="Double" Name="DebitAmount" Nullable="false" />
+    <Property Type="Double" Name="CreditAmount" Nullable="false" />
+    <Property Type="String" Name="Memo" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Account" Relationship="PayrollData.AccountAccountEntry" FromRole="AccountEntry" ToRole="Account" />
+    <Property Type="Int32" Name="PayrollItemId" Nullable="false" />
+    <NavigationProperty Name="PayrollItem" Relationship="PayrollData.PayrollItemAccountEntry" FromRole="AccountEntry" ToRole="PayrollItem" />
+  </EntityType>
+  <Association Name="AccountAccountEntry">
+    <End Type="PayrollData.Account" Role="Account" Multiplicity="1" />
+    <End Type="PayrollData.AccountEntry" Role="AccountEntry" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="AccountId" />
+      </Principal>
+      <Dependent Role="AccountEntry">
+        <PropertyRef Name="AccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PayrollItemAccountEntry">
+    <End Type="PayrollData.PayrollItem" Role="PayrollItem" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="PayrollData.AccountEntry" Role="AccountEntry" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PayrollItem">
+        <PropertyRef Name="PayrollItemId" />
+      </Principal>
+      <Dependent Role="AccountEntry">
+        <PropertyRef Name="PayrollItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmployeeAccountPayrollEmployeeSetup">
+    <End Type="PayrollData.EmployeeAccount" Multiplicity="1" Role="EmployeeAccount" />
+    <End Type="PayrollData.PayrollEmployeeSetup" Multiplicity="*" Role="PayrollEmployeeSetup" />
+    <ReferentialConstraint>
+      <Principal Role="EmployeeAccount">
+        <PropertyRef Name="AccountId" />
+      </Principal>
+      <Dependent Role="PayrollEmployeeSetup">
+        <PropertyRef Name="EmployeeAccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AccountPayrollSetupItem">
+    <End Type="PayrollData.Account" Role="Account" Multiplicity="1" />
+    <End Type="PayrollData.PayrollSetupItem" Role="PayrollSetupItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="AccountId" />
+      </Principal>
+      <Dependent Role="PayrollSetupItem">
+        <PropertyRef Name="PayrollItemAccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="InstitutionAccount" BaseType="PayrollData.Account">
+    <Property Type="Int32" Name="PayeeInstitutionId" Nullable="false" annotation:StoreGeneratedPattern="None" />
+    <NavigationProperty Name="Institution1" Relationship="PayrollData.InstitutionInstitutionAccount" FromRole="InstitutionAccount" ToRole="Institution" />
+  </EntityType>
+  <Association Name="InstitutionInstitutionAccount">
+    <End Type="PayrollData.Institution" Role="Institution" Multiplicity="1" />
+    <End Type="PayrollData.InstitutionAccount" Role="InstitutionAccount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution">
+        <PropertyRef Name="InstitutionId" />
+      </Principal>
+      <Dependent Role="InstitutionAccount">
+        <PropertyRef Name="PayeeInstitutionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="AccountType">
+    <Key>
+      <PropertyRef Name="AccountTypeId" />
+    </Key>
+    <Property Name="AccountTypeId" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+    <Property Name="AccountTypeName" Nullable="false" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <Association Name="PayrollSetupItemPayrollItem">
+    <End Type="PayrollData.PayrollSetupItem" Role="PayrollSetupItem" Multiplicity="0..1" />
+    <End Type="PayrollData.PayrollItem" Role="PayrollItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PayrollSetupItem">
+        <PropertyRef Name="PayrollSetupItemId" />
+      </Principal>
+      <Dependent Role="PayrollItem">
+        <PropertyRef Name="PayrollSetupItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ChargeType">
+    <Key>
+      <PropertyRef Name="ChargeTypeId" />
+    </Key>
+    <Property Type="Int32" Name="ChargeTypeId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="ChargeTypeName" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <Association Name="PayrollItemPayrollItem">
+    <End Type="PayrollData.PayrollItem" Role="PayrollItem" Multiplicity="0..1" />
+    <End Type="PayrollData.PayrollItem" Role="PayrollItem1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PayrollItem">
+        <PropertyRef Name="PayrollItemId" />
+      </Principal>
+      <Dependent Role="PayrollItem1">
+        <PropertyRef Name="ParentPayrollItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PayrollJobTypePayrollEmployeeSetup">
+    <End Type="PayrollData.PayrollJobType" Role="PayrollJobType" Multiplicity="1" />
+    <End Type="PayrollData.PayrollEmployeeSetup" Role="PayrollEmployeeSetup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PayrollJobType">
+        <PropertyRef Name="PayrollJobTypeId" />
+      </Principal>
+      <Dependent Role="PayrollEmployeeSetup">
+        <PropertyRef Name="PayrollJobTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BranchPayrollJob">
+    <End Type="PayrollData.Branch" Role="Branch" Multiplicity="1" />
+    <End Type="PayrollData.PayrollJob" Role="PayrollJob" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branch">
+        <PropertyRef Name="BranchId" />
+      </Principal>
+      <Dependent Role="PayrollJob">
+        <PropertyRef Name="BranchId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PayrollJobBranch">
+    <End Type="PayrollData.PayrollJob" Role="PayrollJob" Multiplicity="0..1" />
+    <End Type="PayrollData.Branch" Role="Branch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PayrollJob">
+        <PropertyRef Name="PayrollJobId" />
+      </Principal>
+      <Dependent Role="Branch">
+        <PropertyRef Name="CurrentPayrollJobId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Accounts_InstitutionAccount">
+    <End Type="PayrollData.Account" Role="Account" Multiplicity="*" />
+    <End Type="PayrollData.Institution" Role="Institution" Multiplicity="0..1" />
+  </Association>
+</Schema>

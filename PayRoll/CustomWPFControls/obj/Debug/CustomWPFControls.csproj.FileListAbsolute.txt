@@ -1,0 +1,73 @@
+c:\users\ndholakia\documents\visual studio 2010\Projects\DragDropItems\CustomWPFControls\bin\Debug\CustomWPFControls.dll
+c:\users\ndholakia\documents\visual studio 2010\Projects\DragDropItems\CustomWPFControls\bin\Debug\CustomWPFControls.pdb
+c:\users\ndholakia\documents\visual studio 2010\Projects\DragDropItems\CustomWPFControls\obj\Debug\ResolveAssemblyReference.cache
+c:\users\ndholakia\documents\visual studio 2010\Projects\DragDropItems\CustomWPFControls\obj\Debug\GeneratedInternalTypeHelper.g.cs
+c:\users\ndholakia\documents\visual studio 2010\Projects\DragDropItems\CustomWPFControls\obj\Debug\CustomWPFControls_MarkupCompile.cache
+c:\users\ndholakia\documents\visual studio 2010\Projects\DragDropItems\CustomWPFControls\obj\Debug\CustomWPFControls_MarkupCompile.lref
+c:\users\ndholakia\documents\visual studio 2010\Projects\DragDropItems\CustomWPFControls\obj\Debug\Themes\Generic.baml
+c:\users\ndholakia\documents\visual studio 2010\Projects\DragDropItems\CustomWPFControls\obj\Debug\CustomWPFControls.g.resources
+c:\users\ndholakia\documents\visual studio 2010\Projects\DragDropItems\CustomWPFControls\obj\Debug\CustomWPFControls.Properties.Resources.resources
+c:\users\ndholakia\documents\visual studio 2010\Projects\DragDropItems\CustomWPFControls\obj\Debug\GenerateResource.read.1.tlog
+c:\users\ndholakia\documents\visual studio 2010\Projects\DragDropItems\CustomWPFControls\obj\Debug\GenerateResource.write.1.tlog
+c:\users\ndholakia\documents\visual studio 2010\Projects\DragDropItems\CustomWPFControls\obj\Debug\CustomWPFControls.dll
+c:\users\ndholakia\documents\visual studio 2010\Projects\DragDropItems\CustomWPFControls\obj\Debug\CustomWPFControls.pdb
+D:\Users\joeseph\Downloads\DragDropItems\DragDropItems\CustomWPFControls\bin\Debug\CustomWPFControls.dll
+D:\Users\joeseph\Downloads\DragDropItems\DragDropItems\CustomWPFControls\bin\Debug\CustomWPFControls.pdb
+D:\Users\joeseph\Downloads\DragDropItems\DragDropItems\CustomWPFControls\obj\Debug\CustomWPFControls.csprojResolveAssemblyReference.cache
+D:\Users\joeseph\Downloads\DragDropItems\DragDropItems\CustomWPFControls\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Users\joeseph\Downloads\DragDropItems\DragDropItems\CustomWPFControls\obj\Debug\CustomWPFControls_MarkupCompile.cache
+D:\Users\joeseph\Downloads\DragDropItems\DragDropItems\CustomWPFControls\obj\Debug\CustomWPFControls_MarkupCompile.lref
+D:\Users\joeseph\Downloads\DragDropItems\DragDropItems\CustomWPFControls\obj\Debug\Themes\Generic.baml
+D:\Users\joeseph\Downloads\DragDropItems\DragDropItems\CustomWPFControls\obj\Debug\CustomWPFControls.g.resources
+D:\Users\joeseph\Downloads\DragDropItems\DragDropItems\CustomWPFControls\obj\Debug\CustomWPFControls.Properties.Resources.resources
+D:\Users\joeseph\Downloads\DragDropItems\DragDropItems\CustomWPFControls\obj\Debug\CustomWPFControls.csproj.GenerateResource.Cache
+D:\Users\joeseph\Downloads\DragDropItems\DragDropItems\CustomWPFControls\obj\Debug\CustomWPFControls.dll
+D:\Users\joeseph\Downloads\DragDropItems\DragDropItems\CustomWPFControls\obj\Debug\CustomWPFControls.pdb
+D:\Prism Projects\Payroll\PayRoll\CustomWPFControls\bin\Debug\CustomWPFControls.dll
+D:\Prism Projects\Payroll\PayRoll\CustomWPFControls\bin\Debug\CustomWPFControls.pdb
+D:\Prism Projects\Payroll\PayRoll\CustomWPFControls\obj\Debug\CustomWPFControls.csprojResolveAssemblyReference.cache
+D:\Prism Projects\Payroll\PayRoll\CustomWPFControls\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Prism Projects\Payroll\PayRoll\CustomWPFControls\obj\Debug\CustomWPFControls_MarkupCompile.cache
+D:\Prism Projects\Payroll\PayRoll\CustomWPFControls\obj\Debug\CustomWPFControls_MarkupCompile.lref
+D:\Prism Projects\Payroll\PayRoll\CustomWPFControls\obj\Debug\Themes\Generic.baml
+D:\Prism Projects\Payroll\PayRoll\CustomWPFControls\obj\Debug\CustomWPFControls.g.resources
+D:\Prism Projects\Payroll\PayRoll\CustomWPFControls\obj\Debug\CustomWPFControls.Properties.Resources.resources
+D:\Prism Projects\Payroll\PayRoll\CustomWPFControls\obj\Debug\CustomWPFControls.csproj.GenerateResource.Cache
+D:\Prism Projects\Payroll\PayRoll\CustomWPFControls\obj\Debug\CustomWPFControls.dll
+D:\Prism Projects\Payroll\PayRoll\CustomWPFControls\obj\Debug\CustomWPFControls.pdb
+C:\Prism Projects\Payroll\PayRoll\CustomWPFControls\bin\Debug\CustomWPFControls.dll
+C:\Prism Projects\Payroll\PayRoll\CustomWPFControls\bin\Debug\CustomWPFControls.pdb
+C:\Prism Projects\Payroll\PayRoll\CustomWPFControls\obj\Debug\CustomWPFControls.csprojResolveAssemblyReference.cache
+C:\Prism Projects\Payroll\PayRoll\CustomWPFControls\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Prism Projects\Payroll\PayRoll\CustomWPFControls\obj\Debug\CustomWPFControls_MarkupCompile.cache
+C:\Prism Projects\Payroll\PayRoll\CustomWPFControls\obj\Debug\CustomWPFControls_MarkupCompile.lref
+C:\Prism Projects\Payroll\PayRoll\CustomWPFControls\obj\Debug\Themes\Generic.baml
+C:\Prism Projects\Payroll\PayRoll\CustomWPFControls\obj\Debug\CustomWPFControls.g.resources
+C:\Prism Projects\Payroll\PayRoll\CustomWPFControls\obj\Debug\CustomWPFControls.Properties.Resources.resources
+C:\Prism Projects\Payroll\PayRoll\CustomWPFControls\obj\Debug\CustomWPFControls.csproj.GenerateResource.Cache
+C:\Prism Projects\Payroll\PayRoll\CustomWPFControls\obj\Debug\CustomWPFControls.dll
+C:\Prism Projects\Payroll\PayRoll\CustomWPFControls\obj\Debug\CustomWPFControls.pdb
+C:\prism\Payroll\PayRoll\CustomWPFControls\bin\Debug\CustomWPFControls.dll
+C:\prism\Payroll\PayRoll\CustomWPFControls\bin\Debug\CustomWPFControls.pdb
+C:\prism\Payroll\PayRoll\CustomWPFControls\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\prism\Payroll\PayRoll\CustomWPFControls\obj\Debug\CustomWPFControls_MarkupCompile.cache
+C:\prism\Payroll\PayRoll\CustomWPFControls\obj\Debug\CustomWPFControls_MarkupCompile.lref
+C:\prism\Payroll\PayRoll\CustomWPFControls\obj\Debug\Themes\Generic.baml
+C:\prism\Payroll\PayRoll\CustomWPFControls\obj\Debug\CustomWPFControls.g.resources
+C:\prism\Payroll\PayRoll\CustomWPFControls\obj\Debug\CustomWPFControls.Properties.Resources.resources
+C:\prism\Payroll\PayRoll\CustomWPFControls\obj\Debug\CustomWPFControls.csproj.GenerateResource.Cache
+C:\prism\Payroll\PayRoll\CustomWPFControls\obj\Debug\CustomWPFControls.dll
+C:\prism\Payroll\PayRoll\CustomWPFControls\obj\Debug\CustomWPFControls.pdb
+C:\prism\Payroll\PayRoll\CustomWPFControls\obj\Debug\CustomWPFControls.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\payroll\PayRoll\CustomWPFControls\bin\Debug\CustomWPFControls.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\CustomWPFControls\bin\Debug\CustomWPFControls.pdb
+C:\Prism\GitRepositiory\payroll\PayRoll\CustomWPFControls\obj\Debug\CustomWPFControls.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\payroll\PayRoll\CustomWPFControls\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Prism\GitRepositiory\payroll\PayRoll\CustomWPFControls\obj\Debug\CustomWPFControls_MarkupCompile.cache
+C:\Prism\GitRepositiory\payroll\PayRoll\CustomWPFControls\obj\Debug\CustomWPFControls_MarkupCompile.lref
+C:\Prism\GitRepositiory\payroll\PayRoll\CustomWPFControls\obj\Debug\Themes\Generic.baml
+C:\Prism\GitRepositiory\payroll\PayRoll\CustomWPFControls\obj\Debug\CustomWPFControls.g.resources
+C:\Prism\GitRepositiory\payroll\PayRoll\CustomWPFControls\obj\Debug\CustomWPFControls.Properties.Resources.resources
+C:\Prism\GitRepositiory\payroll\PayRoll\CustomWPFControls\obj\Debug\CustomWPFControls.csproj.GenerateResource.Cache
+C:\Prism\GitRepositiory\payroll\PayRoll\CustomWPFControls\obj\Debug\CustomWPFControls.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\CustomWPFControls\obj\Debug\CustomWPFControls.pdb

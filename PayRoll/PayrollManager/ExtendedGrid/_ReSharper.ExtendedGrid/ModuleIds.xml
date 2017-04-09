@@ -1,0 +1,4 @@
+<Modules>
+  <Module PersistentId="4C92FCF4-3561-499F-BC5B-F2F089863047" ModuleId="Fluent" />
+  <Module PersistentId="7F67668A-8D50-45E7-BE40-3ADAB7BD3A32" ModuleId="TestClient" />
+</Modules>
