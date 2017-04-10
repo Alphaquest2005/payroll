@@ -184,12 +184,10 @@ namespace PayrollManager.DataLayer
                               Total = g.Sum(z => z.CreditAmount - z.DebitAmount)//
                           };
 
-                 if (lst.Any())
+                var employeeAccountSummaryLines = lst as IList<EmployeeAccountSummaryLine> ?? new List<EmployeeAccountSummaryLine>();
+                if (employeeAccountSummaryLines.Any())
                 {
-                    return new ObservableCollection<EmployeeAccountSummaryLine>(lst.Where(x =>
-                    {
-                        return x != null && x.Account != null && (x.Total > 0 && x.Account.AccountNumber != "1350-75");
-                    }));//
+                    return new ObservableCollection<EmployeeAccountSummaryLine>(employeeAccountSummaryLines.Where(x => x != null && x.Account != null && (x.Total > 0 && x.Account.AccountNumber != "1350-75")));//
                 }
                 else
                 {

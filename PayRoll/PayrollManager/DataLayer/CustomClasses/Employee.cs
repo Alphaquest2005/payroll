@@ -20,6 +20,7 @@ namespace PayrollManager.DataLayer
         {
             if (e.PropertyName == "PayrollItems")
             {
+                //this.SetBaseAmounts();
                 OnPropertyChanged("TotalIncome");
                 OnPropertyChanged("TotalDeductions");
                 OnPropertyChanged("NetAmount");
@@ -27,7 +28,7 @@ namespace PayrollManager.DataLayer
 
             if (e.PropertyName == "PayrollEmployeeSetups")
             {
-               
+                //this.SetBaseAmounts();
                 OnPropertyChanged("PreTotalIncome");
                 OnPropertyChanged("PreTotalDeductions");
                 OnPropertyChanged("PreNetAmount");
@@ -49,18 +50,21 @@ namespace PayrollManager.DataLayer
         public void SetBaseAmounts()
         {
 
-            var plist = from p in this.PayrollEmployeeSetups.Where(p => (p.BaseAmount != (p.PayrollSetupItem.ApplyToTaxableBenefits == true ? Salary + TaxableBenefitsTotal : Salary) || p.BaseAmount == null))//
+            var plist = from p in this.PayrollEmployeeSetups.Where(p => (p.BaseAmount != (p.PayrollSetupItem.ApplyToTaxableBenefits == true ? Salary + TaxableBenefitsTotal : Salary) || p.BaseAmount == 0))//
                         select p;
 
-            if (plist.Count() > 0)
+            var payrollEmployeeSetups = plist as IList<PayrollEmployeeSetup> ?? plist.ToList();
+            if (payrollEmployeeSetups.Any())
             {
-                foreach (var item in plist)
+                foreach (var item in payrollEmployeeSetups)
                 {
                     item.BaseAmount = (item.PayrollSetupItem.ApplyToTaxableBenefits == true ? Salary + TaxableBenefitsTotal : Salary);
                 }
                 BaseViewModel.OnStaticPropertyChanged("PayrollEmployeeSetups");
             }
         }
+
+        
 
         public double Salary
         {
@@ -92,6 +96,14 @@ namespace PayrollManager.DataLayer
             {
                 if (BaseViewModel.StaticPayrollJob == null) return 0;
                 return  PayrollItems.Where(p => p.IncomeDeduction == true && p.ParentPayrollItem == null && p.PayrollJobId == BaseViewModel.StaticPayrollJob.PayrollJobId).Sum(p => p.Amount);
+            }
+        }
+
+        public List<PayrollItem> CurrentPayrollItems
+        {
+            get
+            {
+                return PayrollItems.Where(p => p.PayrollJobId == BaseViewModel.StaticPayrollJob.PayrollJobId).ToList();
             }
         }
 

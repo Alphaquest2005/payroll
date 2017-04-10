@@ -111,8 +111,8 @@ namespace PayrollManager
                 if (_employeeDeductionsData == null) return null;
                 var eb =
                     _employeeDeductionsData.Pivot(
-                        X => X.PayrollItems.GroupBy(p => p.CreditAccount.Institution.ShortName)
-                            .Select(g => new InstitutionSummary {Institution = g.Key, Total = g.Sum(p => p.Amount)}),
+                        X => X.PayrollItems.GroupBy(p => new { p.CreditAccount.Institution.ShortName, p.CreditAccount.Institution.Priority })
+                            .Select(g => new InstitutionSummary {Institution = $"{g.Key.Priority??"99"}-{g.Key.ShortName}", Total = g.Sum(p => p.Amount), Priority = g.Key.Priority}).OrderBy(x => x.Priority),
                         X => X.Institution,
                         X => X.Total, true, null).ToList();
                 return eb;
@@ -231,11 +231,11 @@ namespace PayrollManager
                         Header = "Employee",
                         Binding = new Binding("Employee")
                     });
-                    foreach (var item in ((IDynamicPivotObject) _deductionsData[0]).PropertiesNames)
+                    foreach (var item in ((IDynamicPivotObject) _deductionsData[0]).PropertiesNames.OrderBy(x => x))
                     {
                         DeductionsGrid.Columns.Add(new DataGridTextColumn()
                         {
-                            Header = item.Replace("_", " "),
+                            Header = item.Substring(item.IndexOf("_")+3).Replace("_", " "),
                             Binding = new Binding(item) {StringFormat = "c"},
                             ElementStyle = sstyle
                         });
@@ -364,8 +364,9 @@ namespace PayrollManager
                                     new InstitutionSummary
                                     {
                                         Institution = X.Account.Institution.ShortName,
-                                        Total = X.Total
-                                    }),
+                                        Total = X.Total,
+                                        Priority = x.Account.Institution.Priority
+                                    }).OrderBy(x => x.Priority),
                         X => X.Institution, X => X.Total, true, null).ToList();
                 return eb;
             }
@@ -432,6 +433,7 @@ namespace PayrollManager
             public string Institution { get; set; }
             public ObservableCollection<DataLayer.PayrollItem> PayrollItems { get; set; }
             public double Total { get; set; }
+            public string Priority { get; set; }
         }
 
         public class InstitutionAccountSummary

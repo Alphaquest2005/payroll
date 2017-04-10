@@ -30,7 +30,9 @@ namespace PayrollManager
 
         public void SavePayrollItem()
         {
+            UpdatePayrollItemsBaseAmounts(CurrentEmployee.CurrentPayrollItems);
             BaseViewModel.SaveDatabase();
+
             base.CurrentPayrollItem = _newPayrollItem;
             _newPayrollItem = null;
             
@@ -50,6 +52,7 @@ namespace PayrollManager
                     db.AccountEntries.DeleteObject(item);
                 }
                 db.PayrollItems.DeleteObject(CurrentPayrollItem);
+                UpdatePayrollItemsBaseAmounts(CurrentEmployee.CurrentPayrollItems);
                 SaveDatabase();
             }
             CurrentPayrollItem = null;

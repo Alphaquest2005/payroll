@@ -97,6 +97,7 @@
     <EntitySetMapping Name="Institutions">
       <EntityTypeMapping TypeName="IsTypeOf(DataLayer.Institution)">
         <MappingFragment StoreEntitySet="Institutions">
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
           <ScalarProperty Name="InstitutionId" ColumnName="InstitutionId" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="ShortName" ColumnName="ShortName" />
@@ -196,14 +197,6 @@
           <ScalarProperty Name="CompanyAmount" ColumnName="CompanyAmount" />
           <ScalarProperty Name="MiniumBaseAmount" ColumnName="MiniumBaseAmount" />
           <ScalarProperty Name="AmountFlooring" ColumnName="AmountFlooring" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tmpEmployeeBank">
-      <EntityTypeMapping TypeName="IsTypeOf(DataLayer.tmpEmployeeBank)">
-        <MappingFragment StoreEntitySet="tmpEmployeeBank">
-          <ScalarProperty Name="Employee" ColumnName="Employee" />
-          <ScalarProperty Name="Bank" ColumnName="Bank" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

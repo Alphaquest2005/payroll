@@ -976,8 +976,6 @@ static int instcount = 9999999;
             
             SetPayrollItemsAmounts();
 
-        //    PostToAccounts();
-
             CycleCurrentEmployee();
             
             OnStaticPropertyChanged("CurrentPayrollJob");
@@ -998,19 +996,11 @@ static int instcount = 9999999;
         [MyExceptionHandlerAspect]
         public static TriBoolState ConfigPayrollItem(PayrollItem pi, DataLayer.PayrollEmployeeSetup item, bool AddToCurrentPayrollJob = true)
         {
-            //if (_currentPayrollJob == null)
-            //{
-            //   // MessageBox.Show("Please Select a PayrollJob before continuing");
-            //    return TriBoolState.Fail;
-            //}
+            
             pi.IsTaxableBenefit = item.PayrollSetupItem.IsTaxableBenefit;
             pi.ApplyToTaxableBenefits = item.PayrollSetupItem.ApplyToTaxableBenefits;
             if(item.BaseAmount != null) pi.BaseAmount = (double)item.BaseAmount;
             pi.Amount = Convert.ToDouble(item.Amount);
-            //if (pi.AddToBaseAmount == true)
-            //{
-            //    pi.BaseAmount += pi.Amount;
-            //}
             pi.Priority = item.PayrollSetupItem.Priority;
             if (AddToCurrentPayrollJob == true && _currentPayrollJob != null)  pi.PayrollJobId = _currentPayrollJob.PayrollJobId;
             pi.Name = item.PayrollSetupItem.Name;
@@ -1295,17 +1285,23 @@ static int instcount = 9999999;
                 double baseamount = 0;
                 double amt = 0;
 
-                var plst = payitems.Where(p => p.ParentPayrollItemId == null ).OrderBy(p => p.Priority).ToList();
-                if (plst.FirstOrDefault().Name.Trim().ToUpper() != "Salary".ToUpper())
+                var payrollItems = payitems as IList<PayrollItem> ?? payitems.ToList();
+                if (!payrollItems.Any()) return;
+                var plst = payrollItems.Where(p => p.ParentPayrollItemId == null ).OrderBy(p => p.Priority).ToList();
+                if (plst.First().Name.Trim().ToUpper() != "Salary".ToUpper())
                 {
                     MessageBox.Show("Salary is not the First item Please check Payroll Item order");
                     return;
                 }
+
+                UpdatePayrollItemsBaseAmounts(payrollItems.ToList());
+
                 foreach (var item in plst)
                 {
 
                     if (item.PayrollSetupItem == null) continue;
 
+                    
                     if (item.Name.Trim().ToUpper() == "Salary".ToUpper())
                     {
                         if (item.BaseAmount == 0)
@@ -1362,16 +1358,30 @@ static int instcount = 9999999;
                 throw ex;
             }
         }
+
+        [MyExceptionHandlerAspect]
+
+        public static void UpdatePayrollItemsBaseAmounts(List<PayrollItem> payrollItems)
+        {
+            var truebase = payrollItems.Where(p => p.IncomeDeduction == true && p.ParentPayrollItem == null).Sum(p => p.Amount);
+            foreach (var itm in payrollItems)
+            {
+                itm.BaseAmount = truebase;
+                itm.Amount = Math.Abs(GetPayrollAmount(itm.BaseAmount, itm).GetValueOrDefault());
+            }
+            
+        }
+
         [MyExceptionHandlerAspect]
         public static double? GetPayrollAmount(double baseamount,  DataLayer.PayrollItem item)
         {
             double amt = 0;
-            if (baseamount < item.PayrollSetupItem.MiniumBaseAmount)
+            if (baseamount < item.PayrollSetupItem?.MiniumBaseAmount)
             {
                 return null;
             }
 
-            if (item.Amount != 0) //&& item.Rate == 0)
+            if (item.Amount != 0 && item.Rate == 0) //&& )
             {
 
                 return DoAmountCalculation(amt, item);

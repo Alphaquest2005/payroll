@@ -18,7 +18,6 @@
         <EntityTypeShape EntityType="DataLayer.PayrollJob" Width="1.5" PointX="3" PointY="20.125" />
         <EntityTypeShape EntityType="DataLayer.PayrollJobType" Width="1.5" PointX="0.75" PointY="21" />
         <EntityTypeShape EntityType="DataLayer.PayrollSetupItem" Width="1.875" PointX="9.625" PointY="11.5" />
-        <EntityTypeShape EntityType="DataLayer.tmpEmployeeBank" Width="1.5" PointX="1.75" PointY="7.375" />
         <AssociationConnector Association="DataLayer.FK_AccountAccountEntry" />
         <AssociationConnector Association="DataLayer.FK_PayrollItemAccountEntry" />
         <AssociationConnector Association="DataLayer.FK_AccountPayrollItem" />

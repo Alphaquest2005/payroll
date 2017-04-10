@@ -13,7 +13,6 @@
     <EntitySet Name="PayrollJobs" EntityType="DataLayer.PayrollJob" />
     <EntitySet Name="PayrollJobTypes" EntityType="DataLayer.PayrollJobType" />
     <EntitySet Name="PayrollSetupItems" EntityType="DataLayer.PayrollSetupItem" />
-    <EntitySet Name="tmpEmployeeBank" EntityType="DataLayer.tmpEmployeeBank" />
     <AssociationSet Name="FK_AccountAccountEntry" Association="DataLayer.FK_AccountAccountEntry">
       <End Role="Accounts" EntitySet="Accounts" />
       <End Role="AccountEntries" EntitySet="AccountEntries" />
@@ -202,6 +201,7 @@
     <Property Type="String" Name="ShortName" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Accounts" Relationship="DataLayer.FK_InstitutionAccountASN" FromRole="Institutions" ToRole="Accounts" />
     <NavigationProperty Name="InstitutionAccounts" Relationship="DataLayer.InstitutionInstitutionAccount" FromRole="Institution" ToRole="InstitutionAccount" />
+    <Property Name="Priority" Type="String" />
   </EntityType>
   <EntityType Name="PayrollEmployeeSetup">
     <Key>
@@ -315,14 +315,6 @@
     <Property Type="Double" Name="AmountFlooring" />
     <Property Type="Boolean" Name="IsTaxableBenefit" />
     <Property Type="Boolean" Name="ApplyToTaxableBenefits" />
-  </EntityType>
-  <EntityType Name="tmpEmployeeBank">
-    <Key>
-      <PropertyRef Name="Employee" />
-      <PropertyRef Name="Bank" />
-    </Key>
-    <Property Type="String" Name="Employee" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="Bank" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
   <Association Name="FK_AccountAccountEntry">
     <End Type="DataLayer.Account" Role="Accounts" Multiplicity="1" />

@@ -113,6 +113,7 @@
           <Property Name="InstitutionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
           <Property Name="ShortName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Priority" Type="varchar" MaxLength="2" />
         </EntityType>
         <EntityType Name="PayrollEmployeeSetup">
           <Key>
@@ -205,14 +206,6 @@
           <Property Name="IsTaxableBenefit" Type="bit" />
           <Property Name="ApplyToTaxableBenefits" Type="bit" />
         </EntityType>
-        <EntityType Name="tmpEmployeeBank">
-          <Key>
-            <PropertyRef Name="Employee" />
-            <PropertyRef Name="Bank" />
-          </Key>
-          <Property Name="Employee" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Bank" Type="varchar" MaxLength="50" Nullable="false" />
-        </EntityType>
         <Association Name="FK_AccountAccountEntry">
           <End Role="Accounts" Type="Self.Accounts" Multiplicity="1" />
           <End Role="AccountEntries" Type="Self.AccountEntries" Multiplicity="*" />
@@ -250,7 +243,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_AccountPayrollItem">
-          <End Role="Accounts" Type="Self.Accounts" Multiplicity="1" />
+          <End Role="Accounts" Type="Self.Accounts" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="PayrollItems" Type="Self.PayrollItems" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Accounts">
@@ -261,20 +256,10 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_AccountPayrollItem1">
-          <End Role="Accounts" Type="Self.Accounts" Multiplicity="1" />
-          <End Role="PayrollItems" Type="Self.PayrollItems" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Accounts">
-              <PropertyRef Name="AccountId" />
-            </Principal>
-            <Dependent Role="PayrollItems">
-              <PropertyRef Name="DebitAccountId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_AccountPayrollSetupItem">
-          <End Role="Accounts" Type="Self.Accounts" Multiplicity="1" />
+          <End Role="Accounts" Type="Self.Accounts" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="PayrollSetupItems" Type="Self.PayrollSetupItems" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Accounts">
@@ -336,7 +321,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_EmployeeEmployeeAccount">
-          <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+          <End Role="Employees" Type="Self.Employees" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Accounts_EmployeeAccount" Type="Self.Accounts_EmployeeAccount" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Employees">
@@ -348,7 +335,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_EmployeePayrollEmployeeSetup">
-          <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+          <End Role="Employees" Type="Self.Employees" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="PayrollEmployeeSetup" Type="Self.PayrollEmployeeSetup" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Employees">
@@ -360,7 +349,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_EmployeePayrollItem">
-          <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+          <End Role="Employees" Type="Self.Employees" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="PayrollItems" Type="Self.PayrollItems" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Employees">
@@ -530,7 +521,6 @@
           <EntitySet Name="PayrollJobs" EntityType="Self.PayrollJobs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PayrollJobTypes" EntityType="Self.PayrollJobTypes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PayrollSetupItems" EntityType="Self.PayrollSetupItems" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="tmpEmployeeBank" EntityType="Self.tmpEmployeeBank" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_AccountAccountEntry" Association="Self.FK_AccountAccountEntry">
             <End Role="Accounts" EntitySet="Accounts" />
             <End Role="AccountEntries" EntitySet="AccountEntries" />
@@ -544,10 +534,6 @@
             <End Role="PayrollEmployeeSetup" EntitySet="PayrollEmployeeSetup" />
           </AssociationSet>
           <AssociationSet Name="FK_AccountPayrollItem" Association="Self.FK_AccountPayrollItem">
-            <End Role="Accounts" EntitySet="Accounts" />
-            <End Role="PayrollItems" EntitySet="PayrollItems" />
-          </AssociationSet>
-          <AssociationSet Name="FK_AccountPayrollItem1" Association="Self.FK_AccountPayrollItem1">
             <End Role="Accounts" EntitySet="Accounts" />
             <End Role="PayrollItems" EntitySet="PayrollItems" />
           </AssociationSet>
@@ -645,7 +631,6 @@
           <EntitySet Name="PayrollJobs" EntityType="DataLayer.PayrollJob" />
           <EntitySet Name="PayrollJobTypes" EntityType="DataLayer.PayrollJobType" />
           <EntitySet Name="PayrollSetupItems" EntityType="DataLayer.PayrollSetupItem" />
-          <EntitySet Name="tmpEmployeeBank" EntityType="DataLayer.tmpEmployeeBank" />
           <AssociationSet Name="FK_AccountAccountEntry" Association="DataLayer.FK_AccountAccountEntry">
             <End Role="Accounts" EntitySet="Accounts" />
             <End Role="AccountEntries" EntitySet="AccountEntries" />
@@ -834,6 +819,7 @@
           <Property Type="String" Name="ShortName" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Accounts" Relationship="DataLayer.FK_InstitutionAccountASN" FromRole="Institutions" ToRole="Accounts" />
           <NavigationProperty Name="InstitutionAccounts" Relationship="DataLayer.InstitutionInstitutionAccount" FromRole="Institution" ToRole="InstitutionAccount" />
+          <Property Name="Priority" Type="String" />
         </EntityType>
         <EntityType Name="PayrollEmployeeSetup">
           <Key>
@@ -947,14 +933,6 @@
           <Property Type="Double" Name="AmountFlooring" />
           <Property Type="Boolean" Name="IsTaxableBenefit" />
           <Property Type="Boolean" Name="ApplyToTaxableBenefits" />
-        </EntityType>
-        <EntityType Name="tmpEmployeeBank">
-          <Key>
-            <PropertyRef Name="Employee" />
-            <PropertyRef Name="Bank" />
-          </Key>
-          <Property Type="String" Name="Employee" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Bank" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK_AccountAccountEntry">
           <End Type="DataLayer.Account" Role="Accounts" Multiplicity="1" />
@@ -1269,7 +1247,7 @@
     <EntitySetMapping Name="Accounts">
       <EntityTypeMapping TypeName="IsTypeOf(DataLayer.Account)">
         <MappingFragment StoreEntitySet="Accounts">
-          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+                <ScalarProperty Name="AccountId" ColumnName="AccountId" />
           <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
           <ScalarProperty Name="InstitutionId" ColumnName="InstitutionId" />
           <ScalarProperty Name="AccountName" ColumnName="AccountName" />
@@ -1348,7 +1326,8 @@
     <EntitySetMapping Name="Institutions">
       <EntityTypeMapping TypeName="IsTypeOf(DataLayer.Institution)">
         <MappingFragment StoreEntitySet="Institutions">
-          <ScalarProperty Name="InstitutionId" ColumnName="InstitutionId" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+                <ScalarProperty Name="InstitutionId" ColumnName="InstitutionId" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="ShortName" ColumnName="ShortName" />
         </MappingFragment>
@@ -1447,14 +1426,6 @@
           <ScalarProperty Name="CompanyAmount" ColumnName="CompanyAmount" />
           <ScalarProperty Name="MiniumBaseAmount" ColumnName="MiniumBaseAmount" />
           <ScalarProperty Name="AmountFlooring" ColumnName="AmountFlooring" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tmpEmployeeBank">
-      <EntityTypeMapping TypeName="IsTypeOf(DataLayer.tmpEmployeeBank)">
-        <MappingFragment StoreEntitySet="tmpEmployeeBank">
-          <ScalarProperty Name="Employee" ColumnName="Employee" />
-          <ScalarProperty Name="Bank" ColumnName="Bank" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

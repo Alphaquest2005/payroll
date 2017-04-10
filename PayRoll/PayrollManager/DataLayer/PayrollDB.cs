@@ -287,22 +287,6 @@ namespace PayrollManager.DataLayer
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<tmpEmployeeBank> tmpEmployeeBank
-        {
-            get
-            {
-                if ((_tmpEmployeeBank == null))
-                {
-                    _tmpEmployeeBank = base.CreateObjectSet<tmpEmployeeBank>("tmpEmployeeBank");
-                }
-                return _tmpEmployeeBank;
-            }
-        }
-        private ObjectSet<tmpEmployeeBank> _tmpEmployeeBank;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         public ObjectSet<EmailTemplate> EmailTemplate
         {
             get
@@ -414,14 +398,6 @@ namespace PayrollManager.DataLayer
         public void AddToPayrollSetupItems(PayrollSetupItem payrollSetupItem)
         {
             base.AddObject("PayrollSetupItems", payrollSetupItem);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the tmpEmployeeBank EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTotmpEmployeeBank(tmpEmployeeBank tmpEmployeeBank)
-        {
-            base.AddObject("tmpEmployeeBank", tmpEmployeeBank);
         }
     
         /// <summary>
@@ -2487,6 +2463,30 @@ namespace PayrollManager.DataLayer
         private global::System.String _ShortName;
         partial void OnShortNameChanging(global::System.String value);
         partial void OnShortNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Priority
+        {
+            get
+            {
+                return _Priority;
+            }
+            set
+            {
+                OnPriorityChanging(value);
+                ReportPropertyChanging("Priority");
+                _Priority = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Priority");
+                OnPriorityChanged();
+            }
+        }
+        private global::System.String _Priority;
+        partial void OnPriorityChanging(global::System.String value);
+        partial void OnPriorityChanged();
 
         #endregion
 
@@ -5172,91 +5172,6 @@ namespace PayrollManager.DataLayer
                 }
             }
         }
-
-        #endregion
-
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="DataLayer", Name="tmpEmployeeBank")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class tmpEmployeeBank : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new tmpEmployeeBank object.
-        /// </summary>
-        /// <param name="employee">Initial value of the Employee property.</param>
-        /// <param name="bank">Initial value of the Bank property.</param>
-        public static tmpEmployeeBank CreatetmpEmployeeBank(global::System.String employee, global::System.String bank)
-        {
-            tmpEmployeeBank tmpEmployeeBank = new tmpEmployeeBank();
-            tmpEmployeeBank.Employee = employee;
-            tmpEmployeeBank.Bank = bank;
-            return tmpEmployeeBank;
-        }
-
-        #endregion
-
-        #region Simple Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String Employee
-        {
-            get
-            {
-                return _Employee;
-            }
-            set
-            {
-                if (_Employee != value)
-                {
-                    OnEmployeeChanging(value);
-                    ReportPropertyChanging("Employee");
-                    _Employee = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("Employee");
-                    OnEmployeeChanged();
-                }
-            }
-        }
-        private global::System.String _Employee;
-        partial void OnEmployeeChanging(global::System.String value);
-        partial void OnEmployeeChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String Bank
-        {
-            get
-            {
-                return _Bank;
-            }
-            set
-            {
-                if (_Bank != value)
-                {
-                    OnBankChanging(value);
-                    ReportPropertyChanging("Bank");
-                    _Bank = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("Bank");
-                    OnBankChanged();
-                }
-            }
-        }
-        private global::System.String _Bank;
-        partial void OnBankChanging(global::System.String value);
-        partial void OnBankChanged();
 
         #endregion
 
