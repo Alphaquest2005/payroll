@@ -275,7 +275,6 @@ C:\prism\Printing\SUT.PrintEngine\bin\Debug\Microsoft.Practices.Unity.dll
 C:\prism\Printing\SUT.PrintEngine\bin\Debug\Microsoft.Practices.ObjectBuilder2.xml
 C:\prism\Printing\SUT.PrintEngine\bin\Debug\Microsoft.Practices.Unity.xml
 C:\prism\Printing\SUT.PrintEngine\obj\Debug\SUT.PrintEngine.csprojResolveAssemblyReference.cache
-C:\Prism\GitRepositiory\payroll\PayRoll\SUT.PrintEngine\obj\Debug\SUT.PrintEngine.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\payroll\PayRoll\SUT.PrintEngine\obj\Debug\Views\PrintControlView.baml
 C:\Prism\GitRepositiory\payroll\PayRoll\SUT.PrintEngine\obj\Debug\Controls\ProgressDialog\ProgressDialogView.baml
 C:\Prism\GitRepositiory\payroll\PayRoll\SUT.PrintEngine\obj\Debug\Resources\Themes\Generic\Theme.baml

@@ -157,7 +157,7 @@ namespace PayrollManager.Converters
                     for (int i = 0; i < header.Length; i++)
                     {
                         var y = header[i];
-                        var val = item.GetType().GetProperty(y.ToString().Replace(" ", "_").Replace("-","")).GetValue(item);
+                        var val = item.GetType().GetProperties().FirstOrDefault(x => x.Name.Contains(y.ToString().Replace(" ", "_").Replace("-", ""))).GetValue(item);
                         objData[j, i] = (val == null) ? "" : val.ToString();
                     }
                 }
@@ -250,6 +250,7 @@ namespace PayrollManager.Converters
         /// <param name="obj"></param>
         private void ReleaseObject(object obj)
         {
+            if (obj == null) return;
             try
             {
                 System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);

@@ -98,14 +98,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CustomWPFControls.dll" size="20992">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CustomWPFControls.dll" size="19968">
       <assemblyIdentity name="CustomWPFControls" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>jaA5N1DS8prnF7V1kenJbE8xoZyZqvE3Z2mZQZ4JzaQ=</dsig:DigestValue>
+        <dsig:DigestValue>hUII/WCk5L1KivJEYMkBP/dzVR+EKhwNiXWwWhGbkMs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -117,7 +117,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>5Hzz6TzDc8amDGBDY3pXWyE+C5K5N8NwHv9iJ+oMmnA=</dsig:DigestValue>
+        <dsig:DigestValue>tYsjcOaBMwlx7guAzS6P99ZORYX76+mqr5VGBEHipSg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -129,7 +129,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>gkvohzD9R25fdHbBlTaDNJ3wV+HRNoTYYGXbeAM6LPc=</dsig:DigestValue>
+        <dsig:DigestValue>Hk6GB0eX3ir1QWwdfq34iu9Lra/H3cY8WPyLLqLsaVo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -297,19 +297,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>HPhaX7QSa7QW0+nQVmPX44wX/V1nN0mwiJFK5KH2m5w=</dsig:DigestValue>
+        <dsig:DigestValue>s3qfqxYsnR/4gIvhx2j4dI0KRot+sT/4s/2WPDe6yU8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PayrollManager.exe" size="867328">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PayrollManager.exe" size="867840">
       <assemblyIdentity name="PayrollManager" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>YCJbcoIIlbe+X5RqspJOyTGbGs5XjngQiihJhpL5OwI=</dsig:DigestValue>
+        <dsig:DigestValue>pYGAUeygl3p0lgqwg9IY+z7CoSASu5FMbOM9KegugQU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -345,7 +345,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>KPyBtb0JjYP35ALlsy+7rbzYghq+tjIj8v7ZLbqGPFY=</dsig:DigestValue>
+        <dsig:DigestValue>t/GzBElHHtZRjUc5FUN63BJdizUYsPEH1kjMUoCUXPI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -357,7 +357,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>FNl3jOOgCM69W5ddhI2xCoBGGLHB2nFMqE6Mjtw48Y8=</dsig:DigestValue>
+        <dsig:DigestValue>Vf8hC/CbECgStEcd6MRR/qqe5Xj6SP8/P+uBe9uui1Y=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -547,22 +547,22 @@
       <dsig:DigestValue>pwCKgo4TNay+lugTnFPBHB6EjUR6Z3SmlBuS0NauE+E=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="PayrollDB.mdf" size="7798784" writeableType="applicationData">
+  <file name="PayrollDB.mdf" size="17825792" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>YK+cUKuatfADijEFN37DW4KTns7EkGqonTJqdFtXcF4=</dsig:DigestValue>
+      <dsig:DigestValue>QZX+lFdB8hxW+rqg9fvyQeXGFAP3Ge+H+qroYmlJTVM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="PayrollDB_log.ldf" size="20905984" writeableType="applicationData">
+  <file name="PayrollDB_log.ldf" size="4325376" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>xLvZA8xRiLr7WF0UCUmcRsLqt6PhuxrRbBq+Tk5y2kw=</dsig:DigestValue>
+      <dsig:DigestValue>YCFWtAPl43GeNMDOxS40SNSc2CXdmADUPNNQUJk9Xs8=</dsig:DigestValue>
     </hash>
   </file>
   <file name="PayrollManager.exe.config" size="3006">

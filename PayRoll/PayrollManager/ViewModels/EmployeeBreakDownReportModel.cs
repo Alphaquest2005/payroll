@@ -119,7 +119,7 @@ namespace PayrollManager
                                                 })
                                         .Select(g => new PayrollSummary
                                         {
-                                            PayrollItem = g.Key.Name.Trim(),
+                                            PayrollItem =  g.Key.Priority.ToString("D2")+ "-" + g.Key.Name.Trim(),
                                             IncomeDeduction = g.Key.IncomeDeduction,
                                             Priority = g.Key.Priority,
                                             //g.Key.PayrollSetupItem == null ? g.Key.Priority : g.Key.PayrollSetupItem.Priority,
@@ -156,9 +156,9 @@ namespace PayrollManager
                     .ThenByDescending(x => x.Priority)
                     .Select(x => x.PayrollItem).Distinct();
 
-                var proplst = ((LinqLib.DynamicCodeGenerator.IDynamicPivotObject) _eb[0]).PropertiesNames;
+                var proplst = ((LinqLib.DynamicCodeGenerator.IDynamicPivotObject) _eb[0]).PropertiesNames.OrderBy(x => x);
 
-                foreach (var item in collst)
+                foreach (var item in collst.OrderBy(x => x))
                 {
                     string t = item.Replace(" ", "_").Replace("-", "");
                     foreach (string p in proplst)
@@ -169,7 +169,7 @@ namespace PayrollManager
                             ///var col = 
                             MyDataGrid.Columns.Add(new System.Windows.Controls.DataGridTextColumn()
                             {
-                                Header = item,
+                                Header = item.Substring(3),
                                 Binding = new Binding(p) {StringFormat = "c"}
                             });
                             break;
@@ -196,7 +196,7 @@ namespace PayrollManager
                     {
                         //.GroupBy(x => x.PayrollItem).Select(x => new PayItmSummary{PayrollItem = x.Key, Total = x.Sum(y => y.Total)} )
                              _eb =
-                                emplst.Pivot(E => E.PayrollItems.OrderByDescending(q => q.IncomeDeduction).ThenBy(q => q.Priority),
+                                emplst.Pivot(E => E.PayrollItems.OrderByDescending(q => q.Priority).ThenBy(q => q.IncomeDeduction),
                                     E => E.PayrollItem, E => E.Total, true, null)
                                     .ToList();
 
@@ -209,7 +209,7 @@ namespace PayrollManager
                                         Activator.CreateInstance(t);
                                 tot.GetType().GetProperty("Employee_Name").SetValue(tot, "Total");
                                 double totval = 0;
-                                foreach (var item in tot.PropertiesNames)
+                                foreach (var item in tot.PropertiesNames.OrderBy(x => x))
                                 {
                                     double val = 0;
                                     foreach (var row in _eb)

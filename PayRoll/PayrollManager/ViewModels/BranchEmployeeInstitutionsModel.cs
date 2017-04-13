@@ -363,7 +363,7 @@ namespace PayrollManager
                                 x =>
                                     new InstitutionSummary
                                     {
-                                        Institution = X.Account.Institution.ShortName,
+                                        Institution = $"{X.Account.Institution.Priority ?? "99"}-{X.Account.Institution.ShortName}",
                                         Total = X.Total,
                                         Priority = x.Account.Institution.Priority
                                     }).OrderBy(x => x.Priority),
@@ -395,11 +395,11 @@ namespace PayrollManager
                     });
                     foreach (
                         var item in
-                            ((LinqLib.DynamicCodeGenerator.IDynamicPivotObject) _netSalaryData[0]).PropertiesNames)
+                            ((LinqLib.DynamicCodeGenerator.IDynamicPivotObject) _netSalaryData[0]).PropertiesNames.OrderBy(x => x))
                     {
                         NetSalaryGrid.Columns.Add(new System.Windows.Controls.DataGridTextColumn()
                         {
-                            Header = item.Replace("_", " "),
+                            Header = item.Substring(item.IndexOf("_") + 3).Replace("_", " "),
                             Binding = new Binding(item) {StringFormat = "c"},
                             ElementStyle = sstyle
                         });

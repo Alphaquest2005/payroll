@@ -129,7 +129,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>gkvohzD9R25fdHbBlTaDNJ3wV+HRNoTYYGXbeAM6LPc=</dsig:DigestValue>
+        <dsig:DigestValue>03DNgVzNf52FCAhMXEJJbogJQFAG8RpinQmvbMM07yw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -302,14 +302,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PayrollManager.exe" size="867328">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PayrollManager.exe" size="867840">
       <assemblyIdentity name="PayrollManager" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>YCJbcoIIlbe+X5RqspJOyTGbGs5XjngQiihJhpL5OwI=</dsig:DigestValue>
+        <dsig:DigestValue>PMbZk2unqKGuWLPrNtkDpeg+IZ6YtZIlrQzWhYbPAiM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -345,7 +345,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>KPyBtb0JjYP35ALlsy+7rbzYghq+tjIj8v7ZLbqGPFY=</dsig:DigestValue>
+        <dsig:DigestValue>U33hQw8+QHCRBJCZCZ+CNlBCNeZ8Vl1ew7N5SHPMtV0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -547,22 +547,22 @@
       <dsig:DigestValue>pwCKgo4TNay+lugTnFPBHB6EjUR6Z3SmlBuS0NauE+E=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="PayrollDB.mdf" size="7798784" writeableType="applicationData">
+  <file name="PayrollDB.mdf" size="17825792" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>YK+cUKuatfADijEFN37DW4KTns7EkGqonTJqdFtXcF4=</dsig:DigestValue>
+      <dsig:DigestValue>1ghfTDppFDyOv6MrdXxrTkUjJ9926bfBgh6H74oPE4I=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="PayrollDB_log.ldf" size="20905984" writeableType="applicationData">
+  <file name="PayrollDB_log.ldf" size="4325376" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>xLvZA8xRiLr7WF0UCUmcRsLqt6PhuxrRbBq+Tk5y2kw=</dsig:DigestValue>
+      <dsig:DigestValue>CXzHruysWbMhtT4L1UOOvcWfxO0R2pfn1F6wvCLvyqo=</dsig:DigestValue>
     </hash>
   </file>
   <file name="PayrollManager.exe.config" size="3006">
