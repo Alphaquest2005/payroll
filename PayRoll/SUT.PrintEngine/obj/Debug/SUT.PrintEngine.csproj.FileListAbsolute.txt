@@ -319,3 +319,4 @@ C:\Prism\GitRepositiory\payroll\PayRoll\SUT.PrintEngine\bin\Debug\System.Xml.Lin
 C:\Prism\GitRepositiory\payroll\PayRoll\SUT.PrintEngine\bin\Debug\WindowsBase.dll
 C:\Prism\GitRepositiory\payroll\PayRoll\SUT.PrintEngine\obj\Debug\SUT.PrintEngine.dll
 C:\Prism\GitRepositiory\payroll\PayRoll\SUT.PrintEngine\obj\Debug\SUT.PrintEngine.pdb
+C:\Prism\GitRepositiory\payroll\PayRoll\SUT.PrintEngine\obj\Debug\SUT.PrintEngine.csprojResolveAssemblyReference.cache

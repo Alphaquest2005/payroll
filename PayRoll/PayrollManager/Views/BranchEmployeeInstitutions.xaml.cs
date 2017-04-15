@@ -19,25 +19,34 @@ using SUT.PrintEngine.Utils;
 
 namespace PayrollManager
 {
-	/// <summary>
-	/// Interaction logic for BranchPayrollItemBreakDown.xaml
-	/// </summary>
-	public partial class BranchEmployeeInstitutions : UserControl
-	{
+    /// <summary>
+    /// Interaction logic for BranchPayrollItemBreakDown.xaml
+    /// </summary>
+    public partial class BranchEmployeeInstitutions : UserControl
+    {
         public BranchEmployeeInstitutions()
-		{
-			this.InitializeComponent();
+        {
+            this.InitializeComponent();
             im = (BranchEmployeeInstitutionsModel)this.FindResource("BranchEmployeeInstitutionsModelDataSource");
             im.DeductionsGrid = DeductionsGrid;
             im.NetSalaryGrid = NetSalaryGrid;
-			// Insert code required on object creation below this point.
+            im.GrandTotalGrid = GrandTotalGrid;
+            // Insert code required on object creation below this point.
             var dpd = DependencyPropertyDescriptor.FromProperty(ItemsControl.ItemsSourceProperty, typeof(DataGrid));
             if (dpd != null)
             {
                 dpd.AddValueChanged(DeductionsGrid, DeductionsGrid_ItemSourceChanged);
                 dpd.AddValueChanged(NetSalaryGrid, NetSalaryGrid_ItemSourceChanged);
+                dpd.AddValueChanged(DeductionsGrid, GrandTotalGrid_ItemSourceChanged);
+                dpd.AddValueChanged(NetSalaryGrid, GrandTotalGrid_ItemSourceChanged);
+                dpd.AddValueChanged(GrandTotalGrid, GrandTotalGrid_ItemSourceChanged);
             }
-		}
+        }
+
+        private void GrandTotalGrid_ItemSourceChanged(object sender, EventArgs e)
+        {
+            im.PopulateGrandTotalGrid();
+        }
 
         private void NetSalaryGrid_ItemSourceChanged(object sender, EventArgs e)
         {
@@ -57,8 +66,8 @@ namespace PayrollManager
             //DeductionsGrid.PrintCommand.Execute(DeductionsGrid);
         }
 
-       
-        
+
+
 
         private void GridData_LoadingRow(object sender, DataGridRowEventArgs e)
         {
@@ -104,5 +113,10 @@ namespace PayrollManager
             var p = new ExportToExcel();
             p.GenerateReport(NetSalaryGrid);
         }
-	}
+
+        private void GrandTotal_LoadingRow(object sender, DataGridRowEventArgs e)
+        {
+            e.Row.FontWeight = FontWeights.Bold;
+        }
+    }
 }

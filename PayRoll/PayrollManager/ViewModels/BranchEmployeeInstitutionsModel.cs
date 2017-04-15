@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Data.Entity;
+using System.Dynamic;
 using LinqLib.DynamicCodeGenerator;
 using LinqLib.Sequence;
 using System.Windows.Controls;
@@ -28,7 +29,7 @@ namespace PayrollManager
         private static bool isDirty = false;
         private static List<EmployeeSummaryLine> _employeeDeductionsData = null;
         private static List<EmployeeAccountSummaryLine> _employeeSalaryData = null;
-        private static dynamic _deductionsData = null;
+        private static List<dynamic> _deductionsData = null;
 
         private void BranchEmployeeInstitutionsModel_staticPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
@@ -68,6 +69,19 @@ namespace PayrollManager
 
         }
 
+        private DataGrid _grandTotalGrid = new DataGrid();
+
+        public DataGrid GrandTotalGrid
+        {
+            get { return _grandTotalGrid; }
+            set
+            {
+                _grandTotalGrid = value;
+                OnPropertyChanged("GrandTotalData");
+            }
+
+        }
+
         private DateTime _reportDate = DateTime.Now;
 
         public DateTime ReportDate
@@ -80,6 +94,7 @@ namespace PayrollManager
                 OnPropertyChanged("ReportDate");
                 OnPropertyChanged("DeductionsData");
                 OnPropertyChanged("NetSalaryData");
+                OnPropertyChanged("GrandTotalData");
             }
         }
 
@@ -108,11 +123,11 @@ namespace PayrollManager
         {
             try
             {
-                if (_employeeDeductionsData == null) return null;
+                if (_employeeDeductionsData == null || !_employeeDeductionsData.Any()) return null;
                 var eb =
                     _employeeDeductionsData.Pivot(
                         X => X.PayrollItems.GroupBy(p => new { p.CreditAccount.Institution.ShortName, p.CreditAccount.Institution.Priority })
-                            .Select(g => new InstitutionSummary {Institution = $"{g.Key.Priority??"99"}-{g.Key.ShortName}", Total = g.Sum(p => p.Amount), Priority = g.Key.Priority}).OrderBy(x => x.Priority),
+                            .Select(g => new InstitutionSummary { Institution = $"{g.Key.Priority ?? "99"}-{g.Key.ShortName}", Total = g.Sum(p => p.Amount), Priority = g.Key.Priority }).OrderBy(x => x.Priority),
                         X => X.Institution,
                         X => X.Total, true, null).ToList();
                 return eb;
@@ -130,7 +145,7 @@ namespace PayrollManager
 
                 var t = Task.Run(() =>
                 {
-                    if (CurrentPayrollJob == null) return null;
+                    if (CurrentPayrollJob == null) return new List<EmployeeSummaryLine>();
                     using (var ctx = new PayrollDB())
                     {
 
@@ -139,13 +154,14 @@ namespace PayrollManager
                                                                   && x.PayrollJob.EndDate == CurrentPayrollJob.EndDate
                                                                   && x.PayrollJob.PayrollJobTypeId == CurrentPayrollJob.PayrollJobTypeId)
                                 .Include(x => x.CreditAccount.Institution)
+                                .Include(x => x.Employee)
                                 .AsEnumerable()
                                 .Where(pi => //pi.PayrollJob.Name == CurrentPayrollJob.Name &&
                                     pi.DebitAccount is DataLayer.EmployeeAccount
-                                    && pi.Name.Trim().ToUpper() == "Salary Deduction".ToUpper()
+                                // && "Salary Deduction,Communal Birthday Club".ToUpper().Contains(pi.Name.Trim().ToUpper())
                                 ) //.Where(z => z.PayrollJob.Branch.Name == "Main Branch")
                                 .OrderBy(x => x.Employee.LastName)
-                            group p by new {p.Employee.DisplayName}
+                            group p by new { p.Employee.DisplayName }
                             into g //, p.IncomeDeduction, p.Priority, BranchName = p.PayrollJob.Branch.Name 
                             select new EmployeeSummaryLine
                             {
@@ -156,7 +172,7 @@ namespace PayrollManager
                                 Total = g.Sum(p => p.Amount),
                                 PayrollItems = g.ToList()
                             };
-                        if (!plist.Any()) return null;
+                        if (!plist.Any()) return new List<EmployeeSummaryLine>();
 
                         return plist.ToList();
                     }
@@ -204,7 +220,7 @@ namespace PayrollManager
                     _deductionsData.Add(tot);
                 }
 
-              //  return _deductionsData;
+                //  return _deductionsData;
 
 
             }
@@ -224,19 +240,19 @@ namespace PayrollManager
                 DeductionsGrid.Columns.Clear();
                 if (_deductionsData != null)
                 {
-                    var sstyle = new Style(typeof (TextBlock));
+                    var sstyle = new Style(typeof(TextBlock));
                     sstyle.Setters.Add(new Setter(TextBlock.HorizontalAlignmentProperty, HorizontalAlignment.Right));
                     DeductionsGrid.Columns.Add(new System.Windows.Controls.DataGridTextColumn()
                     {
                         Header = "Employee",
                         Binding = new Binding("Employee")
                     });
-                    foreach (var item in ((IDynamicPivotObject) _deductionsData[0]).PropertiesNames.OrderBy(x => x))
+                    foreach (var item in ((IDynamicPivotObject)_deductionsData[0]).PropertiesNames.OrderBy(x => x))
                     {
                         DeductionsGrid.Columns.Add(new DataGridTextColumn()
                         {
-                            Header = item.Substring(item.IndexOf("_")+3).Replace("_", " "),
-                            Binding = new Binding(item) {StringFormat = "c"},
+                            Header = item.Substring(item.IndexOf("_") + 3).Replace("_", " "),
+                            Binding = new Binding(item) { StringFormat = "c" },
                             ElementStyle = sstyle
                         });
                     }
@@ -245,7 +261,7 @@ namespace PayrollManager
                     DeductionsGrid.Columns.Add(new DataGridTextColumn()
                     {
                         Header = "Total",
-                        Binding = new Binding("Total") {StringFormat = "c"},
+                        Binding = new Binding("Total") { StringFormat = "c" },
                         FontWeight = FontWeights.Bold,
                         ElementStyle = sstyle
                     });
@@ -278,10 +294,54 @@ namespace PayrollManager
 
         }
 
+        private List<object> _grandTotalData = new List<object>();
+        public object GrandTotalData
+        {
+            get
+            {
+                lock (syncRoot)
+                {
+                    if (NetSalaryData != null && DeductionsData != null)
+                    {
+                        _grandTotalData.Clear();
+                        dynamic gt = new ExpandoObject();
+                        gt.GrandTotal = "Total";
+
+                        var nsRow = ((List<dynamic>)NetSalaryData).Last();
+                        var drow = ((List<dynamic>)DeductionsData).Last();
+
+                        var cols = new List<string>();
+                        foreach (var col in nsRow.PropertiesNames)
+                        {
+                            if (!cols.Contains(col)) cols.Add(col);
+                        }
+
+                        foreach (var col in drow.PropertiesNames)
+                        {
+                            if (!cols.Contains(col)) cols.Add(col);
+                        }
+
+                        foreach (var col in cols)
+                        {
+
+                            var ns = (double?)nsRow.GetType().GetProperty(col)?.GetValue(nsRow);
+                            var dd = (double?)drow.GetType().GetProperty(col)?.GetValue(drow);
+                            ((IDictionary<string, object>)gt).Add(col.Substring(3), (ns.GetValueOrDefault() + dd.GetValueOrDefault()).ToString("c"));
+
+                        }
+
+                        _grandTotalData.Add(gt);
+
+                    }
+                }
+                return _grandTotalData;
+            }
+
+        }
 
         private async Task<List<EmployeeAccountSummaryLine>> GetNetSalaryData()
         {
-            if (CurrentPayrollJob == null) return null;
+            if (CurrentPayrollJob == null) return new List<EmployeeAccountSummaryLine>();
             var t = Task.Run(() =>
             {
                 using (var ctx = new PayrollDB())
@@ -291,26 +351,28 @@ namespace PayrollManager
                                                                   && x.PayrollJob.EndDate == CurrentPayrollJob.EndDate
                                                                   && x.PayrollJob.PayrollJobTypeId == CurrentPayrollJob.PayrollJobTypeId)
                             .Include(x => x.CreditAccount.Institution)
+                            .Include(x => x.PayrollJob.PayrollJobType)
+                            .Include(x => x.Employee)
                             .AsEnumerable()
                             .Where(pi => (pi.PayrollJob.Name == CurrentPayrollJob.Name)
                                          && pi.CreditAccount is DataLayer.EmployeeAccount
                                          && pi.Name.Trim().ToUpper() == "Salary".ToUpper()
                             )
                             .OrderBy(x => x.Employee.LastName)
-                            group p by new {p.Employee.DisplayName}
+                         group p by new { p.Employee.DisplayName }
                             into g //, p.IncomeDeduction, p.Priority, BranchName = p.PayrollJob.Branch.Name 
-                            select new EmployeeAccountSummaryLine
-                            {
-                                Employee = g.Key.DisplayName,
-                                Account = g.FirstOrDefault().CreditAccount,
-                                Total =
-                                    g.FirstOrDefault()
-                                        .CreditAccount.AccountEntries.Where(
-                                            z => z.PayrollItem.PayrollJob.Name == CurrentPayrollJob.Name)
-                                        .Sum(q => q.Total)
-                            }).ToList();
+                         select new EmployeeAccountSummaryLine
+                         {
+                             Employee = g.Key.DisplayName,
+                             Account = g.FirstOrDefault().CreditAccount,
+                             Total =
+                                 g.FirstOrDefault()
+                                     .CreditAccount.AccountEntries.Where(
+                                         z => z.PayrollItem.PayrollJob.Name == CurrentPayrollJob.Name)
+                                     .Sum(q => q.Total)
+                         }).ToList();
 
-                    if (!employeeSalaryData.Any()) return null;
+                    if (!employeeSalaryData.Any()) return new List<EmployeeAccountSummaryLine>();
 
                     return employeeSalaryData;
                 }
@@ -355,7 +417,7 @@ namespace PayrollManager
         {
             try
             {
-                if (plist == null) return null;
+                if (plist == null || !plist.Any()) return null;
                 var eb =
                     plist.Pivot(
                         X =>
@@ -386,7 +448,7 @@ namespace PayrollManager
                 NetSalaryGrid.Columns.Clear();
                 if (_netSalaryData != null)
                 {
-                    var sstyle = new Style(typeof (TextBlock));
+                    var sstyle = new Style(typeof(TextBlock));
                     sstyle.Setters.Add(new Setter(TextBlock.HorizontalAlignmentProperty, HorizontalAlignment.Right));
                     NetSalaryGrid.Columns.Add(new System.Windows.Controls.DataGridTextColumn()
                     {
@@ -395,19 +457,19 @@ namespace PayrollManager
                     });
                     foreach (
                         var item in
-                            ((LinqLib.DynamicCodeGenerator.IDynamicPivotObject) _netSalaryData[0]).PropertiesNames.OrderBy(x => x))
+                            ((LinqLib.DynamicCodeGenerator.IDynamicPivotObject)_netSalaryData[0]).PropertiesNames.OrderBy(x => x))
                     {
                         NetSalaryGrid.Columns.Add(new System.Windows.Controls.DataGridTextColumn()
                         {
                             Header = item.Substring(item.IndexOf("_") + 3).Replace("_", " "),
-                            Binding = new Binding(item) {StringFormat = "c"},
+                            Binding = new Binding(item) { StringFormat = "c" },
                             ElementStyle = sstyle
                         });
                     }
                     NetSalaryGrid.Columns.Add(new System.Windows.Controls.DataGridTextColumn()
                     {
                         Header = "Total",
-                        Binding = new Binding("Total") {StringFormat = "c"},
+                        Binding = new Binding("Total") { StringFormat = "c" },
                         FontWeight = FontWeights.Bold,
                         ElementStyle = sstyle
                     });
@@ -420,6 +482,37 @@ namespace PayrollManager
             }
         }
 
+        public void PopulateGrandTotalGrid()
+        {
+            try
+            {
+
+                GrandTotalGrid.Columns.Clear();
+                var gdata = GrandTotalData;
+                if (gdata != null && ((List<object>)gdata).Any())
+                {
+                    var sstyle = new Style(typeof(TextBlock));
+                    sstyle.Setters.Add(new Setter(TextBlock.HorizontalAlignmentProperty, HorizontalAlignment.Right));
+
+                    foreach (
+                        var item in ((IDictionary<string, object>)((List<Object>)gdata).First()).Keys)
+                    {
+                        GrandTotalGrid.Columns.Add(new System.Windows.Controls.DataGridTextColumn()
+                        {
+                            Header = item.Replace("_", " "),
+                            Binding = new Binding(item) { StringFormat = "c" },
+                            ElementStyle = sstyle
+                        });
+                    }
+
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
 
         private void TransformerClassGenerationEventHandler(object sender, ClassGenerationEventArgs e)
         {
@@ -456,6 +549,7 @@ namespace PayrollManager
             public double Total { get; set; }
             public DataLayer.Account Account { get; set; }
         }
+
 
     }
 

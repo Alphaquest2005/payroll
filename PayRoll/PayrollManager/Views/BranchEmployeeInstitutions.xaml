@@ -45,7 +45,31 @@
                         <DataGrid x:Name="NetSalaryGrid" HorizontalAlignment="Stretch"  Margin="0" AlternatingRowBackground="#FFE6F0F4" RowBackground="White" GridLinesVisibility="None" VerticalAlignment="Top" 
                                   ItemsSource="{Binding NetSalaryData, IsAsync=True}"
                                   AutoGenerateColumns="False" RowHeight="25"  ClipboardCopyMode="IncludeHeader" LoadingRow="NetSalary_LoadingRow"/>
-                        
+
+                        <TextBlock Width="237"
+                                   Height="24"
+                                   Margin="0,15,0,15"
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="Top"
+                                   FontSize="20"
+                                   Foreground="#FF393939"
+                                   Text="Grand Total"
+                                   TextAlignment="Left"
+                                   TextWrapping="Wrap" />
+                        <DataGrid x:Name="GrandTotalGrid"
+                                  Margin="0"
+                                  HorizontalAlignment="Stretch"
+                                  VerticalAlignment="Top"
+                                  AlternatingRowBackground="#FFE6F0F4"
+                                  AutoGenerateColumns="False"
+                                  ClipboardCopyMode="IncludeHeader"
+                                  GridLinesVisibility="None"
+                                  ItemsSource="{Binding GrandTotalData,
+                                                        IsAsync=True}"
+                                  LoadingRow="GrandTotal_LoadingRow"
+                                  RowBackground="White"
+                                  RowHeight="25" />
+
                         <TextBlock HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" VerticalAlignment="Top" Width="330" Margin="40,50,0,0" FontSize="14" Foreground="#FF393939" TextAlignment="Left" Text="Prepared By:.........................................................."/>
                         <TextBlock HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" VerticalAlignment="Top" Width="330" Margin="40,20,0,0" FontSize="14" Foreground="#FF393939" TextAlignment="Left" Text="Checked By:..........................................................."/>
                     </StackPanel>
