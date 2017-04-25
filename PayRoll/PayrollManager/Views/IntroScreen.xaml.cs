@@ -49,5 +49,10 @@ namespace PayrollManager.Views
         {
             BaseViewModel.PostToAccounts();
         }
+
+	    private void Selector_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+	    {
+	        MessageBox.Show($"Payroll Job Selected - {BaseViewModel.StaticPayrollJob.Name}");
+	    }
 	}
 }

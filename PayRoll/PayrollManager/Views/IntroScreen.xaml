@@ -32,7 +32,7 @@
     </UserControl.Resources>
 
     <Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource IntroScreenModelDataSource}}" Margin="0,0,0.333,0" d:DataContext="{d:DesignData /SampleData/PayrollJobSampleData.xaml}">
-        <ListBox HorizontalAlignment="Left" Height="349" ItemTemplate="{DynamicResource PayrollJobTemplate3}" ItemsSource="{Binding PayrollJobs}" SelectedItem="{Binding CurrentPayrollJob, Mode=TwoWay}" Margin="214,80,-65.333,0" VerticalAlignment="Top" Width="534" Background="#4CF8F8F8"   />
+        <ListBox HorizontalAlignment="Left" Height="349" ItemTemplate="{DynamicResource PayrollJobTemplate3}" ItemsSource="{Binding PayrollJobs}" SelectedItem="{Binding CurrentPayrollJob, Mode=TwoWay}" SelectionChanged="Selector_OnSelectionChanged" Margin="214,80,-65.333,0" VerticalAlignment="Top" Width="534" Background="#4CF8F8F8"   />
         <TextBlock HorizontalAlignment="Left" Height="45.6" Margin="213.8,10,0,0" TextWrapping="Wrap" Text="Select Payroll Job" VerticalAlignment="Top" Width="245.327" FontSize="26"/>
         <TextBlock x:Name="StartJobBtn" HorizontalAlignment="Left" Height="24.8" Margin="10,81.4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116.8" FontSize="16" Style="{DynamicResource TextButtonStyle}" MouseLeftButtonDown="StartJobBtn_MouseLeftButtonDown"><Run Text="Start New Job"/><LineBreak/><Run/></TextBlock>
         <TextBlock x:Name="ConfigPayItemsBtn" HorizontalAlignment="Left" Height="24.8" Margin="10,111.2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171" FontSize="16" Text="Configure Payroll  Items" Style="{DynamicResource TextButtonStyle}" MouseLeftButtonDown="ConfigPayItemsBtn_MouseLeftButtonDown"/>

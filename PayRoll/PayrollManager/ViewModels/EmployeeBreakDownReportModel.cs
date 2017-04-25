@@ -134,7 +134,7 @@ namespace PayrollManager
 
                     return emplst.ToList();
                 }
-            });
+            }).ConfigureAwait(false);
             return await t;
 
         }
@@ -237,7 +237,7 @@ namespace PayrollManager
                     }
                 }
                 return null;
-            });
+            }).ConfigureAwait(false);
             return await task;
         }
 

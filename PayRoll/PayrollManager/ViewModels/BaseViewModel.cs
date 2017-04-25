@@ -439,7 +439,7 @@ static int instcount = 9999999;
                         HybridAccountsLst.Where(
                             x => x.CurrentAccountEntries != null && x.CurrentAccountEntries.Count > 0).ToList());
                 return lst;
-            });
+            }).ConfigureAwait(false);
             return await t;
         }
 
@@ -475,10 +475,14 @@ static int instcount = 9999999;
         {
             HybridAccountsLst.Clear();
             //
-            foreach (var item in db.Accounts.OfType<InstitutionAccount>())
+            using (var ctx = new PayrollDB())
             {
-                HybridAccountsLst.Add(item);
+               foreach (var item in ctx.Accounts.OfType<InstitutionAccount>().Include(x => x.Institution))
+                {
+                    HybridAccountsLst.Add(item);
+                }  
             }
+               
 
             CreateInstitutionEmployeeAccounts();
 

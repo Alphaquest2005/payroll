@@ -176,7 +176,7 @@ namespace PayrollManager
 
                         return plist.ToList();
                     }
-                });
+                }).ConfigureAwait(false);
 
                 return await t;
             }
@@ -299,8 +299,8 @@ namespace PayrollManager
         {
             get
             {
-                lock (syncRoot)
-                {
+                //lock (syncRoot)
+               // {
                     if (NetSalaryData != null && DeductionsData != null)
                     {
                         _grandTotalData.Clear();
@@ -333,7 +333,7 @@ namespace PayrollManager
                         _grandTotalData.Add(gt);
 
                     }
-                }
+                //}
                 return _grandTotalData;
             }
 
@@ -376,7 +376,7 @@ namespace PayrollManager
 
                     return employeeSalaryData;
                 }
-            });
+            }).ConfigureAwait(false);
             return await t;
         }
 

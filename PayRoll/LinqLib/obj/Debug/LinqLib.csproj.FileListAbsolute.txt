@@ -27,7 +27,6 @@ C:\Prism\GitRepositiory\payroll\PayRoll\LinqLib\bin\Debug\LinqLib.dll
 C:\Prism\GitRepositiory\payroll\PayRoll\LinqLib\bin\Debug\LinqLib.pdb
 C:\Prism\GitRepositiory\payroll\PayRoll\LinqLib\bin\Debug\System.Data.Entity.dll
 C:\Prism\GitRepositiory\payroll\PayRoll\LinqLib\bin\Debug\WindowsBase.dll
-C:\Prism\GitRepositiory\payroll\PayRoll\LinqLib\obj\Debug\LinqLib.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\payroll\PayRoll\LinqLib\obj\Debug\LinqLib.Properties.Resources.resources
 C:\Prism\GitRepositiory\payroll\PayRoll\LinqLib\obj\Debug\LinqLib.csproj.GenerateResource.Cache
 C:\Prism\GitRepositiory\payroll\PayRoll\LinqLib\obj\Debug\LinqLib.dll

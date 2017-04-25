@@ -128,7 +128,7 @@ namespace PayrollManager
                     return plst;
                     
                 }
-            });
+            }).ConfigureAwait(false);
 
 	        return await t;
             }
