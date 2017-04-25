@@ -61,7 +61,7 @@ namespace PayrollManager
         private void PrintDeductions(object sender, MouseButtonEventArgs e)
         {
             //FrameworkElement rpt = (FrameworkElement)DailyReportGD;
-            PrintClass.PrintGrid(ref DeductionsGrid, "Deductions");
+            WPF2PDF.CreateAndOpenPDF(ref DeductionsGrd, "Deductions");
             //if (DeductionsGrid.PrintCommand.CanExecute(DeductionsGrid))
             //DeductionsGrid.PrintCommand.Execute(DeductionsGrid);
         }
@@ -99,7 +99,7 @@ namespace PayrollManager
 
         private void PrintNetSalary(object sender, MouseButtonEventArgs e)
         {
-            PrintClass.PrintGrid(ref NetSalaryGrid, "Net Salary");
+            WPF2PDF.CreateAndOpenPDF(ref NetSalaryGrd, "Net Salary");
         }
 
         private void Deductions2Excel(object sender, MouseButtonEventArgs e)

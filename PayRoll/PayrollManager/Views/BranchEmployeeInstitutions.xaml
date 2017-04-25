@@ -34,17 +34,24 @@
                     <TextBlock HorizontalAlignment="Right" Height="32" Margin="0,65,42,0" TextWrapping="Wrap" Text="Employee vs Institution Breakdown" VerticalAlignment="Top" Width="390" FontSize="25" TextAlignment="Right" Foreground="Black" Background="White"/>
                     <TextBlock Text="{Binding Date}" Margin="546,13,42,0" HorizontalAlignment="right" VerticalAlignment="Top" FontSize="14.667" Foreground="Black" Width="228" TextAlignment="Right"/>
                     <StackPanel Margin="40,140,42,10" Orientation="Vertical">
-                        <TextBlock HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" VerticalAlignment="Top" Width="237" Margin="0,15,0,15" FontSize="20" Foreground="#FF393939" TextAlignment="Left" Text="Deductions"/>
-                        <DataGrid x:Name="DeductionsGrid"  HorizontalAlignment="Stretch"  Margin="0" AlternatingRowBackground="#FFE6F0F4" RowBackground="White" GridLinesVisibility="None" VerticalAlignment="Top" 
-                                  ItemsSource="{Binding DeductionsData, IsAsync=True}"
-                                  AutoGenerateColumns="False" RowHeight="25"
-                                  LoadingRow="GridData_LoadingRow"
-                                  ClipboardCopyMode="IncludeHeader" />
-                        
-                        <TextBlock HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" VerticalAlignment="Top" Width="237" Margin="0,15,0,15" FontSize="20" Foreground="#FF393939" TextAlignment="Left" Text="Net Salary"/>
-                        <DataGrid x:Name="NetSalaryGrid" HorizontalAlignment="Stretch"  Margin="0" AlternatingRowBackground="#FFE6F0F4" RowBackground="White" GridLinesVisibility="None" VerticalAlignment="Top" 
-                                  ItemsSource="{Binding NetSalaryData, IsAsync=True}"
-                                  AutoGenerateColumns="False" RowHeight="25"  ClipboardCopyMode="IncludeHeader" LoadingRow="NetSalary_LoadingRow"/>
+
+                        <Grid x:Name="DeductionsGrd" Height="65">
+                            <TextBlock HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" VerticalAlignment="Top" Width="237" FontSize="20" Foreground="#FF393939" TextAlignment="Left" Text="Deductions"/>
+                            <DataGrid x:Name="DeductionsGrid"  HorizontalAlignment="Stretch"  Margin="0,39,0,0" AlternatingRowBackground="#FFE6F0F4" RowBackground="White" GridLinesVisibility="None" VerticalAlignment="Top" 
+                                ItemsSource="{Binding DeductionsData, IsAsync=True}"
+                                AutoGenerateColumns="False" RowHeight="25"
+                                LoadingRow="GridData_LoadingRow"
+                                ClipboardCopyMode="IncludeHeader" />
+
+                        </Grid>
+                        <Grid x:Name="NetSalaryGrd" Height="65">
+
+                            <TextBlock HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" VerticalAlignment="Top" Width="237" FontSize="20" Foreground="#FF393939" TextAlignment="Left" Text="Net Salary"/>
+                            <DataGrid x:Name="NetSalaryGrid" HorizontalAlignment="Stretch"  Margin="0,39,0,0" AlternatingRowBackground="#FFE6F0F4" RowBackground="White" GridLinesVisibility="None" VerticalAlignment="Top" 
+                                ItemsSource="{Binding NetSalaryData, IsAsync=True}"
+                                AutoGenerateColumns="False" RowHeight="25"  ClipboardCopyMode="IncludeHeader" LoadingRow="NetSalary_LoadingRow"/>
+
+                        </Grid>
 
                         <TextBlock Width="237"
                                    Height="24"
@@ -64,8 +71,7 @@
                                   AutoGenerateColumns="False"
                                   ClipboardCopyMode="IncludeHeader"
                                   GridLinesVisibility="None"
-                                  ItemsSource="{Binding GrandTotalData,
-                                                        IsAsync=True}"
+                                  ItemsSource="{Binding GrandTotalData, IsAsync=True}"
                                   LoadingRow="GrandTotal_LoadingRow"
                                   RowBackground="White"
                                   RowHeight="25" />

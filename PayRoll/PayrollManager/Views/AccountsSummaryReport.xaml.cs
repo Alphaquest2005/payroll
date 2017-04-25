@@ -26,8 +26,9 @@ namespace PayrollManager
 
         private void PrintReport(object sender, MouseButtonEventArgs e)
         {
-            FrameworkElement rpt = (FrameworkElement)DailyReportGD;
-            PrintClass.Print(ref rpt);
+            //FrameworkElement rpt = (FrameworkElement)DailyReportGD;
+            //PrintClass.Print(ref rpt);
+            WPF2PDF.CreateAndOpenPDF(ref DailyReportGD, "AccountSummary");
         }
 	}
 }

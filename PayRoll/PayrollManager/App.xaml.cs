@@ -51,15 +51,18 @@ namespace PayrollManager
         {
             string errorMessage = string.Format("An unhandled exception occurred!: {0} ---- {1}", e.Exception.Message, e.Exception.StackTrace);
             MessageBox.Show(errorMessage, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            if (!errorMessage.Contains("Failure sending mail"))
+            {
+                var en = new EmailLogger.EmailslNotifications("Exception Occurred");
+                en.SendNotificationEmail("",
+                    PayrollManager.Properties.Settings.Default.MachineName + ".com",
+                    PayrollManager.Properties.Settings.Default.MachineName,
+                    @"logs@insight-software.biz",
+                    null,
+                    "Exception Occurred",
+                    "", "", e.Exception.GetType().Name, e.Exception.Message, e.Exception.StackTrace);
+            }
 
-            var en = new EmailLogger.EmailslNotifications("Exception Occurred");
-            en.SendNotificationEmail("",
-                PayrollManager.Properties.Settings.Default.MachineName + ".com",
-                PayrollManager.Properties.Settings.Default.MachineName,
-                @"logs@insight-software.biz",
-                null,
-                "Exception Occurred",
-                "", "", e.Exception.GetType().Name, e.Exception.Message, e.Exception.StackTrace);
 
             e.Handled = true;
            // throw new Exception(errorMessage);
