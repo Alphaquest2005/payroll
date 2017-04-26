@@ -10,6 +10,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using System.Windows.Xps;
 using System.Windows.Xps.Packaging;
 
@@ -19,7 +20,7 @@ namespace PayrollManager
     {
         private static int PixelsPerInch = 96;
         private static double PaperWidth = 8.5;
-        private static int PaperHeight = 14;
+        private static int PaperHeight = 28;
 
         public static string CreatePDF(ref Grid rpt, string reportName)
         {
@@ -35,22 +36,26 @@ namespace PayrollManager
 
             if (rpt.ActualWidth > PaperWidth)
             {
-                
+
 
                 PageContent pageCnt = new PageContent();
                 FixedPage page;
-                var oldParent = RemoveChild(rpt);
-                page = new FixedPage() {Height = (PaperWidth*PixelsPerInch), Width = (PaperHeight*PixelsPerInch), };
-                //rpt.Height = PaperWidth*PixelsPerInch;
-                //rpt.Width = PaperHeight*PixelsPerInch;
-                page.Children.Add(rpt);
-                ((System.Windows.Markup.IAddChild) pageCnt).AddChild(page);
-                
-                
+                // var oldParent = RemoveChild(rpt);
+                page = new FixedPage() { Height = rpt.ActualHeight, Width = rpt.ActualWidth, };// {Height = (PaperWidth*PixelsPerInch), Width = (PaperHeight*PixelsPerInch), };
+                RenderTargetBitmap bmp = new RenderTargetBitmap((int) rpt.ActualWidth, (int) rpt.ActualHeight,0,0, PixelFormats.Pbgra32);
+                bmp.Render(v);
+
+                Image image = new Image();
+                image.Source = bmp;
+                page.Children.Add(image);
+                // ((System.Windows.Markup.IAddChild) pageCnt).AddChild(page);
+
+
                 writer = XpsDocument.CreateXpsDocumentWriter(doc);
                 writer.Write(page);
-                page.Children.Remove(rpt);
-                AddChild(rpt, oldParent);
+                
+                //page.Children.Remove(rpt);
+                //AddChild(rpt, oldParent);
             }
             else
             {
