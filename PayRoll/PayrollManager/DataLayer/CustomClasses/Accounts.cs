@@ -200,6 +200,7 @@ namespace PayrollManager.DataLayer
         {
             get
             {
+                if(BaseViewModel.StaticPayrollJob == null) return new ObservableCollection<EmployeeAccountSummaryLine>();
                 var lst = from i in BaseViewModel.db.AccountEntries.Where(x => x.Accounts.Institution.InstitutionId == this.Institution.InstitutionId
                                                                             && x.PayrollItem.PayrollJobId == BaseViewModel.StaticPayrollJob.PayrollJobId)
                                                                             .OrderByDescending(x => x.PayrollItem.IncomeDeduction).ThenBy(x => x.PayrollItem.Priority)

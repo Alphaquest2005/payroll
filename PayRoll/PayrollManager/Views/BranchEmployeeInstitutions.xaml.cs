@@ -61,7 +61,7 @@ namespace PayrollManager
         private void PrintDeductions(object sender, MouseButtonEventArgs e)
         {
             //FrameworkElement rpt = (FrameworkElement)DailyReportGD;
-            WPF2PDF.CreateAndOpenPDF(ref DeductionsGrd, "Deductions");
+            WPF2PDF.CreateAndOpenPDF(ref DailyReportGD, "BranchEmployeeInstitutions");
             //if (DeductionsGrid.PrintCommand.CanExecute(DeductionsGrid))
             //DeductionsGrid.PrintCommand.Execute(DeductionsGrid);
         }

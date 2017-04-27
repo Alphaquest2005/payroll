@@ -1298,7 +1298,7 @@ static int instcount = 9999999;
                     return;
                 }
 
-                UpdatePayrollItemsBaseAmounts(payrollItems.ToList());
+               // UpdatePayrollItemsBaseAmounts(payrollItems.ToList());
 
                 foreach (var item in plst)
                 {

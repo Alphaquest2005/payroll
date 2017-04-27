@@ -302,14 +302,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PayrollManager.exe" size="876032">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PayrollManager.exe" size="875520">
       <assemblyIdentity name="PayrollManager" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Vf0L7XPXLzmGkGnxoFBQv0rjgp5Y08X8AuPPcQ40kaM=</dsig:DigestValue>
+        <dsig:DigestValue>oG7AQcLblRYiuYlvwDjonuVCAYwiON2HW07wLmfv0y8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -553,7 +553,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>EUmIHUP9AEOy8SAJTkwtHEQAeldTuzlhobB8c6UpkYg=</dsig:DigestValue>
+      <dsig:DigestValue>AIQf+x0qVwpUK9IJDxC9Tn3f0slpsw2TvtYESPoekhw=</dsig:DigestValue>
     </hash>
   </file>
   <file name="PayrollDB_log.ldf" size="4325376" writeableType="applicationData">
@@ -562,16 +562,16 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>B3VbaoGQq7jtENEcV8LQdUQqOCPFhKAhOVQGb5onXOA=</dsig:DigestValue>
+      <dsig:DigestValue>PZ/erWz9cM36F9/175A3tpFB/Y29UFsxQnHL7NvgktQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="PayrollManager.exe.config" size="3006">
+  <file name="PayrollManager.exe.config" size="3907">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>3LuWMKZ2y0dzpJW5aEhzlmxYiNMYn8E4p4GiDtieLu0=</dsig:DigestValue>
+      <dsig:DigestValue>l2hjpKHaaqgv8yoUMIxE/wmk7J9hL/NgLVJn0XS3WvI=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>
