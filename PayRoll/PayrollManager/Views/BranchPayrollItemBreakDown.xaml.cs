@@ -39,8 +39,10 @@ namespace PayrollManager
         BranchPayrollItemBreakDownModel im;
         private void PrintReport(object sender, MouseButtonEventArgs e)
         {
-           
-            WPF2PDF.CreateAndOpenPDF(ref DailyReportGD, "PayrollItemBreakDown");
+
+            // WPF2PDF.CreateAndOpenPDF(ref DailyReportGD, "PayrollItemBreakDown");
+            FrameworkElement rpt = (FrameworkElement)DailyReportGD;
+            PrintClass.Print(ref rpt);
 
         }
 

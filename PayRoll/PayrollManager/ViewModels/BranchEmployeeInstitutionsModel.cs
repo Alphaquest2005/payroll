@@ -158,7 +158,7 @@ namespace PayrollManager
                                 .AsEnumerable()
                                 .Where(pi => //pi.PayrollJob.Name == CurrentPayrollJob.Name &&
                                     pi.DebitAccount is DataLayer.EmployeeAccount
-                                // && "Salary Deduction,Communal Birthday Club".ToUpper().Contains(pi.Name.Trim().ToUpper())
+                                 && "Salary Deduction,Communal Birthday Club".ToUpper().Contains(pi.Name.Trim().ToUpper())
                                 ) //.Where(z => z.PayrollJob.Branch.Name == "Main Branch")
                                 .OrderBy(x => x.Employee.LastName)
                             group p by new { p.Employee.DisplayName }

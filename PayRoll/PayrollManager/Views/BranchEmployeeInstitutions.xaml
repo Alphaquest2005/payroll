@@ -27,7 +27,7 @@
     <Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource BranchEmployeeInstitutionsModelDataSource}}" >
         <Border x:Name="ReportBRD" Margin="0,66,0,0" Width="Auto" MinWidth="1000">
             <ScrollViewer x:Name="ReportGrd" Margin="0,0,0,10">
-                <Grid x:Name="DailyReportGD" DataContext="{Binding}" HorizontalAlignment="Center" Height="Auto" VerticalAlignment="Top" Width="Auto" Background="White" MinWidth="1000">
+                <Grid x:Name="DailyReportGD" DataContext="{Binding}" HorizontalAlignment="Center" Height="Auto" VerticalAlignment="Top" Width="1344" Background="White" MinWidth="1000">
                     <Grid HorizontalAlignment="Stretch" Height="38" Margin="40,97,0,0" VerticalAlignment="Top" Width="Auto"  Background="#FFD7D7D7">
                         <TextBlock Text="{Binding PayrollJobTotal, StringFormat=Gross Job Amount \{0:c\}}" Margin="388,2,42,0" TextAlignment="Right" HorizontalAlignment="Right" VerticalAlignment="Top" Width="346" Height="36" FontSize="21.333" Foreground="#FF353623"/>
                     </Grid>
@@ -91,11 +91,12 @@
                 </Grid>
             </ScrollViewer>
         </Border>
-        <TextBlock Style="{DynamicResource TextButtonStyle}"  HorizontalAlignment="Left" Height="30" Margin="600,36,0,0" TextWrapping="Wrap" Text="Deductions To Excel" VerticalAlignment="Top" Width="184" FontSize="20" FontFamily="Segoe UI Symbol" MouseLeftButtonDown="Deductions2Excel"/>
+        <TextBlock Style="{DynamicResource TextButtonStyle}"  HorizontalAlignment="Left" Height="30" Margin="465,31,0,0" TextWrapping="Wrap" Text="Deductions 2 Excel" VerticalAlignment="Top" Width="184" FontSize="20" FontFamily="Segoe UI Symbol" MouseLeftButtonDown="Deductions2Excel"/>
         <DatePicker SelectedDate="{Binding ReportDate}" HorizontalAlignment="Left" Height="30" Margin="194,10,0,0" VerticalAlignment="Top" Width="237" FontSize="16" SelectedDateFormat="Short"/>
         <TextBlock HorizontalAlignment="Left" Height="30" Margin="21,10,0,0" TextWrapping="Wrap" Text="Select Report Date" VerticalAlignment="Top" Width="149" FontSize="16"/>
-        <TextBlock Style="{DynamicResource TextButtonStyle}"  HorizontalAlignment="Left" Height="30" Margin="824,10,0,0" TextWrapping="Wrap" Text="Print &#xE1A5;" VerticalAlignment="Top" Width="184" FontSize="20" FontFamily="Segoe UI Symbol" MouseLeftButtonDown="PrintDeductions"/>
-        <TextBlock Style="{DynamicResource TextButtonStyle}"  HorizontalAlignment="Left" Height="30" Margin="824,36,0,0" TextWrapping="Wrap" Text="Net Salary To Excel" VerticalAlignment="Top" Width="184" FontSize="20" FontFamily="Segoe UI Symbol" MouseLeftButtonDown="NetSalary2Excel"/>
+        <TextBlock Style="{DynamicResource TextButtonStyle}"  HorizontalAlignment="Left" Height="30" Margin="951,1,0,0" TextWrapping="Wrap" Text="Print &#xE1A5;" VerticalAlignment="Top" Width="73" FontSize="20" FontFamily="Segoe UI Symbol" MouseLeftButtonDown="PrintDeductions"/>
+        <TextBlock Style="{DynamicResource TextButtonStyle}"  HorizontalAlignment="Left" Height="30" Margin="665,31,0,0" TextWrapping="Wrap" Text="Net Salary 2 Excel" VerticalAlignment="Top" Width="184" FontSize="20" FontFamily="Segoe UI Symbol" MouseLeftButtonDown="NetSalary2Excel"/>
+        <TextBlock Style="{DynamicResource TextButtonStyle}"  HorizontalAlignment="Left" Height="30" Margin="867,31,0,0" TextWrapping="Wrap" Text="Grand Tot.2 Excel" VerticalAlignment="Top" Width="157" FontSize="20" FontFamily="Segoe UI Symbol" MouseLeftButtonDown="GrandTotal2Excel"/>
 
     </Grid>
 </UserControl>

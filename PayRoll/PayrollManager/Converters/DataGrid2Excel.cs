@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -157,7 +158,17 @@ namespace PayrollManager.Converters
                     for (int i = 0; i < header.Length; i++)
                     {
                         var y = header[i];
-                        var val = item.GetType().GetProperties().FirstOrDefault(x => x.Name.Contains(y.ToString().Replace(" ", "_").Replace("-", ""))).GetValue(item);
+                        object val;
+                        var o = item as ExpandoObject;
+                        if (o != null)
+                        {
+                            val = ((IDictionary<string, object>) item)[y.ToString().Replace(" ", "_").Replace("-", "")];
+                        }
+                        else
+                        {
+                            val = item.GetType().GetProperties().FirstOrDefault(x => x.Name.Contains(y.ToString().Replace(" ", "_").Replace("-", ""))).GetValue(item);
+                        }
+                        
                         objData[j, i] = (val == null) ? "" : val.ToString();
                     }
                 }

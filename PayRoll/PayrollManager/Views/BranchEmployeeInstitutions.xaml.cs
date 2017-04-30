@@ -61,9 +61,12 @@ namespace PayrollManager
         private void PrintDeductions(object sender, MouseButtonEventArgs e)
         {
             //FrameworkElement rpt = (FrameworkElement)DailyReportGD;
-            WPF2PDF.CreateAndOpenPDF(ref DailyReportGD, "BranchEmployeeInstitutions");
+           // WPF2PDF.CreateAndOpenPDF(ref DailyReportGD, "BranchEmployeeInstitutions");
             //if (DeductionsGrid.PrintCommand.CanExecute(DeductionsGrid))
             //DeductionsGrid.PrintCommand.Execute(DeductionsGrid);
+
+            FrameworkElement rpt = (FrameworkElement)DailyReportGD;
+            PrintClass.Print(ref rpt);
         }
 
 
@@ -117,6 +120,12 @@ namespace PayrollManager
         private void GrandTotal_LoadingRow(object sender, DataGridRowEventArgs e)
         {
             e.Row.FontWeight = FontWeights.Bold;
+        }
+
+        private void GrandTotal2Excel(object sender, MouseButtonEventArgs e)
+        {
+            var p = new ExportToExcel();
+            p.GenerateReport(GrandTotalGrid);
         }
     }
 }

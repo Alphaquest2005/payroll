@@ -42,7 +42,9 @@ namespace PayrollManager
         {
             //FrameworkElement rpt = (FrameworkElement)DailyReportGD;
             //PrintClass.Print(ref rpt);
-            WPF2PDF.CreateAndOpenPDF(ref DailyReportGD, "EmployeeBreakDownReport");
+            // WPF2PDF.CreateAndOpenPDF(ref DailyReportGD, "EmployeeBreakDownReport");
+            FrameworkElement rpt = (FrameworkElement)DailyReportGD;
+            PrintClass.Print(ref rpt);
         }
 
         private void GridData_LoadingRow(object sender, DataGridRowEventArgs e)

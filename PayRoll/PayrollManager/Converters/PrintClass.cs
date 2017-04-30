@@ -29,7 +29,7 @@ namespace PayrollManager
         private static void SetUpPrint(FrameworkElement fwe, DrawingVisual visual)
         {
             Size printSize;
-            if (fwe.ActualWidth > 1056 && fwe.ActualWidth <= 1344)
+            if (fwe.ActualWidth > 1056 )//&& fwe.ActualWidth <= 1344
             {
                 printSize = new Size(1344, 816);
             }

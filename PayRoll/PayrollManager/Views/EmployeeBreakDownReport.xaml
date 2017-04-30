@@ -14,7 +14,7 @@
 	<Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource EmployeeBreakDownReportModelDataSource}}" Width="1056" Margin="0">
         <ScrollViewer x:Name="ReportBRD" Margin="0,45,0,10"  Width="Auto" HorizontalScrollBarVisibility="Auto" CanContentScroll="True" >
             <ScrollViewer x:Name="ReportGrd" Margin="0,0,0,10" Width="Auto" CanContentScroll="True" >
-                <Grid x:Name="DailyReportGD" DataContext="{Binding}" HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Top" Width="Auto" Background="White" MinWidth="1056">
+                <Grid x:Name="DailyReportGD" DataContext="{Binding}" HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Top" Width="1344" Background="White" MinWidth="1056">
                     <Grid HorizontalAlignment="Stretch" Height="38" Margin="40,97,0,0" VerticalAlignment="Top" Width="Auto"  Background="#FFD7D7D7">
                         <TextBlock Text="{Binding PayrollJobTotal, StringFormat='Gross Job Amount {0:c}'}" Margin="388,2,42,0" TextAlignment="Right" HorizontalAlignment="Right" VerticalAlignment="Top" Width="346" Height="36" FontSize="21.333" Foreground="#FF353623"/>
                     </Grid>
