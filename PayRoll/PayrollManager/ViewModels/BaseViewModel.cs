@@ -906,7 +906,7 @@ static int instcount = 9999999;
             foreach (var item in pitmlst)
             {
                 if (item.Employee.BranchId != StaticCurrentBranch.BranchId) continue;
-                if (item.Employee.EmploymentEndDate.HasValue == true && item.Employee.EmploymentEndDate.Value.Date <= DateTime.Now.Date) continue;
+                if (item.Employee.EmploymentEndDate.HasValue == true && item.Employee.EmploymentEndDate.Value.Date <= _currentPayrollJob.StartDate.Date) continue;
                 
                 DataLayer.PayrollItem pi;
 

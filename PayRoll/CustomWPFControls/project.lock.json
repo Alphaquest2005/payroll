@@ -1,5 +1,4 @@
 {
-  "locked": false,
   "version": 2,
   "targets": {
     ".NETFramework,Version=v4.0,Profile=Client": {},
@@ -9,5 +8,25 @@
   "projectFileDependencyGroups": {
     "": [],
     ".NETFramework,Version=v4.0,Profile=Client": []
+  },
+  "packageFolders": {
+    "C:\\Users\\Alpha\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "restore": {
+      "projectUniqueName": "C:\\Prism\\GitRepositiory\\payroll\\PayRoll\\CustomWPFControls\\CustomWPFControls.csproj",
+      "projectName": "CustomWPFControls",
+      "projectPath": "C:\\Prism\\GitRepositiory\\payroll\\PayRoll\\CustomWPFControls\\CustomWPFControls.csproj",
+      "projectJsonPath": "C:\\Prism\\GitRepositiory\\payroll\\PayRoll\\CustomWPFControls\\project.json",
+      "projectStyle": "ProjectJson"
+    },
+    "frameworks": {
+      "net40-client": {}
+    },
+    "runtimes": {
+      "win": {
+        "#import": []
+      }
+    }
   }
 }

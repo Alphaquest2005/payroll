@@ -299,8 +299,8 @@ namespace PayrollManager
         {
             get
             {
-                //lock (syncRoot)
-               // {
+                lock (syncRoot)
+                {
                     if (NetSalaryData != null && DeductionsData != null)
                     {
                         _grandTotalData.Clear();
@@ -332,9 +332,11 @@ namespace PayrollManager
 
                         _grandTotalData.Add(gt);
 
+                        
+
                     }
-                //}
-                return _grandTotalData;
+                    return _grandTotalData;
+                }
             }
 
         }

@@ -485,13 +485,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="PayrollDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PayrollDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>PayrollDB.mdf</DependentUpon>
-    </Content>
     <Resource Include="blue_purple_green_copy-408x259.jpg" />
     <Content Include="DataLayer\AllData.sql" />
     <Content Include="DataLayer\Clear Data.sql" />

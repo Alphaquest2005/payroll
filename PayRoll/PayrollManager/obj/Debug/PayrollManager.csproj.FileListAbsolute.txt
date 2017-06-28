@@ -461,8 +461,6 @@ C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\GeneratedIntern
 C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\PayrollManager_MarkupCompile.cache
 C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\PayrollManager_MarkupCompile.lref
 C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\SUT.PrintEngine.App.config
-C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\PayrollDB.mdf
-C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\PayrollDB_log.ldf
 C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\PayrollManager.exe.manifest
 C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\PayrollManager.application
 C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\PayrollManager.exe
@@ -549,9 +547,8 @@ C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\PayrollSe
 C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\PaymentReport.baml
 C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\Views\MainView.baml
 C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\PayrollManager.g.resources
-C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\RdlCompile.cache
-C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\RdlCompile.compiled
 C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\PayrollManager.exe.manifest
 C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\PayrollManager.application
 C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\PayrollManager.exe
 C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\PayrollManager.pdb
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\EmailLogger.dll.config

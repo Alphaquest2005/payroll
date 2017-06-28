@@ -8,8 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("payrolldb.mdf")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("payrolldb_log.ldf")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("datalayer/alldata.sql")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("datalayer/clear%20data.sql")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("datalayer/payrolldb.edmx.sql")]

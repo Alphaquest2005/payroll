@@ -105,7 +105,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>PssN5KhcTWPad/FeRXNkUZXtLy+NGiVTai5pl3M4NHc=</dsig:DigestValue>
+        <dsig:DigestValue>RtmqknQiPsHEBKLpNMRqwhRn3bRZcPsIWzgqyw5Zrjc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -117,19 +117,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>5H/iJHb5WfrsmeWz+DUiGCGvN8htqm9JwP/eBgeih3w=</dsig:DigestValue>
+        <dsig:DigestValue>lUCDcLe3DX1fUvWnm+4Eajzzy6UNgkZqNi18SmGG7BI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LinqLib.dll" size="400896">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LinqLib.dll" size="398848">
       <assemblyIdentity name="LinqLib" version="1.0.3.0" publicKeyToken="100A413726BA3D7C" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>hI1THf6+lCqUGFuz35CXPEC2tODSyfnWz9+bVR73H9A=</dsig:DigestValue>
+        <dsig:DigestValue>x058d6HwGM3lNPB0PPfoUjNGn7CzDvXXrknpQWOp2MA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -297,7 +297,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>nRiazsG2zlySMiNNKQ4Sc0fqMJ51nS43bg0UJv3nxvo=</dsig:DigestValue>
+        <dsig:DigestValue>70J9IthY7RnFl3ORrUQj72ESNtx0VZbahCzApO5kpPQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -309,7 +309,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>wzvR/H91Tr0bnScq1Gqk0y6FsK2+OWvfwcKz+1X7ZGk=</dsig:DigestValue>
+        <dsig:DigestValue>e1iOM0FOfBnqIlorNWUfAyXrMvWuZG4htEV1wt/gm2c=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -345,7 +345,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>vyVmUGClyRctSpIuk/EW4L8qVgMbAZdSECO6jU40Dhc=</dsig:DigestValue>
+        <dsig:DigestValue>p3QGWOzn308bx8bmUWa/BnR0pKbvjzhI7uvqpBisRDA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -357,7 +357,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>KpqP9Hg5nlcfTUEGG6k7tcGovcq0yUhpxYe4KonzVEE=</dsig:DigestValue>
+        <dsig:DigestValue>aVrDjzUMg6LhgwnadpvCzBQPc0PY3s4sc8ZC5Ej7WVA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -545,24 +545,6 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>pwCKgo4TNay+lugTnFPBHB6EjUR6Z3SmlBuS0NauE+E=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="PayrollDB.mdf" size="17825792" writeableType="applicationData">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>37cQVQo0+dLTodjZ61HMgqvisSLnlvcG3N2TMeuT5is=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="PayrollDB_log.ldf" size="4325376" writeableType="applicationData">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>QIm1nmYKSzBe2kJmwbxPecF7b7IF27GsRK+oX1JkpFk=</dsig:DigestValue>
     </hash>
   </file>
   <file name="PayrollManager.exe.config" size="3907">

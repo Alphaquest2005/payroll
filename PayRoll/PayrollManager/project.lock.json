@@ -1,9 +1,9 @@
 {
-  "locked": false,
-  "version": 1,
+  "version": 2,
   "targets": {
     ".NETFramework,Version=v4.5": {
       "CommonServiceLocator/1.0.0": {
+        "type": "package",
         "compile": {
           "lib/NET35/Microsoft.Practices.ServiceLocation.dll": {}
         },
@@ -12,6 +12,7 @@
         }
       },
       "EnterpriseLibrary.Caching/5.0.505": {
+        "type": "package",
         "dependencies": {
           "EnterpriseLibrary.Common": "5.0.0"
         },
@@ -26,6 +27,7 @@
         }
       },
       "EnterpriseLibrary.Common/5.0.505": {
+        "type": "package",
         "dependencies": {
           "Unity.Interception": "2.1.0"
         },
@@ -40,6 +42,7 @@
         }
       },
       "EntityFramework/5.0.0": {
+        "type": "package",
         "frameworkAssemblies": [
           "System.ComponentModel.DataAnnotations",
           "System.Data.Entity"
@@ -52,6 +55,7 @@
         }
       },
       "PostSharp/4.3.31": {
+        "type": "package",
         "compile": {
           "lib/net35-client/PostSharp.dll": {}
         },
@@ -60,6 +64,7 @@
         }
       },
       "Unity/2.1.505": {
+        "type": "package",
         "dependencies": {
           "CommonServiceLocator": "1.0.0"
         },
@@ -76,6 +81,7 @@
         }
       },
       "Unity.Interception/2.1.505": {
+        "type": "package",
         "dependencies": {
           "Unity": "2.1.0"
         },
@@ -89,11 +95,45 @@
         "runtime": {
           "lib/NET35/Microsoft.Practices.Unity.Interception.Configuration.dll": {},
           "lib/NET35/Microsoft.Practices.Unity.Interception.dll": {}
+        }
+      },
+      "CustomWPFControls/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.0,Profile=Client"
+      },
+      "EmailLogger/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "dependencies": {
+          "PostSharp": "4.3.31"
+        }
+      },
+      "LinqLib/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5"
+      },
+      "Outlook/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5"
+      },
+      "PrintableDataGrid/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "dependencies": {
+          "LinqLib": "1.0.0"
+        }
+      },
+      "SUT.PrintEngine/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v3.5",
+        "dependencies": {
+          "EnterpriseLibrary.Caching": "5.0.505"
         }
       }
     },
     ".NETFramework,Version=v4.5/win": {
       "CommonServiceLocator/1.0.0": {
+        "type": "package",
         "compile": {
           "lib/NET35/Microsoft.Practices.ServiceLocation.dll": {}
         },
@@ -102,6 +142,7 @@
         }
       },
       "EnterpriseLibrary.Caching/5.0.505": {
+        "type": "package",
         "dependencies": {
           "EnterpriseLibrary.Common": "5.0.0"
         },
@@ -116,6 +157,7 @@
         }
       },
       "EnterpriseLibrary.Common/5.0.505": {
+        "type": "package",
         "dependencies": {
           "Unity.Interception": "2.1.0"
         },
@@ -130,6 +172,7 @@
         }
       },
       "EntityFramework/5.0.0": {
+        "type": "package",
         "frameworkAssemblies": [
           "System.ComponentModel.DataAnnotations",
           "System.Data.Entity"
@@ -142,6 +185,7 @@
         }
       },
       "PostSharp/4.3.31": {
+        "type": "package",
         "compile": {
           "lib/net35-client/PostSharp.dll": {}
         },
@@ -150,6 +194,7 @@
         }
       },
       "Unity/2.1.505": {
+        "type": "package",
         "dependencies": {
           "CommonServiceLocator": "1.0.0"
         },
@@ -166,6 +211,7 @@
         }
       },
       "Unity.Interception/2.1.505": {
+        "type": "package",
         "dependencies": {
           "Unity": "2.1.0"
         },
@@ -179,6 +225,39 @@
         "runtime": {
           "lib/NET35/Microsoft.Practices.Unity.Interception.Configuration.dll": {},
           "lib/NET35/Microsoft.Practices.Unity.Interception.dll": {}
+        }
+      },
+      "CustomWPFControls/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.0,Profile=Client"
+      },
+      "EmailLogger/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "dependencies": {
+          "PostSharp": "4.3.31"
+        }
+      },
+      "LinqLib/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5"
+      },
+      "Outlook/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5"
+      },
+      "PrintableDataGrid/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "dependencies": {
+          "LinqLib": "1.0.0"
+        }
+      },
+      "SUT.PrintEngine/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v3.5",
+        "dependencies": {
+          "EnterpriseLibrary.Caching": "5.0.505"
         }
       }
     }
@@ -187,6 +266,7 @@
     "CommonServiceLocator/1.0.0": {
       "sha512": "RJjv0yxm+Fk/ak/CVMTGr0ng7g/nudkVYos4eQrIDpth3BdE1j7J2ddRm8FXtOoIZbgDqTU6hKq5zoackwL3HQ==",
       "type": "package",
+      "path": "commonservicelocator/1.0.0",
       "files": [
         "CommonServiceLocator.1.0.0.nupkg.sha512",
         "CommonServiceLocator.nuspec",
@@ -200,6 +280,7 @@
     "EnterpriseLibrary.Caching/5.0.505": {
       "sha512": "9aO3yZTTJCfnP9jBhiLt7xX+UCA9wGpw3Q4zpaLmkIoEn0k8XwU6pRP8FUT3USLGeMpUwJh4t6F8nyIojKchXA==",
       "type": "package",
+      "path": "enterpriselibrary.caching/5.0.505",
       "files": [
         "EnterpriseLibrary.Caching.5.0.505.nupkg.sha512",
         "EnterpriseLibrary.Caching.nuspec",
@@ -214,6 +295,7 @@
     "EnterpriseLibrary.Common/5.0.505": {
       "sha512": "56ohaIm5TXzb6oR6QkUI3VtzI2fFVdAfhQaAanTZ9j/RrTAL1JvvN1d4qmAPc3mb9e+6zJUp1F+n4yA3ILHhpw==",
       "type": "package",
+      "path": "enterpriselibrary.common/5.0.505",
       "files": [
         "EnterpriseLibrary.Common.5.0.505.nupkg.sha512",
         "EnterpriseLibrary.Common.nuspec",
@@ -228,6 +310,7 @@
     "EntityFramework/5.0.0": {
       "sha512": "WYfgJWKg/RjwU8pzZkImD9DsV+J1nqDcIGp1S0/bdnElKBmAaUC2nmq/QQAcco32KyQQWnLgJNiDzIOz2xWFbQ==",
       "type": "package",
+      "path": "entityframework/5.0.0",
       "files": [
         "Content/App.config.transform",
         "Content/Web.config.transform",
@@ -253,6 +336,7 @@
     "PostSharp/4.3.31": {
       "sha512": "SU3UV33EVCVrwVG+DR84//hHrnH5T1FvAB+d2YZODCOQJKLHv++GA2r8q7cN5BTGu4EcWc3grXNA2ySsdWUo9w==",
       "type": "package",
+      "path": "postsharp/4.3.31",
       "files": [
         "PostSharp.4.3.31.nupkg.sha512",
         "PostSharp.nuspec",
@@ -273,6 +357,7 @@
     "Unity/2.1.505": {
       "sha512": "nln8FUuLPocfHTGiXsCDSFCr/K5yCTIkrQdhWy9DPfGQea++hU5Ko84mpuTL6BzhT/SfIhhBrGMhlxzN59bY/A==",
       "type": "package",
+      "path": "unity/2.1.505",
       "files": [
         "Unity.2.1.505.nupkg.sha512",
         "Unity.nuspec",
@@ -289,6 +374,7 @@
     "Unity.Interception/2.1.505": {
       "sha512": "5Ri8/+kEr98AsRzQHSe3Zay4NyxsdsbW7qgWr+pCiVTC0kCaAe0oy2TyUdPIaCtVtV9Ruf89buduWw0PKRbLEA==",
       "type": "package",
+      "path": "unity.interception/2.1.505",
       "files": [
         "Unity.Interception.2.1.505.nupkg.sha512",
         "Unity.Interception.nuspec",
@@ -301,6 +387,36 @@
         "tools/Utils.psm1",
         "tools/install.ps1"
       ]
+    },
+    "CustomWPFControls/1.0.0": {
+      "type": "project",
+      "path": "../CustomWPFControls/project.json",
+      "msbuildProject": "../CustomWPFControls/CustomWPFControls.csproj"
+    },
+    "EmailLogger/1.0.0": {
+      "type": "project",
+      "path": "../Emailing/project.json",
+      "msbuildProject": "../Emailing/EmailLogger.csproj"
+    },
+    "LinqLib/1.0.0": {
+      "type": "project",
+      "path": "../LinqLib/project.json",
+      "msbuildProject": "../LinqLib/LinqLib.csproj"
+    },
+    "Outlook/1.0.0": {
+      "type": "project",
+      "path": "../Outlook/project.json",
+      "msbuildProject": "../Outlook/Outlook.csproj"
+    },
+    "PrintableDataGrid/1.0.0": {
+      "type": "project",
+      "path": "../PrintableDataGrid/project.json",
+      "msbuildProject": "../PrintableDataGrid/PrintableDataGrid.csproj"
+    },
+    "SUT.PrintEngine/1.0.0": {
+      "type": "project",
+      "path": "../SUT.PrintEngine/project.json",
+      "msbuildProject": "../SUT.PrintEngine/SUT.PrintEngine.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -309,5 +425,53 @@
       "PostSharp >= 4.3.31"
     ],
     ".NETFramework,Version=v4.5": []
+  },
+  "packageFolders": {
+    "C:\\Users\\Alpha\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "restore": {
+      "projectUniqueName": "C:\\Prism\\GitRepositiory\\payroll\\PayRoll\\PayrollManager\\PayrollManager.csproj",
+      "projectName": "PayrollManager",
+      "projectPath": "C:\\Prism\\GitRepositiory\\payroll\\PayRoll\\PayrollManager\\PayrollManager.csproj",
+      "projectJsonPath": "C:\\Prism\\GitRepositiory\\payroll\\PayRoll\\PayrollManager\\project.json",
+      "projectStyle": "ProjectJson",
+      "frameworks": {
+        "net45": {
+          "projectReferences": {
+            "C:\\Prism\\GitRepositiory\\payroll\\PayRoll\\CustomWPFControls\\CustomWPFControls.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\payroll\\PayRoll\\CustomWPFControls\\CustomWPFControls.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\payroll\\PayRoll\\Emailing\\EmailLogger.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\payroll\\PayRoll\\Emailing\\EmailLogger.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\payroll\\PayRoll\\LinqLib\\LinqLib.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\payroll\\PayRoll\\LinqLib\\LinqLib.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\payroll\\PayRoll\\Outlook\\Outlook.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\payroll\\PayRoll\\Outlook\\Outlook.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\payroll\\PayRoll\\PrintableDataGrid\\PrintableDataGrid.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\payroll\\PayRoll\\PrintableDataGrid\\PrintableDataGrid.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\payroll\\PayRoll\\SUT.PrintEngine\\SUT.PrintEngine.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\payroll\\PayRoll\\SUT.PrintEngine\\SUT.PrintEngine.csproj"
+            }
+          }
+        }
+      }
+    },
+    "dependencies": {
+      "EntityFramework": "5.0.0",
+      "PostSharp": "4.3.31"
+    },
+    "frameworks": {
+      "net45": {}
+    },
+    "runtimes": {
+      "win": {
+        "#import": []
+      }
+    }
   }
 }

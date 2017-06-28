@@ -1,5 +1,4 @@
 {
-  "locked": false,
   "version": 2,
   "targets": {
     ".NETFramework,Version=v4.5": {
@@ -29,6 +28,7 @@
     "PostSharp/4.3.31": {
       "sha512": "SU3UV33EVCVrwVG+DR84//hHrnH5T1FvAB+d2YZODCOQJKLHv++GA2r8q7cN5BTGu4EcWc3grXNA2ySsdWUo9w==",
       "type": "package",
+      "path": "postsharp/4.3.31",
       "files": [
         "PostSharp.4.3.31.nupkg.sha512",
         "PostSharp.nuspec",
@@ -52,5 +52,28 @@
       "PostSharp >= 4.3.31"
     ],
     ".NETFramework,Version=v4.5": []
+  },
+  "packageFolders": {
+    "C:\\Users\\Alpha\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "restore": {
+      "projectUniqueName": "C:\\Prism\\GitRepositiory\\payroll\\PayRoll\\Emailing\\EmailLogger.csproj",
+      "projectName": "EmailLogger",
+      "projectPath": "C:\\Prism\\GitRepositiory\\payroll\\PayRoll\\Emailing\\EmailLogger.csproj",
+      "projectJsonPath": "C:\\Prism\\GitRepositiory\\payroll\\PayRoll\\Emailing\\project.json",
+      "projectStyle": "ProjectJson"
+    },
+    "dependencies": {
+      "PostSharp": "4.3.31"
+    },
+    "frameworks": {
+      "net45": {}
+    },
+    "runtimes": {
+      "win": {
+        "#import": []
+      }
+    }
   }
 }

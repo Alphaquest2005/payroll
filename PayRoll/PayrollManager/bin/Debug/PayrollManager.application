@@ -14,14 +14,14 @@
     <framework targetVersion="4.5" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="PayrollManager.exe.manifest" size="32999">
+    <dependentAssembly dependencyType="install" codebase="PayrollManager.exe.manifest" size="32142">
       <assemblyIdentity name="PayrollManager.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>hp4nffEqV1bqrE7dsYVTw1JUtVHlkOkvpA/NdxEhMLc=</dsig:DigestValue>
+        <dsig:DigestValue>bOdwveFS9TK9KWSWoFsev+U2H2SCtEtqlGj8dwtU8CA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
