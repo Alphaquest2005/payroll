@@ -552,3 +552,9 @@ C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\PayrollManager.
 C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\PayrollManager.exe
 C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\PayrollManager.pdb
 C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\EmailLogger.dll.config
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\PayrollManager.csproj.CoreCompileInputs.cache
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\EntityFramework.SqlServer.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\System.Data.Entity.dll
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\bin\Debug\PayrollManager.pssym
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\PayrollManager.exe.postsharp
+C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\PostSharpHost.config

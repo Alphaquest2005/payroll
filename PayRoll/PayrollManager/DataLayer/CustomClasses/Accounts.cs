@@ -27,7 +27,7 @@ namespace PayrollManager.DataLayer
         {
             get
             {
-                if (CurrentAccountEntries == null || BaseViewModel.StaticPayrollJob == null) return 0;
+                if (CurrentAccountEntries == null || BaseViewModel.CurrentPayrollJob == null) return 0;
 
                 return CurrentAccountEntries.Sum(ae => ae.CreditAmount - ae.DebitAmount);
             }
@@ -37,7 +37,7 @@ namespace PayrollManager.DataLayer
         {
             get
             {
-                if (CurrentEmpNetCreditEntries == null || BaseViewModel.StaticPayrollJob == null) return 0;
+                if (CurrentEmpNetCreditEntries == null || BaseViewModel.CurrentPayrollJob == null) return 0;
 
                 return CurrentEmpNetCreditEntries.Sum(ae => ae.Total) - CurrentEmpNetDebitEntries.Sum(ae => ae.Total);
             }
@@ -47,7 +47,7 @@ namespace PayrollManager.DataLayer
         {
             get
             {
-                if (CurrentAccountEntries == null || BaseViewModel.StaticPayrollJob == null) return 0;
+                if (CurrentAccountEntries == null || BaseViewModel.CurrentPayrollJob == null) return 0;
 
                 return CurrentAccountEntries.Sum(ae => ae.DebitAmount);
             }
@@ -57,7 +57,7 @@ namespace PayrollManager.DataLayer
         {
             get
             {
-                if ( BaseViewModel.StaticPayrollJob == null) return 0;
+                if ( BaseViewModel.CurrentPayrollJob == null) return 0;
 
                 return CurrentEmpNetDebitEntries.Sum(ae => ae.Total);
             }
@@ -67,7 +67,7 @@ namespace PayrollManager.DataLayer
         {
             get
             {
-                if (CurrentAccountEntries == null || BaseViewModel.StaticPayrollJob == null) return 0;
+                if (CurrentAccountEntries == null || BaseViewModel.CurrentPayrollJob == null) return 0;
 
                 return CurrentAccountEntries.Sum(ae => ae.CreditAmount);
             }
@@ -77,7 +77,7 @@ namespace PayrollManager.DataLayer
         {
             get
             {
-                if ( BaseViewModel.StaticPayrollJob == null) return 0;
+                if ( BaseViewModel.CurrentPayrollJob == null) return 0;
 
                 return CurrentEmpNetCreditEntries.Sum(ae => ae.Total);
             }
@@ -91,25 +91,25 @@ namespace PayrollManager.DataLayer
             {
 
                 if (_currentAccountEntries == null || !_currentAccountEntries.Any() ||
-                    (BaseViewModel.StaticPayrollJob != null && 
+                    (BaseViewModel.CurrentPayrollJob != null && 
                         _currentAccountEntries.First().PayrollItem  != null &&
-                        BaseViewModel.StaticPayrollJob.PayrollJobId != _currentAccountEntries.First().PayrollItem.PayrollJobId))
+                        BaseViewModel.CurrentPayrollJob.PayrollJobId != _currentAccountEntries.First().PayrollItem.PayrollJobId))
                 {
-                    if ( BaseViewModel.StaticPayrollJob == null ||
-                        BaseViewModel.StaticCurrentBranch == null) return null;
-                    //return new ObservableCollection<AccountEntry>(AccountEntries.Where(a => a.PayrollItem.PayrollJobId == BaseViewModel.StaticPayrollJob.PayrollJobId 
-                    //                                                && a.PayrollItem.Employee.BranchId == BaseViewModel.StaticCurrentBranch.BranchId 
+                    if ( BaseViewModel.CurrentPayrollJob == null ||
+                        BaseViewModel.CurrentBranch == null) return null;
+                    //return new ObservableCollection<AccountEntry>(AccountEntries.Where(a => a.PayrollItem.PayrollJobId == BaseViewModel.CurrentPayrollJob.PayrollJobId 
+                    //                                                && a.PayrollItem.Employee.BranchId == BaseViewModel.CurrentBranch.BranchId 
                     //                                                && a.PayrollItem.PayrollJob.Branch != null 
-                    //                                                && a.PayrollItem.PayrollJob.Branch.BranchId == BaseViewModel.StaticCurrentBranch.BranchId)
+                    //                                                && a.PayrollItem.PayrollJob.Branch.BranchId == BaseViewModel.CurrentBranch.BranchId)
                     //                                                .OrderByDescending(x => x.PayrollItem.IncomeDeduction).ThenBy(x => x.PayrollItem.Priority));
                     List<AccountEntry> alst;
                     using (var ctx = new PayrollDB())
                     {
                         alst =
                             ctx.AccountEntries
-                                     .Where(a => a.PayrollItem.PayrollJobId == BaseViewModel.StaticPayrollJob.PayrollJobId
+                                     .Where(a => a.PayrollItem.PayrollJobId == BaseViewModel.CurrentPayrollJob.PayrollJobId
                                                  && a.AccountId == AccountId
-                                                 && a.PayrollItem.Employee.BranchId == BaseViewModel.StaticCurrentBranch.BranchId)
+                                                 && a.PayrollItem.Employee.BranchId == BaseViewModel.CurrentBranch.BranchId)
                                      .Include(x => x.PayrollItem)
                                      .OrderByDescending(x => x.PayrollItem.IncomeDeduction)
                                      .ThenBy(x => x.PayrollItem.Priority).ToList();
@@ -152,7 +152,7 @@ namespace PayrollManager.DataLayer
         {
             get
             {
-                if (CurrentAccountEntries == null || BaseViewModel.StaticPayrollJob == null) return null;
+                if (CurrentAccountEntries == null || BaseViewModel.CurrentPayrollJob == null) return null;
                 return new ObservableCollection<AccountEntry>(CurrentAccountEntries.Where(a => a.DebitAmount != 0));
             }
         }
@@ -161,7 +161,7 @@ namespace PayrollManager.DataLayer
         {
             get
             {
-                if (CurrentAccountEntries == null || BaseViewModel.StaticPayrollJob == null) return null;
+                if (CurrentAccountEntries == null || BaseViewModel.CurrentPayrollJob == null) return null;
                 return new ObservableCollection<AccountEntry>(CurrentAccountEntries.Where(a => a.CreditAmount != 0 ));
             }
         }
@@ -170,29 +170,38 @@ namespace PayrollManager.DataLayer
         {
             get
             {
-                var lst = from i in BaseViewModel.db.AccountEntries.Where(x => x.Accounts.Institution.InstitutionId == this.Institution.InstitutionId
-                                                                            && x.PayrollItem.PayrollJobId == BaseViewModel.StaticPayrollJob.PayrollJobId)
-                                                                            .OrderBy(x => x.PayrollItem.Employee.LastName)
-                                                                            .ThenByDescending(x => x.PayrollItem.IncomeDeduction).ThenBy(x => x.PayrollItem.Priority)
-                                                                            .AsEnumerable()//&& x.PayrollItem.CreditAccount.AccountId != this.AccountId 
-
-                          group i by new { i.PayrollItem.Employee, i.Accounts } into g
-                          select new EmployeeAccountSummaryLine
-                          {
-                              Employee = g.Key.Employee.DisplayName,
-                              Account = g.Key.Accounts,
-                              Total = g.Sum(z => z.CreditAmount - z.DebitAmount)//
-                          };
-
-                var employeeAccountSummaryLines = lst as IList<EmployeeAccountSummaryLine> ?? new List<EmployeeAccountSummaryLine>();
-                if (employeeAccountSummaryLines.Any())
+                using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
                 {
-                    return new ObservableCollection<EmployeeAccountSummaryLine>(employeeAccountSummaryLines.Where(x => x != null && x.Account != null && (x.Total > 0 && x.Account.AccountNumber != "1350-75")));//
+                    var lst = from i in ctx.AccountEntries
+                            .Where(x => x.Accounts.Institution.InstitutionId == this.Institution.InstitutionId
+                                        && x.PayrollItem.PayrollJobId == BaseViewModel.CurrentPayrollJob.PayrollJobId)
+                            .OrderBy(x => x.PayrollItem.Employee.LastName)
+                            .ThenByDescending(x => x.PayrollItem.IncomeDeduction).ThenBy(x => x.PayrollItem.Priority)
+                            .ToList() //&& x.PayrollItem.CreditAccount.AccountId != this.AccountId 
+
+                        group i by new {i.PayrollItem.Employee, i.Accounts}
+                        into g
+                        select new EmployeeAccountSummaryLine
+                        {
+                            Employee = g.Key.Employee.DisplayName,
+                            Account = g.Key.Accounts,
+                            Total = g.Sum(z => z.CreditAmount - z.DebitAmount) //
+                        };
+
+                    var employeeAccountSummaryLines = lst as IList<EmployeeAccountSummaryLine> ??
+                                                      new List<EmployeeAccountSummaryLine>();
+                    if (employeeAccountSummaryLines.Any())
+                    {
+                        return new ObservableCollection<EmployeeAccountSummaryLine>(employeeAccountSummaryLines.Where(
+                            x => x != null && x.Account != null &&
+                                 (x.Total > 0 && x.Account.AccountNumber != "1350-75"))); //
+                    }
+                    else
+                    {
+                        return new ObservableCollection<EmployeeAccountSummaryLine>(); //
+                    }
                 }
-                else
-                {
-                    return new ObservableCollection<EmployeeAccountSummaryLine>();//
-                }
+
             }
         }
 
@@ -200,21 +209,27 @@ namespace PayrollManager.DataLayer
         {
             get
             {
-                if(BaseViewModel.StaticPayrollJob == null) return new ObservableCollection<EmployeeAccountSummaryLine>();
-                var lst = from i in BaseViewModel.db.AccountEntries.Where(x => x.Accounts.Institution.InstitutionId == this.Institution.InstitutionId
-                                                                            && x.PayrollItem.PayrollJobId == BaseViewModel.StaticPayrollJob.PayrollJobId)
-                                                                            .OrderByDescending(x => x.PayrollItem.IncomeDeduction).ThenBy(x => x.PayrollItem.Priority)
-                                                                            .AsEnumerable()
+                using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
+                {
+                    if (BaseViewModel.CurrentPayrollJob == null)
+                        return new ObservableCollection<EmployeeAccountSummaryLine>();
+                    var lst = from i in ctx.AccountEntries
+                            .Where(x => x.Accounts.Institution.InstitutionId == this.Institution.InstitutionId
+                                        && x.PayrollItem.PayrollJobId == BaseViewModel.CurrentPayrollJob.PayrollJobId)
+                            .OrderByDescending(x => x.PayrollItem.IncomeDeduction).ThenBy(x => x.PayrollItem.Priority)
+                            .ToList()
 
-                          group i by new { i.PayrollItem.Employee, i.Accounts } into g
-                          select new EmployeeAccountSummaryLine
-                          {
-                              Employee = g.Key.Employee.DisplayName,
-                              Account = g.Key.Accounts,
-                              Total = g.Sum(z => z.DebitAmount - z.CreditAmount)
-                          };
+                        group i by new {i.PayrollItem.Employee, i.Accounts}
+                        into g
+                        select new EmployeeAccountSummaryLine
+                        {
+                            Employee = g.Key.Employee.DisplayName,
+                            Account = g.Key.Accounts,
+                            Total = g.Sum(z => z.DebitAmount - z.CreditAmount)
+                        };
 
-                return new ObservableCollection<EmployeeAccountSummaryLine>(lst.Where(x => x.Total > 0));
+                    return new ObservableCollection<EmployeeAccountSummaryLine>(lst.Where(x => x.Total > 0));
+                }
             }
         }
 

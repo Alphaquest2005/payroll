@@ -4,6 +4,7 @@ using System.Text;
 using System.Windows.Data;
 using System.ComponentModel;
 using System.Linq;
+using PayrollManager.DataLayer;
 
 namespace PayrollManager
 {
@@ -11,28 +12,23 @@ namespace PayrollManager
 	{
         public EmployeeAccountDetailsModel()
 		{
-           
+		    using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
+		    {
+		        _employeeAccountTypes = new ListCollectionView(ctx.AccountTypes.ToList());
+		    }
+
 		}
 
-        ListCollectionView _EmployeeAccountTypes = new ListCollectionView(db.AccountTypes.ToList());
-        public ListCollectionView EmployeeAccountTypes
-        {
-            get
-            {
-
-                return _EmployeeAccountTypes;
+	    private readonly ListCollectionView _employeeAccountTypes;
+        public ListCollectionView EmployeeAccountTypes => _employeeAccountTypes;
 
 
-            }
-        }
-       
-
-        public void SaveEmployeeAccount()
+	    public void SaveEmployeeAccount()
         {
 
 
 
-            SaveDatabase();
+           // SaveDatabase(ctx);
             base.CurrentAccount = _newEmployeeAccount;
             _newEmployeeAccount = null;
 
@@ -54,23 +50,28 @@ namespace PayrollManager
 
         public void DeleteEmployeeAccount()
         {
-            if (CurrentEmployeeAccount == null) return;
-            db.Accounts.DeleteObject(CurrentEmployeeAccount);
-            // db.PayrollItems.Detach(CurrentPayrollItem);
+            using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
+            {
+                if (CurrentEmployeeAccount == null) return;
+                ctx.Accounts.DeleteObject(CurrentEmployeeAccount);
+                // db.PayrollItems.Detach(CurrentPayrollItem);
 
 
-            SaveDatabase();
-            CurrentEmployeeAccount = null;
-
+                SaveDatabase(ctx);
+                CurrentEmployeeAccount = null;
+            }
         }
 
 
         public void NewEmployeeAccount()
         {
-            DataLayer.EmployeeAccount newemp = BaseViewModel.db.Accounts.CreateObject<DataLayer.EmployeeAccount>();
-            db.Accounts.AddObject(newemp);
-            _newEmployeeAccount = newemp;
-            OnPropertyChanged("CurrentEmployeeAccount");
+            using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
+            {
+                DataLayer.EmployeeAccount newemp = ctx.Accounts.CreateObject<DataLayer.EmployeeAccount>();
+                ctx.Accounts.AddObject(newemp);
+                _newEmployeeAccount = newemp;
+                OnPropertyChanged("CurrentEmployeeAccount");
+            }
         }
 
         

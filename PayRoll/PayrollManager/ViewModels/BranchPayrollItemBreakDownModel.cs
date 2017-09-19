@@ -108,7 +108,6 @@ namespace PayrollManager
                         //.Where(z => z.PayrollJob.Branch.Name == "Main Branch")
                         .OrderByDescending(x => x.IncomeDeduction)
                         .ThenBy(x => x.PayrollSetupItem == null ? x.Priority : x.PayrollSetupItem.Priority)
-                        .AsEnumerable()
                         group p by new {p.Name}
                         into g //, p.IncomeDeduction, p.Priority, BranchName = p.PayrollJob.Branch.Name 
                         select new BranchPayrollItemSummaryLine

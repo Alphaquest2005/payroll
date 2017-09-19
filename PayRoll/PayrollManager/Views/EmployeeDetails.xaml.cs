@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Linq;
+    using PayrollManager.DataLayer;
 
 namespace PayrollManager
 {
@@ -64,13 +65,25 @@ namespace PayrollManager
         {
             if (e.Row.IsNewItem == true && im.CurrentEmployee != null )
             {
-                im.UpdateEmployee();
-                DataLayer.EmployeeAccount ne = (DataLayer.EmployeeAccount)e.Row.Item;
-                if (im.CurrentEmployee == null) return;
-                ne.AccountName = im.CurrentEmployee.FirstName + " " + BaseViewModel.db.Institutions.Where( i => i.InstitutionId != null && i.InstitutionId == ne.InstitutionId).FirstOrDefault().ShortName + " Salary Account";
-                ne.AccountType = "Salary Account";
+                using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
+                {
+                    im.UpdateEmployee();
+                    DataLayer.EmployeeAccount ne = (DataLayer.EmployeeAccount) e.Row.Item;
+                    if (im.CurrentEmployee == null) return;
+                    var inst = ctx.Institutions
+                        .FirstOrDefault(i => i.InstitutionId == ne.InstitutionId);
+                    if (inst != null)
+                    {
+                        ne.AccountName = im.CurrentEmployee.FirstName + " " +
+                                         inst.ShortName +
+                                         " Salary Account";
+                    ne.AccountType = "Salary Account";
+                        ctx.Accounts.ApplyCurrentValues(ne);
+                    }
+                     BaseViewModel.SaveDatabase(ctx);    
+                }
             }
-            BaseViewModel.SaveDatabase();
+           
         }
 
         private void DataGrid_BeginningEdit_1(object sender, DataGridBeginningEditEventArgs e)

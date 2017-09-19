@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "targets": {
     ".NETFramework,Version=v4.0,Profile=Client": {},
     ".NETFramework,Version=v4.0,Profile=Client/win": {}
@@ -18,7 +18,17 @@
       "projectName": "CustomWPFControls",
       "projectPath": "C:\\Prism\\GitRepositiory\\payroll\\PayRoll\\CustomWPFControls\\CustomWPFControls.csproj",
       "projectJsonPath": "C:\\Prism\\GitRepositiory\\payroll\\PayRoll\\CustomWPFControls\\project.json",
-      "projectStyle": "ProjectJson"
+      "packagesPath": "C:\\Users\\Alpha\\.nuget\\packages\\",
+      "outputPath": "C:\\Prism\\GitRepositiory\\payroll\\PayRoll\\CustomWPFControls\\obj\\",
+      "projectStyle": "ProjectJson",
+      "configFilePaths": [
+        "C:\\Users\\Alpha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      }
     },
     "frameworks": {
       "net40-client": {}

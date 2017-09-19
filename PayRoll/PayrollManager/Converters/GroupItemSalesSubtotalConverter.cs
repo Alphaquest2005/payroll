@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
+using PayrollManager.DataLayer;
 
 namespace PayrollManager.Converters
 {
@@ -36,38 +37,44 @@ namespace PayrollManager.Converters
         {
             DataLayer.Account ia = value as DataLayer.Account;
             DataLayer.PayrollJob pj = parameter as DataLayer.PayrollJob;
-
-            return ia.AccountEntries.Where(ae => ae.PayrollItem.PayrollJobId == pj.PayrollJobId).Sum(ae => ae.Total);
+            using (var ctx = new PayrollDB())
+            {
+                return ctx.AccountEntries.Where(ae => ae.AccountId == ia.AccountId && ae.PayrollItem.PayrollJobId == pj.PayrollJobId).Sum(ae => ae.Total);
+            }
+                
 
         }
 
         private double GetAccountTotal(object value)
         {
             DataLayer.Account ia = value as DataLayer.Account;
-            return ia.AccountEntries.Sum(ae => ae.Total);
+            using (var ctx = new PayrollDB())
+            {
+                return ctx.AccountEntries.Where(ae => ae.AccountId == ia.AccountId).Sum(ae => ae.Total);
+            }
         }
 
         private double GetSubTotal(CollectionViewGroup collectionViewGroup)
         {
             double tot = Double.MaxValue;
-            if (typeof(DataLayer.PayrollItem).IsInstanceOfType(collectionViewGroup.Items[0]))
+            if (collectionViewGroup.Items[0] is PayrollItem)
             {
                         return  (from i in collectionViewGroup.Items.AsEnumerable()
                           select ((DataLayer.PayrollItem)i).Amount).Sum();
 
             }
-            if (typeof(DataLayer.PayrollEmployeeSetup).IsInstanceOfType(collectionViewGroup.Items[0]))
+            if (collectionViewGroup.Items[0] is PayrollEmployeeSetup)
             {
-                return (Double)(from i in collectionViewGroup.Items.AsEnumerable()
+                return (Double)(from i in collectionViewGroup.Items
                                 select ((DataLayer.PayrollEmployeeSetup)i).Amount).Sum();
             }
-            if (typeof(DataLayer.AccountEntry).IsInstanceOfType(collectionViewGroup.Items[0]))
+            if (collectionViewGroup.Items[0] is AccountEntry)
             {
                 return (Double)(from i in collectionViewGroup.Items.AsEnumerable()
                                 select ((DataLayer.AccountEntry)i).Total).Sum();
             }
 
-            if (typeof(PayrollItemsReportModel.PayrollReportLine).IsInstanceOfType(collectionViewGroup.Items[0]))
+            if (collectionViewGroup.Items[0] is PayrollItemsReportModel.PayrollReportLine)
             {
                 return (Double)(from i in collectionViewGroup.Items.AsEnumerable()
                                 select ((PayrollItemsReportModel.PayrollReportLine)i).Amount).Sum();

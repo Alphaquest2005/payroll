@@ -4,6 +4,7 @@ using System.Text;
 using System.Windows.Data;
 using System.ComponentModel;
 using System.Collections.ObjectModel;
+using PayrollManager.DataLayer;
 
 namespace PayrollManager
 {
@@ -27,27 +28,39 @@ namespace PayrollManager
         {
             get
             {
-                return new ObservableCollection<DataLayer.InstitutionAccount>(db.Accounts.OfType<DataLayer.InstitutionAccount>());
+                using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
+                {
+                    return new ObservableCollection<DataLayer.InstitutionAccount>(ctx.Accounts
+                        .OfType<DataLayer.InstitutionAccount>());
+                }
             }
         }
         
         public void SavePayrollSetupItem()
         {
-            BaseViewModel.SaveDatabase();
-            
-            base.CurrentPayrollSetupItem = _newPayrollSetupItem;
-            _newPayrollSetupItem = null;
-            OnStaticPropertyChanged("PayrollSetupItems");
-            OnStaticPropertyChanged("CurrentPayrollSetupItem");
-            OnStaticPropertyChanged("PayrollSetupItemsCollection");
+            using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
+            {
+                ctx.PayrollSetupItems.ApplyCurrentValues(_newPayrollSetupItem);
+                SaveDatabase(ctx);
+
+                base.CurrentPayrollSetupItem = _newPayrollSetupItem;
+                _newPayrollSetupItem = null;
+                OnStaticPropertyChanged("PayrollSetupItems");
+                OnStaticPropertyChanged("CurrentPayrollSetupItem");
+                OnStaticPropertyChanged("PayrollSetupItemsCollection");
+            }
         }
 
         public void DeletePayrollSetupItem()
         {
+
             if (CurrentPayrollSetupItem.EntityState !=  System.Data.EntityState.Detached)
             {
-                db.PayrollSetupItems.DeleteObject(CurrentPayrollSetupItem);
-                SaveDatabase();
+                using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
+                {
+                    ctx.PayrollSetupItems.DeleteObject(CurrentPayrollSetupItem);
+                    SaveDatabase(ctx);
+                }
             }
             CurrentPayrollSetupItem = null;
             OnStaticPropertyChanged("PayrollSetupItems");
@@ -58,11 +71,14 @@ namespace PayrollManager
 
         public void NewPayrollSetupItem()
         {
-            DataLayer.PayrollSetupItem newpi = BaseViewModel.db.PayrollSetupItems.CreateObject();
-            db.PayrollSetupItems.AddObject(newpi);
-            _newPayrollSetupItem = newpi;
-            OnPropertyChanged("CurrentPayrollSetupItem");
-            
+            using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
+            {
+                PayrollSetupItem newpi = ctx.PayrollSetupItems.CreateObject();
+                ctx.PayrollSetupItems.AddObject(newpi);
+                _newPayrollSetupItem = newpi;
+                OnPropertyChanged("CurrentPayrollSetupItem");
+            }
+
 
         }
 

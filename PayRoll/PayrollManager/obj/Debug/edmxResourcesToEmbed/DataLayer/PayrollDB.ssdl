@@ -91,7 +91,7 @@
     <Property Name="DriversLicence" Type="nvarchar" MaxLength="50" />
     <Property Name="DriversLicenceClass" Type="nvarchar" MaxLength="50" />
     <Property Name="SexId" Type="int" />
-    <Property Name="EmploymentEndDate" Type="datetime" />
+    <Property Name="EmploymentEndDate" Type="datetime2" Precision="7" />
   </EntityType>
   <EntityType Name="Employees_User">
     <Key>
@@ -108,7 +108,7 @@
     <Property Name="InstitutionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
     <Property Name="ShortName" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Priority" Type="varchar" MaxLength="2" />
+    <Property Name="Priority" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="PayrollEmployeeSetup">
     <Key>
@@ -238,9 +238,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_AccountPayrollItem">
-    <End Role="Accounts" Type="Self.Accounts" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
+    <End Role="Accounts" Type="Self.Accounts" Multiplicity="1" />
     <End Role="PayrollItems" Type="Self.PayrollItems" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Accounts">
@@ -251,10 +249,20 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_AccountPayrollItem1">
+    <End Role="Accounts" Type="Self.Accounts" Multiplicity="1" />
+    <End Role="PayrollItems" Type="Self.PayrollItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Accounts">
+        <PropertyRef Name="AccountId" />
+      </Principal>
+      <Dependent Role="PayrollItems">
+        <PropertyRef Name="DebitAccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_AccountPayrollSetupItem">
-    <End Role="Accounts" Type="Self.Accounts" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
+    <End Role="Accounts" Type="Self.Accounts" Multiplicity="1" />
     <End Role="PayrollSetupItems" Type="Self.PayrollSetupItems" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Accounts">
@@ -316,9 +324,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_EmployeeEmployeeAccount">
-    <End Role="Employees" Type="Self.Employees" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
+    <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
     <End Role="Accounts_EmployeeAccount" Type="Self.Accounts_EmployeeAccount" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Employees">
@@ -330,9 +336,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_EmployeePayrollEmployeeSetup">
-    <End Role="Employees" Type="Self.Employees" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
+    <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
     <End Role="PayrollEmployeeSetup" Type="Self.PayrollEmployeeSetup" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Employees">
@@ -344,9 +348,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_EmployeePayrollItem">
-    <End Role="Employees" Type="Self.Employees" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
+    <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
     <End Role="PayrollItems" Type="Self.PayrollItems" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Employees">
@@ -529,6 +531,10 @@
       <End Role="PayrollEmployeeSetup" EntitySet="PayrollEmployeeSetup" />
     </AssociationSet>
     <AssociationSet Name="FK_AccountPayrollItem" Association="Self.FK_AccountPayrollItem">
+      <End Role="Accounts" EntitySet="Accounts" />
+      <End Role="PayrollItems" EntitySet="PayrollItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AccountPayrollItem1" Association="Self.FK_AccountPayrollItem1">
       <End Role="Accounts" EntitySet="Accounts" />
       <End Role="PayrollItems" EntitySet="PayrollItems" />
     </AssociationSet>

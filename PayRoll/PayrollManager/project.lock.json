@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "targets": {
     ".NETFramework,Version=v4.5": {
       "CommonServiceLocator/1.0.0": {
@@ -41,26 +41,43 @@
           "lib/NET35/Microsoft.Practices.EnterpriseLibrary.Common.dll": {}
         }
       },
-      "EntityFramework/5.0.0": {
+      "EntityFramework/6.1.3": {
         "type": "package",
         "frameworkAssemblies": [
-          "System.ComponentModel.DataAnnotations",
-          "System.Data.Entity"
+          "System.ComponentModel.DataAnnotations"
         ],
         "compile": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
           "lib/net45/EntityFramework.dll": {}
         },
         "runtime": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
           "lib/net45/EntityFramework.dll": {}
         }
       },
-      "PostSharp/4.3.31": {
+      "PostSharp/5.0.33": {
         "type": "package",
+        "dependencies": {
+          "PostSharp.Redist": "[5.0.33, 6.0.0)"
+        },
         "compile": {
-          "lib/net35-client/PostSharp.dll": {}
+          "lib/net35-client/_._": {}
         },
         "runtime": {
-          "lib/net35-client/PostSharp.dll": {}
+          "lib/net35-client/_._": {}
+        },
+        "build": {
+          "build/PostSharp.props": {},
+          "build/PostSharp.targets": {}
+        }
+      },
+      "PostSharp.Redist/5.0.33": {
+        "type": "package",
+        "compile": {
+          "lib/net45/PostSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net45/PostSharp.dll": {}
         }
       },
       "Unity/2.1.505": {
@@ -105,7 +122,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.5",
         "dependencies": {
-          "PostSharp": "4.3.31"
+          "PostSharp": "5.0.33"
         }
       },
       "LinqLib/1.0.0": {
@@ -171,26 +188,43 @@
           "lib/NET35/Microsoft.Practices.EnterpriseLibrary.Common.dll": {}
         }
       },
-      "EntityFramework/5.0.0": {
+      "EntityFramework/6.1.3": {
         "type": "package",
         "frameworkAssemblies": [
-          "System.ComponentModel.DataAnnotations",
-          "System.Data.Entity"
+          "System.ComponentModel.DataAnnotations"
         ],
         "compile": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
           "lib/net45/EntityFramework.dll": {}
         },
         "runtime": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
           "lib/net45/EntityFramework.dll": {}
         }
       },
-      "PostSharp/4.3.31": {
+      "PostSharp/5.0.33": {
         "type": "package",
+        "dependencies": {
+          "PostSharp.Redist": "[5.0.33, 6.0.0)"
+        },
         "compile": {
-          "lib/net35-client/PostSharp.dll": {}
+          "lib/net35-client/_._": {}
         },
         "runtime": {
-          "lib/net35-client/PostSharp.dll": {}
+          "lib/net35-client/_._": {}
+        },
+        "build": {
+          "build/PostSharp.props": {},
+          "build/PostSharp.targets": {}
+        }
+      },
+      "PostSharp.Redist/5.0.33": {
+        "type": "package",
+        "compile": {
+          "lib/net45/PostSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net45/PostSharp.dll": {}
         }
       },
       "Unity/2.1.505": {
@@ -235,7 +269,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.5",
         "dependencies": {
-          "PostSharp": "4.3.31"
+          "PostSharp": "5.0.33"
         }
       },
       "LinqLib/1.0.0": {
@@ -307,51 +341,67 @@
         "tools/install.ps1"
       ]
     },
-    "EntityFramework/5.0.0": {
-      "sha512": "WYfgJWKg/RjwU8pzZkImD9DsV+J1nqDcIGp1S0/bdnElKBmAaUC2nmq/QQAcco32KyQQWnLgJNiDzIOz2xWFbQ==",
+    "EntityFramework/6.1.3": {
+      "sha512": "2xzFHAF3VVdmTR3//MygtQpwfbDjeaq+nQwCcokLzen7MKHOojPaxNPQPa4diHY1QtcR7zlHAJHNRqPB7W2Syw==",
       "type": "package",
-      "path": "entityframework/5.0.0",
+      "path": "entityframework/6.1.3",
       "files": [
-        "Content/App.config.transform",
-        "Content/Web.config.transform",
-        "EntityFramework.5.0.0.nupkg.sha512",
+        "EntityFramework.6.1.3.nupkg.sha512",
         "EntityFramework.nuspec",
+        "content/App.config.transform",
+        "content/Web.config.transform",
+        "lib/net40/EntityFramework.SqlServer.dll",
+        "lib/net40/EntityFramework.SqlServer.xml",
         "lib/net40/EntityFramework.dll",
         "lib/net40/EntityFramework.xml",
+        "lib/net45/EntityFramework.SqlServer.dll",
+        "lib/net45/EntityFramework.SqlServer.xml",
         "lib/net45/EntityFramework.dll",
         "lib/net45/EntityFramework.xml",
-        "tools/EntityFramework.PS3.psd1",
         "tools/EntityFramework.PowerShell.Utility.dll",
         "tools/EntityFramework.PowerShell.dll",
         "tools/EntityFramework.psd1",
         "tools/EntityFramework.psm1",
-        "tools/Redirect.VS11.config",
-        "tools/Redirect.config",
         "tools/about_EntityFramework.help.txt",
         "tools/init.ps1",
         "tools/install.ps1",
         "tools/migrate.exe"
       ]
     },
-    "PostSharp/4.3.31": {
-      "sha512": "SU3UV33EVCVrwVG+DR84//hHrnH5T1FvAB+d2YZODCOQJKLHv++GA2r8q7cN5BTGu4EcWc3grXNA2ySsdWUo9w==",
+    "PostSharp/5.0.33": {
+      "sha512": "HzhH4kH3FY5lCfkN7eNZakeu861S+0LkLUtYmC8KoncbIpsYNpVS9KnqMtXQQx6bzfjNtqavtn5jc0RnWYhglQ==",
       "type": "package",
-      "path": "postsharp/4.3.31",
+      "path": "postsharp/5.0.33",
       "files": [
-        "PostSharp.4.3.31.nupkg.sha512",
-        "PostSharp.nuspec",
+        "build/PostSharp-Tools.exe",
+        "build/PostSharp.MSBuild.Core.v5.0.33.Release.dll",
+        "build/PostSharp.MSBuild.v5.0.33.Release.dll",
+        "build/PostSharp.Version.properties",
+        "build/PostSharp.properties",
+        "build/PostSharp.props",
+        "build/PostSharp.targets",
+        "build/PostSharp.tasks",
+        "lib/net35-client/_._",
+        "lib/netcoreapp1.0/PostSharp.Compiler.Client.dll",
+        "lib/netcoreapp1.0/dotnet-compile-postsharp.exe",
+        "lib/netstandard1.0/_._",
+        "postsharp.5.0.33.nupkg.sha512",
+        "postsharp.nuspec"
+      ]
+    },
+    "PostSharp.Redist/5.0.33": {
+      "sha512": "bWXEY/TdsRXykBT6WrRuZbhCO7eefLbblROkI7wdYKdvq3q1oYV+lvfWE6vhwx5S415fxrdmbt2HYB+klJiKUA==",
+      "type": "package",
+      "path": "postsharp.redist/5.0.33",
+      "files": [
         "lib/net35-client/PostSharp.dll",
         "lib/net35-client/PostSharp.xml",
-        "lib/portable-net4+sl5+netcore45+wpa81+wp8/PostSharp.dll",
-        "lib/portable-net4+sl5+netcore45+wpa81+wp8/PostSharp.xml",
-        "tools/PostSharp-Tools.exe",
-        "tools/PostSharp.MSBuild.v4.3.31.Release.dll",
-        "tools/PostSharp.Version.properties",
-        "tools/PostSharp.properties",
-        "tools/PostSharp.targets",
-        "tools/PostSharp.tasks",
-        "tools/install.ps1",
-        "tools/uninstall.ps1"
+        "lib/net45/PostSharp.dll",
+        "lib/net45/PostSharp.xml",
+        "lib/netstandard1.3/PostSharp.dll",
+        "lib/netstandard1.3/PostSharp.xml",
+        "postsharp.redist.5.0.33.nupkg.sha512",
+        "postsharp.redist.nuspec"
       ]
     },
     "Unity/2.1.505": {
@@ -421,8 +471,8 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "EntityFramework >= 5.0.0",
-      "PostSharp >= 4.3.31"
+      "EntityFramework >= 6.1.3",
+      "PostSharp >= 5.0.33"
     ],
     ".NETFramework,Version=v4.5": []
   },
@@ -435,7 +485,17 @@
       "projectName": "PayrollManager",
       "projectPath": "C:\\Prism\\GitRepositiory\\payroll\\PayRoll\\PayrollManager\\PayrollManager.csproj",
       "projectJsonPath": "C:\\Prism\\GitRepositiory\\payroll\\PayRoll\\PayrollManager\\project.json",
+      "packagesPath": "C:\\Users\\Alpha\\.nuget\\packages\\",
+      "outputPath": "C:\\Prism\\GitRepositiory\\payroll\\PayRoll\\PayrollManager\\obj\\",
       "projectStyle": "ProjectJson",
+      "configFilePaths": [
+        "C:\\Users\\Alpha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
       "frameworks": {
         "net45": {
           "projectReferences": {
@@ -462,8 +522,8 @@
       }
     },
     "dependencies": {
-      "EntityFramework": "5.0.0",
-      "PostSharp": "4.3.31"
+      "EntityFramework": "6.1.3",
+      "PostSharp": "5.0.33"
     },
     "frameworks": {
       "net45": {}
@@ -473,5 +533,40 @@
         "#import": []
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "EnterpriseLibrary.Caching 5.0.505 depends on EnterpriseLibrary.Common (>= 5.0.0) but EnterpriseLibrary.Common 5.0.0 was not found. An approximate best match of EnterpriseLibrary.Common 5.0.505 was resolved.",
+      "libraryId": "EnterpriseLibrary.Common",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.5",
+        ".NETFramework,Version=v4.5/win"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Unity.Interception 2.1.505 depends on Unity (>= 2.1.0) but Unity 2.1.0 was not found. An approximate best match of Unity 2.1.505 was resolved.",
+      "libraryId": "Unity",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.5",
+        ".NETFramework,Version=v4.5/win"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "EnterpriseLibrary.Common 5.0.505 depends on Unity.Interception (>= 2.1.0) but Unity.Interception 2.1.0 was not found. An approximate best match of Unity.Interception 2.1.505 was resolved.",
+      "libraryId": "Unity.Interception",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.5",
+        ".NETFramework,Version=v4.5/win"
+      ]
+    }
+  ]
 }

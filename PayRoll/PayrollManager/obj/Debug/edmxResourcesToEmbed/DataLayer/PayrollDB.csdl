@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="DataLayer" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityContainer Name="PayrollDB" p1:LazyLoadingEnabled="true">
+  <EntityContainer Name="PayrollDB" p1:LazyLoadingEnabled="false">
     <EntitySet Name="AccountEntries" EntityType="DataLayer.AccountEntry" />
     <EntitySet Name="Accounts" EntityType="DataLayer.Account" />
     <EntitySet Name="AccountTypes" EntityType="DataLayer.AccountType" />
@@ -182,7 +182,7 @@
     <NavigationProperty Name="PayrollItems" Relationship="DataLayer.FK_EmployeePayrollItem" FromRole="Employees" ToRole="PayrollItems" />
     <NavigationProperty Name="EmployeeAccounts" Relationship="DataLayer.EmployeeEmployeeAccount" FromRole="Employee" ToRole="EmployeeAccount" />
     <Property Type="String" Name="EmailAddress" MaxLength="Max" Unicode="true" FixedLength="false" />
-    <Property Type="DateTime" Name="EmploymentEndDate" Precision="3" />
+    <Property Type="DateTime" Name="EmploymentEndDate" Precision="7" Nullable="true" />
     <Property Type="DateTime" Name="EntryDateTime" Precision="3" />
     <Property Type="String" Name="DriversLicence" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="DriversLicenceClass" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -201,7 +201,7 @@
     <Property Type="String" Name="ShortName" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Accounts" Relationship="DataLayer.FK_InstitutionAccountASN" FromRole="Institutions" ToRole="Accounts" />
     <NavigationProperty Name="InstitutionAccounts" Relationship="DataLayer.InstitutionInstitutionAccount" FromRole="Institution" ToRole="InstitutionAccount" />
-    <Property Name="Priority" Type="String" />
+    <Property Name="Priority" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
   </EntityType>
   <EntityType Name="PayrollEmployeeSetup">
     <Key>

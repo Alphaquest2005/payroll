@@ -4,6 +4,7 @@ using System.Text;
 using System.Windows.Data;
 using System.ComponentModel;
 using System.Linq;
+using PayrollManager.DataLayer;
 
 namespace PayrollManager
 {
@@ -18,8 +19,11 @@ namespace PayrollManager
         {
 
 
-
-            SaveDatabase();
+            using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
+            {
+                ctx.Accounts.ApplyCurrentValues(_newInstitutionAccount);
+                SaveDatabase(ctx);
+            }
             base.CurrentInstitutionAccount = _newInstitutionAccount;
            _newInstitutionAccount = null;
             
@@ -42,13 +46,15 @@ namespace PayrollManager
 
         public void DeleteInstitionAccount()
         {
-            db.Accounts.DeleteObject(CurrentInstitutionAccount);
-            // db.PayrollItems.Detach(CurrentPayrollItem);
+            using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
+            {
+                ctx.Accounts.DeleteObject(CurrentInstitutionAccount);
+                // db.PayrollItems.Detach(CurrentPayrollItem);
 
 
-            SaveDatabase();
-            CurrentInstitutionAccount = null;
-
+                SaveDatabase(ctx);
+                CurrentInstitutionAccount = null;
+            }
         }
 
         
@@ -58,11 +64,15 @@ namespace PayrollManager
 
         public void NewInstitutionAccount()
         {
-            DataLayer.InstitutionAccount newemp = BaseViewModel.db.Accounts.CreateObject<DataLayer.InstitutionAccount>();
-            db.Accounts.AddObject(newemp);
-            
-            _newInstitutionAccount = newemp;
-            OnPropertyChanged("CurrentInstitutionAccount");
+            using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
+            {
+                DataLayer.InstitutionAccount newemp =
+                    ctx.Accounts.CreateObject<DataLayer.InstitutionAccount>();
+                ctx.Accounts.AddObject(newemp);
+
+                _newInstitutionAccount = newemp;
+                OnPropertyChanged("CurrentInstitutionAccount");
+            }
         }
 
 

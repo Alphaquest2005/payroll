@@ -13,3 +13,4 @@ C:\Prism\GitRepositiory\payroll\PayRoll\Outlook\bin\Debug\Outlook.pdb
 C:\Prism\GitRepositiory\payroll\PayRoll\Outlook\obj\Debug\Outlook.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\payroll\PayRoll\Outlook\obj\Debug\Outlook.dll
 C:\Prism\GitRepositiory\payroll\PayRoll\Outlook\obj\Debug\Outlook.pdb
+C:\Prism\GitRepositiory\payroll\PayRoll\Outlook\obj\Debug\Outlook.csproj.CoreCompileInputs.cache

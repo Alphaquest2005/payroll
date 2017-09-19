@@ -21,3 +21,7 @@ C:\Prism\GitRepositiory\payroll\PayRoll\Emailing\bin\Debug\PostSharp.dll
 C:\Prism\GitRepositiory\payroll\PayRoll\Emailing\obj\Debug\EmailLogger.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\payroll\PayRoll\Emailing\obj\Debug\EmailLogger.dll
 C:\Prism\GitRepositiory\payroll\PayRoll\Emailing\obj\Debug\EmailLogger.pdb
+C:\Prism\GitRepositiory\payroll\PayRoll\Emailing\obj\Debug\EmailLogger.csproj.CoreCompileInputs.cache
+C:\Prism\GitRepositiory\payroll\PayRoll\Emailing\bin\Debug\EmailLogger.pssym
+C:\Prism\GitRepositiory\payroll\PayRoll\Emailing\obj\Debug\EmailLogger.dll.postsharp
+C:\Prism\GitRepositiory\payroll\PayRoll\Emailing\obj\Debug\PostSharpHost.config

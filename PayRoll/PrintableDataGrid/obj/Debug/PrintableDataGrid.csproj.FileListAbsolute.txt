@@ -14,3 +14,4 @@ C:\Prism\GitRepositiory\payroll\PayRoll\PrintableDataGrid\bin\Debug\LinqLib.xml
 C:\Prism\GitRepositiory\payroll\PayRoll\PrintableDataGrid\obj\Debug\PrintableDataGrid.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\payroll\PayRoll\PrintableDataGrid\obj\Debug\PrintableDataGrid.dll
 C:\Prism\GitRepositiory\payroll\PayRoll\PrintableDataGrid\obj\Debug\PrintableDataGrid.pdb
+C:\Prism\GitRepositiory\payroll\PayRoll\PrintableDataGrid\obj\Debug\PrintableDataGrid.csproj.CoreCompileInputs.cache

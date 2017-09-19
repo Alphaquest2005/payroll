@@ -1,55 +1,102 @@
 {
-  "version": 2,
+  "version": 3,
   "targets": {
     ".NETFramework,Version=v4.5": {
-      "PostSharp/4.3.31": {
+      "PostSharp/5.0.33": {
         "type": "package",
+        "dependencies": {
+          "PostSharp.Redist": "[5.0.33, 6.0.0)"
+        },
         "compile": {
-          "lib/net35-client/PostSharp.dll": {}
+          "lib/net35-client/_._": {}
         },
         "runtime": {
-          "lib/net35-client/PostSharp.dll": {}
+          "lib/net35-client/_._": {}
+        },
+        "build": {
+          "build/PostSharp.props": {},
+          "build/PostSharp.targets": {}
+        }
+      },
+      "PostSharp.Redist/5.0.33": {
+        "type": "package",
+        "compile": {
+          "lib/net45/PostSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net45/PostSharp.dll": {}
         }
       }
     },
     ".NETFramework,Version=v4.5/win": {
-      "PostSharp/4.3.31": {
+      "PostSharp/5.0.33": {
         "type": "package",
+        "dependencies": {
+          "PostSharp.Redist": "[5.0.33, 6.0.0)"
+        },
         "compile": {
-          "lib/net35-client/PostSharp.dll": {}
+          "lib/net35-client/_._": {}
         },
         "runtime": {
-          "lib/net35-client/PostSharp.dll": {}
+          "lib/net35-client/_._": {}
+        },
+        "build": {
+          "build/PostSharp.props": {},
+          "build/PostSharp.targets": {}
+        }
+      },
+      "PostSharp.Redist/5.0.33": {
+        "type": "package",
+        "compile": {
+          "lib/net45/PostSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net45/PostSharp.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "PostSharp/4.3.31": {
-      "sha512": "SU3UV33EVCVrwVG+DR84//hHrnH5T1FvAB+d2YZODCOQJKLHv++GA2r8q7cN5BTGu4EcWc3grXNA2ySsdWUo9w==",
+    "PostSharp/5.0.33": {
+      "sha512": "HzhH4kH3FY5lCfkN7eNZakeu861S+0LkLUtYmC8KoncbIpsYNpVS9KnqMtXQQx6bzfjNtqavtn5jc0RnWYhglQ==",
       "type": "package",
-      "path": "postsharp/4.3.31",
+      "path": "postsharp/5.0.33",
       "files": [
-        "PostSharp.4.3.31.nupkg.sha512",
-        "PostSharp.nuspec",
+        "build/PostSharp-Tools.exe",
+        "build/PostSharp.MSBuild.Core.v5.0.33.Release.dll",
+        "build/PostSharp.MSBuild.v5.0.33.Release.dll",
+        "build/PostSharp.Version.properties",
+        "build/PostSharp.properties",
+        "build/PostSharp.props",
+        "build/PostSharp.targets",
+        "build/PostSharp.tasks",
+        "lib/net35-client/_._",
+        "lib/netcoreapp1.0/PostSharp.Compiler.Client.dll",
+        "lib/netcoreapp1.0/dotnet-compile-postsharp.exe",
+        "lib/netstandard1.0/_._",
+        "postsharp.5.0.33.nupkg.sha512",
+        "postsharp.nuspec"
+      ]
+    },
+    "PostSharp.Redist/5.0.33": {
+      "sha512": "bWXEY/TdsRXykBT6WrRuZbhCO7eefLbblROkI7wdYKdvq3q1oYV+lvfWE6vhwx5S415fxrdmbt2HYB+klJiKUA==",
+      "type": "package",
+      "path": "postsharp.redist/5.0.33",
+      "files": [
         "lib/net35-client/PostSharp.dll",
         "lib/net35-client/PostSharp.xml",
-        "lib/portable-net4+sl5+netcore45+wpa81+wp8/PostSharp.dll",
-        "lib/portable-net4+sl5+netcore45+wpa81+wp8/PostSharp.xml",
-        "tools/PostSharp-Tools.exe",
-        "tools/PostSharp.MSBuild.v4.3.31.Release.dll",
-        "tools/PostSharp.Version.properties",
-        "tools/PostSharp.properties",
-        "tools/PostSharp.targets",
-        "tools/PostSharp.tasks",
-        "tools/install.ps1",
-        "tools/uninstall.ps1"
+        "lib/net45/PostSharp.dll",
+        "lib/net45/PostSharp.xml",
+        "lib/netstandard1.3/PostSharp.dll",
+        "lib/netstandard1.3/PostSharp.xml",
+        "postsharp.redist.5.0.33.nupkg.sha512",
+        "postsharp.redist.nuspec"
       ]
     }
   },
   "projectFileDependencyGroups": {
     "": [
-      "PostSharp >= 4.3.31"
+      "PostSharp >= 5.0.33"
     ],
     ".NETFramework,Version=v4.5": []
   },
@@ -62,10 +109,20 @@
       "projectName": "EmailLogger",
       "projectPath": "C:\\Prism\\GitRepositiory\\payroll\\PayRoll\\Emailing\\EmailLogger.csproj",
       "projectJsonPath": "C:\\Prism\\GitRepositiory\\payroll\\PayRoll\\Emailing\\project.json",
-      "projectStyle": "ProjectJson"
+      "packagesPath": "C:\\Users\\Alpha\\.nuget\\packages\\",
+      "outputPath": "C:\\Prism\\GitRepositiory\\payroll\\PayRoll\\Emailing\\obj\\",
+      "projectStyle": "ProjectJson",
+      "configFilePaths": [
+        "C:\\Users\\Alpha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      }
     },
     "dependencies": {
-      "PostSharp": "4.3.31"
+      "PostSharp": "5.0.33"
     },
     "frameworks": {
       "net45": {}

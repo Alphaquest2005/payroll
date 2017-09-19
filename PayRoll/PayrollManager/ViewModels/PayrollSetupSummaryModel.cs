@@ -5,6 +5,7 @@ using System.Windows.Data;
 using System.ComponentModel;
 using System.Collections.ObjectModel;
 using System.Linq;
+using PayrollManager.DataLayer;
 
 namespace PayrollManager
 {
@@ -21,8 +22,15 @@ namespace PayrollManager
 
         void PayrollSetupItemsList_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
-            SaveDatabase();
-           
+            using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
+            {
+                foreach (PayrollSetupItem itm in e.NewItems)
+                {
+                    ctx.PayrollSetupItems.ApplyCurrentValues(itm);
+                }
+                
+                SaveDatabase(ctx);
+            }
             OnStaticPropertyChanged("PayrollSetupItems");
         //    UpdateDataSource();
         }
@@ -44,44 +52,28 @@ namespace PayrollManager
 
         public void summaryModel_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            if (e.PropertyName == "CurrentPayrollJobTypeId") //e.PropertyName == "CurrentPayrollSetupItem" && CurrentPayrollSetupItem != null ||
-            {
-                if (CurrentPayrollJobTypeId != -1)
-                {
-                   // PayrollSetupItemsList = new ObservableCollection<DataLayer.PayrollSetupItem>(PayrollSetupItems.Where(p => p.PayrollJobTypeId == CurrentPayrollJobTypeId));
-                    PayrollSetupItemsList = new ObservableCollection<DataLayer.PayrollSetupItem>(PayrollSetupItems);
-                    // UpdateDataSource();
-                }
-                else
-                {
-                    PayrollSetupItemsList = new ObservableCollection<DataLayer.PayrollSetupItem>(PayrollSetupItems);
-                    //  UpdateDataSource();
-                }
-
-                PayrollSetupItemsList.CollectionChanged += PayrollSetupItemsList_CollectionChanged;
-            }
-            if (e.PropertyName == "PayrollSetupItemsCollection")
-            {
-
-                PayrollSetupItemsList = new ObservableCollection<DataLayer.PayrollSetupItem>(PayrollSetupItems);
-                OnStaticPropertyChanged("PayrollSetupItemsList");
-                UpdateDataSource();
-                PayrollSetupItemsList.CollectionChanged += PayrollSetupItemsList_CollectionChanged;
-            }
-
-
+            if (e.PropertyName != "CurrentPayrollJobTypeId" && e.PropertyName != "PayrollSetupItemsCollection") return;
+            PayrollSetupItemsList = new ObservableCollection<DataLayer.PayrollSetupItem>(PayrollSetupItems);
+            OnStaticPropertyChanged("PayrollSetupItemsList");
+            UpdateDataSource();
+            PayrollSetupItemsList.CollectionChanged += PayrollSetupItemsList_CollectionChanged;
         }
 
-       static ObservableCollection<DataLayer.PayrollSetupItem> _PayrollSetupItemsList = new ObservableCollection<DataLayer.PayrollSetupItem>(db.PayrollSetupItems);
+       static ObservableCollection<DataLayer.PayrollSetupItem> _payrollSetupItemsList = null;
         public ObservableCollection<DataLayer.PayrollSetupItem> PayrollSetupItemsList
         {
             get
             {
-                return _PayrollSetupItemsList;
+                if (_payrollSetupItemsList != null) return _payrollSetupItemsList;
+                using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
+                {
+                    _payrollSetupItemsList = new ObservableCollection<PayrollSetupItem>(ctx.PayrollSetupItems);
+                }
+                return _payrollSetupItemsList;
             }
             set
             {
-                _PayrollSetupItemsList = value;
+                _payrollSetupItemsList = value;
                 OnPropertyChanged("PayrollSetupItemsList");
                 
             }

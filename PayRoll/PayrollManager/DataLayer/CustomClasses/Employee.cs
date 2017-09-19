@@ -56,105 +56,125 @@ namespace PayrollManager.DataLayer
             var payrollEmployeeSetups = plist as IList<PayrollEmployeeSetup> ?? plist.ToList();
             if (payrollEmployeeSetups.Any())
             {
-                foreach (var item in payrollEmployeeSetups)
+                using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
                 {
-                    item.BaseAmount = (item.PayrollSetupItem.ApplyToTaxableBenefits == true ? Salary + TaxableBenefitsTotal : Salary);
+                    foreach (var item in payrollEmployeeSetups)
+                    {
+                        item.BaseAmount = (item.PayrollSetupItem.ApplyToTaxableBenefits == true
+                            ? Salary + TaxableBenefitsTotal
+                            : Salary);
+                        var dbitm = ctx.PayrollEmployeeSetup.First(
+                            x => x.PayrollEmployeeSetupId == item.PayrollEmployeeSetupId);
+                        dbitm.BaseAmount = item.BaseAmount;
+                    }
+                    BaseViewModel.SaveDatabase(ctx);
                 }
                 BaseViewModel.OnStaticPropertyChanged("PayrollEmployeeSetups");
             }
         }
 
-        
+        public double Salary { get; set; }
+        public double TaxableBenefitsTotal { get; set; }
+        public string DisplayName => $"{FirstName} {LastName}";
 
-        public double Salary
-        {
-            get
-            {
-                return this.PayrollEmployeeSetups.Where(p => p.PayrollSetupItem != null && p.PayrollSetupItem.IncomeDeduction == true && p.PayrollSetupItem.Name == "Salary").Sum(p => p.CalcAmount);//&& p.PayrollJobType == BaseViewModel.StaticPayrollJobType
-            }
-        }
+        public double TotalIncome { get; set; }
 
-        public double TaxableBenefitsTotal
-        {
-            get
-            {
-                return this.PayrollEmployeeSetups.Where(p => p.PayrollSetupItem != null && p.PayrollSetupItem.IncomeDeduction == true && p.PayrollSetupItem.IsTaxableBenefit == true).Sum(p => p.CalcAmount);//&& p.PayrollJobType == BaseViewModel.StaticPayrollJobType
-            }
-        }
+        public double TotalDeductions { get; set; }
 
+        public double NetAmount => TotalIncome - TotalDeductions;
 
-        public string DisplayName
-        {
-            get
-            {
-                return String.Format("{0} {1}", FirstName, LastName);
-            }
-        }
-        public double TotalIncome
-        {
-            get
-            {
-                if (BaseViewModel.StaticPayrollJob == null) return 0;
-                return  PayrollItems.Where(p => p.IncomeDeduction == true && p.ParentPayrollItem == null && p.PayrollJobId == BaseViewModel.StaticPayrollJob.PayrollJobId).Sum(p => p.Amount);
-            }
-        }
+        public double? PreNetAmount => PreTotalIncome - PreTotalDeductions;
+        public double? PreTotalDeductions { get; set; }
+        public double? PreTotalIncome { get; set; }
+        //public double Salary
+        //{
+        //    get
+        //    {
+        //        return this.PayrollEmployeeSetups.Where(p => p.PayrollSetupItem != null && p.PayrollSetupItem.IncomeDeduction == true && p.PayrollSetupItem.Name == "Salary").Sum(p => p.CalcAmount);//&& p.PayrollJobType == BaseViewModel.CurrentPayrollJobType
+        //    }
+        //}
 
-        public List<PayrollItem> CurrentPayrollItems
-        {
-            get
-            {
-                return PayrollItems.Where(p => p.PayrollJobId == BaseViewModel.StaticPayrollJob.PayrollJobId).ToList();
-            }
-        }
-
-        public double TotalDeductions
-        {
-            get
-            {
-                if (BaseViewModel.StaticPayrollJob == null) return 0;
-                return PayrollItems.Where(p => p.IncomeDeduction == false && p.ParentPayrollItem == null && p.PayrollJobId == BaseViewModel.StaticPayrollJob.PayrollJobId).Sum(p => p.Amount);
-            }
-        }
-
-        public double NetAmount
-        {
-            get
-            {
-                return TotalIncome - TotalDeductions;
-            }
-        }
+        //public double TaxableBenefitsTotal
+        //{
+        //    get
+        //    {
+        //        return this.PayrollEmployeeSetups.Where(p => p.PayrollSetupItem != null && p.PayrollSetupItem.IncomeDeduction == true && p.PayrollSetupItem.IsTaxableBenefit == true).Sum(p => p.CalcAmount);//&& p.PayrollJobType == BaseViewModel.CurrentPayrollJobType
+        //    }
+        //}
 
 
-        public double? PreTotalIncome
-        {
-            get
-            {
-                
-                if (BaseViewModel.StaticPayrollJobType == null) return 0;
-                double amt =  this.PayrollEmployeeSetups.Where(p => p.PayrollSetupItem != null && p.PayrollSetupItem.IncomeDeduction == true && p.PayrollJobType != null && p.PayrollJobType == BaseViewModel.StaticPayrollJobType).Sum(p => p.CalcAmount);
-                
-                return amt ;
-            }
-        }
+        //public string DisplayName
+        //{
+        //    get
+        //    {
+        //        return String.Format("{0} {1}", FirstName, LastName);
+        //    }
+        //}
+        //public double TotalIncome
+        //{
+        //    get
+        //    {
+        //        if (BaseViewModel.CurrentPayrollJob == null) return 0;
+        //        return  PayrollItems.Where(p => p.IncomeDeduction == true && p.ParentPayrollItem == null && p.PayrollJobId == BaseViewModel.CurrentPayrollJob.PayrollJobId).Sum(p => p.Amount);
+        //    }
+        //}
 
-        public double? PreTotalDeductions
-        {
-            get
-            {
+        //public List<PayrollItem> CurrentPayrollItems
+        //{
+        //    get
+        //    {
+        //        return PayrollItems.Where(p => p.PayrollJobId == BaseViewModel.CurrentPayrollJob.PayrollJobId).ToList();
+        //    }
+        //}
 
-                if (BaseViewModel.StaticPayrollJobType == null) return 0;
-                var plist = PayrollEmployeeSetups.Where(p => p.PayrollSetupItem != null && p.PayrollSetupItem.IncomeDeduction == false &&  p.PayrollJobType == BaseViewModel.StaticPayrollJobType);
-                return plist.Sum(p => p.CalcAmount) * -1;
-            }
-        }
+        //public double TotalDeductions
+        //{
+        //    get
+        //    {
+        //        if (BaseViewModel.CurrentPayrollJob == null) return 0;
+        //        return PayrollItems.Where(p => p.IncomeDeduction == false && p.ParentPayrollItem == null && p.PayrollJobId == BaseViewModel.CurrentPayrollJob.PayrollJobId).Sum(p => p.Amount);
+        //    }
+        //}
 
-        public double? PreNetAmount
-        {
-            get
-            {
-                return PreTotalIncome - PreTotalDeductions;
-            }
-        }
-        
+        //public double NetAmount
+        //{
+        //    get
+        //    {
+        //        return TotalIncome - TotalDeductions;
+        //    }
+        //}
+
+
+        //public double? PreTotalIncome
+        //{
+        //    get
+        //    {
+
+        //        if (BaseViewModel.CurrentPayrollJobType == null) return 0;
+        //        double amt =  this.PayrollEmployeeSetups.Where(p => p.PayrollSetupItem != null && p.PayrollSetupItem.IncomeDeduction == true && p.PayrollJobType != null && p.PayrollJobType == BaseViewModel.CurrentPayrollJobType).Sum(p => p.CalcAmount);
+
+        //        return amt ;
+        //    }
+        //}
+
+        //public double? PreTotalDeductions 
+        //{
+        //    get
+        //    {
+
+        //        if (BaseViewModel.CurrentPayrollJobType == null) return 0;
+        //        var plist = PayrollEmployeeSetups.Where(p => p.PayrollSetupItem != null && p.PayrollSetupItem.IncomeDeduction == false &&  p.PayrollJobType == BaseViewModel.CurrentPayrollJobType)Sum(p => p.CalcAmount) * -1;
+        //        return plist.;
+        //    }
+        //}
+
+        //public double? PreNetAmount 
+        //{
+        //    get
+        //    {
+        //        return PreTotalIncome - PreTotalDeductions;
+        //    }
+        //}
+
     }
 }

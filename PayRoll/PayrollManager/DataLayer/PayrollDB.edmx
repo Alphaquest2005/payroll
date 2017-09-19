@@ -96,7 +96,7 @@
           <Property Name="DriversLicence" Type="nvarchar" MaxLength="50" />
           <Property Name="DriversLicenceClass" Type="nvarchar" MaxLength="50" />
           <Property Name="SexId" Type="int" />
-          <Property Name="EmploymentEndDate" Type="datetime" />
+          <Property Name="EmploymentEndDate" Type="datetime2" Precision="7" />
         </EntityType>
         <EntityType Name="Employees_User">
           <Key>
@@ -113,7 +113,7 @@
           <Property Name="InstitutionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
           <Property Name="ShortName" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Priority" Type="varchar" MaxLength="2" />
+          <Property Name="Priority" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="PayrollEmployeeSetup">
           <Key>
@@ -243,9 +243,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_AccountPayrollItem">
-          <End Role="Accounts" Type="Self.Accounts" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
+          <End Role="Accounts" Type="Self.Accounts" Multiplicity="1" />
           <End Role="PayrollItems" Type="Self.PayrollItems" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Accounts">
@@ -256,10 +254,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_AccountPayrollItem1">
+          <End Role="Accounts" Type="Self.Accounts" Multiplicity="1" />
+          <End Role="PayrollItems" Type="Self.PayrollItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="AccountId" />
+            </Principal>
+            <Dependent Role="PayrollItems">
+              <PropertyRef Name="DebitAccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_AccountPayrollSetupItem">
-          <End Role="Accounts" Type="Self.Accounts" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
+          <End Role="Accounts" Type="Self.Accounts" Multiplicity="1" />
           <End Role="PayrollSetupItems" Type="Self.PayrollSetupItems" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Accounts">
@@ -321,9 +329,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_EmployeeEmployeeAccount">
-          <End Role="Employees" Type="Self.Employees" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
+          <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
           <End Role="Accounts_EmployeeAccount" Type="Self.Accounts_EmployeeAccount" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Employees">
@@ -335,9 +341,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_EmployeePayrollEmployeeSetup">
-          <End Role="Employees" Type="Self.Employees" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
+          <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
           <End Role="PayrollEmployeeSetup" Type="Self.PayrollEmployeeSetup" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Employees">
@@ -349,9 +353,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_EmployeePayrollItem">
-          <End Role="Employees" Type="Self.Employees" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
+          <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
           <End Role="PayrollItems" Type="Self.PayrollItems" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Employees">
@@ -537,6 +539,10 @@
             <End Role="Accounts" EntitySet="Accounts" />
             <End Role="PayrollItems" EntitySet="PayrollItems" />
           </AssociationSet>
+          <AssociationSet Name="FK_AccountPayrollItem1" Association="Self.FK_AccountPayrollItem1">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="PayrollItems" EntitySet="PayrollItems" />
+          </AssociationSet>
           <AssociationSet Name="FK_AccountPayrollSetupItem" Association="Self.FK_AccountPayrollSetupItem">
             <End Role="Accounts" EntitySet="Accounts" />
             <End Role="PayrollSetupItems" EntitySet="PayrollSetupItems" />
@@ -618,7 +624,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DataLayer" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="PayrollDB" p1:LazyLoadingEnabled="true">
+        <EntityContainer Name="PayrollDB" p1:LazyLoadingEnabled="false">
           <EntitySet Name="AccountEntries" EntityType="DataLayer.AccountEntry" />
           <EntitySet Name="Accounts" EntityType="DataLayer.Account" />
           <EntitySet Name="AccountTypes" EntityType="DataLayer.AccountType" />
@@ -800,7 +806,7 @@
           <NavigationProperty Name="PayrollItems" Relationship="DataLayer.FK_EmployeePayrollItem" FromRole="Employees" ToRole="PayrollItems" />
           <NavigationProperty Name="EmployeeAccounts" Relationship="DataLayer.EmployeeEmployeeAccount" FromRole="Employee" ToRole="EmployeeAccount" />
           <Property Type="String" Name="EmailAddress" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Type="DateTime" Name="EmploymentEndDate" Precision="3" />
+          <Property Type="DateTime" Name="EmploymentEndDate" Precision="7" Nullable="true" />
           <Property Type="DateTime" Name="EntryDateTime" Precision="3" />
           <Property Type="String" Name="DriversLicence" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="DriversLicenceClass" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -819,7 +825,7 @@
           <Property Type="String" Name="ShortName" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Accounts" Relationship="DataLayer.FK_InstitutionAccountASN" FromRole="Institutions" ToRole="Accounts" />
           <NavigationProperty Name="InstitutionAccounts" Relationship="DataLayer.InstitutionInstitutionAccount" FromRole="Institution" ToRole="InstitutionAccount" />
-          <Property Name="Priority" Type="String" />
+          <Property Name="Priority" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
         </EntityType>
         <EntityType Name="PayrollEmployeeSetup">
           <Key>

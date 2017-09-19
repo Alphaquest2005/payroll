@@ -7,6 +7,7 @@ using System.Linq;
 using LinqLib.DynamicCodeGenerator;
 using LinqLib.Sequence;
 using System.Collections.ObjectModel;
+using System.Data.Objects;
 using System.Windows.Controls;
 using System.Windows;
 using System.Threading.Tasks;
@@ -85,11 +86,11 @@ namespace PayrollManager
                 if (CurrentPayrollJob == null || CurrentBranch == null) return new List<EmpSummary>();
                 using (var ctx = new PayrollDB())
                 {
-                    var emplst = ctx.Employees.Where(x => x.BranchId == CurrentBranch.BranchId).AsEnumerable()
+                    var emplst = ctx.Employees.Where(x => x.BranchId == CurrentBranch.BranchId)
                         .Where(
                             x =>
                                 x.EmploymentEndDate.HasValue == false ||
-                                x.EmploymentEndDate.Value.Date >= DateTime.Now.Date)
+                                EntityFunctions.TruncateTime(x.EmploymentEndDate.Value) >= EntityFunctions.TruncateTime(DateTime.Now))
                         .OrderBy(x => x.LastName)
                         .Select(e => new EmpSummary
                         {
@@ -98,7 +99,6 @@ namespace PayrollManager
                                 new ObservableCollection<PayrollSummary>(
                                     e.PayrollItems.Where(p => p.PayrollJobId == CurrentPayrollJob.PayrollJobId
                                                               && p.ParentPayrollItem == null)
-                                        .AsEnumerable()
                                         .Select(
                                             x =>
                                                 new
@@ -128,11 +128,11 @@ namespace PayrollManager
                                         .ThenBy(x => x.Priority).ToList()),
                             Total = e.NetAmount
                         })
-                        .AsEnumerable();
+                        .ToList();
 
 
 
-                    return emplst.ToList();
+                    return emplst;
                 }
             }).ConfigureAwait(false);
             return await t;

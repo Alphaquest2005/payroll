@@ -71,3 +71,4 @@ C:\Prism\GitRepositiory\payroll\PayRoll\CustomWPFControls\obj\Debug\CustomWPFCon
 C:\Prism\GitRepositiory\payroll\PayRoll\CustomWPFControls\obj\Debug\CustomWPFControls.csproj.GenerateResource.Cache
 C:\Prism\GitRepositiory\payroll\PayRoll\CustomWPFControls\obj\Debug\CustomWPFControls.dll
 C:\Prism\GitRepositiory\payroll\PayRoll\CustomWPFControls\obj\Debug\CustomWPFControls.pdb
+C:\Prism\GitRepositiory\payroll\PayRoll\CustomWPFControls\obj\Debug\CustomWPFControls.csproj.CoreCompileInputs.cache

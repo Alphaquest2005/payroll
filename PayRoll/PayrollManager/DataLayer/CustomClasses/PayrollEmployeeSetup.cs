@@ -15,20 +15,24 @@ namespace PayrollManager.DataLayer
             {
                 try
                 {
-                    if (this.PayrollSetupItem == null) return 0;
-                    DataLayer.PayrollItem p = new PayrollItem() { PayrollSetupItem = this.PayrollSetupItem };
-                    if (BaseViewModel.ConfigPayrollItem(p, this) == BaseViewModel.TriBoolState.Success)
+                    using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
                     {
-                        double amt = Convert.ToDouble(BaseViewModel.GetPayrollAmount(Convert.ToDouble(this.BaseAmount), p));
-                        //p = null;
-                        BaseViewModel.db.DeleteObject(p);
-                        return amt;
-                    }
-                    else
-                    {
-                        //p = null;
-                       BaseViewModel.db.DeleteObject(p);
-                        return 0;
+                        if (this.PayrollSetupItem == null) return 0;
+                        DataLayer.PayrollItem p = new PayrollItem() {PayrollSetupItem = this.PayrollSetupItem};
+                        if (BaseViewModel.ConfigPayrollItem(p, this) == BaseViewModel.TriBoolState.Success)
+                        {
+                            double amt =
+                                Convert.ToDouble(BaseViewModel.GetPayrollAmount(Convert.ToDouble(this.BaseAmount), p));
+                            //p = null;
+                            ctx.DeleteObject(p);
+                            return amt;
+                        }
+                        else
+                        {
+                            //p = null;
+                            ctx.DeleteObject(p);
+                            return 0;
+                        }
                     }
                 }
                 catch (Exception ex)

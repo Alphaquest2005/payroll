@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Collections.ObjectModel;
 using System.Windows.Controls;
+using PayrollManager.DataLayer;
 
 namespace PayrollManager
 {
@@ -54,7 +55,10 @@ namespace PayrollManager
         {
             get
             {
-                return new ObservableCollection<DataLayer.PayrollSetupItem>(db.PayrollSetupItems.ToList());
+                using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
+                {
+                    return new ObservableCollection<DataLayer.PayrollSetupItem>(ctx.PayrollSetupItems.ToList());
+                }
             }
         }
 
@@ -70,7 +74,7 @@ namespace PayrollManager
         public void SaveItem()
         {
             
-            BaseViewModel.SaveDatabase();
+           // BaseViewModel.SaveDatabase();
 
             OnStaticPropertyChanged("PayrollEmployeeSetup");
             OnStaticPropertyChanged("CurrentEmployee");
@@ -84,7 +88,10 @@ namespace PayrollManager
         {
             get
             {
-                return new ListCollectionView(db.ChargeTypes.ToList());
+                using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
+                {
+                    return new ListCollectionView(ctx.ChargeTypes.ToList());
+                }
             }
         }
        
@@ -101,26 +108,32 @@ namespace PayrollManager
 
         public void NewItem()
         {
-            DataLayer.PayrollEmployeeSetup newpi = BaseViewModel.db.PayrollEmployeeSetup.CreateObject();
-            db.PayrollEmployeeSetup.AddObject(newpi);
-           // PayrollEmployeeSetup.Add(newpi);
-            _newItem = newpi;
-            OnStaticPropertyChanged("PayrollEmployeeSetup");
+            using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
+            {
+                DataLayer.PayrollEmployeeSetup newpi = ctx.PayrollEmployeeSetup.CreateObject();
+                ctx.PayrollEmployeeSetup.AddObject(newpi);
+                // PayrollEmployeeSetup.Add(newpi);
+                _newItem = newpi;
+                OnStaticPropertyChanged("PayrollEmployeeSetup");
+            }
         }
 
         public void UpdateItem(DataLayer.PayrollEmployeeSetup newpi )
         {
-            if (db.PayrollEmployeeSetup.Where(a => a.PayrollEmployeeSetupId == newpi.PayrollEmployeeSetupId).Count() == 0)
+            using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
             {
-                db.PayrollEmployeeSetup.AddObject(newpi);
+                if (!ctx.PayrollEmployeeSetup.Where(a => a.PayrollEmployeeSetupId == newpi.PayrollEmployeeSetupId).Any())
+                {
+                    ctx.PayrollEmployeeSetup.AddObject(newpi);
+                }
+
+                SaveDatabase(ctx);
+
+
+                //PayrollEmployeeSetup.Add(newpi);
+                _newItem = newpi;
+                OnStaticPropertyChanged("PayrollEmployeeSetup");
             }
-
-            SaveDatabase();
-
-
-            //PayrollEmployeeSetup.Add(newpi);
-            _newItem = newpi;
-            OnStaticPropertyChanged("PayrollEmployeeSetup");
         }
 
 

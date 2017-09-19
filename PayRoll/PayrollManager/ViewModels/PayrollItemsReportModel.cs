@@ -25,7 +25,6 @@ namespace PayrollManager
                 {
                    
                     var pl = from p in CurrentPayrollJob.PayrollItems
-                                 .AsEnumerable()
                                  .OrderByDescending(x => x.IncomeDeduction)
                                  .ThenBy(x => x.PayrollSetupItem == null?x.Priority:x.PayrollSetupItem.Priority)
                              let pi = p.PayrollSetupItem == null? p.Priority : p.PayrollSetupItem.Priority

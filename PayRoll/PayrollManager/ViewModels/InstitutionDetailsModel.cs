@@ -4,6 +4,7 @@ using System.Text;
 using System.Windows.Data;
 using System.ComponentModel;
 using System.Linq;
+using PayrollManager.DataLayer;
 
 namespace PayrollManager
 {
@@ -17,9 +18,11 @@ namespace PayrollManager
         public void SaveInstitution()
         {
 
-
-
-            SaveDatabase();
+            using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
+            {
+                ctx.Institutions.ApplyCurrentValues(_newInstitution);
+                SaveDatabase(ctx);
+            }
             base.CurrentInstitution = _newInstitution;
            _newInstitution = null;
             
@@ -42,11 +45,12 @@ namespace PayrollManager
 
         public void DeleteInstition()
         {
-            db.Institutions.DeleteObject(CurrentInstitution);
-            // db.PayrollItems.Detach(CurrentPayrollItem);
-
-
-            SaveDatabase();
+            using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
+            {
+                ctx.Institutions.DeleteObject(CurrentInstitution);
+                // db.PayrollItems.Detach(CurrentPayrollItem);
+                SaveDatabase(ctx);
+            }
             CurrentInstitution = null;
 
         }
@@ -58,10 +62,13 @@ namespace PayrollManager
 
         public void NewInstitution()
         {
-            DataLayer.Institution newemp = db.Institutions.CreateObject();
-           db.Institutions.AddObject(newemp);
-            
-            _newInstitution = newemp;
+            using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
+            {
+                DataLayer.Institution newemp = ctx.Institutions.CreateObject();
+                ctx.Institutions.AddObject(newemp);
+
+                _newInstitution = newemp;
+            }
             OnPropertyChanged("CurrentInstitution");
         }
 

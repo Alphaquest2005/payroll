@@ -23,21 +23,21 @@ namespace PayrollManager
             }
         }
 
-        public ObservableCollection<DataLayer.AccountEntry> Debits
-        {
-            get
-            {
-                return new ObservableCollection<DataLayer.AccountEntry>(CurrentAccount.AccountEntries.Where(ae => ae.DebitAmount != 0 && ae.PayrollItem.PayrollJobId == BaseViewModel.StaticPayrollJob.PayrollJobId));
-            }
-        }
+        //public ObservableCollection<DataLayer.AccountEntry> Debits
+        //{
+        //    get
+        //    {
+        //        return new ObservableCollection<DataLayer.AccountEntry>(CurrentAccount.AccountEntries.Where(ae => ae.DebitAmount != 0 && ae.PayrollItem.PayrollJobId == BaseViewModel.CurrentPayrollJob.PayrollJobId));
+        //    }
+        //}
 
-        public ObservableCollection<DataLayer.AccountEntry> Credits
-        {
-            get
-            {
-                return new ObservableCollection<DataLayer.AccountEntry>(CurrentAccount.AccountEntries.Where(ae => ae.CreditAmount != 0 && ae.PayrollItem.PayrollJobId == BaseViewModel.StaticPayrollJob.PayrollJobId));
-            }
-        }
+        //public ObservableCollection<DataLayer.AccountEntry> Credits
+        //{
+        //    get
+        //    {
+        //        return new ObservableCollection<DataLayer.AccountEntry>(CurrentAccount.AccountEntries.Where(ae => ae.CreditAmount != 0 && ae.PayrollItem.PayrollJobId == BaseViewModel.CurrentPayrollJob.PayrollJobId));
+        //    }
+        //}
 		
 
 

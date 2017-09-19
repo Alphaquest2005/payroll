@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using PayrollManager.DataLayer;
 
 namespace PayrollManager
 {
@@ -28,7 +29,7 @@ namespace PayrollManager
        {
            get
            {
-               //return db.AccountEntries.Where(ae => ae.IncomeDeduction == true && ae.PayrollItem.PayrollJobId == BaseViewModel.StaticPayrollJob.PayrollJobId && ae.PayrollItem.Employee == CurrentEmployee).Sum(ae => ae.Total);
+               //return db.AccountEntries.Where(ae => ae.IncomeDeduction == true && ae.PayrollItem.PayrollJobId == BaseViewModel.CurrentPayrollJob.PayrollJobId && ae.PayrollItem.Employee == CurrentEmployee).Sum(ae => ae.Total);
                return CurrentIncomeAccountEntries.Sum(ae => ae.Total);
            }
        }
@@ -37,7 +38,13 @@ namespace PayrollManager
        {
            get
            {
-               return new ObservableCollection<DataLayer.AccountEntry>(db.AccountEntries.Where(ae => ae.IncomeDeduction == true && ae.PayrollItem.PayrollJobId == BaseViewModel.StaticPayrollJob.PayrollJobId && ae.PayrollItem.Employee == CurrentEmployee));
+               using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
+               {
+                   return new ObservableCollection<DataLayer.AccountEntry>(ctx.AccountEntries.Where(
+                       ae => ae.IncomeDeduction == true &&
+                             ae.PayrollItem.PayrollJobId == BaseViewModel.CurrentPayrollJob.PayrollJobId &&
+                             ae.PayrollItem.Employee == CurrentEmployee));
+               }
            }
        }
 
@@ -45,7 +52,14 @@ namespace PayrollManager
        {
            get
            {
-               return new ObservableCollection<DataLayer.AccountEntry>(db.AccountEntries.Where(ae => ae.IncomeDeduction == true && (ae.PayrollItem.PayrollJob.EndDate.Year == BaseViewModel.StaticPayrollJob.EndDate.Year && ae.PayrollItem.PayrollJob.EndDate <= BaseViewModel.StaticPayrollJob.EndDate.AddHours(23)) && ae.PayrollItem.Employee == CurrentEmployee));
+               using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
+               {
+                   return new ObservableCollection<DataLayer.AccountEntry>(ctx.AccountEntries.Where(
+                       ae => ae.IncomeDeduction == true &&
+                             (ae.PayrollItem.PayrollJob.EndDate.Year == BaseViewModel.CurrentPayrollJob.EndDate.Year &&
+                              ae.PayrollItem.PayrollJob.EndDate <= BaseViewModel.CurrentPayrollJob.EndDate.AddHours(23)
+                             ) && ae.PayrollItem.Employee == CurrentEmployee));
+               }
            }
        }
 
@@ -53,7 +67,14 @@ namespace PayrollManager
        {
            get
            {
-               return new ObservableCollection<DataLayer.AccountEntry>(db.AccountEntries.Where(ae => ae.IncomeDeduction == false && (ae.PayrollItem.PayrollJob.EndDate.Year == BaseViewModel.StaticPayrollJob.EndDate.Year && ae.PayrollItem.PayrollJob.EndDate <= BaseViewModel.StaticPayrollJob.EndDate.AddHours(23)) && ae.PayrollItem.Employee == CurrentEmployee));
+               using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
+               {
+                   return new ObservableCollection<DataLayer.AccountEntry>(ctx.AccountEntries.Where(
+                       ae => ae.IncomeDeduction == false &&
+                             (ae.PayrollItem.PayrollJob.EndDate.Year == BaseViewModel.CurrentPayrollJob.EndDate.Year &&
+                              ae.PayrollItem.PayrollJob.EndDate <= BaseViewModel.CurrentPayrollJob.EndDate.AddHours(23)
+                             ) && ae.PayrollItem.Employee == CurrentEmployee));
+               }
            }
        }
 
@@ -76,20 +97,34 @@ namespace PayrollManager
        {
            get
            {
-               if (BaseViewModel.StaticPayrollJob == null) return null;
-               var lst = from p in db.AccountEntries.AsEnumerable()
-                         where p.IncomeDeduction == true && (p.PayrollItem.PayrollJob.EndDate.Year == BaseViewModel.StaticPayrollJob.EndDate.Year && p.PayrollItem.PayrollJob.EndDate <= BaseViewModel.StaticPayrollJob.EndDate.AddHours(23)) && p.PayrollItem.Employee == CurrentEmployee && p.PayrollItem.ParentPayrollItem == null
-                         group p by p.PayrollItem.Name into pname
-                         select new PayrollSummaryLineItem
-                         {
-                             LineItemDescription = pname.Key,
-                             CurrentAmount = pname.Where(z => z.PayrollItem.PayrollJobId == BaseViewModel.StaticPayrollJob.PayrollJobId).Sum(z => z.CreditAmount),
-                             YearAmount = pname.Sum(z => z.CreditAmount)
-                         };
-               List<PayrollSummaryLineItem> f = new List<PayrollSummaryLineItem>(lst.ToList());
-               f.Add(new PayrollSummaryLineItem() { LineItemDescription = "Total", CurrentAmount = lst.Sum(p => p.CurrentAmount), YearAmount = lst.Sum(p => p.YearAmount) });
+               if (BaseViewModel.CurrentPayrollJob == null) return null;
+               using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
+               {
+                   var lst = from p in ctx.AccountEntries
+                       where p.IncomeDeduction == true &&
+                             (p.PayrollItem.PayrollJob.EndDate.Year == BaseViewModel.CurrentPayrollJob.EndDate.Year &&
+                              p.PayrollItem.PayrollJob.EndDate <= BaseViewModel.CurrentPayrollJob.EndDate.AddHours(23)
+                             ) && p.PayrollItem.Employee == CurrentEmployee && p.PayrollItem.ParentPayrollItem == null
+                       group p by p.PayrollItem.Name
+                       into pname
+                       select new PayrollSummaryLineItem
+                       {
+                           LineItemDescription = pname.Key,
+                           CurrentAmount = pname
+                               .Where(z => z.PayrollItem.PayrollJobId == BaseViewModel.CurrentPayrollJob.PayrollJobId)
+                               .Sum(z => z.CreditAmount),
+                           YearAmount = pname.Sum(z => z.CreditAmount)
+                       };
+                   List<PayrollSummaryLineItem> f = new List<PayrollSummaryLineItem>(lst.ToList());
+                   f.Add(new PayrollSummaryLineItem()
+                   {
+                       LineItemDescription = "Total",
+                       CurrentAmount = lst.Sum(p => p.CurrentAmount),
+                       YearAmount = lst.Sum(p => p.YearAmount)
+                   });
 
-               return f;
+                   return f;
+               }
            }
        }
        
@@ -97,43 +132,61 @@ namespace PayrollManager
        {
            get
            {
-               if (BaseViewModel.StaticPayrollJob == null) return null;
-               var lst = from p in db.AccountEntries.AsEnumerable()
-                         where p.IncomeDeduction == false && (p.PayrollItem.PayrollJob.EndDate.Year == BaseViewModel.StaticPayrollJob.EndDate.Year && p.PayrollItem.PayrollJob.EndDate <= BaseViewModel.StaticPayrollJob.EndDate.AddHours(23)) && p.PayrollItem.Employee == CurrentEmployee && p.PayrollItem.ParentPayrollItem == null
-                         group p by p.PayrollItem.Name into pname
-                         select new PayrollSummaryLineItem
-                         {
-                             LineItemDescription = pname.Key,
-                             CurrentAmount = pname.Where(z => z.PayrollItem.PayrollJobId == BaseViewModel.StaticPayrollJob.PayrollJobId).Sum(z => z.DebitAmount),
-                             YearAmount = pname.Sum(z =>  z.DebitAmount)
-                         };
-               List<PayrollSummaryLineItem> f = new List<PayrollSummaryLineItem>(lst.ToList());
-               f.Add(new PayrollSummaryLineItem() { LineItemDescription = "Total", CurrentAmount = lst.Sum(p => p.CurrentAmount), YearAmount = lst.Sum(p => p.YearAmount) });
-               return f;
+               using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
+               {
+                   if (BaseViewModel.CurrentPayrollJob == null) return null;
+                   var lst = from p in ctx.AccountEntries
+                       where p.IncomeDeduction == false &&
+                             (p.PayrollItem.PayrollJob.EndDate.Year == BaseViewModel.CurrentPayrollJob.EndDate.Year &&
+                              p.PayrollItem.PayrollJob.EndDate <= BaseViewModel.CurrentPayrollJob.EndDate.AddHours(23)
+                             ) && p.PayrollItem.Employee == CurrentEmployee && p.PayrollItem.ParentPayrollItem == null
+                       group p by p.PayrollItem.Name
+                       into pname
+                       select new PayrollSummaryLineItem
+                       {
+                           LineItemDescription = pname.Key,
+                           CurrentAmount = pname
+                               .Where(z => z.PayrollItem.PayrollJobId == BaseViewModel.CurrentPayrollJob.PayrollJobId)
+                               .Sum(z => z.DebitAmount),
+                           YearAmount = pname.Sum(z => z.DebitAmount)
+                       };
+                   List<PayrollSummaryLineItem> f = new List<PayrollSummaryLineItem>(lst.ToList());
+                   f.Add(new PayrollSummaryLineItem()
+                   {
+                       LineItemDescription = "Total",
+                       CurrentAmount = lst.Sum(p => p.CurrentAmount),
+                       YearAmount = lst.Sum(p => p.YearAmount)
+                   });
+                   return f;
+               }
            }
        }
 
 
        internal void EmailReport(ref Grid rpt)
        {
-           DataLayer.EmailTemplate etmp = db.EmailTemplate.Where(et => et.Key == "EmployeePayStub").FirstOrDefault();
-           if (CurrentEmployee.EmailAddress == null)
+           using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
            {
-               MessageBox.Show("Please add employee's email address before proceding");
-               return;
-           }
-           if (etmp != null)
-           {
-               string pdffile = WPF2PDF.CreatePDF(ref rpt, StaticCurrentEmployee.DisplayName.Replace(" ","-") + "-" + "PayStub");
-
-               MyOutlook.Mail.CreateDraft(etmp.FromEmailAddress, etmp.Subject, etmp.EmailBody, CurrentEmployee.EmailAddress, pdffile);
-           }
-           else
-           {
-               MessageBox.Show("No email template found");
+               DataLayer.EmailTemplate etmp = ctx.EmailTemplate.FirstOrDefault(et => et.Key == "EmployeePayStub");
+               if (CurrentEmployee.EmailAddress == null)
+               {
+                   MessageBox.Show("Please add employee's email address before proceding");
                    return;
+               }
+               if (etmp != null)
+               {
+                   string pdffile = WPF2PDF.CreatePDF(ref rpt,
+                       StaticCurrentEmployee.DisplayName.Replace(" ", "-") + "-" + "PayStub");
+
+                   MyOutlook.Mail.CreateDraft(etmp.FromEmailAddress, etmp.Subject, etmp.EmailBody,
+                       CurrentEmployee.EmailAddress, pdffile);
+               }
+               else
+               {
+                   MessageBox.Show("No email template found");
+                   return;
+               }
            }
-           
        }
 
 

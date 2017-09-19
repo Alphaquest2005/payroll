@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Linq;
+using PayrollManager.DataLayer;
 
 namespace PayrollManager
 {
@@ -35,32 +36,36 @@ namespace PayrollManager
 
         PayrollEmployeeSetupDetailsModel im;
 
-        private void NewBtn_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            im.NewItem();
-        }
+        //private void NewBtn_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        //{
+        //    im.NewItem();
+        //}
 
-        private void SaveBtn_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            im.SaveItem();
-        }
+        //private void SaveBtn_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        //{
+        //    im.SaveItem();
+        //}
 
         private void PayrollEmpDG_RowEditEnding(object sender, DataGridRowEditEndingEventArgs e)
         {
-            
-            
-            DataLayer.PayrollEmployeeSetup r = (DataLayer.PayrollEmployeeSetup)e.Row.Item;
-            
-             if (r.EntityState == EntityState.Detached && r.EntityKey == null)
-             {
-                 BaseViewModel.db.PayrollEmployeeSetup.AddObject(r);
-             }
-            r.EmployeeId = ((DataLayer.Employee)EmployeeCmb.SelectedItem).EmployeeId;
 
-            im.SaveItem();
+            using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
+            {
+                DataLayer.PayrollEmployeeSetup r = (DataLayer.PayrollEmployeeSetup) e.Row.Item;
+
+                if (r.EntityState == EntityState.Detached && r.EntityKey == null)
+                {
+                    ctx.PayrollEmployeeSetup.AddObject(r);
+                }
+                r.EmployeeId = ((DataLayer.Employee) EmployeeCmb.SelectedItem).EmployeeId;
+
+                BaseViewModel.SaveDatabase(ctx);
+
+                
+            }
 
             im.CurrentEmployee.SetBaseAmounts();
-           // BaseViewModel.OnStaticPropertyChanged("PayrollEmployeeSetups");
+            // BaseViewModel.OnStaticPropertyChanged("PayrollEmployeeSetups");
             //if (e.EditAction == DataGridEditAction.Commit)
             //{
             //    im.UpdateItem(e.Row.Item as DataLayer.PayrollEmployeeSetup);
@@ -90,54 +95,58 @@ namespace PayrollManager
         {
             DataLayer.PayrollEmployeeSetup r = (DataLayer.PayrollEmployeeSetup)e.Row.Item;
 
-           // if (r.EntityState == EntityState.Detached || r.EntityState == EntityState.Deleted) return;
-            if (r.EntityState == EntityState.Detached && r.EntityKey == null)
+            // if (r.EntityState == EntityState.Detached || r.EntityState == EntityState.Deleted) return;
+            using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
             {
-                BaseViewModel.db.PayrollEmployeeSetup.AddObject(r);
-            }
-            
-            if (e.Column.Header.ToString() == "Payroll Item")
-            {
-                ComboBox cb = (ComboBox)e.EditingElement;
-                DataLayer.PayrollSetupItem ps =(DataLayer.PayrollSetupItem) cb.SelectedItem;
-                if (ps == null)
+                if (r.EntityState == EntityState.Detached && r.EntityKey == null)
                 {
-                    e.Cancel = true;
-                    return;
+                    ctx.PayrollEmployeeSetup.AddObject(r);
                 }
-                if (ps.Amount == null || ps.Amount == 0)
+
+                if (e.Column.Header.ToString() == "Payroll Item")
                 {
-                    r.ChargeType = "Rate";
-                    r.Rate = Convert.ToSingle(ps.Rate);
-                    r.RateRounding = ps.RateRounding;
-                    if (ps.CompanyLineItemDescription != null || ps.CompanyLineItemDescription == "")
+                    ComboBox cb = (ComboBox) e.EditingElement;
+                    DataLayer.PayrollSetupItem ps = (DataLayer.PayrollSetupItem) cb.SelectedItem;
+                    if (ps == null)
                     {
-                        r.CompanyRate = Convert.ToSingle(ps.CompanyRate);                        
+                        e.Cancel = true;
+                        return;
                     }
-                }
-                else
-                {
-                    r.ChargeType = "Amount";
-                    r.Amount = ps.Amount;
-                    if (ps.CompanyLineItemDescription != null || ps.CompanyLineItemDescription == "")
+                    if (ps.Amount == null || ps.Amount == 0)
                     {
-                        r.CompanyAmount = ps.CompanyAmount;
-
+                        r.ChargeType = "Rate";
+                        r.Rate = Convert.ToSingle(ps.Rate);
+                        r.RateRounding = ps.RateRounding;
+                        if (ps.CompanyLineItemDescription != null || ps.CompanyLineItemDescription == "")
+                        {
+                            r.CompanyRate = Convert.ToSingle(ps.CompanyRate);
+                        }
                     }
+                    else
+                    {
+                        r.ChargeType = "Amount";
+                        r.Amount = ps.Amount;
+                        if (ps.CompanyLineItemDescription != null || ps.CompanyLineItemDescription == "")
+                        {
+                            r.CompanyAmount = ps.CompanyAmount;
+
+                        }
+                    }
+
+
                 }
 
-                
-            }
-
-            if (e.Column.Header.ToString() == "Amount")
-            {
-                TextBox t = (TextBox)(e.EditingElement);
-               if (t.Text != "$0.00")  r.ChargeType = "Amount";
-            }
-            if (e.Column.Header.ToString() == "Rate")
-            {
-               TextBox t = (TextBox)(e.EditingElement);
-               if (t.Text != "$0.00")  r.ChargeType = "Rate";
+                if (e.Column.Header.ToString() == "Amount")
+                {
+                    TextBox t = (TextBox) (e.EditingElement);
+                    if (t.Text != "$0.00") r.ChargeType = "Amount";
+                }
+                if (e.Column.Header.ToString() == "Rate")
+                {
+                    TextBox t = (TextBox) (e.EditingElement);
+                    if (t.Text != "$0.00") r.ChargeType = "Rate";
+                }
+                BaseViewModel.SaveDatabase(ctx);
             }
         }
 
@@ -180,21 +189,23 @@ namespace PayrollManager
             {
                 foreach (var item in xgrid.SelectedItems.OfType<DataLayer.PayrollEmployeeSetup>().ToList())
                 {
-
-                    if (item.EntityState != EntityState.Detached)
+                    using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
                     {
-                        if (item.EntityKey == null) BaseViewModel.db.PayrollEmployeeSetup.AddObject(item);
-                        BaseViewModel.db.PayrollEmployeeSetup.DeleteObject(item);
+                        if (item.EntityState != EntityState.Detached)
+                        {
+                            if (item.EntityKey == null) ctx.PayrollEmployeeSetup.AddObject(item);
+                            ctx.PayrollEmployeeSetup.DeleteObject(item);
+                        }
+
+                        else
+                        {
+
+                            ctx.PayrollEmployeeSetup.Attach(item);
+                            ctx.PayrollEmployeeSetup.DeleteObject(item);
+
+                        }
+                        BaseViewModel.SaveDatabase(ctx);
                     }
-
-                    else
-                    {
-
-                        BaseViewModel.db.PayrollEmployeeSetup.Attach(item);
-                        BaseViewModel.db.PayrollEmployeeSetup.DeleteObject(item);
-
-                    }
-
 
                     im.SaveItem();
                 }

@@ -55,14 +55,18 @@ namespace PayrollManager
 	    private void EmailAllReport(object sender, MouseButtonEventArgs e)
 	    {
 
-	        var emplst = im.CurrentPayrollJob.PayrollItems.Select(x => x.Employee).Distinct();
-	        foreach (var employee in emplst)
+	        using (var ctx = new PayrollDB())
 	        {
-	            im.CurrentEmployee = employee;
-                DailyReportGD.UpdateLayout();
-	            im.EmailReport(ref DailyReportGD);
+	            var emplst = ctx.PayrollJobs.Where(x => x.PayrollJobId == BaseViewModel.CurrentPayrollJob.PayrollJobId).SelectMany(x => x.PayrollItems).Select(x => x.Employee).Distinct();
+	            foreach (var employee in emplst)
+	            {
+	                im.CurrentEmployee = employee;
+	                DailyReportGD.UpdateLayout();
+	                im.EmailReport(ref DailyReportGD);
+	            }
+	            MessageBox.Show("Email Created. Please Check Drafts to review then send");
 	        }
-            MessageBox.Show("Email Created. Please Check Drafts to review then send");
+
 	    }
 
 

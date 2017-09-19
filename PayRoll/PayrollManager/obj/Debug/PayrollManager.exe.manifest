@@ -44,7 +44,12 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
-      <assemblyIdentity name="EntityFramework" version="5.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="EntityFramework" version="6.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="EntityFramework.SqlServer" version="6.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" processorArchitecture="msil" />
     </dependentAssembly>
   </dependency>
   <dependency>
@@ -94,7 +99,7 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
-      <assemblyIdentity name="PostSharp" version="4.3.31.0" publicKeyToken="B13FD38B8F9C99D7" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="PostSharp" version="5.0.33.0" publicKeyToken="B13FD38B8F9C99D7" language="neutral" processorArchitecture="msil" />
     </dependentAssembly>
   </dependency>
   <dependency>
@@ -105,19 +110,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>RtmqknQiPsHEBKLpNMRqwhRn3bRZcPsIWzgqyw5Zrjc=</dsig:DigestValue>
+        <dsig:DigestValue>QYDWNslV3O2M05A5HQskGSAXBAVOSDFjjcvIDHAzKqo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EmailLogger.dll" size="7680">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EmailLogger.dll" size="8803">
       <assemblyIdentity name="EmailLogger" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>lUCDcLe3DX1fUvWnm+4Eajzzy6UNgkZqNi18SmGG7BI=</dsig:DigestValue>
+        <dsig:DigestValue>5I6r0OrDoSY/+rilKdIFl1RGlZx0zFgpMnh83eWf9zc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -129,7 +134,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>x058d6HwGM3lNPB0PPfoUjNGn7CzDvXXrknpQWOp2MA=</dsig:DigestValue>
+        <dsig:DigestValue>yDDKX5CsAEyArUM+piwNmBRH304qLcf5/OLtlYvxwyM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -297,19 +302,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>70J9IthY7RnFl3ORrUQj72ESNtx0VZbahCzApO5kpPQ=</dsig:DigestValue>
+        <dsig:DigestValue>2RiqHs7eVlVAFSB9tBSqbARDWsqGpsyGTBiO81bbz+0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PayrollManager.exe" size="876032">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PayrollManager.exe" size="904300">
       <assemblyIdentity name="PayrollManager" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>e1iOM0FOfBnqIlorNWUfAyXrMvWuZG4htEV1wt/gm2c=</dsig:DigestValue>
+        <dsig:DigestValue>PG0/qlKOPQAqa6AHB/VeJBfRd6Bj5p/cu+jwDyz1FA4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -345,7 +350,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>p3QGWOzn308bx8bmUWa/BnR0pKbvjzhI7uvqpBisRDA=</dsig:DigestValue>
+        <dsig:DigestValue>FueeMaoJYTKa5dnv2/j9kEsWt8ydBEjXj71vPHLIq3c=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -357,7 +362,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>aVrDjzUMg6LhgwnadpvCzBQPc0PY3s4sc8ZC5Ej7WVA=</dsig:DigestValue>
+        <dsig:DigestValue>gIOf9Dr/1phVu62Ld7aBq0khHvQkfLosbyJAZNxo8Ng=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

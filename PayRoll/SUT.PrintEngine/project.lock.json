@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "targets": {
     ".NETFramework,Version=v3.5": {
       "CommonServiceLocator/1.0.0": {
@@ -247,7 +247,17 @@
       "projectName": "SUT.PrintEngine",
       "projectPath": "C:\\Prism\\GitRepositiory\\payroll\\PayRoll\\SUT.PrintEngine\\SUT.PrintEngine.csproj",
       "projectJsonPath": "C:\\Prism\\GitRepositiory\\payroll\\PayRoll\\SUT.PrintEngine\\project.json",
-      "projectStyle": "ProjectJson"
+      "packagesPath": "C:\\Users\\Alpha\\.nuget\\packages\\",
+      "outputPath": "C:\\Prism\\GitRepositiory\\payroll\\PayRoll\\SUT.PrintEngine\\obj\\",
+      "projectStyle": "ProjectJson",
+      "configFilePaths": [
+        "C:\\Users\\Alpha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      }
     },
     "dependencies": {
       "EnterpriseLibrary.Caching": "5.0.505"
@@ -260,5 +270,40 @@
         "#import": []
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "EnterpriseLibrary.Caching 5.0.505 depends on EnterpriseLibrary.Common (>= 5.0.0) but EnterpriseLibrary.Common 5.0.0 was not found. An approximate best match of EnterpriseLibrary.Common 5.0.505 was resolved.",
+      "libraryId": "EnterpriseLibrary.Common",
+      "targetGraphs": [
+        ".NETFramework,Version=v3.5",
+        ".NETFramework,Version=v3.5/win"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Unity.Interception 2.1.505 depends on Unity (>= 2.1.0) but Unity 2.1.0 was not found. An approximate best match of Unity 2.1.505 was resolved.",
+      "libraryId": "Unity",
+      "targetGraphs": [
+        ".NETFramework,Version=v3.5",
+        ".NETFramework,Version=v3.5/win"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "EnterpriseLibrary.Common 5.0.505 depends on Unity.Interception (>= 2.1.0) but Unity.Interception 2.1.0 was not found. An approximate best match of Unity.Interception 2.1.505 was resolved.",
+      "libraryId": "Unity.Interception",
+      "targetGraphs": [
+        ".NETFramework,Version=v3.5",
+        ".NETFramework,Version=v3.5/win"
+      ]
+    }
+  ]
 }

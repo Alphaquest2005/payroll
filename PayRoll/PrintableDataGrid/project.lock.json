@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "targets": {
     ".NETFramework,Version=v4.5": {
       "LinqLib/1.0.0": {
@@ -34,7 +34,17 @@
       "projectName": "PrintableDataGrid",
       "projectPath": "C:\\Prism\\GitRepositiory\\payroll\\PayRoll\\PrintableDataGrid\\PrintableDataGrid.csproj",
       "projectJsonPath": "C:\\Prism\\GitRepositiory\\payroll\\PayRoll\\PrintableDataGrid\\project.json",
+      "packagesPath": "C:\\Users\\Alpha\\.nuget\\packages\\",
+      "outputPath": "C:\\Prism\\GitRepositiory\\payroll\\PayRoll\\PrintableDataGrid\\obj\\",
       "projectStyle": "ProjectJson",
+      "configFilePaths": [
+        "C:\\Users\\Alpha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
       "frameworks": {
         "net45": {
           "projectReferences": {

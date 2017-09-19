@@ -5,6 +5,7 @@ using System.Windows.Data;
 using System.ComponentModel;
 using System.Collections.ObjectModel;
 using System.Linq;
+using PayrollManager.DataLayer;
 
 namespace PayrollManager
 {
@@ -21,18 +22,18 @@ namespace PayrollManager
         {
             if ((e.PropertyName == "CurrentEmployee" || e.PropertyName == "CurrentBranch" || e.PropertyName == "PayrollItems" || e.PropertyName == "CurrentPayrollJob") && CurrentEmployee != null && CurrentBranch != null && CurrentPayrollJob != null)
             {
-                var lst = from p in db.PayrollItems.AsEnumerable()
-                          where p.EmployeeId == CurrentEmployee.EmployeeId && p.PayrollJobId == CurrentPayrollJob.PayrollJobId && p.PayrollJob.Branch != null && p.PayrollJob.Branch.BranchId == BaseViewModel.StaticCurrentBranch.BranchId
-                          select p;
-                if (lst.Count() > 0)
+                using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
                 {
-                    PayrollItemList = new ObservableCollection<DataLayer.PayrollItem>(lst);
+                    var lst = (from p in ctx.PayrollItems//.AsEnumerable()
+                        where p.EmployeeId == CurrentEmployee.EmployeeId &&
+                              p.PayrollJobId == CurrentPayrollJob.PayrollJobId && p.PayrollJob.Branch != null &&
+                              p.PayrollJob.Branch.BranchId == BaseViewModel.CurrentBranch.BranchId
+                        select p).ToList();
+                    PayrollItemList = lst.Any() 
+                        ? new ObservableCollection<DataLayer.PayrollItem>(lst) 
+                        : null;
+                    OnPropertyChanged("PayrollItemList");
                 }
-                else
-                {
-                    PayrollItemList = null;
-                }
-                OnPropertyChanged("PayrollItemList");
             }
             if (CurrentEmployee == null)
             {

@@ -6,6 +6,8 @@ using System.ComponentModel;
 using System.Linq;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using EmailLogger;
+using PayrollManager.DataLayer;
 
 namespace PayrollManager
 {
@@ -26,12 +28,19 @@ namespace PayrollManager
             {
                 OnStaticPropertyChanged("CurrentAccountsLst");
             }
+            if (e.PropertyName == nameof(CurrentEmployee))
+            {
+                using (var ctx = new PayrollDB())
+                {
+                    CurrentPayrollItems =  ctx.PayrollItems.Where(x => x.EmployeeId == CurrentEmployee.EmployeeId).ToList();
+                }
+            }
         }
 
         public void SavePayrollItem()
         {
-            UpdatePayrollItemsBaseAmounts(CurrentEmployee.CurrentPayrollItems);
-            BaseViewModel.SaveDatabase();
+            UpdatePayrollItemsBaseAmounts(CurrentPayrollItems, new PayrollDB());
+           // BaseViewModel.SaveDatabase();
 
             base.CurrentPayrollItem = _newPayrollItem;
             _newPayrollItem = null;
@@ -42,34 +51,63 @@ namespace PayrollManager
             OnStaticPropertyChanged("CurrentPayrollItem");
         }
 
+        public List<PayrollItem> CurrentPayrollItems { get; set; }
+
         public void DeletePayrollItem()
         {
-
-            if (CurrentPayrollItem != null && CurrentPayrollItem.EntityState != System.Data.EntityState.Detached)
+            using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
             {
-                foreach (var item in CurrentPayrollItem.AccountEntries.ToList())
+                if (CurrentPayrollItem != null && CurrentPayrollItem.EntityState != System.Data.EntityState.Detached)
                 {
-                    db.AccountEntries.DeleteObject(item);
+                    foreach (var item in ctx.AccountEntries.Where(x => x.PayrollItemId == CurrentPayrollItem.PayrollItemId).ToList())
+                    {
+                        ctx.AccountEntries.DeleteObject(item);
+                    }
+                    ctx.PayrollItems.DeleteObject(CurrentPayrollItem);
+                    CurrentPayrollItems = ctx.PayrollItems.Where(x => x.EmployeeId == CurrentEmployee.EmployeeId)
+                        .ToList();
+                    UpdatePayrollItemsBaseAmounts(CurrentPayrollItems, ctx);
+                    SaveDatabase(ctx);
                 }
-                db.PayrollItems.DeleteObject(CurrentPayrollItem);
-                UpdatePayrollItemsBaseAmounts(CurrentEmployee.CurrentPayrollItems);
-                SaveDatabase();
+                CurrentPayrollItem = null;
+                OnStaticPropertyChanged("CurrentPayrollJob");
+                OnStaticPropertyChanged("PayrollItems");
+                OnStaticPropertyChanged("Employees");
+                OnStaticPropertyChanged("CurrentPayrollItem");
             }
-            CurrentPayrollItem = null;
-            OnStaticPropertyChanged("CurrentPayrollJob");
-            OnStaticPropertyChanged("PayrollItems");
-            OnStaticPropertyChanged("Employees");
-            OnStaticPropertyChanged("CurrentPayrollItem");
+        }
+
+        //[MyExceptionHandlerAspect]
+
+        public static void UpdatePayrollItemsBaseAmounts(List<PayrollItem> payrollItems, PayrollDB ctx)
+        {
+           
+                var truebase = payrollItems.Where(p => p.IncomeDeduction == true && p.ParentPayrollItem == null)
+                    .Sum(p => p.Amount);
+                foreach (var itm in payrollItems)
+                {
+
+                    itm.BaseAmount = truebase;
+                    itm.Amount = Math.Abs(GetPayrollAmount(itm.BaseAmount, itm).GetValueOrDefault());
+                    var dbItm = ctx.PayrollItems.First(x => x.PayrollItemId == itm.PayrollItemId);
+                    dbItm.BaseAmount = itm.BaseAmount;
+                    dbItm.Amount = itm.Amount;
+                }
+          
         }
 
         public void NewPayrollItem()
         {
-           DataLayer.PayrollItem newpi =  BaseViewModel.db.PayrollItems.CreateObject();
-           db.PayrollItems.AddObject(newpi);
-           newpi.Status = "Amounts Processed";
-           _newPayrollItem = newpi;
+            using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
+            {
+                DataLayer.PayrollItem newpi = ctx.PayrollItems.CreateObject();
+                ctx.PayrollItems.AddObject(newpi);
+                newpi.Status = "Amounts Processed";
+                _newPayrollItem = newpi;
 
-           OnPropertyChanged("CurrentPayrollItem");
+                OnPropertyChanged("CurrentPayrollItem");
+                SaveDatabase(ctx);
+            }
         }
 
         DataLayer.PayrollItem _newPayrollItem;

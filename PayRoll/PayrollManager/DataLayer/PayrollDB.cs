@@ -60,7 +60,7 @@ namespace PayrollManager.DataLayer
         /// </summary>
         public PayrollDB() : base("name=PayrollDB", "PayrollDB")
         {
-            this.ContextOptions.LazyLoadingEnabled = true;
+            this.ContextOptions.LazyLoadingEnabled = false;
             OnContextCreated();
         }
     
@@ -69,7 +69,7 @@ namespace PayrollManager.DataLayer
         /// </summary>
         public PayrollDB(string connectionString) : base(connectionString, "PayrollDB")
         {
-            this.ContextOptions.LazyLoadingEnabled = true;
+            this.ContextOptions.LazyLoadingEnabled = false;
             OnContextCreated();
         }
     
@@ -78,7 +78,7 @@ namespace PayrollManager.DataLayer
         /// </summary>
         public PayrollDB(EntityConnection connection) : base(connection, "PayrollDB")
         {
-            this.ContextOptions.LazyLoadingEnabled = true;
+            this.ContextOptions.LazyLoadingEnabled = false;
             OnContextCreated();
         }
     

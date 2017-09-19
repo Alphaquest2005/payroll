@@ -155,7 +155,6 @@ namespace PayrollManager
                                                                   && x.PayrollJob.PayrollJobTypeId == CurrentPayrollJob.PayrollJobTypeId)
                                 .Include(x => x.CreditAccount.Institution)
                                 .Include(x => x.Employee)
-                                .AsEnumerable()
                                 .Where(pi => //pi.PayrollJob.Name == CurrentPayrollJob.Name &&
                                     pi.DebitAccount is DataLayer.EmployeeAccount
                                  && "Salary Deduction,Communal Birthday Club".ToUpper().Contains(pi.Name.Trim().ToUpper())

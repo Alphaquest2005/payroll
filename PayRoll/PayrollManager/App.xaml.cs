@@ -23,7 +23,7 @@ namespace PayrollManager
         /// </summary>   
         /// 
         public static SplashScreen2 splash = new SplashScreen2(@"blue_purple_green_copy-408x259.jpg");
-        [MyExceptionHandlerAspect]
+        //[MyExceptionHandlerAspect]
         public App()
         {
             
@@ -46,7 +46,7 @@ namespace PayrollManager
         }
         string machineName = "";
 
-        [MyExceptionHandlerAspect]
+        //[MyExceptionHandlerAspect]
         void OnDispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
         {
             string errorMessage = string.Format("An unhandled exception occurred!: {0} ---- {1}", e.Exception.Message, e.Exception.StackTrace);
