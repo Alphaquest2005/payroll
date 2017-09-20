@@ -42,17 +42,17 @@ namespace PayrollManager.Views
         private void GenPayrollBtn_MouseLeftButtonDown_1(object sender, MouseButtonEventArgs e)
         {
              
-           BaseViewModel.GeneratePayrollItems();
+           BaseViewModel.Instance.GeneratePayrollItems();
         }
 
         private void PostPayrollBtn_MouseLeftButtonDown_1(object sender, MouseButtonEventArgs e)
         {
-            BaseViewModel.PostToAccounts();
+            BaseViewModel.Instance.PostToAccounts();
         }
 
 	    private void Selector_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
 	    {
-	        MessageBox.Show($"Payroll Job Selected - {BaseViewModel.CurrentPayrollJob.Name}");
+	        MessageBox.Show($"Payroll Job Selected - {BaseViewModel.Instance.CurrentPayrollJob.Name}");
 	    }
 	}
 }

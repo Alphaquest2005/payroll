@@ -29,7 +29,7 @@ namespace PayrollManager
             
            
             OnStaticPropertyChanged("CurrentInstitutionAccount");
-            _institutionAccounts = null;
+            CycleInstitutionAccounts();
             OnStaticPropertyChanged("InstitutionAccounts");
 
         }

@@ -27,7 +27,7 @@ namespace PayrollManager
                     var lst = (from p in ctx.PayrollItems//.AsEnumerable()
                         where p.EmployeeId == CurrentEmployee.EmployeeId &&
                               p.PayrollJobId == CurrentPayrollJob.PayrollJobId && p.PayrollJob.Branch != null &&
-                              p.PayrollJob.Branch.BranchId == BaseViewModel.CurrentBranch.BranchId
+                              p.PayrollJob.Branch.BranchId == CurrentBranch.BranchId
                         select p).ToList();
                     PayrollItemList = lst.Any() 
                         ? new ObservableCollection<DataLayer.PayrollItem>(lst) 

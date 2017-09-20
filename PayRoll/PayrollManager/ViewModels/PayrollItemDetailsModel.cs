@@ -30,10 +30,19 @@ namespace PayrollManager
             }
             if (e.PropertyName == nameof(CurrentEmployee))
             {
-                using (var ctx = new PayrollDB())
+                if (CurrentEmployee == null)
                 {
-                    CurrentPayrollItems =  ctx.PayrollItems.Where(x => x.EmployeeId == CurrentEmployee.EmployeeId).ToList();
+                    CurrentPayrollItems = new List<PayrollItem>();
                 }
+                else
+                {
+                    using (var ctx = new PayrollDB())
+                    {
+                        CurrentPayrollItems = ctx.PayrollItems.Where(x => x.EmployeeId == CurrentEmployee.EmployeeId)
+                            .ToList();
+                    }
+                }
+
             }
         }
 

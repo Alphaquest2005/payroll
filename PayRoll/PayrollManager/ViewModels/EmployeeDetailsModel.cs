@@ -27,7 +27,7 @@ namespace PayrollManager
             // if(base.CurrentEmployee != null)base.CurrentEmployee.SetBaseAmounts();
             base.CurrentEmployee = _newEmployee;
             if (base.CurrentEmployee != null) base.CurrentEmployee.SetBaseAmounts();
-            _newEmployee = null;
+            _newEmployee = new Employee();
             OnStaticPropertyChanged("CurrentEmployee");
             OnStaticPropertyChanged("Employees");
 
@@ -70,7 +70,7 @@ namespace PayrollManager
                     ctx.Employees.DeleteObject(CurrentEmployee);
                     SaveDatabase(ctx);
                 }
-                CurrentEmployee = null;
+                CurrentEmployee = new Employee();
                 OnStaticPropertyChanged("CurrentEmployee");
                 OnStaticPropertyChanged("Employees");
             }

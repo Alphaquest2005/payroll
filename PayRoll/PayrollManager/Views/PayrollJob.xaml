@@ -15,7 +15,7 @@
 	</UserControl.Resources>
 
     <Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource PayrollJobModelDataSource},Path=CurrentPayrollJob}"  >
-        <DatePicker SelectedDate="{Binding StartDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding Source={StaticResource PayrollJobModelDataSource},Path=CurrentPayrollJob.Status,  Converter={StaticResource PostedConverter}}" Margin="115,59,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" d:DataContext="{d:DesignData /SampleData/PayrollJobSampleData.xaml}" Height="27" Width="161"/>
+        <DatePicker SelectedDate="{Binding StartDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding Source={StaticResource PayrollJobModelDataSource},Path=Instance.CurrentPayrollJob.Status,  Converter={StaticResource PostedConverter}}" Margin="115,59,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" d:DataContext="{d:DesignData /SampleData/PayrollJobSampleData.xaml}" Height="27" Width="161"/>
         <DatePicker SelectedDate="{Binding EndDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding Source={StaticResource PayrollJobModelDataSource},Path=CurrentPayrollJob.Status,  Converter={StaticResource PostedConverter}}" Margin="115,91,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" d:DataContext="{d:DesignData /SampleData/PayrollJobSampleData.xaml}" Width="161"/>
 		<TextBlock HorizontalAlignment="Left" Height="23" Margin="20,63,0,0" TextWrapping="Wrap" Text="Start Date" VerticalAlignment="Top" Width="84" TextAlignment="Right"/>
 		<TextBlock HorizontalAlignment="Left" Height="22" Margin="20,91,0,0" TextWrapping="Wrap" Text="End Date" VerticalAlignment="Top" Width="84" TextAlignment="Right"/>

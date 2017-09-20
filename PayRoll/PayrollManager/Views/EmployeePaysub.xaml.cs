@@ -57,7 +57,7 @@ namespace PayrollManager
 
 			using (var ctx = new PayrollDB())
 			{
-				var emplst = BaseViewModel._employees;
+				var emplst = BaseViewModel.Instance.Employees;
 				foreach (var employee in emplst)
 				{
 					im.CurrentEmployee = employee;

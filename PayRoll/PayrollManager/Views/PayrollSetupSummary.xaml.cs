@@ -27,34 +27,34 @@ namespace PayrollManager
 
 
 
-        private void ListBox_Drop_2(object sender, DragEventArgs e)
-        {
-            ListBox lstbox = ((ListBox)sender);
-            foreach (DataLayer.PayrollSetupItem item in lstbox.Items)
-            {
-                item.Priority = lstbox.Items.IndexOf(item);
-            }
-        }
+		private void ListBox_Drop_2(object sender, DragEventArgs e)
+		{
+			ListBox lstbox = ((ListBox)sender);
+			foreach (DataLayer.PayrollSetupItem item in lstbox.Items)
+			{
+				item.Priority = lstbox.Items.IndexOf(item);
+			}
+		}
 
-        private void AutoGenTxt_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            BaseViewModel.SetupAllEmployees();
-        }
+		private void AutoGenTxt_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+		{
+			BaseViewModel.Instance.SetupAllEmployees();
+		}
 
-        private void AddSelectedItem(object sender, SelectionChangedEventArgs e)
-        {
-            if (MultiSelectChk.IsChecked == false)
-            {
+		private void AddSelectedItem(object sender, SelectionChangedEventArgs e)
+		{
+			if (MultiSelectChk.IsChecked == false)
+			{
 
-                for (int i = 0; i < ItemsLst.SelectedItems.Count - 1; i++)
-                {
-                    ItemsLst.SelectedItems.RemoveAt(i);
-                }
+				for (int i = 0; i < ItemsLst.SelectedItems.Count - 1; i++)
+				{
+					ItemsLst.SelectedItems.RemoveAt(i);
+				}
 
 
-            }
-            BaseViewModel.CurrentSelectedPayrollSetups = new System.Collections.ObjectModel.ObservableCollection<DataLayer.PayrollSetupItem>(this.ItemsLst.SelectedItems.OfType<DataLayer.PayrollSetupItem>());
-        }
+			}
+			BaseViewModel.Instance.CurrentSelectedPayrollSetups = new System.Collections.ObjectModel.ObservableCollection<DataLayer.PayrollSetupItem>(this.ItemsLst.SelectedItems.OfType<DataLayer.PayrollSetupItem>());
+		}
 
 
 	}

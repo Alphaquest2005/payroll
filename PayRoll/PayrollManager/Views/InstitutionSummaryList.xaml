@@ -26,7 +26,7 @@
     </UserControl.Resources>
 
     <Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource EmployeeSummaryListModelDataSource}}">
-        <ListBox  ItemsSource="{Binding Institutions}" ItemTemplate="{DynamicResource InstitutionSummaryIDT}" SelectedItem="{Binding CurrentInstitution, Mode=OneWayToSource}" HorizontalAlignment="Left" Height="318" Margin="0,80,0,0" VerticalAlignment="Top" Width="672" Background="#4CFFFFFF"/>
+        <ListBox  ItemsSource="{Binding Institutions, Mode=OneWay, IsAsync=True, Source={x:Static local:BaseViewModel.Instance}}" ItemTemplate="{DynamicResource InstitutionSummaryIDT}" SelectedItem="{Binding CurrentInstitution, Mode=OneWayToSource}" HorizontalAlignment="Left" Height="318" Margin="0,80,0,0" VerticalAlignment="Top" Width="672" Background="#4CFFFFFF"/>
         <TextBlock HorizontalAlignment="Left" Height="44" Margin="22,10,0,0" TextWrapping="Wrap" Text="Institutions" VerticalAlignment="Top" Width="281" FontSize="26" Foreground="#FF17204A"/>
     </Grid>
 </UserControl>

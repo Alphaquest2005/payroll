@@ -30,7 +30,7 @@ namespace PayrollManager
             
            
             OnStaticPropertyChanged("CurrentInstitutionAccount");
-            _institutionAccounts = null;
+            CycleInstitutionAccounts();
             OnStaticPropertyChanged("InstitutionAccounts");
 
         }
@@ -94,7 +94,7 @@ namespace PayrollManager
             set
             {
                 base.CurrentInstitutionAccount = value;
-                _institutionAccounts = null;
+                CycleInstitutionAccounts();
                 OnStaticPropertyChanged("InstitutionAccounts");
             }
         }

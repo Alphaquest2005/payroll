@@ -35,12 +35,12 @@
     <Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource PaysubModelDataSource}}">
         <Border x:Name="ReportBRD" Margin="25,80,4.716,28" Width="867" Padding="0,0,0,40">
             <ScrollViewer x:Name="ReportGrd" Margin="0,0,0,0"  CanContentScroll="True" >
-                <Grid x:Name="DailyReportGD" DataContext="{Binding CurrentInstitutionAccount}" HorizontalAlignment="Center" Height="Auto" VerticalAlignment="Top" Width="816" Background="White" >
+                <Grid x:Name="DailyReportGD" HorizontalAlignment="Center" Height="Auto" VerticalAlignment="Top" Width="816" Background="White" >
                     <Grid HorizontalAlignment="Left" Height="38" Margin="40,97,0,0" VerticalAlignment="Top" Width="734"  Background="#FFD7D7D7">
                         <TextBlock Text="{Binding NetTotal, StringFormat=c}" Margin="557,2,0,0" TextAlignment="Right" HorizontalAlignment="Left" VerticalAlignment="Top" Width="177" Height="36" FontSize="21.333" Foreground="#FF353623"/>
                     </Grid>
                     <TextBlock HorizontalAlignment="Center" Height="31.8" Margin="460,65.2,42,0" TextWrapping="Wrap" Text="Payment Report" VerticalAlignment="Top" Width="314" FontSize="25" TextAlignment="Right" Foreground="Black" Background="White"/>
-                    <TextBlock Text="{Binding Date}" Margin="154.3,64.8,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="14.667" Foreground="Black"/>
+                    <TextBlock Text="{Binding Instance.Date, StringFormat=D}" Margin="154.3,64.8,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="14.667" Foreground="Black"/>
                     <StackPanel Margin="40,140,42,20" Orientation="Vertical">
                         <StackPanel Margin="10,0,10.4,0" Orientation="Horizontal" HorizontalAlignment="Stretch" Height="50">
                             <TextBlock Text="Debits" HorizontalAlignment="Left" Height="34" TextWrapping="Wrap" VerticalAlignment="Top" Width="489" FontSize="20" Foreground="#FF393939" TextAlignment="Left" Margin="0,0,0,0"/>
@@ -67,9 +67,9 @@
                             </DataGrid.Columns>
                         </DataGrid>
                     </StackPanel>
-                    <TextBlock HorizontalAlignment="Left" Height="29.6" Margin="37.3,13.4,0,0" TextWrapping="Wrap" Text="{Binding Institution1.Name}" VerticalAlignment="Top" Width="243.2" FontSize="24"/>
-                    <TextBlock HorizontalAlignment="Left" Height="20" Margin="37.3,48,0,0" TextWrapping="Wrap" Text="{Binding AccountName}" VerticalAlignment="Top" Width="243.2" FontSize="16"/>
-                    <TextBlock HorizontalAlignment="Left" Height="20" Margin="37.3,65.2,0,0" TextWrapping="Wrap" Text="{Binding AccountNumber}" VerticalAlignment="Top" Width="243.2" FontSize="16"/>
+                    <TextBlock HorizontalAlignment="Left" Height="29.6" Margin="37.3,13.4,0,0" TextWrapping="Wrap" Text="{Binding Instance.CurrentInstitutionAccount.Institution.Name}" VerticalAlignment="Top" Width="243.2" FontSize="24"/>
+                    <TextBlock HorizontalAlignment="Left" Height="20" Margin="37.3,48,0,0" TextWrapping="Wrap" Text="{Binding Instance.CurrentInstitutionAccount.AccountName}" VerticalAlignment="Top" Width="243.2" FontSize="16"/>
+                    <TextBlock HorizontalAlignment="Left" Height="20" Margin="37.3,65.2,0,0" TextWrapping="Wrap" Text="{Binding Instance.CurrentInstitutionAccount.AccountNumber}" VerticalAlignment="Top" Width="243.2" FontSize="16"/>
                 </Grid>
             </ScrollViewer>
         </Border>
