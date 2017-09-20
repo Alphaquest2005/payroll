@@ -284,7 +284,7 @@ namespace PayrollManager
             }
         }
 
-        static List<Employee> _employees;
+        static List<Employee> _employees = new List<Employee>();
         //[MyExceptionHandlerAspect]
         public ObservableCollection<Employee> Employees
         {
@@ -304,6 +304,7 @@ namespace PayrollManager
                 using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
                 {
                     var res = ctx.Employees
+                        .Include(x => x.EmployeeAccounts)
                         .Where(e => (e.EmploymentEndDate.HasValue == false
                                      || EntityFunctions.TruncateTime(e.EmploymentEndDate) >=
                                      EntityFunctions.TruncateTime(DateTime.Now)))
@@ -323,6 +324,7 @@ namespace PayrollManager
                             x.SexId,
                             x.SupervisorId,
                             x.UnionMember,
+                            EmployeeAccounts = x.EmployeeAccounts,
                             Salary = x.PayrollEmployeeSetups
                                 .Where(p => p.PayrollSetupItem != null &&
                                             p.PayrollSetupItem.IncomeDeduction == true &&
@@ -352,28 +354,38 @@ namespace PayrollManager
                                             CurrentPayrollJob.PayrollJobTypeId)
                         }).ToList();
 
-
-                    _employees = res.Select(x => new Employee()
+                    foreach (var emp in res)
                     {
-                        FirstName = x.FirstName,
-                        BranchId = x.BranchId,
-                        DriversLicence = x.DriversLicence,
-                        EmailAddress = x.EmailAddress,
-                        EmployeeId = x.EmployeeId,
-                        EmploymentEndDate = x.EmploymentEndDate,
-                        EmploymentStartDate = x.EmploymentStartDate,
-                        LastName = x.LastName,
-                        MiddleName = x.MiddleName,
-                        SexId = x.SexId,
-                        SupervisorId = x.SupervisorId,
-                        UnionMember = x.UnionMember,
-                        Salary = x.Salary.Sum(p => p.CalcAmount),
-                        TaxableBenefitsTotal = x.TaxableBenefitsTotal.Sum(p => p.CalcAmount),
-                        TotalIncome = x.TotalIncome.GetValueOrDefault(),
-                        TotalDeductions = x.TotalDeductions.GetValueOrDefault(),
-                        PreTotalIncome = (double?) x.PreTotalIncome.Sum(p => p.CalcAmount),
-                        PreTotalDeductions = (double?) x.PreTotalDeductions.Sum(p => p.CalcAmount) * -1,
-                    }).ToList();
+                        var nemp = new Employee()
+                        {
+                            FirstName = emp.FirstName,
+                            BranchId = emp.BranchId,
+                            DriversLicence = emp.DriversLicence,
+                            EmailAddress = emp.EmailAddress,
+                            EmployeeId = emp.EmployeeId,
+                            EmploymentEndDate = emp.EmploymentEndDate,
+                            EmploymentStartDate = emp.EmploymentStartDate,
+                            LastName = emp.LastName,
+                            MiddleName = emp.MiddleName,
+                            SexId = emp.SexId,
+                            SupervisorId = emp.SupervisorId,
+                            UnionMember = emp.UnionMember,
+                            Salary = emp.Salary.Sum(p => p.CalcAmount),
+
+                            TaxableBenefitsTotal = emp.TaxableBenefitsTotal.Sum(p => p.CalcAmount),
+                            TotalIncome = emp.TotalIncome.GetValueOrDefault(),
+                            TotalDeductions = emp.TotalDeductions.GetValueOrDefault(),
+                            PreTotalIncome = (double?) emp.PreTotalIncome.Sum(p => p.CalcAmount),
+                            PreTotalDeductions = (double?) emp.PreTotalDeductions.Sum(p => p.CalcAmount) * -1,
+                        };
+                        foreach (var employeeAccount in emp.EmployeeAccounts.ToList())
+                        {
+                            nemp.EmployeeAccounts.Add(employeeAccount);
+                        }
+                        _employees.Add(nemp);
+                    }
+
+                    
                 }
                 OnStaticPropertyChanged("Employees");
                 return new ObservableCollection<Employee>(_employees);
@@ -1077,14 +1089,14 @@ namespace PayrollManager
             if (pi.EmployeeId != item.EmployeeId) return TriBoolState.Continue;
 
           //  DataLayer.EmployeeAccount ea = item.EmployeeAccount; // GetEmployeeAccount(item.PayrollSetupItem.EmployeeAccountType, item.EmployeeId);
-            if (item.DebitAccount == null)
+            if (item.CreditAccountId == 0)
             {
                 MessageBox.Show(string.Format("{0} has no Debit Account setup for Account Type:{1}", item.Employee.DisplayName, item.PayrollSetupItem.EmployeeAccountType));
                 
                 return TriBoolState.Fail;
             }
 
-            if (item.CreditAccount == null)
+            if (item.DebitAccountId == 0)
             {
                 MessageBox.Show(string.Format("{0} has no Credit Account setup for Account Type:{1}", item.Employee.DisplayName, item.PayrollSetupItem.EmployeeAccountType));
                 return TriBoolState.Fail;

@@ -5,6 +5,7 @@ using System.Windows.Data;
 using System.ComponentModel;
 using System.Linq;
 using System.Collections.ObjectModel;
+using System.Data.Entity;
 using System.Windows.Controls;
 using PayrollManager.DataLayer;
 
@@ -31,9 +32,9 @@ namespace PayrollManager
             }
             if (e.PropertyName == "CurrentEmployee" || e.PropertyName == "CurrentPayrollJobType")
             {
-                OnPropertyChanged("PayrollEmployeeSetups");
-                OnStaticPropertyChanged("PayrollEmployeeSetups");
-               
+                GetPayrollEmployeeSetups();
+                // OnStaticPropertyChanged("PayrollEmployeeSetups");
+
             }
         }
 
@@ -51,35 +52,47 @@ namespace PayrollManager
         //    }
         //}
 
-        public ObservableCollection<DataLayer.PayrollSetupItem> oPayrollSetupItems
-        {
-            get
-            {
-                using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
-                {
-                    return new ObservableCollection<DataLayer.PayrollSetupItem>(ctx.PayrollSetupItems.ToList());
-                }
-            }
-        }
-
+        //public ObservableCollection<DataLayer.PayrollSetupItem> oPayrollSetupItems
+        //{
+        //    get
+        //    {
+        //        using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
+        //        {
+        //            return new ObservableCollection<DataLayer.PayrollSetupItem>(ctx.PayrollSetupItems.ToList());
+        //        }
+        //    }
+        //}
+	    private static ObservableCollection<DataLayer.PayrollEmployeeSetup> _payrollEmployeeSetups = null;
         public ObservableCollection<DataLayer.PayrollEmployeeSetup> PayrollEmployeeSetups
         {
             get
             {
-                if (CurrentEmployee == null) return null;
-                return new ObservableCollection<DataLayer.PayrollEmployeeSetup>(CurrentEmployee.PayrollEmployeeSetups.Where( p => p.PayrollJobType == CurrentPayrollJobType));
+                if(_payrollEmployeeSetups == null) GetPayrollEmployeeSetups();
+                return _payrollEmployeeSetups;
             }
         }
 
-        public void SaveItem()
+	    private ObservableCollection<PayrollEmployeeSetup> GetPayrollEmployeeSetups()
+	    {
+	        if (CurrentEmployee == null || CurrentPayrollJobType == null) return null;
+	        using (var ctx = new PayrollDB())
+	        {
+	            _payrollEmployeeSetups = new ObservableCollection<DataLayer.PayrollEmployeeSetup>(ctx.PayrollEmployeeSetup
+                    .Include(x => x.PayrollSetupItem)
+                    .Where(p => p.PayrollJobTypeId == CurrentPayrollJobType.PayrollJobTypeId &&
+	                     p.EmployeeId == CurrentEmployee.EmployeeId));
+	            OnPropertyChanged("PayrollEmployeeSetups");
+                return _payrollEmployeeSetups;
+	        }
+	    }
+
+	    public void UpdateProperties()
         {
             
-           // BaseViewModel.SaveDatabase();
-
+           
             OnStaticPropertyChanged("PayrollEmployeeSetup");
             OnStaticPropertyChanged("CurrentEmployee");
-            //base.CurrentPayrollEmployeeSetup = _newItem;
-            //_newItem = null;
+           
 
         }
 
@@ -140,25 +153,25 @@ namespace PayrollManager
 
 
 
-        DataLayer.Employee _currentEmployee;
-        public override DataLayer.Employee CurrentEmployee
-        {
-            get
-            {
-                return _currentEmployee;
-                // return (DataLayer.Employee)GetValue(CurrentEmployeeProperty);
-            }
-            set
-            {
+        //DataLayer.Employee _currentEmployee;
+        //public override DataLayer.Employee CurrentEmployee
+        //{
+        //    get
+        //    {
+        //        return _currentEmployee;
+        //        // return (DataLayer.Employee)GetValue(CurrentEmployeeProperty);
+        //    }
+        //    set
+        //    {
 
 
-                _currentEmployee = value;
-                // NotifyPropertyChanged("CurrentEmployee");
-                OnStaticPropertyChanged("CurrentEmployee");
+        //        _currentEmployee = value;
+        //        // NotifyPropertyChanged("CurrentEmployee");
+        //        OnStaticPropertyChanged("CurrentEmployee");
 
-                // SetValue(CurrentEmployeeProperty, value);
-            }
-        }
+        //        // SetValue(CurrentEmployeeProperty, value);
+        //    }
+        //}
 
 
         DataLayer.PayrollEmployeeSetup _newItem;

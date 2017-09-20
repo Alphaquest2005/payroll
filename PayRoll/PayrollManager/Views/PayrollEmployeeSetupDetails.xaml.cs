@@ -207,7 +207,7 @@ namespace PayrollManager
                         BaseViewModel.SaveDatabase(ctx);
                     }
 
-                    im.SaveItem();
+                    im.UpdateProperties();
                 }
             }
         }
@@ -224,7 +224,7 @@ namespace PayrollManager
 
         private void CheckBox_Click(object sender, RoutedEventArgs e)
         {
-            im.SaveItem();
+            im.UpdateProperties();
 
             im.CurrentEmployee.SetBaseAmounts();
         }

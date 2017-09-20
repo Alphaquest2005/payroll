@@ -88,26 +88,26 @@ namespace PayrollManager
         }
 
         DataLayer.Employee  _newEmployee;
-        public override DataLayer.Employee CurrentEmployee
-        {
-            get
-            {
-                if (_newEmployee == null)
-                {
-                    return base.CurrentEmployee;
-                }
-                else
-                {
-                    return _newEmployee;
-                }
-            }
-            set
-            {
-                base.CurrentEmployee = value;
-                OnStaticPropertyChanged("CurrentEmployee");
-                OnStaticPropertyChanged("Employees");
-            }
-        }
+        //public override DataLayer.Employee CurrentEmployee
+        //{
+        //    get
+        //    {
+        //        if (_newEmployee == null)
+        //        {
+        //            return base.CurrentEmployee;
+        //        }
+        //        else
+        //        {
+        //            return _newEmployee;
+        //        }
+        //    }
+        //    set
+        //    {
+        //        base.CurrentEmployee = value;
+        //        OnStaticPropertyChanged("CurrentEmployee");
+        //        OnStaticPropertyChanged("Employees");
+        //    }
+        //}
 
 
 		#region INotifyPropertyChanged

@@ -8,7 +8,7 @@ C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\obj\Debug\
 PayrollManager
 none
 false
-DEBUG;TRACE
+POSTSHARP;DEBUG;TRACE
 C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\App.xaml
 44655538142
 51934076737
@@ -16,5 +16,5 @@ C:\Prism\GitRepositiory\payroll\PayRoll\PayrollManager\App.xaml
 42-2044599002
 LogInScreen.xaml;MainWindow.xaml;Styles\Theme.xaml;Views\AccountDetails.xaml;Views\AccountsSummary.xaml;Views\AccountsSummaryReport.xaml;Views\BranchPayrollItemBreakDown.xaml;Views\BranchEmployeeInstitutions.xaml;Views\InstitutionDetails.xaml;Views\EmployeeBreakDownReport.xaml;Views\EmployeePaysub.xaml;Views\EmployeeSummaryList.xaml;Views\HeaderTemplate.xaml;Views\InstitutionCheckView.xaml;Views\EmployeeAccountDetails.xaml;Views\EmployeeAccountSummaryList.xaml;Views\EmployeeDetails.xaml;Views\EmployeePayrollItemsList.xaml;Views\InstitutionSummaryList.xaml;Views\IntroScreen.xaml;Views\PayCheckView.xaml;Views\PayrollEmployeeSetupDetails.xaml;Views\PayrollItemDetails.xaml;Views\PayrollItemsReport.xaml;Views\PayrollJob.xaml;Views\PayrollSetupItems.xaml;Views\PayrollSetupSummary.xaml;Views\PaymentReport.xaml;Styles\ButtonStyles.xaml;Styles\ComboBoxStyles.xaml;Styles\CheckBoxStyles.xaml;Styles\DataGridCustomizations.xaml;Styles\TextBlockStyles.xaml;Styles\DataGridStyles.xaml;Styles\GroupBoxStyles.xaml;Styles\ListBoxStyles.xaml;Styles\MenuStyles.xaml;Styles\Resources.xaml;Styles\ScrollBarStyles.xaml;Styles\Styles.xaml;Styles\TabControlStyles.xaml;Styles\TextBoxStyles.xaml;Styles\WindowStyles.xaml;Views\MainView.xaml;
 
-False
+True
 
