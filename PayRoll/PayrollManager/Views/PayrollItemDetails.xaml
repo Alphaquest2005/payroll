@@ -23,7 +23,7 @@
                 <ColumnDefinition Width="17*"/>
             </Grid.ColumnDefinitions>
             <ComboBox SelectedValue="{Binding EmployeeId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
-                      DisplayMemberPath="DisplayName" SelectedValuePath="EmployeeId" ItemsSource="{Binding Employees, Source={StaticResource PayrollItemDetailsModelDataSource}}"
+                      DisplayMemberPath="DisplayName" SelectedValuePath="EmployeeId" ItemsSource="{Binding Employees, Mode=OneWay, IsAsync=True, Source={StaticResource PayrollItemDetailsModelDataSource}}"
                       Margin="143.77,23.348,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="23.816" Width="185.759" RenderTransformOrigin="0.501,0.554" Grid.Column="1"/>
             <TextBox Text="{Binding Name, FallbackValue='Create New Item',UpdateSourceTrigger=PropertyChanged}" Margin="29.894,23.348,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="33.403" Width="248.93" FontSize="21.333"/>
             <TextBlock HorizontalAlignment="Left" Height="22.07" Margin="57.161,25.094,0,0" TextWrapping="Wrap" Text="Employee" VerticalAlignment="Top" Width="72.445" TextAlignment="Right" Grid.Column="1"/>

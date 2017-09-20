@@ -26,6 +26,7 @@ namespace PayrollManager
             {
                 foreach (PayrollSetupItem itm in e.NewItems)
                 {
+                    ctx.PayrollSetupItems.Attach(itm);
                     ctx.PayrollSetupItems.ApplyCurrentValues(itm);
                 }
                 

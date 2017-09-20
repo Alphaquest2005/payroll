@@ -278,104 +278,108 @@ static int instcount = 9999999;
             }
         }
 
-        private static List<Employee> _employees;
+        public static List<Employee> _employees;
         //[MyExceptionHandlerAspect]
-        public static ObservableCollection<Employee> Employees
+        public ObservableCollection<Employee> Employees
         {
             get
             {
                 if (BaseViewModel.CurrentBranch == null) return null;
                 if (_employees != null) return new ObservableCollection<Employee>(_employees.Where(x => x.BranchId == BaseViewModel.CurrentBranch.BranchId).ToList());
                                         
-                try
-                {
-
-
-                    using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
-                    {
-                        var res = ctx.Employees
-                            .Where(e =>  (e.EmploymentEndDate.HasValue == false
-                                            || EntityFunctions.TruncateTime(e.EmploymentEndDate) >=
-                                            EntityFunctions.TruncateTime(DateTime.Now)))
-                            .OrderBy(x => x.LastName)
-                            .Select(x => new
-                            {
-                                x.FirstName,
-                                x.BranchId,
-                                x.DriversLicence,
-                                x.EmailAddress,
-                                x.EmployeeId,
-                                x.EmploymentEndDate,
-                                x.EmploymentStartDate,
-                                x.LastName,
-                                x.MiddleName,
-                                x.SexId,
-                                x.SupervisorId,
-                                x.UnionMember,
-                                Salary = x.PayrollEmployeeSetups
-                                    .Where(p => p.PayrollSetupItem != null &&
-                                                p.PayrollSetupItem.IncomeDeduction == true &&
-                                                p.PayrollSetupItem.Name == "Salary"),
-                                TaxableBenefitsTotal = x.PayrollEmployeeSetups
-                                    .Where(p => p.PayrollSetupItem != null &&
-                                                p.PayrollSetupItem.IncomeDeduction == true &&
-                                                p.PayrollSetupItem.IsTaxableBenefit == true),
-                                TotalIncome = (double?)x.PayrollItems
-                                    .Where(p => p.IncomeDeduction == true && p.ParentPayrollItem == null &&
-                                                p.PayrollJobId == BaseViewModel.CurrentPayrollJob.PayrollJobId)
-                                    .Sum(p => p.Amount),
-                                TotalDeductions = (double?)x.PayrollItems
-                                    .Where(p => p.IncomeDeduction == false && p.ParentPayrollItem == null &&
-                                                p.PayrollJobId == BaseViewModel.CurrentPayrollJob.PayrollJobId)
-                                    .Sum(p => p.Amount),
-                                PreTotalIncome = x.PayrollEmployeeSetups
-                                    .Where(p => p.PayrollSetupItem != null &&
-                                                p.PayrollSetupItem.IncomeDeduction == true &&
-                                                p.PayrollJobType.PayrollJobTypeId == BaseViewModel.CurrentPayrollJob.PayrollJobTypeId)
-                                    ,
-                                PreTotalDeductions =
-                                 x.PayrollEmployeeSetups
-                                    .Where(p => p.PayrollSetupItem != null &&
-                                                p.PayrollSetupItem.IncomeDeduction == false &&
-                                                p.PayrollJobType.PayrollJobTypeId == BaseViewModel.CurrentPayrollJob.PayrollJobTypeId)
-
-                            }).ToList();
-
-
-                        _employees = res.Select(x => new Employee()
-                            {
-                                FirstName = x.FirstName,
-                                BranchId = x.BranchId,
-                                DriversLicence = x.DriversLicence,
-                                EmailAddress = x.EmailAddress,
-                                EmployeeId = x.EmployeeId,
-                                EmploymentEndDate = x.EmploymentEndDate,
-                                EmploymentStartDate = x.EmploymentStartDate,
-                                LastName = x.LastName,
-                                MiddleName = x.MiddleName,
-                                SexId = x.SexId,
-                                SupervisorId = x.SupervisorId,
-                                UnionMember = x.UnionMember,
-                                Salary = x.Salary.Sum(p => p.CalcAmount),
-                                TaxableBenefitsTotal = x.TaxableBenefitsTotal.Sum(p => p.CalcAmount),
-                                TotalIncome = x.TotalIncome.GetValueOrDefault(),
-                                TotalDeductions = x.TotalDeductions.GetValueOrDefault(),
-                                PreTotalIncome = (double?)x.PreTotalIncome.Sum(p => p.CalcAmount),
-                                PreTotalDeductions = (double?)x.PreTotalDeductions.Sum(p => p.CalcAmount) * -1,
-                            }).ToList();
-                    }
-                    return new ObservableCollection<Employee>(_employees);
-                }
-                catch (Exception)
-                {
-
-                    throw;
-                }
+                return GetEmployees();
             }
         }
-     
 
-       ObservableCollection<DataLayer.PayrollJob> _payrollJobs;
+        private static ObservableCollection<Employee> GetEmployees()
+        {
+            try
+            {
+                using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
+                {
+                    var res = ctx.Employees
+                        .Where(e => (e.EmploymentEndDate.HasValue == false
+                                     || EntityFunctions.TruncateTime(e.EmploymentEndDate) >=
+                                     EntityFunctions.TruncateTime(DateTime.Now)))
+                        .Where(x => x.BranchId == CurrentBranch.BranchId && x.PayrollItems.Any(p => p.PayrollJobId == BaseViewModel.CurrentPayrollJob.PayrollJobId))
+                        .OrderBy(x => x.LastName)
+                        .Select(x => new
+                        {
+                            x.FirstName,
+                            x.BranchId,
+                            x.DriversLicence,
+                            x.EmailAddress,
+                            x.EmployeeId,
+                            x.EmploymentEndDate,
+                            x.EmploymentStartDate,
+                            x.LastName,
+                            x.MiddleName,
+                            x.SexId,
+                            x.SupervisorId,
+                            x.UnionMember,
+                            Salary = x.PayrollEmployeeSetups
+                                .Where(p => p.PayrollSetupItem != null &&
+                                            p.PayrollSetupItem.IncomeDeduction == true &&
+                                            p.PayrollSetupItem.Name == "Salary"),
+                            TaxableBenefitsTotal = x.PayrollEmployeeSetups
+                                .Where(p => p.PayrollSetupItem != null &&
+                                            p.PayrollSetupItem.IncomeDeduction == true &&
+                                            p.PayrollSetupItem.IsTaxableBenefit == true),
+                            TotalIncome = (double?) x.PayrollItems
+                                .Where(p => p.IncomeDeduction == true && p.ParentPayrollItem == null &&
+                                            p.PayrollJobId == BaseViewModel.CurrentPayrollJob.PayrollJobId)
+                                .Sum(p => p.Amount),
+                            TotalDeductions = (double?) x.PayrollItems
+                                .Where(p => p.IncomeDeduction == false && p.ParentPayrollItem == null &&
+                                            p.PayrollJobId == BaseViewModel.CurrentPayrollJob.PayrollJobId)
+                                .Sum(p => p.Amount),
+                            PreTotalIncome = x.PayrollEmployeeSetups
+                                .Where(p => p.PayrollSetupItem != null &&
+                                            p.PayrollSetupItem.IncomeDeduction == true &&
+                                            p.PayrollJobType.PayrollJobTypeId ==
+                                            BaseViewModel.CurrentPayrollJob.PayrollJobTypeId),
+                            PreTotalDeductions =
+                            x.PayrollEmployeeSetups
+                                .Where(p => p.PayrollSetupItem != null &&
+                                            p.PayrollSetupItem.IncomeDeduction == false &&
+                                            p.PayrollJobType.PayrollJobTypeId ==
+                                            BaseViewModel.CurrentPayrollJob.PayrollJobTypeId)
+                        }).ToList();
+
+
+                    _employees = res.Select(x => new Employee()
+                    {
+                        FirstName = x.FirstName,
+                        BranchId = x.BranchId,
+                        DriversLicence = x.DriversLicence,
+                        EmailAddress = x.EmailAddress,
+                        EmployeeId = x.EmployeeId,
+                        EmploymentEndDate = x.EmploymentEndDate,
+                        EmploymentStartDate = x.EmploymentStartDate,
+                        LastName = x.LastName,
+                        MiddleName = x.MiddleName,
+                        SexId = x.SexId,
+                        SupervisorId = x.SupervisorId,
+                        UnionMember = x.UnionMember,
+                        Salary = x.Salary.Sum(p => p.CalcAmount),
+                        TaxableBenefitsTotal = x.TaxableBenefitsTotal.Sum(p => p.CalcAmount),
+                        TotalIncome = x.TotalIncome.GetValueOrDefault(),
+                        TotalDeductions = x.TotalDeductions.GetValueOrDefault(),
+                        PreTotalIncome = (double?) x.PreTotalIncome.Sum(p => p.CalcAmount),
+                        PreTotalDeductions = (double?) x.PreTotalDeductions.Sum(p => p.CalcAmount) * -1,
+                    }).ToList();
+                }
+                OnStaticPropertyChanged("Employees");
+                return new ObservableCollection<Employee>(_employees);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+
+        ObservableCollection<DataLayer.PayrollJob> _payrollJobs;
        
         public ObservableCollection<DataLayer.PayrollJob> PayrollJobs
         {
@@ -826,11 +830,12 @@ static int instcount = 9999999;
                     using (var ctx = new PayrollDB())
                     {
                         CurrentBranch.CurrentPayrollJobId = _currentPayrollJob.PayrollJobId;
+                        ctx.Branches.Attach(CurrentBranch);
                         ctx.Branches.ApplyCurrentValues(CurrentBranch);
                         SaveDatabase(ctx);
                     }
                 }
-
+                GetEmployees();
                 OnStaticPropertyChanged("CurrentPayrollJob");
                 
                 CycleCurrentEmployee();
@@ -1522,7 +1527,7 @@ static int instcount = 9999999;
                 MessageBox.Show("Please Select the Payroll Job Type before processing");
                 return;
             }
-            foreach (var emp in Employees.ToList())
+            foreach (var emp in _employees.ToList())
             {
                if( AutoSetupEmployee(emp) == false) break;
             }

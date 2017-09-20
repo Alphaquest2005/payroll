@@ -17,12 +17,12 @@ namespace PayrollManager.DataLayer
             }
         }
 
-        public bool IncomeDeduction
-        {
-            get
-            {
-                return PayrollItem.IncomeDeduction;
-            }
-        }
+        //public bool IncomeDeduction
+        //{
+        //    get
+        //    {
+        //        return PayrollItem.IncomeDeduction;
+        //    }
+        //}
     }
 }

@@ -21,6 +21,7 @@ namespace PayrollManager
 
             using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
             {
+                ctx.Accounts.Attach(_newInstitutionAccount);
                 ctx.Accounts.ApplyCurrentValues(_newInstitutionAccount);
                 SaveDatabase(ctx);
             }

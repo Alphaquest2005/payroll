@@ -20,6 +20,7 @@ namespace PayrollManager
         {
             using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
             {
+                ctx.PayrollJobs.Attach(CurrentPayrollJob);
                 ctx.PayrollJobs.ApplyCurrentValues(CurrentPayrollJob);
                 BaseViewModel.SaveDatabase(ctx);
                 OnStaticPropertyChanged("CurrentPayrollJob");

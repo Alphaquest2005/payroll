@@ -40,6 +40,7 @@ namespace PayrollManager
         {
             using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
             {
+                ctx.PayrollSetupItems.Attach(_newPayrollSetupItem);
                 ctx.PayrollSetupItems.ApplyCurrentValues(_newPayrollSetupItem);
                 SaveDatabase(ctx);
 

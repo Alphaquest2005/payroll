@@ -19,55 +19,55 @@ namespace PayrollManager
 	/// </summary>
 	public partial class EmployeePaysub : UserControl
 	{
-        public EmployeePaysub()
+		public EmployeePaysub()
 		{
 			this.InitializeComponent();
-           im = (EmployeePayStubModel)this.FindResource("EmployeePayStubModelDataSource");
-           
+		   im = (EmployeePayStubModel)this.FindResource("EmployeePayStubModelDataSource");
+		   
 			// Insert code required on object creation below this point.
 		}
-        EmployeePayStubModel im;
-        private void PrintReport(object sender, MouseButtonEventArgs e)
-        {
-            FrameworkElement rpt = (FrameworkElement)DailyReportGD;
-            PrintClass.Print(ref rpt);
-        }
+		EmployeePayStubModel im;
+		private void PrintReport(object sender, MouseButtonEventArgs e)
+		{
+			FrameworkElement rpt = (FrameworkElement)DailyReportGD;
+			PrintClass.Print(ref rpt);
+		}
 
-        private void EmailReport(object sender, MouseButtonEventArgs e)
-        {
-            //FrameworkElement rpt = (FrameworkElement);
-            im.EmailReport(ref DailyReportGD);
-            MessageBox.Show("Email Created. Please Check Drafts to review then send");
-        }
+		private void EmailReport(object sender, MouseButtonEventArgs e)
+		{
+			//FrameworkElement rpt = (FrameworkElement);
+			im.EmailReport(ref DailyReportGD);
+			MessageBox.Show("Email Created. Please Check Drafts to review then send");
+		}
 
-        private void IncomeDataGrid_LoadingRow(object sender, DataGridRowEventArgs e)
-        {
-            //var lrow = im.IncomePayrollLineItems.LastOrDefault();
-            if ((e.Row.Item as EmployeePayStubModel.PayrollSummaryLineItem).LineItemDescription == "Total")
-            {
-               // e.Row.Background = new SolidColorBrush(Colors.DodgerBlue);
-               // e.Row.FontSize = 14;
-                e.Row.FontWeight = FontWeights.Bold;
-               
-            }
-        }
+		private void IncomeDataGrid_LoadingRow(object sender, DataGridRowEventArgs e)
+		{
+			//var lrow = im.IncomePayrollLineItems.LastOrDefault();
+			if ((e.Row.Item as EmployeePayStubModel.PayrollSummaryLineItem).LineItemDescription == "Total")
+			{
+			   // e.Row.Background = new SolidColorBrush(Colors.DodgerBlue);
+			   // e.Row.FontSize = 14;
+				e.Row.FontWeight = FontWeights.Bold;
+			   
+			}
+		}
 
-	    private void EmailAllReport(object sender, MouseButtonEventArgs e)
-	    {
+		private void EmailAllReport(object sender, MouseButtonEventArgs e)
+		{
 
-	        using (var ctx = new PayrollDB())
-	        {
-	            var emplst = ctx.PayrollJobs.Where(x => x.PayrollJobId == BaseViewModel.CurrentPayrollJob.PayrollJobId).SelectMany(x => x.PayrollItems).Select(x => x.Employee).Distinct();
-	            foreach (var employee in emplst)
-	            {
-	                im.CurrentEmployee = employee;
-	                DailyReportGD.UpdateLayout();
-	                im.EmailReport(ref DailyReportGD);
-	            }
-	            MessageBox.Show("Email Created. Please Check Drafts to review then send");
-	        }
+			using (var ctx = new PayrollDB())
+			{
+				var emplst = BaseViewModel._employees;
+				foreach (var employee in emplst)
+				{
+					im.CurrentEmployee = employee;
+					DailyReportGD.UpdateLayout();
+					im.EmailReport(ref DailyReportGD);
+				}
+				MessageBox.Show("Email Created. Please Check Drafts to review then send");
+			}
 
-	    }
+		}
 
 
 

@@ -20,6 +20,7 @@ namespace PayrollManager
         {
             using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
             {
+                ctx.Employees.Attach(_newEmployee);
                 ctx.Employees.ApplyCurrentValues(_newEmployee);
                 SaveDatabase(ctx);
             }
@@ -38,6 +39,7 @@ namespace PayrollManager
             if (base.CurrentEmployee != null)  
             using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
             {
+                ctx.Employees.Attach(CurrentEmployee);
                 ctx.Employees.ApplyCurrentValues(CurrentEmployee);
                 base.CurrentEmployee.SetBaseAmounts();
                 BaseViewModel.SaveDatabase(ctx);

@@ -61,32 +61,34 @@ namespace PayrollManager
 
 
 
-        private void DataGrid_RowEditEnding_1(object sender, DataGridRowEditEndingEventArgs e)
-        {
-            if (e.Row.IsNewItem == true && im.CurrentEmployee != null )
-            {
-                using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
-                {
-                    im.UpdateEmployee();
-                    DataLayer.EmployeeAccount ne = (DataLayer.EmployeeAccount) e.Row.Item;
-                    if (im.CurrentEmployee == null) return;
-                    var inst = ctx.Institutions
-                        .FirstOrDefault(i => i.InstitutionId == ne.InstitutionId);
-                    if (inst != null)
-                    {
-                        ne.AccountName = im.CurrentEmployee.FirstName + " " +
-                                         inst.ShortName +
-                                         " Salary Account";
-                    ne.AccountType = "Salary Account";
-                        ctx.Accounts.ApplyCurrentValues(ne);
-                    }
-                     BaseViewModel.SaveDatabase(ctx);    
-                }
-            }
-           
-        }
+	    private void DataGrid_RowEditEnding_1(object sender, DataGridRowEditEndingEventArgs e)
+	    {
+	        if (e.Row.IsNewItem == true && im.CurrentEmployee != null)
+	        {
+	            using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
+	            {
+	                im.UpdateEmployee();
+	                DataLayer.EmployeeAccount ne = (DataLayer.EmployeeAccount) e.Row.Item;
+	                if (im.CurrentEmployee == null) return;
+	                var inst = ctx.Institutions
+	                    .FirstOrDefault(i => i.InstitutionId == ne.InstitutionId);
+	                if (inst != null)
+	                {
+	                    ne.AccountName = im.CurrentEmployee.FirstName + " " +
+	                                     inst.ShortName +
+	                                     " Salary Account";
+	                    ne.AccountType = "Salary Account";
+	                    ctx.Accounts.Attach(ne);
+	                    ctx.Accounts.ApplyCurrentValues(ne);
+	                    BaseViewModel.SaveDatabase(ctx);
+	                }
 
-        private void DataGrid_BeginningEdit_1(object sender, DataGridBeginningEditEventArgs e)
+	            }
+	        }
+
+	    }
+
+	    private void DataGrid_BeginningEdit_1(object sender, DataGridBeginningEditEventArgs e)
         {
            
                   

@@ -192,7 +192,7 @@
                     <local:EmployeeSummaryList Margin="0,0,0,0" MouseEnter="BringIntoView"/>
                 </Expander>
 
-                <Expander x:Name="PayCheckViewEXP" ExpandDirection="Right"  Margin="50,10,0,0" Width="Auto" Height="535" HorizontalAlignment="Left" VerticalAlignment="Top"  Padding="5,5,5,10" IsExpanded="False"  >
+                <!--<Expander x:Name="PayCheckViewEXP" ExpandDirection="Right"  Margin="50,10,0,0" Width="Auto" Height="535" HorizontalAlignment="Left" VerticalAlignment="Top"  Padding="5,5,5,10" IsExpanded="False"  >
                     <Expander.Header>
                         <Grid Height="Auto" MouseEnter="BringIntoView">
                             <TextBlock Height="63" Style="{DynamicResource ExpHeadStyle}" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,10,23,0" Width="55" FontFamily="Segoe UI Symbol" FontSize="40" Text="&#xE0D1;"/>
@@ -200,7 +200,7 @@
                         </Grid>
                     </Expander.Header>
                     <local:PayCheckView Margin="0" MouseEnter="BringIntoView"/>
-                </Expander>
+                </Expander>-->
 
                 <Expander x:Name="EmployeePayStubEXP" ExpandDirection="Right"  Margin="50,10,0,0" Width="Auto" Height="535" HorizontalAlignment="Left" VerticalAlignment="Top"  Padding="5,5,5,10" IsExpanded="True"  >
                     <Expander.Header>
