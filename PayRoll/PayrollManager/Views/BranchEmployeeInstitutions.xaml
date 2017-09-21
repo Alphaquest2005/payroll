@@ -32,7 +32,7 @@
                         <TextBlock Text="{Binding PayrollJobTotal, StringFormat=Gross Job Amount \{0:c\}}" Margin="388,2,42,0" TextAlignment="Right" HorizontalAlignment="Right" VerticalAlignment="Top" Width="346" Height="36" FontSize="21.333" Foreground="#FF353623"/>
                     </Grid>
                     <TextBlock HorizontalAlignment="Right" Height="32" Margin="0,65,42,0" TextWrapping="Wrap" Text="Employee vs Institution Breakdown" VerticalAlignment="Top" Width="390" FontSize="25" TextAlignment="Right" Foreground="Black" Background="White"/>
-                    <TextBlock Text="{Binding Date}" Margin="546,13,42,0" HorizontalAlignment="right" VerticalAlignment="Top" FontSize="14.667" Foreground="Black" Width="228" TextAlignment="Right"/>
+                    <TextBlock Text="{Binding Date, StringFormat=D}" Margin="546,13,42,0" HorizontalAlignment="right" VerticalAlignment="Top" FontSize="14.667" Foreground="Black" Width="228" TextAlignment="Right"/>
                     <StackPanel Margin="40,140,42,10" Orientation="Vertical">
                         <Grid >
 
@@ -87,7 +87,7 @@
 
                     <TextBlock HorizontalAlignment="Left" Height="29.6" Margin="37.3,13.4,0,0" TextWrapping="Wrap" Text="{Binding Institution1.Name}" VerticalAlignment="Top" Width="243.2" FontSize="24"/>
                     <TextBlock HorizontalAlignment="Left" Height="20" Margin="37.3,48,0,0" TextWrapping="Wrap" Text="{Binding AccountName}" VerticalAlignment="Top" Width="243.2" FontSize="16"/>
-                    <TextBlock HorizontalAlignment="Left" Height="24" Margin="40,73,0,0" TextWrapping="Wrap" Text="{Binding ReportDate, StringFormat='Reporting for {0:MMM-yyyy}'}" VerticalAlignment="Top" Width="321" FontSize="16" FontWeight="Bold"/>
+                    <TextBlock HorizontalAlignment="Left" Height="24" Margin="40,73,0,0" TextWrapping="Wrap" Text="{Binding CurrentPayrollJob.Name}" VerticalAlignment="Top" Width="321" FontSize="16" FontWeight="Bold"/>
                 </Grid>
             </ScrollViewer>
         </Border>

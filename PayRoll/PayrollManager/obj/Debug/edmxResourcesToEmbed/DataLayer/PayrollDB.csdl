@@ -127,7 +127,7 @@
     <Property Type="Int32" Name="InstitutionId" Nullable="false" />
     <Property Type="String" Name="AccountName" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="AccountType" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="RealAccountEntries" Relationship="DataLayer.FK_AccountAccountEntry" FromRole="Accounts" ToRole="AccountEntries" />
+    <NavigationProperty Name="AccountEntries" Relationship="DataLayer.FK_AccountAccountEntry" FromRole="Accounts" ToRole="AccountEntries" />
     <NavigationProperty Name="PayrollItems" Relationship="DataLayer.FK_AccountPayrollItem" FromRole="Accounts" ToRole="PayrollItems" />
     <NavigationProperty Name="PayrollItems1" Relationship="DataLayer.FK_AccountPayrollItem1" FromRole="Accounts" ToRole="PayrollItems" />
     <NavigationProperty Name="PayrollSetupItems" Relationship="DataLayer.FK_AccountPayrollSetupItem" FromRole="Accounts" ToRole="PayrollSetupItems" />

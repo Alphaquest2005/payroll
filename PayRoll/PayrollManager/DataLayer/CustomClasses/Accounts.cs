@@ -10,18 +10,18 @@ namespace PayrollManager.DataLayer
 {
     public partial class Account
     {
-        private ObservableCollection<DataLayer.AccountEntry> _accountEntries = null;
-        public ObservableCollection<DataLayer.AccountEntry> AccountEntries
-        {
-            get
-            {
-                if (_accountEntries == null)
-                {
-                    return new ObservableCollection<AccountEntry>(RealAccountEntries);
-                }
-                return _accountEntries;
-            }
-        }
+        //private ObservableCollection<DataLayer.AccountEntry> _accountEntries = null;
+        //public ObservableCollection<DataLayer.AccountEntry> AccountEntries
+        //{
+        //    get
+        //    {
+        //        if (_accountEntries == null)
+        //        {
+        //            return new ObservableCollection<AccountEntry>(RealAccountEntries);
+        //        }
+        //        return _accountEntries;
+        //    }
+        //}
 
         public double Total
         {

@@ -626,7 +626,7 @@ namespace PayrollManager
                 {
                     _currentInstitutionAccount = value;
                     
-                    CurrentInstitutionAccount.RealAccountEntries.AssociationChanged += AssociationChanged;
+                    CurrentInstitutionAccount.AccountEntries.AssociationChanged += AssociationChanged;
                 }
                 _currentInstitutionAccount = value;
                 OnStaticPropertyChanged("CurrentInstitutionAccount");
@@ -652,7 +652,7 @@ namespace PayrollManager
                 if (_currentEmployeeAccount == null && value != null)
                 {
                     _currentEmployeeAccount = value;
-                    CurrentEmployeeAccount.RealAccountEntries.AssociationChanged += AssociationChanged;
+                    CurrentEmployeeAccount.AccountEntries.AssociationChanged += AssociationChanged;
                 }
                 _currentEmployeeAccount = value;
                 OnStaticPropertyChanged("CurrentEmployeeAccount");
@@ -676,7 +676,7 @@ namespace PayrollManager
                 if(_currentAccount == null && value != null)
                 {
                     _currentAccount = value;
-                    CurrentAccount.RealAccountEntries.AssociationChanged += AssociationChanged;
+                    CurrentAccount.AccountEntries.AssociationChanged += AssociationChanged;
                 }
                 _currentAccount = value;
                 OnStaticPropertyChanged("CurrentAccount");

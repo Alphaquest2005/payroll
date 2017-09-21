@@ -585,7 +585,7 @@ namespace PayrollManager.DataLayer
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("DataLayer", "FK_AccountAccountEntry", "AccountEntries")]
-        public EntityCollection<AccountEntry> RealAccountEntries
+        public EntityCollection<AccountEntry> AccountEntries
         {
             get
             {

@@ -149,31 +149,40 @@ namespace PayrollManager
                     using (var ctx = new PayrollDB())
                     {
 
-                        var plist =
-                            from p in ctx.PayrollItems.Where(x => x.PayrollJob.StartDate == CurrentPayrollJob.StartDate
-                                                                  && x.PayrollJob.EndDate == CurrentPayrollJob.EndDate
-                                                                  && x.PayrollJob.PayrollJobTypeId == CurrentPayrollJob.PayrollJobTypeId)
-                                .Include(x => x.CreditAccount.Institution)
-                                .Include(x => x.Employee)
-                                .Where(pi => //pi.PayrollJob.Name == CurrentPayrollJob.Name &&
-                                    pi.DebitAccount is DataLayer.EmployeeAccount
-                                 && "Salary Deduction,Communal Birthday Club".ToUpper().Contains(pi.Name.Trim().ToUpper())
-                                ) //.Where(z => z.PayrollJob.Branch.Name == "Main Branch")
-                                .OrderBy(x => x.Employee.LastName)
-                            group p by new { p.Employee.DisplayName }
-                            into g //, p.IncomeDeduction, p.Priority, BranchName = p.PayrollJob.Branch.Name 
-                            select new EmployeeSummaryLine
+                        var plist = ctx.PayrollItems
+                            //use this to get all jobs over branches
+                            .Where(x => x.PayrollJob.StartDate == CurrentPayrollJob.StartDate && x.PayrollJob.EndDate == CurrentPayrollJob.EndDate && x.PayrollJob.PayrollJobTypeId == CurrentPayrollJob.PayrollJobTypeId)
+                            .Include("CreditAccount.Institution")
+                            .Include(x => x.Employee)
+                            .Where(pi => pi.DebitAccount is DataLayer.EmployeeAccount &&
+                                         "Salary Deduction,Communal Birthday Club".ToUpper()
+                                             .Contains(pi.Name.Trim().ToUpper()))
+                            .OrderBy(x => x.Employee.LastName)
+                            .GroupBy(p => new {DisplayName = p.Employee.FirstName + " " + p.Employee.LastName})
+                            .Select(g => new
                             {
                                 Employee = g.Key.DisplayName,
-                                //BranchName = g.Key.BranchName,
-                                //Priority = g.Key.Priority,
-                                //IncomeDeduction = g.Key.IncomeDeduction,
                                 Total = g.Sum(p => p.Amount),
-                                PayrollItems = g.ToList()
-                            };
+                                PayrollItems = g
+                            })
+                            .ToList()
+                            .Select(g => new EmployeeSummaryLine
+                            {
+                                Employee = g.Employee,
+                                Total = g.Total,
+                                PayrollItems = g.PayrollItems.ToList()
+                            }).ToList();
                         if (!plist.Any()) return new List<EmployeeSummaryLine>();
 
-                        return plist.ToList();
+                        plist.ForEach(x =>
+                        {
+                            x.PayrollItems.ForEach(z =>
+                            {
+                                z.CreditAccountReference.Load();
+                                z.CreditAccount.InstitutionReference.Load();
+                            });
+                        });
+                        return plist;
                     }
                 }).ConfigureAwait(false);
 
@@ -345,38 +354,48 @@ namespace PayrollManager
             if (CurrentPayrollJob == null) return new List<EmployeeAccountSummaryLine>();
             var t = Task.Run(() =>
             {
-                using (var ctx = new PayrollDB())
+                try
                 {
-                    var employeeSalaryData =
-                        (from p in ctx.PayrollItems.Where(x => x.PayrollJob.StartDate == CurrentPayrollJob.StartDate
-                                                                  && x.PayrollJob.EndDate == CurrentPayrollJob.EndDate
-                                                                  && x.PayrollJob.PayrollJobTypeId == CurrentPayrollJob.PayrollJobTypeId)
-                            .Include(x => x.CreditAccount.Institution)
-                            .Include(x => x.PayrollJob.PayrollJobType)
-                            .Include(x => x.Employee)
-                            .AsEnumerable()
-                            .Where(pi => (pi.PayrollJob.Name == CurrentPayrollJob.Name)
-                                         && pi.CreditAccount is DataLayer.EmployeeAccount
-                                         && pi.Name.Trim().ToUpper() == "Salary".ToUpper()
-                            )
-                            .OrderBy(x => x.Employee.LastName)
-                         group p by new { p.Employee.DisplayName }
-                            into g //, p.IncomeDeduction, p.Priority, BranchName = p.PayrollJob.Branch.Name 
-                         select new EmployeeAccountSummaryLine
-                         {
-                             Employee = g.Key.DisplayName,
-                             Account = g.FirstOrDefault().CreditAccount,
-                             Total =
-                                 g.FirstOrDefault()
-                                     .CreditAccount.AccountEntries.Where(
-                                         z => z.PayrollItem.PayrollJob.Name == CurrentPayrollJob.Name)
-                                     .Sum(q => q.Total)
-                         }).ToList();
+                    using (var ctx = new PayrollDB())
+                    {
+                        var employeeSalaryData =
+                        ctx.PayrollItems.Where(x => x.PayrollJob.StartDate == CurrentPayrollJob.StartDate
+                                                               && x.PayrollJob.EndDate == CurrentPayrollJob.EndDate
+                                                               && x.PayrollJob.PayrollJobTypeId == CurrentPayrollJob
+                                                                   .PayrollJobTypeId)
+                                .Include(x => x.CreditAccount.Institution)
+                                .Include(x => x.CreditAccount.AccountEntries)
+                                .Include(x => x.PayrollJob.PayrollJobType)
+                                .Include(x => x.Employee)
+                                //use this to get all jobs over branches
+                                .Where(pi => (pi.PayrollJob.StartDate == CurrentPayrollJob.StartDate && pi.PayrollJob.EndDate == CurrentPayrollJob.EndDate && pi.PayrollJob.PayrollJobTypeId == CurrentPayrollJob.PayrollJobTypeId)
+                                             && pi.CreditAccount is DataLayer.EmployeeAccount
+                                             && pi.Name.Trim().ToUpper() == "Salary".ToUpper()
+                                )
+                                .OrderBy(x => x.Employee.LastName)
+                            .Select(p => new { DisplayName = p.Employee.FirstName + " " + p.Employee.LastName,
+                                                             p.CreditAccount,
+                                               Total = p.CreditAccount.AccountEntries.Where(z => z.PayrollItem.PayrollJob.StartDate == CurrentPayrollJob.StartDate && z.PayrollItem.PayrollJob.EndDate == CurrentPayrollJob.EndDate && z.PayrollItem.PayrollJob.PayrollJobTypeId == CurrentPayrollJob.PayrollJobTypeId).Sum(q => q.CreditAmount - q.DebitAmount)
+                                              })
+                            .Select(g => new EmployeeAccountSummaryLine
+                            {
+                                Employee = g.DisplayName,
+                                Account = g.CreditAccount,
+                                Total = g.Total
+                            })
+                            .ToList();
 
-                    if (!employeeSalaryData.Any()) return new List<EmployeeAccountSummaryLine>();
-
-                    return employeeSalaryData;
+                        if (!employeeSalaryData.Any()) return new List<EmployeeAccountSummaryLine>();
+                        employeeSalaryData.ForEach(x => x.Account.InstitutionReference.Load());
+                        return employeeSalaryData;
+                    }
                 }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    throw;
+                }
+
             }).ConfigureAwait(false);
             return await t;
         }
