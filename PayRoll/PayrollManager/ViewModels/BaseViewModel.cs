@@ -836,13 +836,9 @@ namespace PayrollManager
             }
         }
 
-        public  DataLayer.PayrollJob CurrentPayrollJob
+        public DataLayer.PayrollJob CurrentPayrollJob
         {
-            get
-            {
-                return _currentPayrollJob;
-                
-            }
+            get { return _currentPayrollJob; }
             set
             {
                 if (_currentPayrollJob == value) return;
@@ -857,13 +853,17 @@ namespace PayrollManager
                         SaveDatabase(ctx);
                     }
                 }
-                GetEmployees();
-                
-                
-                CycleCurrentEmployee();
-                _institutionAccounts = null;
-                CycleInstitutionAccounts();
+                if (_currentPayrollJob != null)
+                {
+                    Task.Run(() =>
+                    {
+                        GetEmployees();
+                        CycleCurrentEmployee();
+                    });
 
+                    _institutionAccounts = null;
+                    CycleInstitutionAccounts();
+                }
                 OnStaticPropertyChanged("CurrentPayrollJob");
 
             }
