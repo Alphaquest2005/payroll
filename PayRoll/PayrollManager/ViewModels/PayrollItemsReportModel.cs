@@ -4,7 +4,9 @@ using System.Text;
 using System.Windows.Data;
 using System.ComponentModel;
 using System.Collections.ObjectModel;
+using System.Data.Entity;
 using System.Linq;
+using PayrollManager.DataLayer;
 
 namespace PayrollManager
 {
@@ -21,28 +23,10 @@ namespace PayrollManager
             OnPropertyChanged(e.PropertyName);
             if (e.PropertyName == "CurrentPayrollJob")
             {
-                if ( CurrentPayrollJob != null)
+                if (CurrentPayrollJob != null)
                 {
-                   
-                    var pl = from p in CurrentPayrollJob.PayrollItems
-                                 .OrderByDescending(x => x.IncomeDeduction)
-                                 .ThenBy(x => x.PayrollSetupItem == null?x.Priority:x.PayrollSetupItem.Priority)
-                             let pi = p.PayrollSetupItem == null? p.Priority : p.PayrollSetupItem.Priority
-                             group p by new { pname = p.Name, p.CreditAccount.Institution.Name, p.IncomeDeduction, Priority = pi } into g//
-                             select new PayrollItemsReportModel.PayrollReportLine
-                             {
-                                 InstitionName = g.Key.Name,
-                                 PayrollItemName = g.Key.pname,
-                                 Amount = g.Sum(p => p.Amount),
-                                 //CreditAmount = g.Sum(p => p.CreditAmount),
-                                 //DebitAmount = g.Sum(p => p.DebitAmount),
-                                 Priority = g.Key.Priority,
-                                 IncomeDeduction = g.Key.IncomeDeduction
-                             };
-                  
+                    GetPayrollItems();
 
-                   
-                    PayrollItems = new ObservableCollection<PayrollItemsReportModel.PayrollReportLine>(pl.OrderByDescending(x => x.IncomeDeduction).ThenBy(x => x.Priority));//
                     OnStaticPropertyChanged("PayrollItems");
                 }
                 else
@@ -54,12 +38,55 @@ namespace PayrollManager
             }
         }
 
-        public double PayrollJobTotal
+	    private void GetPayrollItems()
+	    {
+
+	        using (var ctx = new PayrollDB())
+	        {
+	            try
+	            {
+	                var pl = from p in ctx.PayrollItems.Where(x => x.PayrollJobId == CurrentPayrollJob.PayrollJobId)
+                            .OrderByDescending(x => x.IncomeDeduction)
+	                        .ThenBy(x => x.PayrollSetupItem == null ? x.Priority : x.PayrollSetupItem.Priority)
+	                    let pi = p.PayrollSetupItem == null ? p.Priority : p.PayrollSetupItem.Priority
+	                    group p by new
+	                    {
+	                        pname = p.Name,
+	                        p.CreditAccount.Institution.Name,
+	                        p.IncomeDeduction,
+	                        Priority = pi
+	                    }
+	                    into g //
+	                    select new PayrollItemsReportModel.PayrollReportLine
+	                    {
+	                        InstitionName = g.Key.Name,
+	                        PayrollItemName = g.Key.pname,
+	                        Amount = g.Sum(p => p.Amount),
+	                        //CreditAmount = g.Sum(p => p.CreditAmount),
+	                        //DebitAmount = g.Sum(p => p.DebitAmount),
+	                        Priority = g.Key.Priority,
+	                        IncomeDeduction = g.Key.IncomeDeduction
+	                    };
+
+
+	                PayrollItems = new ObservableCollection<PayrollItemsReportModel.PayrollReportLine>(pl
+	                    .OrderByDescending(x => x.IncomeDeduction).ThenBy(x => x.Priority)); //
+	            }
+	            catch (Exception exception)
+	            {
+	                Console.WriteLine(exception);
+	                throw;
+	            }
+	        }
+
+	    }
+
+	    public double PayrollJobTotal
         {
             get
             {
                 if (CurrentPayrollJob == null) return 0;
-                return CurrentPayrollJob.PayrollItems.Sum(pi => pi.Amount);
+                return PayrollItems.Sum(pi => pi.Amount);
             }
         }
 

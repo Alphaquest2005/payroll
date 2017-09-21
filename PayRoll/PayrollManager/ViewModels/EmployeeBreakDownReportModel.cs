@@ -7,6 +7,7 @@ using System.Linq;
 using LinqLib.DynamicCodeGenerator;
 using LinqLib.Sequence;
 using System.Collections.ObjectModel;
+using System.Data.Entity.SqlServer;
 using System.Data.Objects;
 using System.Windows.Controls;
 using System.Windows;
@@ -79,67 +80,78 @@ namespace PayrollManager
 	    }
 
 	    private async Task<IEnumerable<EmpSummary>> GetEmpData()
-        {
-            
-            var t = Task.Run(() =>
-            {
-                if (CurrentPayrollJob == null || CurrentBranch == null) return new List<EmpSummary>();
-                using (var ctx = new PayrollDB())
-                {
-                    var emplst = ctx.Employees.Where(x => x.BranchId == CurrentBranch.BranchId)
-                        .Where(
-                            x =>
-                                x.EmploymentEndDate.HasValue == false ||
-                                EntityFunctions.TruncateTime(x.EmploymentEndDate.Value) >= EntityFunctions.TruncateTime(DateTime.Now))
-                        .OrderBy(x => x.LastName)
-                        .Select(e => new EmpSummary
-                        {
-                            Employee_Name = e.DisplayName,
-                            PayrollItems =
-                                new ObservableCollection<PayrollSummary>(
-                                    e.PayrollItems.Where(p => p.PayrollJobId == CurrentPayrollJob.PayrollJobId
-                                                              && p.ParentPayrollItem == null)
-                                        .Select(
-                                            x =>
-                                                new
-                                                {
-                                                    PayrollItem = x,
-                                                    Priority =
-                                                        x.PayrollSetupItem == null
-                                                            ? x.Priority
-                                                            : x.PayrollSetupItem.Priority
-                                                })
-                                        .GroupBy(
-                                            x =>
-                                                new
-                                                {
-                                                    x.PayrollItem.Name,
-                                                    x.PayrollItem.IncomeDeduction,
-                                                    x.Priority
-                                                })
-                                        .Select(g => new PayrollSummary
-                                        {
-                                            PayrollItem =  g.Key.Priority.ToString("D2")+ "-" + g.Key.Name.Trim(),
-                                            IncomeDeduction = g.Key.IncomeDeduction,
-                                            Priority = g.Key.Priority,
-                                            //g.Key.PayrollSetupItem == null ? g.Key.Priority : g.Key.PayrollSetupItem.Priority,
-                                            Total = g.Sum(x => x.PayrollItem.Amount)
-                                        }).OrderByDescending(x => x.IncomeDeduction)
-                                        .ThenBy(x => x.Priority).ToList()),
-                            Total = e.NetAmount
-                        })
-                        .ToList();
+	    {
+
+	        var t = Task.Run(() =>
+	        {
+	            if (CurrentPayrollJob == null || CurrentBranch == null) return new List<EmpSummary>();
+	            using (var ctx = new PayrollDB())
+	            {
+	                try
+	                {
+
+
+	                    var emplst = Employees//.Where(x => x.BranchId == CurrentBranch.BranchId)
+	                        //.Where(
+	                        //    x =>
+	                        //        x.EmploymentEndDate.HasValue == false ||
+	                        //        EntityFunctions.TruncateTime(x.EmploymentEndDate.Value) >=
+	                        //        EntityFunctions.TruncateTime(DateTime.Now))
+	                        //.OrderBy(x => x.LastName)
+	                        .Select(e => new EmpSummary
+	                        {
+	                            Employee_Name = e.DisplayName,
+	                            PayrollItems = ctx.PayrollItems.Where(p => p.PayrollJobId == CurrentPayrollJob.PayrollJobId
+                                                                  && p.EmployeeId == e.EmployeeId
+	                                                              && p.ParentPayrollItem == null)
+	                                        .Select(
+	                                            x =>
+	                                                new
+	                                                {
+	                                                    PayrollItem = x,
+	                                                    Priority =
+	                                                    x.PayrollSetupItem == null
+	                                                        ? x.Priority
+	                                                        : x.PayrollSetupItem.Priority
+	                                                })
+	                                        .GroupBy(
+	                                            x =>
+	                                                new
+	                                                {
+	                                                    Name = x.PayrollItem.Name.Trim(),
+	                                                    x.PayrollItem.IncomeDeduction,
+	                                                    x.Priority
+	                                                })
+	                                        .Select(g => new PayrollSummary
+	                                        {
+	                                            PayrollItemName =  g.Key.Name,//.ToString("D2")
+                                                IncomeDeduction = g.Key.IncomeDeduction,
+	                                            Priority = g.Key.Priority,
+	                                            Total = g.Sum(x => x.PayrollItem.Amount)
+	                                        }).OrderByDescending(x => x.IncomeDeduction)
+	                                        .ThenBy(x => x.Priority)
+                                            .ToList()
+                                        ,
+	                            Total = e.NetAmount
+	                        })
+	                        .ToList();
 
 
 
-                    return emplst;
-                }
-            }).ConfigureAwait(false);
-            return await t;
+	                    return emplst;
+	                }
+	                catch (Exception e)
+	                {
+	                    Console.WriteLine(e);
+	                    throw;
+	                }
+	            }
+	        }).ConfigureAwait(false);
+	        return await t;
 
-        }
+	    }
 
-        public void PopulateGrid()
+	    public void PopulateGrid()
         {
            
             MyDataGrid.Columns.Clear();
@@ -249,17 +261,19 @@ namespace PayrollManager
         public class EmpSummary
         {
             public string Employee_Name { get; set; }
-            public ObservableCollection<PayrollSummary> PayrollItems { get; set; }
+            public List<PayrollSummary> PayrollItems { get; set; }
             public double Total { get; set; }
         }
 
         public class PayrollSummary
         {
-            public string PayrollItem { get; set; }
+            public string PayrollItem => Priority.ToString("D2") + "-" + PayrollItemName;
             public bool IncomeDeduction { get; set; }
             public int Priority { get; set; }
            // public ObservableCollection<DataLayer.PayrollItem> PayrollItems { get; set; }
             public double Total { get; set; }
+
+            public string PayrollItemName { get; set; }
         }
 
         public class PayItmSummary

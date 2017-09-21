@@ -90,7 +90,7 @@ namespace PayrollManager
             try
             {
 
-                if (CurrentPayrollJob == null) return null;
+               
              var t = Task.Run(() =>
             {
                 using (var ctx = new PayrollDB())
@@ -105,25 +105,26 @@ namespace PayrollManager
                                 pi.PayrollJob.EndDate.Month == ReportDate.Month &&
                                 pi.PayrollJob.EndDate.Year == ReportDate.Year)
                         .Include(x => x.PayrollJob.Branch)
-                        //.Where(z => z.PayrollJob.Branch.Name == "Main Branch")
+                        
                         .OrderByDescending(x => x.IncomeDeduction)
                         .ThenBy(x => x.PayrollSetupItem == null ? x.Priority : x.PayrollSetupItem.Priority)
                         group p by new {p.Name}
-                        into g //, p.IncomeDeduction, p.Priority, BranchName = p.PayrollJob.Branch.Name 
+                        into g 
                         select new BranchPayrollItemSummaryLine
                         {
                             Payroll_Item = g.Key.Name,
-                            //BranchName = g.Key.BranchName,
-                            //Priority = g.Key.Priority,
-                            //IncomeDeduction = g.Key.IncomeDeduction,
                             Total = g.Sum(p => p.Amount),
                             PayrollItems =
                                 g.OrderByDescending(x => x.IncomeDeduction)
                                     .ThenBy(x => x.PayrollSetupItem == null ? x.Priority : x.PayrollSetupItem.Priority)
-                                    .ToList() //
+                                    
                         }).ToList();
                     if (!plst.Any()) return null;
-
+                    plst.ForEach(x => x.PayrollItems.ToList().ForEach(z =>
+                    {
+                        z.PayrollJobReference.Load();
+                        z.PayrollJob.BranchReference.Load();
+                    }));
                     return plst;
                     
                 }
@@ -254,7 +255,7 @@ namespace PayrollManager
             //public int Priority { get; set; }
             //public bool IncomeDeduction { get; set; }
             public double Total { get; set; }
-            public List<DataLayer.PayrollItem> PayrollItems { get; set; }
+            public IOrderedEnumerable<PayrollItem> PayrollItems { get; set; }
         }
 
 		
