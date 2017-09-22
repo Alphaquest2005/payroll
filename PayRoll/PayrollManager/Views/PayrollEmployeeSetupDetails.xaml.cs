@@ -49,41 +49,14 @@ namespace PayrollManager
         private void PayrollEmpDG_RowEditEnding(object sender, DataGridRowEditEndingEventArgs e)
         {
 
-            using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
-            {
                 DataLayer.PayrollEmployeeSetup r = (DataLayer.PayrollEmployeeSetup) e.Row.Item;
-
-                if (r.EntityState == EntityState.Detached && r.EntityKey == null)
-                {
-                    ctx.PayrollEmployeeSetup.AddObject(r);
-                }
-                r.EmployeeId = ((DataLayer.Employee) EmployeeCmb.SelectedItem).EmployeeId;
-
-                BaseViewModel.SaveDatabase(ctx);
-
-                
-            }
-
-            im.CurrentEmployee.SetBaseAmounts();
-            // BaseViewModel.OnStaticPropertyChanged("PayrollEmployeeSetups");
-            //if (e.EditAction == DataGridEditAction.Commit)
-            //{
-            //    im.UpdateItem(e.Row.Item as DataLayer.PayrollEmployeeSetup);
-
-            //}
-        }
-
-        private void PayrollEmpDG_MouseLeave(object sender, MouseEventArgs e)
-        {
-          // im.SaveItem();
-        }
-
-        //private void PayrollEmpDG_RowEditEnding(object sender, ExtendedGrid.Microsoft.Windows.Controls.DataGridRowEditEndingEventArgs e)
-        //{
+                r.EmployeeId = ((DataLayer.Employee) EmployeeCmb.SelectedItem)?.EmployeeId ?? BaseViewModel.Instance.CurrentEmployee.EmployeeId;
+                im.SavePayrollEmployeeSetup();
+               // im.SetEmployeeSetupBaseAmounts(r.EmployeeId);
            
-        //   im.SaveItem();
-        //}
+        }
 
+       
       
         private void xgrid_InitializingNewItem(object sender, InitializingNewItemEventArgs e)
         {
@@ -95,14 +68,7 @@ namespace PayrollManager
         {
             DataLayer.PayrollEmployeeSetup r = (DataLayer.PayrollEmployeeSetup)e.Row.Item;
 
-            // if (r.EntityState == EntityState.Detached || r.EntityState == EntityState.Deleted) return;
-            using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
-            {
-                if (r.EntityState == EntityState.Detached && r.EntityKey == null)
-                {
-                    ctx.PayrollEmployeeSetup.AddObject(r);
-                }
-
+           
                 if (e.Column.Header.ToString() == "Payroll Item")
                 {
                     ComboBox cb = (ComboBox) e.EditingElement;
@@ -146,40 +112,11 @@ namespace PayrollManager
                     TextBox t = (TextBox) (e.EditingElement);
                     if (t.Text != "$0.00") r.ChargeType = "Rate";
                 }
-                BaseViewModel.SaveDatabase(ctx);
-            }
+          
+                //im.SavePayrollEmployeeSetup();
         }
 
-        private void xgrid_PreviewKeyDown(object sender, KeyEventArgs e)
-        {
-            //if (e.Key == Key.Delete )
-            //{
-            //    var res = MessageBox.Show("Are you sure you want to delete?", "Delete Row", MessageBoxButton.YesNo);
-            //    if (res == MessageBoxResult.Yes)
-            //    {
-            //        foreach (var item in xgrid.SelectedItems.OfType<DataLayer.PayrollEmployeeSetup>().ToList())
-            //        {
 
-            //            if (item.EntityState != EntityState.Detached && item.EntityKey == null)
-            //            {
-            //                BaseViewModel.db.PayrollEmployeeSetup.AddObject(item);
-            //            }
-
-            //            BaseViewModel.db.PayrollEmployeeSetup.DeleteObject(item);
-            //            im.SaveItem();
-            //        }
-            //    }
-            //    else
-            //    {
-
-            //    }
-            //}
-        }
-
-        private void GrdSourceUpdated(object sender, DataTransferEventArgs e)
-        {
-
-        }
 
         private void DeleteBtn_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -189,57 +126,13 @@ namespace PayrollManager
             {
                 foreach (var item in xgrid.SelectedItems.OfType<DataLayer.PayrollEmployeeSetup>().ToList())
                 {
-                    using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
-                    {
-                        if (item.EntityState != EntityState.Detached)
-                        {
-                            if (item.EntityKey == null) ctx.PayrollEmployeeSetup.AddObject(item);
-                            ctx.PayrollEmployeeSetup.DeleteObject(item);
-                        }
-
-                        else
-                        {
-
-                            ctx.PayrollEmployeeSetup.Attach(item);
-                            ctx.PayrollEmployeeSetup.DeleteObject(item);
-
-                        }
-                        BaseViewModel.SaveDatabase(ctx);
-                    }
-
-                    im.UpdateProperties();
+                    im.DeletePayrollEmployeeSetup(item);
                 }
+                im.UpdateProperties();
             }
         }
 
-        private void CheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-          
-        }
-
-        private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
-        {
-         
-        }
-
-        private void CheckBox_Click(object sender, RoutedEventArgs e)
-        {
-            im.UpdateProperties();
-
-            im.CurrentEmployee.SetBaseAmounts();
-        }
-
-      
-
        
-
-  
-
-      
-
-   
-       
-
        
 	}
 }

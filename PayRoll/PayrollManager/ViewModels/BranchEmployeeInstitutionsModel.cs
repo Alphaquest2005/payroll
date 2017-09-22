@@ -375,13 +375,13 @@ namespace PayrollManager
                                 .OrderBy(x => x.Employee.LastName)
                             .Select(p => new { DisplayName = p.Employee.FirstName + " " + p.Employee.LastName,
                                                              p.CreditAccount,
-                                               Total = p.CreditAccount.AccountEntries.Where(z => z.PayrollItem.PayrollJob.StartDate == CurrentPayrollJob.StartDate && z.PayrollItem.PayrollJob.EndDate == CurrentPayrollJob.EndDate && z.PayrollItem.PayrollJob.PayrollJobTypeId == CurrentPayrollJob.PayrollJobTypeId).Sum(q => q.CreditAmount - q.DebitAmount)
+                                               Total = (double?)p.CreditAccount.AccountEntries.Where(z => z.PayrollItem.PayrollJob.StartDate == CurrentPayrollJob.StartDate && z.PayrollItem.PayrollJob.EndDate == CurrentPayrollJob.EndDate && z.PayrollItem.PayrollJob.PayrollJobTypeId == CurrentPayrollJob.PayrollJobTypeId).Sum(q => q.CreditAmount - q.DebitAmount)
                                               })
                             .Select(g => new EmployeeAccountSummaryLine
                             {
                                 Employee = g.DisplayName,
                                 Account = g.CreditAccount,
-                                Total = g.Total
+                                Total = g.Total ?? 0
                             })
                             .ToList();
 

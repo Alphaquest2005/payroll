@@ -52,10 +52,7 @@ namespace PayrollManager
             im.EditAccount((DataLayer.EmployeeAccount)((FrameworkElement)sender).DataContext);
         }
 
-        private void NewAccount_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            BaseViewModel.slider.MoveTo("EmployeeAccountSummaryListEXP");
-        }
+
 
 
 
@@ -65,9 +62,10 @@ namespace PayrollManager
 	    {
 	        if (e.Row.IsNewItem == true && im.CurrentEmployee != null)
 	        {
+	            im.SaveEmployee();
 	            using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
 	            {
-	                im.UpdateEmployee();
+
 	                DataLayer.EmployeeAccount ne = (DataLayer.EmployeeAccount) e.Row.Item;
 	                if (im.CurrentEmployee == null) return;
 	                var inst = ctx.Institutions
@@ -78,8 +76,17 @@ namespace PayrollManager
 	                                     inst.ShortName +
 	                                     " Salary Account";
 	                    ne.AccountType = "Salary Account";
-	                    ctx.Accounts.Attach(ne);
+	                    if (ne.AccountId == 0)
+	                    {
+	                        ctx.Accounts.AddObject(ne);
+	                    }
+	                    else
+	                    {
+	                        var ritm = ctx.Accounts.OfType<EmployeeAccount>().First(x => x.AccountId == ne.AccountId);
+	                    ctx.Accounts.Attach(ritm);
 	                    ctx.Accounts.ApplyCurrentValues(ne);
+	                    }
+	                    
 	                    BaseViewModel.SaveDatabase(ctx);
 	                }
 
@@ -87,12 +94,6 @@ namespace PayrollManager
 	        }
 
 	    }
-
-	    private void DataGrid_BeginningEdit_1(object sender, DataGridBeginningEditEventArgs e)
-        {
-           
-                  
-        }
 
         private void GenerateItms_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {

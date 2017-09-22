@@ -47,31 +47,7 @@ namespace PayrollManager.DataLayer
             //}
         }
 
-        public void SetBaseAmounts()
-        {
 
-            var plist = from p in this.PayrollEmployeeSetups.Where(p => (p.BaseAmount != (p.PayrollSetupItem.ApplyToTaxableBenefits == true ? Salary + TaxableBenefitsTotal : Salary) || p.BaseAmount == 0))//
-                        select p;
-
-            var payrollEmployeeSetups = plist as IList<PayrollEmployeeSetup> ?? plist.ToList();
-            if (payrollEmployeeSetups.Any())
-            {
-                using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
-                {
-                    foreach (var item in payrollEmployeeSetups)
-                    {
-                        item.BaseAmount = (item.PayrollSetupItem.ApplyToTaxableBenefits == true
-                            ? Salary + TaxableBenefitsTotal
-                            : Salary);
-                        var dbitm = ctx.PayrollEmployeeSetup.First(
-                            x => x.PayrollEmployeeSetupId == item.PayrollEmployeeSetupId);
-                        dbitm.BaseAmount = item.BaseAmount;
-                    }
-                    BaseViewModel.SaveDatabase(ctx);
-                }
-                BaseViewModel.OnStaticPropertyChanged("PayrollEmployeeSetups");
-            }
-        }
 
         public double Salary { get; set; }
         public double TaxableBenefitsTotal { get; set; }

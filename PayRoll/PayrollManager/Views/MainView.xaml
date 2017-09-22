@@ -246,6 +246,16 @@
                     <local:Paysub Margin="0" MouseEnter="BringIntoView"/>
                 </Expander>
 
+                <!--<Expander x:Name="InstitutionSummaryEXP" ExpandDirection="Right" IsExpanded="True"  Margin="600,10,0,-210" Width="Auto" Height="500" HorizontalAlignment="Left" VerticalAlignment="Top"  Padding="5,5,5,10" >
+                    <Expander.Header>
+                        <Grid Height="Auto" MouseEnter="BringIntoView">
+                            <TextBlock Height="63" Style="{DynamicResource ExpHeadStyle}" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,10,23,0" Width="55" FontFamily="Segoe UI Symbol" FontSize="40" Text="&#xE158;"/>
+                            <TextBlock Text="Accounts" Style="{DynamicResource ExpHeadStyle}" HorizontalAlignment="Right" Margin="-16,65,10,0" TextWrapping="Wrap" Width="84" TextAlignment="Center" RenderTransformOrigin="0.535,1.32" FontSize="{DynamicResource ExpHeadFontSize}" FontWeight="Bold"/>
+                        </Grid>
+                    </Expander.Header>
+                    <local:InstitutionSummaryList Margin="0" MouseEnter="BringIntoView"/>
+                </Expander>-->
+
                 <Expander x:Name="AccountDetailsEXP" ExpandDirection="Right" Margin="100,10,0,-210"  Width="Auto" Height="500" HorizontalAlignment="Left" VerticalAlignment="Top"  Padding="5,5,5,10" >
                     <Expander.Header>
                         <Grid Height="Auto" MouseEnter="BringIntoView">

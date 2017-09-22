@@ -31,7 +31,7 @@
     <Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource PayrollEmployeeSetupDetailsModelDataSource}}" Width="Auto" Margin="0,0,0,0">
         <Grid Margin="0,80,0,0">
 
-            <DataGrid Name="xgrid" SelectedItem="{Binding CurrentPayrollEmployeeSetup}"  ItemsSource="{Binding PayrollEmployeeSetups, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"  DataContext="{Binding Source={StaticResource PayrollEmployeeSetupDetailsModelDataSource}}" SourceUpdated="GrdSourceUpdated"  Margin="156.96,41.48,-198.84,87.68" CanUserResizeRows="True" MinRowHeight="30" RowHeight="30" AutoGenerateColumns="False" RenderTransformOrigin="0.5,0.5" AlternatingRowBackground="#FFE6F0F4" RowBackground="White" GridLinesVisibility="None" RowEditEnding="PayrollEmpDG_RowEditEnding" MouseLeave="PayrollEmpDG_MouseLeave" InitializingNewItem="xgrid_InitializingNewItem" CellEditEnding="xgrid_CellEditEnding" PreviewKeyDown="xgrid_PreviewKeyDown" CanUserSortColumns="False" ClipboardCopyMode="IncludeHeader" >
+            <DataGrid Name="xgrid" SelectedItem="{Binding CurrentPayrollEmployeeSetup}"  ItemsSource="{Binding PayrollEmployeeSetups, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"  DataContext="{Binding Source={StaticResource PayrollEmployeeSetupDetailsModelDataSource}}"  Margin="156.96,41.48,-198.84,87.68" CanUserResizeRows="True" MinRowHeight="30" RowHeight="30" AutoGenerateColumns="False" RenderTransformOrigin="0.5,0.5" AlternatingRowBackground="#FFE6F0F4" RowBackground="White" GridLinesVisibility="None" RowEditEnding="PayrollEmpDG_RowEditEnding" InitializingNewItem="xgrid_InitializingNewItem" CellEditEnding="xgrid_CellEditEnding" CanUserSortColumns="False" ClipboardCopyMode="IncludeHeader" >
                 <DataGrid.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform ScaleX="1.25" ScaleY="1.25"/>
@@ -59,12 +59,12 @@
                     <DataGridComboBoxColumn Header="Payroll Item" SelectedValueBinding="{Binding PayrollSetupItemId, UpdateSourceTrigger=PropertyChanged}" Width="125" DisplayMemberPath="Name" SelectedValuePath="PayrollSetupItemId">
                         <DataGridComboBoxColumn.ElementStyle>
                             <Style TargetType="{x:Type ComboBox}">
-                                <Setter Property="ItemsSource" Value="{Binding Path=DataContext.oPayrollSetupItems, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" />
+                                <Setter Property="ItemsSource" Value="{Binding Path=DataContext.PayrollSetupItems, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" />
                             </Style>
                         </DataGridComboBoxColumn.ElementStyle>
                         <DataGridComboBoxColumn.EditingElementStyle>
                             <Style TargetType="{x:Type ComboBox}">
-                                <Setter Property="ItemsSource" Value="{Binding Path=DataContext.oPayrollSetupItems, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" />
+                                <Setter Property="ItemsSource" Value="{Binding Path=DataContext.PayrollSetupItems, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" />
                             </Style>
                         </DataGridComboBoxColumn.EditingElementStyle>
                     </DataGridComboBoxColumn>

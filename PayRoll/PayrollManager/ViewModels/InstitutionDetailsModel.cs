@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Data;
 using System.ComponentModel;
+using System.Data;
 using System.Linq;
 using PayrollManager.DataLayer;
 
@@ -10,26 +11,31 @@ namespace PayrollManager
 {
 	public class InstitutionDetailsModel : BaseViewModel
 	{
-        public InstitutionDetailsModel()
-		{
-           
-		}
+       
 
         public void SaveInstitution()
         {
 
             using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
             {
-                ctx.Institutions.Attach(_newInstitution);
-                ctx.Institutions.ApplyCurrentValues(_newInstitution);
+                if (CurrentInstitution.InstitutionId == 0)
+                {
+                    ctx.Institutions.AddObject(CurrentInstitution);
+                }
+                else
+                {
+                    if (CurrentInstitution.EntityState == EntityState.Added) return;
+                    var ritm = ctx.Institutions.First(x => x.InstitutionId == CurrentInstitution.InstitutionId);
+                     ctx.Institutions.Attach(ritm);
+                ctx.Institutions.ApplyCurrentValues(CurrentInstitution);
+                }
+               
                 SaveDatabase(ctx);
             }
-            base.CurrentInstitution = _newInstitution;
-           _newInstitution = null;
             
            
             OnStaticPropertyChanged("CurrentInstitutionAccount");
-            CycleInstitutionAccounts();
+           // CycleInstitutionAccounts();
             OnStaticPropertyChanged("InstitutionAccounts");
 
         }
@@ -46,10 +52,11 @@ namespace PayrollManager
 
         public void DeleteInstition()
         {
+            if(CurrentInstitution.InstitutionId != 0)
             using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
             {
-                ctx.Institutions.DeleteObject(CurrentInstitution);
-                // db.PayrollItems.Detach(CurrentPayrollItem);
+                var ritm = ctx.Institutions.First(x => x.InstitutionId == CurrentInstitution.InstitutionId);
+                ctx.Institutions.DeleteObject(ritm);
                 SaveDatabase(ctx);
             }
             CurrentInstitution = null;
@@ -68,33 +75,12 @@ namespace PayrollManager
                 DataLayer.Institution newemp = ctx.Institutions.CreateObject();
                 ctx.Institutions.AddObject(newemp);
 
-                _newInstitution = newemp;
+                CurrentInstitution = newemp;
             }
             OnPropertyChanged("CurrentInstitution");
         }
 
 
-        DataLayer.Institution _newInstitution;
-        public DataLayer.Institution CurrentInstitution
-        {
-            get
-            {
-                if (_newInstitution == null)
-                {
-                    return base.CurrentInstitution;
-                }
-                else
-                {
-                    return _newInstitution;
-                }
-            }
-            set
-            {
-                base.CurrentInstitution = value;
-                _institutions = null;
-                OnStaticPropertyChanged("Institutions");
-            }
-        }
 
 
       

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Data;
 using System.ComponentModel;
+using System.Data;
 using System.Linq;
 using System.Windows;
 using PayrollManager.DataLayer;
@@ -11,50 +12,36 @@ namespace PayrollManager
 {
 	public class EmployeeDetailsModel : BaseViewModel
 	{
-		public EmployeeDetailsModel()
-		{
-			
-		}
-
         public void SaveEmployee()
         {
             using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
             {
-                ctx.Employees.Attach(_newEmployee);
-                ctx.Employees.ApplyCurrentValues(_newEmployee);
+                if (CurrentEmployee.EmployeeId == 0)
+                {
+                    ctx.Employees.AddObject(CurrentEmployee);
+                }
+                else
+                {
+                    if (CurrentEmployee.EntityState == EntityState.Added) return;
+                    var ritm = ctx.Employees.First(x => x.EmployeeId == CurrentEmployee.EmployeeId);
+                    ctx.Employees.Attach(ritm);
+                    ctx.Employees.ApplyCurrentValues(CurrentEmployee);
+                }
+                
                 SaveDatabase(ctx);
             }
-            // if(base.CurrentEmployee != null)base.CurrentEmployee.SetBaseAmounts();
-            base.CurrentEmployee = _newEmployee;
-            if (base.CurrentEmployee != null) base.CurrentEmployee.SetBaseAmounts();
-            _newEmployee = new Employee();
+            
             OnStaticPropertyChanged("CurrentEmployee");
             OnStaticPropertyChanged("Employees");
 
 
         }
 
-        public void UpdateEmployee()
-        {
-            if (base.CurrentEmployee != null)  
-            using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
-            {
-                ctx.Employees.Attach(CurrentEmployee);
-                ctx.Employees.ApplyCurrentValues(CurrentEmployee);
-                base.CurrentEmployee.SetBaseAmounts();
-                BaseViewModel.SaveDatabase(ctx);
-            }
-           
-            OnStaticPropertyChanged("CurrentEmployee");
-            OnStaticPropertyChanged("Employees");
-
-
-        }
 
         public void EmployeeAutoSetup()
         {
-            UpdateEmployee();
-            if (base.CurrentEmployee != null) AutoSetupEmployee(CurrentEmployee);
+            SaveEmployee();
+            if (CurrentEmployee != null) AutoSetupEmployee(CurrentEmployee);
            
             MessageBox.Show("Setup Complete");
         }
@@ -63,54 +50,42 @@ namespace PayrollManager
         {
             using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
             {
-                if (base.CurrentEmployee == null) MessageBox.Show("Please select an employee");
-                if (CurrentEmployee.EntityState != System.Data.EntityState.Detached &&
-                    CurrentEmployee.EntityState != System.Data.EntityState.Deleted)
+                if (CurrentEmployee == null)
                 {
-                    ctx.Employees.DeleteObject(CurrentEmployee);
+                    MessageBox.Show("Please select an employee");
+                    return;
+                }
+                if (CurrentEmployee.EmployeeId != 0)
+                {
+                    if (CurrentEmployee.EntityState == EntityState.Added) return;
+                    var ritm = ctx.Employees.FirstOrDefault(x => x.EmployeeId == CurrentEmployee.EmployeeId);
+                    
+                    ctx.Employees.DeleteObject(ritm);
                     SaveDatabase(ctx);
                 }
-                CurrentEmployee = new Employee();
+                CurrentEmployee = null;
+                GetEmployees();
                 OnStaticPropertyChanged("CurrentEmployee");
                 OnStaticPropertyChanged("Employees");
             }
         }
 
-        public void NewEmployee()
-        {
-            using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
-            {
-                DataLayer.Employee newemp = ctx.Employees.CreateObject<DataLayer.Employee>();
-               ctx.Employees.AddObject(newemp);
-                _newEmployee = newemp;
-                OnPropertyChanged("CurrentEmployee");
-            }
-        }
+	    public void NewEmployee()
+	    {
+	        using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
+	        {
+	            var newemp = ctx.Employees.CreateObject<DataLayer.Employee>();
+	            ctx.Employees.AddObject(newemp);
+	            CurrentEmployee = newemp;
+	        }
+	        OnPropertyChanged("CurrentEmployee");
 
-        DataLayer.Employee  _newEmployee;
-        //public override DataLayer.Employee CurrentEmployee
-        //{
-        //    get
-        //    {
-        //        if (_newEmployee == null)
-        //        {
-        //            return base.CurrentEmployee;
-        //        }
-        //        else
-        //        {
-        //            return _newEmployee;
-        //        }
-        //    }
-        //    set
-        //    {
-        //        base.CurrentEmployee = value;
-        //        OnStaticPropertyChanged("CurrentEmployee");
-        //        OnStaticPropertyChanged("Employees");
-        //    }
-        //}
+	    }
 
 
-		#region INotifyPropertyChanged
+
+
+	    #region INotifyPropertyChanged
 		public event PropertyChangedEventHandler PropertyChanged;
 
 		private void NotifyPropertyChanged(String info)
@@ -124,12 +99,15 @@ namespace PayrollManager
 
         internal void DeleteEmployeeAccount(DataLayer.EmployeeAccount p)
         {
+            if(p.AccountId != 0)
             using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
             {
-                ctx.Accounts.DeleteObject(p);
+                var ritm = ctx.Accounts.OfType<EmployeeAccount>().FirstOrDefault(x => x.AccountId == p.AccountId);
+                ctx.Accounts.DeleteObject(ritm);
                 OnStaticPropertyChanged("CurrentEmployee");
                 OnStaticPropertyChanged("EmployeeAccounts");
             }
+            p = null;
         }
 
         internal void EditAccount(DataLayer.Account a)

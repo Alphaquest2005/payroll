@@ -307,14 +307,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PayrollManager.exe" size="911468">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PayrollManager.exe" size="913516">
       <assemblyIdentity name="PayrollManager" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>cJkn35iTsk9WTFVplIe6A8R3eA/ZerOFje2+KKRvhJE=</dsig:DigestValue>
+        <dsig:DigestValue>0/XsrIWpV8Lo5BhdocbRKAem+WwDd13qO5Vubjyeikw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -86,6 +86,31 @@ namespace PayrollManager
             }
         }
 
+        public void SavePayrollJob()
+        {
+            using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
+            {
+                if (CurrentPayrollJob.PayrollJobId == 0)
+                {
+                    ctx.PayrollJobs.AddObject(CurrentPayrollJob);
+                }
+                else
+                {
+                    if (CurrentPayrollJob.EntityState == EntityState.Added) return;
+                    var ritm = ctx.PayrollJobs.First(x => x.PayrollJobId == CurrentPayrollJob.PayrollJobId);
+                    ctx.PayrollJobs.Attach(ritm);
+                    if(CurrentPayrollJob.PreparedBy == null) CurrentPayrollJob.PreparedBy = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+                    ctx.PayrollJobs.ApplyCurrentValues(CurrentPayrollJob);
+                }
+
+                SaveDatabase(ctx);
+            }
+            UpdatePayrollJobs();
+            OnStaticPropertyChanged("CurrentPayrollJob");
+            OnStaticPropertyChanged("PayrollJobs");
+
+        }
+
         internal void MergeEmployeAccountIntoInstitutionAccount(InstitutionAccount ia)
         {
             try
@@ -297,10 +322,15 @@ namespace PayrollManager
             }
         }
 
-        private  ObservableCollection<Employee> GetEmployees()
+        public ObservableCollection<Employee> GetEmployees()
         {
             try
             {
+
+                if (CurrentPayrollJob == null) return new ObservableCollection<Employee>();
+                var cpjobId = CurrentPayrollJob.PayrollJobId;
+
+                _employees = new List<Employee>();
                 using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
                 {
                     var res = ctx.Employees
@@ -308,7 +338,7 @@ namespace PayrollManager
                         .Where(e => (e.EmploymentEndDate.HasValue == false
                                      || EntityFunctions.TruncateTime(e.EmploymentEndDate) >=
                                      EntityFunctions.TruncateTime(DateTime.Now)))
-                        .Where(x => x.BranchId == CurrentBranch.BranchId && x.PayrollItems.Any(p => p.PayrollJobId == CurrentPayrollJob.PayrollJobId))
+                        .Where(x => x.BranchId == CurrentBranch.BranchId && x.PayrollItems.Any(p => p.PayrollJobId == cpjobId))
                         .OrderBy(x => x.LastName)
                         .Select(x => new
                         {
@@ -335,11 +365,11 @@ namespace PayrollManager
                                             p.PayrollSetupItem.IsTaxableBenefit == true),
                             TotalIncome = (double?) x.PayrollItems
                                 .Where(p => p.IncomeDeduction == true && p.ParentPayrollItem == null &&
-                                            p.PayrollJobId == CurrentPayrollJob.PayrollJobId)
+                                            p.PayrollJobId == cpjobId)
                                 .Sum(p => p.Amount),
                             TotalDeductions = (double?) x.PayrollItems
                                 .Where(p => p.IncomeDeduction == false && p.ParentPayrollItem == null &&
-                                            p.PayrollJobId == CurrentPayrollJob.PayrollJobId)
+                                            p.PayrollJobId == cpjobId)
                                 .Sum(p => p.Amount),
                             PreTotalIncome = x.PayrollEmployeeSetups
                                 .Where(p => p.PayrollSetupItem != null &&
@@ -478,7 +508,7 @@ namespace PayrollManager
         
         private static ObservableCollection<InstitutionAccount> _institutionAccounts;
         //[MyExceptionHandlerAspect]
-        public  ObservableCollection<InstitutionAccount> InstitutionAccounts => _institutionAccounts ?? (_institutionAccounts = GetInstitutionAccountsData().Result);
+        public  ObservableCollection<InstitutionAccount> InstitutionAccounts => _institutionAccounts ?? (_institutionAccounts = GetInstitutionAccountsData());
 
         internal ObservableCollection<Institution> _institutions;
         //[MyExceptionHandlerAspect]
@@ -497,18 +527,19 @@ namespace PayrollManager
             }
         }
 
-        private  async Task<ObservableCollection<InstitutionAccount>> GetInstitutionAccountsData()
+        private   ObservableCollection<InstitutionAccount> GetInstitutionAccountsData()
         {
-            var t = Task.Run(() =>
-            {
+           
                 try
                 {
                     GenerateHybridAccounts();
                     OnStaticPropertyChanged("InstitutionAccountsData");
                     var lst =
                         new ObservableCollection<InstitutionAccount>(
-                            HybridAccountsLst.Where(
+                            HybridAccountsLst.ToList().Where(
                                 x => x.CurrentAccountEntries != null && x.CurrentAccountEntries.Count > 0).ToList());
+                    _institutionAccounts = lst;
+                    OnStaticPropertyChanged(nameof(InstitutionAccounts));
                     return lst;
                 }
                 catch (Exception e)
@@ -517,8 +548,6 @@ namespace PayrollManager
                     throw;
                 }
 
-            }).ConfigureAwait(false);
-            return await t;
         }
 
         private static ObservableCollection<DataLayer.Account> _currentAccountsLst;
@@ -528,33 +557,39 @@ namespace PayrollManager
             get
             {
                 if (_currentAccountsLst != null) return _currentAccountsLst;
-                using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
-                {
-                    ObservableCollection<DataLayer.Account> lst = new ObservableCollection<DataLayer.Account>();
+                return UpdateCurrentAccountsLst();
+            }
+        }
 
-                    foreach (var item in ctx.Accounts.OfType<DataLayer.InstitutionAccount>())
+        public ObservableCollection<Account> UpdateCurrentAccountsLst()
+        {
+            using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
+            {
+                ObservableCollection<DataLayer.Account> lst = new ObservableCollection<DataLayer.Account>();
+
+                foreach (var item in ctx.Accounts.OfType<DataLayer.InstitutionAccount>())
+                {
+                    lst.Add(item);
+                }
+                if (CurrentEmployee != null)
+                {
+                    foreach (var item in CurrentEmployee.EmployeeAccounts)
                     {
                         lst.Add(item);
                     }
-                    if (CurrentEmployee != null)
-                    {
-                        foreach (var item in CurrentEmployee.EmployeeAccounts)
-                        {
-                            lst.Add(item);
-                        }
-                    }
-                    else
-                    {
-                        foreach (var item in ctx.Accounts.OfType<DataLayer.EmployeeAccount>())
-                        {
-                            lst.Add(item);
-                        }
-                    }
-                    _currentAccountsLst = lst;
-                    return _currentAccountsLst;
                 }
+                //else
+                //{
+                //    foreach (var item in ctx.Accounts.OfType<DataLayer.EmployeeAccount>())
+                //    {
+                //        lst.Add(item);
+                //    }
+                //}
+                _currentAccountsLst = lst;
+                return _currentAccountsLst;
             }
         }
+
         //[MyExceptionHandlerAspect]
         internal void GenerateHybridAccounts()
         {
@@ -734,7 +769,7 @@ namespace PayrollManager
             set
             {
                 _currentPayrollItem = value;
-
+                OnPropertyChanged("CurrentPayrollItem");
                 OnStaticPropertyChanged("CurrentPayrollItem");
              
             }
@@ -786,8 +821,9 @@ namespace PayrollManager
                 {
                     if (CurrentPayrollJob != _currentBranch.CurrentPayrollJob)
                     {
-                        _currentPayrollJob = _currentBranch.CurrentPayrollJob;
+                        CurrentPayrollJob = _currentBranch.CurrentPayrollJob;
                         _currentPayrollJobType = _currentBranch.CurrentPayrollJob.PayrollJobType;
+
                     }
                     else
                     {
@@ -801,8 +837,6 @@ namespace PayrollManager
                         OnStaticPropertyChanged("InstitutionAccounts");
                 }
                 OnStaticPropertyChanged("CurrentBranch");
-                
-
                 OnStaticPropertyChanged("Employees");
                 OnStaticPropertyChanged("CurrentEmployee");
                 
@@ -847,29 +881,40 @@ namespace PayrollManager
                 {
                     using (var ctx = new PayrollDB())
                     {
+                        var ritm = ctx.Branches.First(x => x.BranchId == CurrentBranch.BranchId);
                         CurrentBranch.CurrentPayrollJobId = _currentPayrollJob.PayrollJobId;
-                        ctx.Branches.Attach(CurrentBranch);
+                        ctx.Branches.Attach(ritm);
                         ctx.Branches.ApplyCurrentValues(CurrentBranch);
                         SaveDatabase(ctx);
+
+                        //CurrentBranch = ctx.Branches.Include(x => x.CurrentPayrollJob).First(x => x.BranchId == CurrentBranch.BranchId);
                     }
+
                 }
                 if (_currentPayrollJob != null)
                 {
                     Task.Run(() =>
                     {
                         GetEmployees();
-                        CycleCurrentEmployee();
+                        
                     });
 
-                    _institutionAccounts = null;
-                    CycleInstitutionAccounts();
+                    Task.Run(() =>
+                    {
+                        GetInstitutionAccountsData();
+
+                    });
+
+                    
+
                 }
+                OnPropertyChanged("CurrentPayrollJob");
                 OnStaticPropertyChanged("CurrentPayrollJob");
 
             }
         }
 
-        public  List<PayrollSetupItem> PayrollSetupItems { get; }
+        
 
         public DateTime Date => DateTime.Now.Date;
         
@@ -899,14 +944,14 @@ namespace PayrollManager
 
         }
         //[MyExceptionHandlerAspect]
-        internal  void CycleInstitutionAccounts()
-        {
-            _currentInstitutionAccount = null;
-            OnStaticPropertyChanged("CurrentInstitutionAccount");
-            if (_currentInstitutionAccount == null) _currentInstitutionAccount = InstitutionAccounts.FirstOrDefault();
-            OnStaticPropertyChanged("CurrentInstitutionAccount");
-            OnStaticPropertyChanged("InstitutionAccounts");
-        }
+        //internal  void CycleInstitutionAccounts()
+        //{
+        //    _currentInstitutionAccount = null;
+        //    OnStaticPropertyChanged("CurrentInstitutionAccount");
+        //    if (_currentInstitutionAccount == null) _currentInstitutionAccount = InstitutionAccounts.FirstOrDefault();
+        //    OnStaticPropertyChanged("CurrentInstitutionAccount");
+        //    OnStaticPropertyChanged("InstitutionAccounts");
+        //}
 
         #region INotifyPropertyChanged
         public static event PropertyChangedEventHandler staticPropertyChanged;
@@ -937,131 +982,141 @@ namespace PayrollManager
         #endregion
 
         //[MyExceptionHandlerAspect]
-        internal  void GeneratePayrollItems()
+        internal void GeneratePayrollItems()
         {
-           if (_currentPayrollJob == null)
-            {
-                MessageBox.Show("Please Select the Current Payroll Job you want to use, then Try again.");
-                return;
-            }
-
-           if (_currentPayrollJob.Status == "Posted")
-           {
-               MessageBox.Show("Sorry Payroll Job already posted and no further changes can be made.");
-               return;
-           }
-            using (var ctx = new PayrollDB())
+            try
             {
 
-                var pitmlst = (from p in ctx.PayrollEmployeeSetup
-                        .Where(p => p.PayrollJobTypeId == CurrentPayrollJob.PayrollJobTypeId &&
-                                    p.Employee.BranchId == CurrentBranch.BranchId
-                            //  && p.EmployeeId == 69
-                        ).ToList()
-                    orderby p.PayrollSetupItem.Priority
-                    select p);
-                if (pitmlst == null)
+
+                if (_currentPayrollJob == null)
                 {
                     MessageBox.Show("Please Select the Current Payroll Job you want to use, then Try again.");
                     return;
                 }
 
-                if (pitmlst.FirstOrDefault().PayrollSetupItem.Name.Trim().ToUpper() != "Salary".ToUpper())
+                if (_currentPayrollJob.Status == "Posted")
                 {
-                    MessageBox.Show("Salary is not the First item. Please check Payroll Item order");
+                    MessageBox.Show("Sorry Payroll Job already posted and no further changes can be made.");
                     return;
                 }
-
-                foreach (var item in pitmlst)
+                using (var ctx = new PayrollDB())
                 {
-                    if (item.Employee.BranchId != CurrentBranch.BranchId) continue;
-                    if (item.Employee.EmploymentEndDate.HasValue == true &&
-                        item.Employee.EmploymentEndDate.Value.Date <= _currentPayrollJob.StartDate.Date) continue;
 
-                    DataLayer.PayrollItem pi;
-
-                    if (_currentPayrollJob.StartDate >= item.StartDate)
+                    var pitmlst = (from p in ctx.PayrollEmployeeSetup
+                            .Include(x => x.Employee)
+                            .Include(x => x.PayrollSetupItem)
+                            .Where(p => p.PayrollJobTypeId == CurrentPayrollJob.PayrollJobTypeId &&
+                                        p.Employee.BranchId == CurrentBranch.BranchId
+                                //  && p.EmployeeId == 69
+                            )
+                        orderby p.PayrollSetupItem.Priority
+                        select p).ToList();
+                    if (!pitmlst.Any())
                     {
-                        if (item.EndDate != null && _currentPayrollJob.EndDate > item.EndDate)
+                        MessageBox.Show("Please Select the Current Payroll Job you want to use, then Try again.");
+                        return;
+                    }
+
+                    if (pitmlst.First().PayrollSetupItem.Name.Trim().ToUpper() != "Salary".ToUpper())
+                    {
+                        MessageBox.Show("Salary is not the First item. Please check Payroll Item order");
+                        return;
+                    }
+
+                    foreach (var item in pitmlst)
+                    {
+                        if (item.Employee.BranchId != CurrentBranch.BranchId) continue;
+                        if (item.Employee.EmploymentEndDate.HasValue == true &&
+                            item.Employee.EmploymentEndDate.Value.Date <= _currentPayrollJob.StartDate.Date) continue;
+
+                        DataLayer.PayrollItem pi;
+
+                        if (_currentPayrollJob.StartDate >= item.StartDate)
                         {
+                            if (item.EndDate != null && _currentPayrollJob.EndDate > item.EndDate)
+                            {
+                                continue;
+                            }
+
+                        }
+                        else
+                        {
+                            MessageBox.Show(string.Format(
+                                "{1} - Payroll Item-'{0}' was not created because payroll job was too early",
+                                item.PayrollSetupItem.Name, item.Employee.DisplayName));
                             continue;
                         }
 
+                        pi = (from p in ctx.PayrollItems
+                              .Include(x => x.ChildPayrollItems)
+                               .Where(p => p.PayrollJobId == CurrentPayrollJob.PayrollJobId
+                                            && p.PayrollJob.BranchId == CurrentBranch.BranchId
+                                            && p.Employee.BranchId == CurrentBranch.BranchId
+                                            && p.EmployeeId == item.EmployeeId
+                                            && p.PayrollSetupItemId == item.PayrollSetupItemId
+                                            && (p.CreditAccountId == item.CreditAccountId &&
+                                                p.DebitAccountId == item.DebitAccountId)
+                                )
+                            select p).FirstOrDefault();
+                        if (pi == null)
+                        {
+
+                            pi = ctx.PayrollItems.CreateObject();
+                            ctx.PayrollItems.AddObject(pi);
+                        }
+
+
+                        TriBoolState triBool = ConfigPayrollItem(pi, item);
+                        switch (triBool)
+                        {
+                            case TriBoolState.Fail:
+                                return;
+
+                            case TriBoolState.Success:
+                                break;
+                            case TriBoolState.Continue:
+                                continue;
+
+                            default:
+                                break;
+                        }
+
+
+                        SaveDatabase(ctx); // save to get itemid
+                        foreach (var ci in pi.ChildPayrollItems.ToList())
+                        {
+                            ctx.PayrollItems.DeleteObject(ci);
+                        }
+
+
+                        if (string.IsNullOrEmpty(item.PayrollSetupItem.CompanyLineItemDescription)) continue;
+                        PayrollItem citem = CreateCompanyPayrollItem(pi, item);
+
+                        ctx.PayrollItems.AddObject(citem);
                     }
-                    else
-                    {
-                        MessageBox.Show(string.Format(
-                            "{1} - Payroll Item-'{0}' was not created because payroll job was too early",
-                            item.PayrollSetupItem.Name, item.Employee.DisplayName));
-                        continue;
-                    }
-
-                    pi = (from p in ctx.PayrollItems //.AsEnumerable()
-                            .Where(p => p.PayrollJobId == CurrentPayrollJob.PayrollJobId
-                                        && p.PayrollJob != null && p.PayrollJob.Branch != null
-                                        && p.PayrollJob.Branch.BranchId == CurrentBranch.BranchId
-                                        && p.Employee != null
-                                        && p.Employee.BranchId == CurrentBranch.BranchId
-                                        && p.EmployeeId == item.EmployeeId
-                                        && p.PayrollSetupItemId == item.PayrollSetupItemId
-                                        && (p.CreditAccountId == item.CreditAccountId &&
-                                            p.DebitAccountId == item.DebitAccountId)
-                                // && ((p.Amount == item.Amount && item.ChargeType == "Amount") || (item.ChargeType == "Rate" && p.Rate == item.Rate))
-                            )
-                        select p).FirstOrDefault();
-                    if (pi == null)
-                    {
-
-                        pi = ctx.PayrollItems.CreateObject();
-                        ctx.PayrollItems.AddObject(pi);
-                    }
-
-
-                    TriBoolState triBool = ConfigPayrollItem(pi, item);
-                    switch (triBool)
-                    {
-                        case TriBoolState.Fail:
-                            return;
-
-                        case TriBoolState.Success:
-                            break;
-                        case TriBoolState.Continue:
-                            continue;
-
-                        default:
-                            break;
-                    }
-
-
-                    SaveDatabase(ctx); // save to get itemid
-                    foreach (var ci in pi.ChildPayrollItems.ToList())
-                    {
-                        ctx.PayrollItems.DeleteObject(ci);
-                    }
-
-
-                    if (string.IsNullOrEmpty(item.PayrollSetupItem.CompanyLineItemDescription)) continue;
-                    PayrollItem citem = CreateCompanyPayrollItem(pi, item);
-
-                    ctx.PayrollItems.AddObject(citem);
+                    SaveDatabase(ctx);
                 }
-                SaveDatabase(ctx);
+
+                SetPayrollItemsAmounts();
+                GetEmployees();
+                
+                OnStaticPropertyChanged("CurrentPayrollJob");
+                OnStaticPropertyChanged("PayrollItems");
+
+                OnStaticPropertyChanged("Employees");
+                OnStaticPropertyChanged("CurrentEmployee.EmployeeAccounts");
+                OnStaticPropertyChanged("CurrentEmployee");
+                OnStaticPropertyChanged("PayrollJobs");
+                MessageBox.Show("Payroll Job Setup Complete");
             }
-
-            SetPayrollItemsAmounts();
-
-            CycleCurrentEmployee();
-            
-            OnStaticPropertyChanged("CurrentPayrollJob");
-            OnStaticPropertyChanged("PayrollItems");
-            
-           OnStaticPropertyChanged("Employees");
-            OnStaticPropertyChanged("CurrentEmployee.EmployeeAccounts");
-            OnStaticPropertyChanged("CurrentEmployee");
-            OnStaticPropertyChanged("PayrollJobs");
-            MessageBox.Show("Payroll Job Setup Complete");
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
         }
-       public enum TriBoolState
+
+        public enum TriBoolState
         {
             Fail,
             Success,
@@ -1127,36 +1182,47 @@ namespace PayrollManager
            // SetPayrollItemsAmounts();
 
             ClearExistingAccountEntries();
-
-            foreach (var item in _currentPayrollJob.PayrollItems.Where(p=>p.Status == "Amounts Processed" && p.ParentPayrollItem == null))
-            {
-                
-               // do debit account entry
-                CreateAccountEntry(item,  true);
-
-                
-                // do credit account entry
-                CreateAccountEntry(item, false);
-                item.Status = "Posted";
-
-                if (item.PayrollSetupItem != null && item.PayrollSetupItem.CompanyLineItemDescription != "")
-                {
-                    foreach (var citm in item.ChildPayrollItems)
-                    {
-                        // do debit account entry
-                        CreateAccountEntry(citm, true);
-
-
-                        // do credit account entry
-                        CreateAccountEntry(citm, false);
-                    }
-                }
-              
-            }
-            _currentPayrollJob.Status = "Posted";
            
+            using (var ctx = new PayrollDB())
+            {
+                  
 
-            CycleCurrentEmployee();
+
+                foreach (var item in ctx.PayrollItems
+                    .Where(p => p.PayrollJobId == CurrentPayrollJob.PayrollJobId && p.Status == "Amounts Processed" &&
+                                p.ParentPayrollItem == null).ToList())
+                {
+
+                    // do debit account entry
+                    CreateAccountEntry(item, true, ctx);
+
+
+                    // do credit account entry
+                    CreateAccountEntry(item, false, ctx);
+                    item.Status = "Posted";
+
+                    if (item.PayrollSetupItem != null && item.PayrollSetupItem.CompanyLineItemDescription != "")
+                    {
+                        foreach (var citm in item.ChildPayrollItems)
+                        {
+                            // do debit account entry
+                            CreateAccountEntry(citm, true, ctx);
+
+
+                            // do credit account entry
+                            CreateAccountEntry(citm, false, ctx);
+                        }
+                    }
+
+                }
+                SaveDatabase(ctx);
+}
+            CurrentPayrollJob.Status = "Posted";
+            CurrentPayrollJob.PreparedBy = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+            SavePayrollJob();
+            UpdatePayrollJobs();
+
+            GetEmployees();
             MessageBox.Show("Payroll Job Posted");
             OnStaticPropertyChanged("CurrentPayrollJob");
             OnStaticPropertyChanged("PayrollItems");
@@ -1225,29 +1291,27 @@ namespace PayrollManager
             }
         }
         //[MyExceptionHandlerAspect]
-        private void CycleCurrentEmployee()
-        {
-            try
-            {
-                CurrentEmployee = new Employee();
-                OnStaticPropertyChanged("CurrentEmployee");
-                if (CurrentEmployee == null) CurrentEmployee = Employees.FirstOrDefault();
-                OnStaticPropertyChanged("CurrentEmployee");
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
+        //private void CycleCurrentEmployee()
+        //{
+        //    try
+        //    {
+        //        CurrentEmployee = new Employee();
+        //        OnStaticPropertyChanged("CurrentEmployee");
+        //        if (CurrentEmployee == null) CurrentEmployee = Employees.FirstOrDefault();
+        //        OnStaticPropertyChanged("CurrentEmployee");
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        Console.WriteLine(e);
+        //        throw;
+        //    }
 
-        }
+        //}
 
         //[MyExceptionHandlerAspect]
-        private void CreateAccountEntry(DataLayer.PayrollItem item, bool debitCredit)
+        private void CreateAccountEntry(PayrollItem item, bool debitCredit, PayrollDB ctx)
         {
 
-            using (var ctx = new PayrollDB())
-            {
                 DataLayer.AccountEntry ea;
 
 
@@ -1255,7 +1319,6 @@ namespace PayrollManager
 
                 if (debitCredit == true)
                 {
-                    //  var ddd = db.AccountEntries.Where(a => a.PayrollItemId == item.PayrollItemId && a.AccountId == item.DebitAccountId);
                     ea = ctx.AccountEntries
                         .FirstOrDefault(a => a.PayrollItem.PayrollJobId == CurrentPayrollJob.PayrollJobId &&
                                     a.PayrollItemId == item.PayrollItemId && a.AccountId == item.DebitAccountId);
@@ -1280,8 +1343,8 @@ namespace PayrollManager
                 ae.EntryTime = DateTime.Now;
 
                 ctx.AccountEntries.AddObject(ae);
-                SaveDatabase(ctx);
-            }
+                
+            
         }
 
 
@@ -1291,6 +1354,7 @@ namespace PayrollManager
             try
             {
                 ctx.SaveChanges();
+                ctx.AcceptAllChanges();
             }
             catch (System.Data.OptimisticConcurrencyException oce)
             {
@@ -1360,10 +1424,9 @@ namespace PayrollManager
             {
 
                 var emppayitm =
-                    from p in ctx.PayrollItems.Where(pi => pi.PayrollJobId == CurrentPayrollJob.PayrollJobId &&
-                                                           pi.PayrollJob.Branch != null &&
-                                                           pi.PayrollJob.Branch.BranchId ==
-                                                           CurrentBranch.BranchId)
+                    (from p in ctx.PayrollItems
+                    .Include(x => x.PayrollSetupItem)
+                    .Where(pi => pi.PayrollJobId == CurrentPayrollJob.PayrollJobId)
                     orderby p.Priority ascending
                     group p by p.Employee
                     into e
@@ -1371,11 +1434,15 @@ namespace PayrollManager
                     {
                         emp = e.Key,
                         payitems = e.Select(p => p)
-                    };
+                    }).ToList();
 
 
                 foreach (var emp in emppayitm)
                 {
+                    foreach (var payrollItem in emp.payitems)
+                    {
+                        payrollItem.PayrollSetupItemReference.Load();
+                    }
                     CalculatePayrollAmts(emp.payitems, ctx);
                 }
 
@@ -1571,7 +1638,93 @@ namespace PayrollManager
             MessageBox.Show("Setup Complete");
         }
 
-        public  bool AutoSetupEmployee(DataLayer.Employee cemp)
+        public void SetEmployeeSetupBaseAmounts(int empId)
+        {
+            using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
+            {
+                var salary = ctx.PayrollEmployeeSetup
+                    .Include(x => x.PayrollSetupItem)
+                    .Where(p => 
+                                p.EmployeeId == empId &&
+                                p.PayrollSetupItem != null &&
+                                p.PayrollSetupItem.IncomeDeduction == true &&
+                                p.PayrollSetupItem.Name == "Salary").ToList().Sum(p => p.CalcAmount);
+                var taxableBenefitsTotal = ctx.PayrollEmployeeSetup
+                                            .Include(x => x.PayrollSetupItem)
+                                            .Where(p => p.EmployeeId == empId &&
+                                                        p.PayrollSetupItem != null &&
+                                                        p.PayrollSetupItem.IncomeDeduction == true &&
+                                                        p.PayrollSetupItem.IsTaxableBenefit == true).ToList().Sum(p => p.CalcAmount);
+
+                var payrollEmployeeSetups = ctx.PayrollEmployeeSetup.Include(x => x.PayrollSetupItem)
+                    .Where(p => p.EmployeeId == empId)
+                                            //&&
+                                            //(p.BaseAmount != (p.PayrollSetupItem.ApplyToTaxableBenefits == true
+                                            //     ? salary + taxableBenefitsTotal
+                                            //     : salary) || p.BaseAmount == 0)
+                   .ToList();
+
+
+                
+                foreach (var item in payrollEmployeeSetups)
+                {
+                    item.BaseAmount = (item.PayrollSetupItem.ApplyToTaxableBenefits == true
+                        ? salary + taxableBenefitsTotal
+                        : salary);
+                    var dbitm = ctx.PayrollEmployeeSetup.First(
+                        x => x.PayrollEmployeeSetupId == item.PayrollEmployeeSetupId);
+                    dbitm.BaseAmount = item.BaseAmount;
+                }
+                SaveDatabase(ctx);
+            }
+            GetPayrollEmployeeSetups();
+
+        }
+
+        private ObservableCollection<PayrollSetupItem> _payrollSetupItems;
+
+        public ObservableCollection<PayrollSetupItem> PayrollSetupItems
+        {
+            get
+            {
+                if (_payrollSetupItems != null) return _payrollSetupItems;
+                using (var ctx = new PayrollDB())
+                {
+                    _payrollSetupItems = new ObservableCollection<DataLayer.PayrollSetupItem>(ctx
+                        .PayrollSetupItems.ToList());
+                }
+                return _payrollSetupItems;
+            }
+        }
+
+        public ObservableCollection<PayrollEmployeeSetup> GetPayrollEmployeeSetups()
+        {
+            if (CurrentEmployee == null || CurrentPayrollJobType == null) return null;
+            using (var ctx = new PayrollDB())
+            {
+                _payrollEmployeeSetups = new ObservableCollection<DataLayer.PayrollEmployeeSetup>(ctx.PayrollEmployeeSetup
+                    .Include(x => x.PayrollSetupItem)
+                    .Where(p => p.PayrollJobTypeId == CurrentPayrollJobType.PayrollJobTypeId &&
+                                p.EmployeeId == CurrentEmployee.EmployeeId));
+                OnPropertyChanged("PayrollEmployeeSetups");
+                OnStaticPropertyChanged("PayrollEmployeeSetups");
+                return _payrollEmployeeSetups;
+
+            }
+        }
+
+        private static ObservableCollection<DataLayer.PayrollEmployeeSetup> _payrollEmployeeSetups = null;
+        public ObservableCollection<DataLayer.PayrollEmployeeSetup> PayrollEmployeeSetups
+        {
+            get
+            {
+                if (_payrollEmployeeSetups == null) return GetPayrollEmployeeSetups();
+                return _payrollEmployeeSetups;
+            }
+        }
+
+
+        public bool AutoSetupEmployee(DataLayer.Employee cemp)
         {
             using (var ctx = new PayrollDB())
             {
@@ -1627,10 +1780,11 @@ namespace PayrollManager
 
 
             }
-            cemp.SetBaseAmounts();
             
                 SaveDatabase(ctx);
             }
+
+            SetEmployeeSetupBaseAmounts(cemp.EmployeeId);
             return true;
         }
 

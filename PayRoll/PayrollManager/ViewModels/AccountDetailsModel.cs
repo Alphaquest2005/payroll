@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Data;
 using System.ComponentModel;
+using System.Data;
 using System.Linq;
 using PayrollManager.DataLayer;
 
@@ -10,27 +11,31 @@ namespace PayrollManager
 {
 	public class AccountDetailsModel : BaseViewModel
 	{
-		public AccountDetailsModel()
-		{
-           
-		}
-
+		
         public void SaveInstitutionAccount()
         {
 
 
             using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
             {
-                ctx.Accounts.Attach(_newInstitutionAccount);
-                ctx.Accounts.ApplyCurrentValues(_newInstitutionAccount);
+                if (CurrentInstitutionAccount.AccountId == 0)
+                {
+                    ctx.Accounts.AddObject(CurrentInstitutionAccount);
+                }
+                else
+                {
+                    if (CurrentInstitutionAccount.EntityState == EntityState.Added) return;
+                    var ritm = ctx.Accounts.First(x => x.AccountId == CurrentInstitutionAccount.AccountId);
+                ctx.Accounts.Attach(ritm);
+                ctx.Accounts.ApplyCurrentValues(CurrentInstitutionAccount);
+                }
+                
                 SaveDatabase(ctx);
             }
-            base.CurrentInstitutionAccount = _newInstitutionAccount;
-           _newInstitutionAccount = null;
-            
+           
            
             OnStaticPropertyChanged("CurrentInstitutionAccount");
-            CycleInstitutionAccounts();
+           // CycleInstitutionAccounts();
             OnStaticPropertyChanged("InstitutionAccounts");
 
         }
@@ -45,25 +50,26 @@ namespace PayrollManager
             CurrentInstitutionAccount = acc;
         }
 
-        public void DeleteInstitionAccount()
-        {
-            using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
-            {
-                ctx.Accounts.DeleteObject(CurrentInstitutionAccount);
-                // db.PayrollItems.Detach(CurrentPayrollItem);
+	    public void DeleteInstitionAccount()
+	    {
+	        if (CurrentInstitutionAccount.AccountId != 0)
+	            using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
+	            {
+	                var ritm = ctx.Accounts.First(x => x.AccountId == CurrentInstitutionAccount.AccountId);
+	                ctx.Accounts.DeleteObject(ritm);
+	                SaveDatabase(ctx);
+
+	            }
+	        CurrentInstitutionAccount = null;
+
+	    }
 
 
-                SaveDatabase(ctx);
-                CurrentInstitutionAccount = null;
-            }
-        }
-
-        
 
 
-       
 
-        public void NewInstitutionAccount()
+
+	    public void NewInstitutionAccount()
         {
             using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
             {
@@ -71,34 +77,10 @@ namespace PayrollManager
                     ctx.Accounts.CreateObject<DataLayer.InstitutionAccount>();
                 ctx.Accounts.AddObject(newemp);
 
-                _newInstitutionAccount = newemp;
+                CurrentInstitutionAccount = newemp;
                 OnPropertyChanged("CurrentInstitutionAccount");
             }
         }
-
-
-        DataLayer.InstitutionAccount _newInstitutionAccount;
-        public override DataLayer.InstitutionAccount CurrentInstitutionAccount
-        {
-            get
-            {
-                if (_newInstitutionAccount == null)
-                {
-                    return base.CurrentInstitutionAccount;
-                }
-                else
-                {
-                    return _newInstitutionAccount;
-                }
-            }
-            set
-            {
-                base.CurrentInstitutionAccount = value;
-                CycleInstitutionAccounts();
-                OnStaticPropertyChanged("InstitutionAccounts");
-            }
-        }
-
 
       
 

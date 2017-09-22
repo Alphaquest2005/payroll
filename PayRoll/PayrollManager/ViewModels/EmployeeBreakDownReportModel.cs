@@ -85,26 +85,21 @@ namespace PayrollManager
 	        var t = Task.Run(() =>
 	        {
 	            if (CurrentPayrollJob == null || CurrentBranch == null) return new List<EmpSummary>();
+	            int cpjob = CurrentPayrollJob.PayrollJobId;
 	            using (var ctx = new PayrollDB())
 	            {
 	                try
 	                {
+	                    var payrollItems = ctx.PayrollItems.Where(p => p.PayrollJobId == cpjob
+	                                                                   && p.ParentPayrollItem == null).ToList();
 
 
-	                    var emplst = Employees//.Where(x => x.BranchId == CurrentBranch.BranchId)
-	                        //.Where(
-	                        //    x =>
-	                        //        x.EmploymentEndDate.HasValue == false ||
-	                        //        EntityFunctions.TruncateTime(x.EmploymentEndDate.Value) >=
-	                        //        EntityFunctions.TruncateTime(DateTime.Now))
-	                        //.OrderBy(x => x.LastName)
+                        var emplst = Employees
 	                        .Select(e => new EmpSummary
 	                        {
 	                            Employee_Name = e.DisplayName,
-	                            PayrollItems = ctx.PayrollItems.Where(p => p.PayrollJobId == CurrentPayrollJob.PayrollJobId
-                                                                  && p.EmployeeId == e.EmployeeId
-	                                                              && p.ParentPayrollItem == null)
-	                                        .Select(
+	                            PayrollItems = payrollItems
+                                            .Select(
 	                                            x =>
 	                                                new
 	                                                {
@@ -202,7 +197,7 @@ namespace PayrollManager
             var task = Task.Run(() =>
             {
 
-                if (CurrentBranch != null && emplst.Any() )//&& CurrentBranch.Employees.Any(e => e.PayrollItems.Any(p => p.PayrollJob == CurrentPayrollJob))
+                if (CurrentBranch != null && emplst.Any() && CurrentPayrollJob != null)//&& CurrentBranch.Employees.Any(e => e.PayrollItems.Any(p => p.PayrollJob == CurrentPayrollJob))
                 {
                     try
                     {

@@ -3,71 +3,65 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Data;
 using System.ComponentModel;
+using System.Data;
 using System.Windows;
 using System.Linq;
 using PayrollManager.DataLayer;
 
 namespace PayrollManager
 {
-	public class PayrollJobModel : BaseViewModel
-	{
-        public PayrollJobModel()
-        {
+    public class PayrollJobModel : BaseViewModel
+    {
+       
 
-        }
 
-        public void SavePayrollJob()
-        {
-            using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
-            {
-                ctx.PayrollJobs.Attach(CurrentPayrollJob);
-                ctx.PayrollJobs.ApplyCurrentValues(CurrentPayrollJob);
-                BaseViewModel.SaveDatabase(ctx);
-                OnStaticPropertyChanged("CurrentPayrollJob");
-                OnStaticPropertyChanged("PayrollJobs");
-            }
-        }
 
         public void DeletePayrollJob()
         {
-            var res = MessageBox.Show("Are you sure you want to Delete this payroll Job? Have you checked all 'One Off' Payroll items?", "Delete Payroll Job", MessageBoxButton.YesNo);
+            var res = MessageBox.Show(
+                "Are you sure you want to Delete this payroll Job? Have you checked all 'One Off' Payroll items?",
+                "Delete Payroll Job", MessageBoxButton.YesNo);
             if (res == MessageBoxResult.No) return;
-
+            if(CurrentPayrollJob.PayrollJobId != 0)
             using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
             {
+                ctx.PayrollJobs.Attach(CurrentPayrollJob);
                 ctx.PayrollJobs.DeleteObject(CurrentPayrollJob);
                 // db.PayrollItems.Detach(CurrentPayrollItem);
 
 
                 SaveDatabase(ctx);
-                CurrentPayrollJob = null;
-                OnStaticPropertyChanged("CurrentPayrollJob");
-                OnStaticPropertyChanged("PayrollJobs");
             }
+            CurrentPayrollJob = null;
+            UpdatePayrollJobs();
+            OnStaticPropertyChanged("CurrentPayrollJob");
+            OnStaticPropertyChanged("PayrollJobs");
+
         }
 
         public void NewPayrollJob()
         {
+            DataLayer.PayrollJob newemp;
             using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
             {
-                DataLayer.PayrollJob newemp = ctx.PayrollJobs.CreateObject<DataLayer.PayrollJob>();
-                ctx.PayrollJobs.AddObject(newemp);
-                
-                newemp.Branch = CurrentBranch;
+
+                newemp = ctx.PayrollJobs.CreateObject<DataLayer.PayrollJob>();
+                newemp.BranchId = CurrentBranch.BranchId;
                 newemp.PayrollJobType = ctx.PayrollJobTypes.FirstOrDefault();
                 newemp.StartDate = DateTime.Now;
                 newemp.EndDate = DateTime.Now;
                 newemp.PaymentDate = DateTime.Now;
-                newemp.PreparedBy =
-                    System.Security.Principal.WindowsIdentity.GetCurrent()
-                        .Name; //((App)App.Current).CurrentUser.EmployeeId;
+                newemp.PreparedBy = System.Security.Principal.WindowsIdentity.GetCurrent().Name; 
                 newemp.Status = "Open";
-                CurrentPayrollJob = newemp;
-                OnPropertyChanged("CurrentPayrollJob");
+                ctx.PayrollJobs.AddObject(newemp);
                 SaveDatabase(ctx);
             }
+            CurrentPayrollJob = newemp;
+            OnPropertyChanged("CurrentPayrollJob");
+
+
         }
 
-	
-	}
+
+    }
 }

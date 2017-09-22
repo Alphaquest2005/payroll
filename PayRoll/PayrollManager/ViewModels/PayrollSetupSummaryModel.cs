@@ -54,7 +54,7 @@ namespace PayrollManager
         public void summaryModel_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             if (e.PropertyName != "CurrentPayrollJobTypeId" && e.PropertyName != "PayrollSetupItemsCollection") return;
-            PayrollSetupItemsList = new ObservableCollection<DataLayer.PayrollSetupItem>(PayrollSetupItems);
+            
             OnStaticPropertyChanged("PayrollSetupItemsList");
             UpdateDataSource();
             PayrollSetupItemsList.CollectionChanged += PayrollSetupItemsList_CollectionChanged;

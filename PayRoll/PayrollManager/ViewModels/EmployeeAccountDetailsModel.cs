@@ -53,6 +53,7 @@ namespace PayrollManager
             using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
             {
                 if (CurrentEmployeeAccount == null) return;
+                ctx.Accounts.Attach(CurrentEmployeeAccount);
                 ctx.Accounts.DeleteObject(CurrentEmployeeAccount);
                 // db.PayrollItems.Detach(CurrentPayrollItem);
 
