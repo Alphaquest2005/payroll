@@ -51,6 +51,7 @@ namespace PayrollManager
 
         public void SavePayrollItem()
         {
+
             using (var ctx = new PayrollDB())
             {
                 if(CurrentPayrollItem == null) return;
@@ -88,6 +89,7 @@ namespace PayrollManager
 
         public void DeletePayrollItem()
         {
+            if (CurrentPayrollItem == null) return;
             using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
             {
 

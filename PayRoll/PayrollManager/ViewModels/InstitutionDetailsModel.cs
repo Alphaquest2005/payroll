@@ -15,7 +15,7 @@ namespace PayrollManager
 
         public void SaveInstitution()
         {
-
+            if (CurrentInstitution == null) return;
             using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
             {
                 if (CurrentInstitution.InstitutionId == 0)
@@ -52,7 +52,8 @@ namespace PayrollManager
 
         public void DeleteInstition()
         {
-            if(CurrentInstitution.InstitutionId != 0)
+            if (CurrentInstitution == null) return;
+            if (CurrentInstitution.InstitutionId != 0)
             using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
             {
                 var ritm = ctx.Institutions.First(x => x.InstitutionId == CurrentInstitution.InstitutionId);

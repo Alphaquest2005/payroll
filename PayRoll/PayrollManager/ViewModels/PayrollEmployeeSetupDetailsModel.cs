@@ -66,7 +66,8 @@ namespace PayrollManager
 
 	    public void SavePayrollEmployeeSetup()
 	    {
-	        using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
+            if (CurrentPayrollEmployeeSetup == null) return;
+            using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
 	        {
 	            if (CurrentPayrollEmployeeSetup.PayrollEmployeeSetupId == 0)
 	            {
@@ -94,7 +95,8 @@ namespace PayrollManager
 
 	    public void DeletePayrollEmployeeSetup(PayrollEmployeeSetup pi)
 	    {
-            if(pi.PayrollEmployeeSetupId != 0)
+            
+            if (pi.PayrollEmployeeSetupId != 0)
 	        using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
 	        {
 	            var ritm = ctx.PayrollEmployeeSetup.First(x => x.PayrollEmployeeSetupId == pi.PayrollEmployeeSetupId);

@@ -28,7 +28,7 @@ namespace PayrollManager
         private void EmployeeBreakDownReportModel_staticPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             OnPropertyChanged(e.PropertyName);
-            if ( e.PropertyName == "CurrentPayrollJob")//e.PropertyName == "CurrentBranch" ||
+            if (e.PropertyName == "CurrentBranch" || e.PropertyName == "CurrentPayrollJob")//
             {
                 isDirty = true;
                 OnPropertyChanged("EmployeeBreakDown");
@@ -64,9 +64,9 @@ namespace PayrollManager
 	                {
 	                    if (isDirty)
 	                    {
-	                        _emplst = GetEmpData().Result.ToList();
+	                        _emplst = GetEmpData();
 
-	                        _eb = GetEmployeeBreakDown(_emplst).Result;
+	                        _eb = GetEmployeeBreakDown(_emplst);
 	                        isDirty = false;
 	                    }
 	                }
@@ -79,11 +79,10 @@ namespace PayrollManager
 	        }
 	    }
 
-	    private async Task<IEnumerable<EmpSummary>> GetEmpData()
+	    private List<EmpSummary> GetEmpData()
 	    {
 
-	        var t = Task.Run(() =>
-	        {
+	        
 	            if (CurrentPayrollJob == null || CurrentBranch == null) return new List<EmpSummary>();
 	            int cpjob = CurrentPayrollJob.PayrollJobId;
 	            using (var ctx = new PayrollDB())
@@ -98,7 +97,7 @@ namespace PayrollManager
 	                        .Select(e => new EmpSummary
 	                        {
 	                            Employee_Name = e.DisplayName,
-	                            PayrollItems = payrollItems
+	                            PayrollItems = payrollItems.Where(x => x.EmployeeId == e.EmployeeId)
                                             .Select(
 	                                            x =>
 	                                                new
@@ -141,8 +140,7 @@ namespace PayrollManager
 	                    throw;
 	                }
 	            }
-	        }).ConfigureAwait(false);
-	        return await t;
+	      
 
 	    }
 
@@ -192,10 +190,9 @@ namespace PayrollManager
             }
         }
 
-	    private async Task<dynamic> GetEmployeeBreakDown(List<EmpSummary> emplst)
+	    private dynamic GetEmployeeBreakDown(List<EmpSummary> emplst)
         {
-            var task = Task.Run(() =>
-            {
+           
 
                 if (CurrentBranch != null && emplst.Any() && CurrentPayrollJob != null)//&& CurrentBranch.Employees.Any(e => e.PayrollItems.Any(p => p.PayrollJob == CurrentPayrollJob))
                 {
@@ -244,8 +241,7 @@ namespace PayrollManager
                     }
                 }
                 return null;
-            }).ConfigureAwait(false);
-            return await task;
+           
         }
 
 	    protected void TransformerClassGenerationEventHandler(object sender, ClassGenerationEventArgs e)

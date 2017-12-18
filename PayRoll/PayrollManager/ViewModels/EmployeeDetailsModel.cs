@@ -16,6 +16,7 @@ namespace PayrollManager
         {
             using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
             {
+                if (CurrentEmployee == null) return;
                 if (CurrentEmployee.EmployeeId == 0)
                 {
                     ctx.Employees.AddObject(CurrentEmployee);

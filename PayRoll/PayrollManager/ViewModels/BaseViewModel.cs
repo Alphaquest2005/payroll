@@ -90,6 +90,7 @@ namespace PayrollManager
         {
             using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
             {
+                if (CurrentPayrollJob == null) return;
                 if (CurrentPayrollJob.PayrollJobId == 0)
                 {
                     ctx.PayrollJobs.AddObject(CurrentPayrollJob);
@@ -690,6 +691,7 @@ namespace PayrollManager
                     CurrentEmployeeAccount.AccountEntries.AssociationChanged += AssociationChanged;
                 }
                 _currentEmployeeAccount = value;
+                OnPropertyChanged("CurrentEmployeeAccount");
                 OnStaticPropertyChanged("CurrentEmployeeAccount");
                 OnStaticPropertyChanged("Accounts");
                 OnStaticPropertyChanged("AccountTypes");

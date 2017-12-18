@@ -272,7 +272,7 @@ namespace PayrollManager
 
 
             // double sl = VisualTreeHelper.GetOffset(slidcontents).X*-1;
-            double sl = slidcontents.TransformToAncestor(slid.Parent as Visual).Transform(new Point(0, 0)).X * -1;
+            double sl = (double) (slidcontents?.TransformToAncestor(slid.Parent as Visual).Transform(new Point(0, 0)).X * -1);
             // Canvas.SetLeft(slidcontents, -1800);
             //slid.MouseStart = new Point(0, 0);
             //slid.MouseNow = new Point(-1800, 0);

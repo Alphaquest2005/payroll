@@ -52,8 +52,7 @@ namespace PayrollManager
         }
 
        static DateTime _reportDate = DateTime.Now;
-	    private IEnumerable<BranchPayrollItemSummaryLine> _plist;
-	    private List<object> _eb;
+	   	    private List<object> _eb;
 
 	    public DateTime ReportDate
         {
@@ -75,8 +74,8 @@ namespace PayrollManager
                 {
                     if (isDirty)
                     {
-                        _plist = GetBranchData().Result;
-                        CalcBranchData();
+                        var _plist = GetBranchData();
+                        CalcBranchData(_plist);
                         SetBranchTotals();
                         isDirty = false;
                     }
@@ -85,14 +84,15 @@ namespace PayrollManager
             }
         }
 
-        private async Task<IEnumerable<BranchPayrollItemSummaryLine>> GetBranchData()
+      
+
+        private List<BranchPayrollItemSummaryLine> GetBranchData()
 	    {
             try
             {
 
                
-             var t = Task.Run(() =>
-            {
+           
                 using (var ctx = new PayrollDB())
                 {
                     var startDate = DateTime.Parse(string.Format("{0}/1/{1}", ReportDate.Month, ReportDate.Year));
@@ -128,9 +128,7 @@ namespace PayrollManager
                     return plst;
                     
                 }
-            }).ConfigureAwait(false);
-
-	        return await t;
+      
             }
             catch (Exception)
             {
@@ -217,12 +215,12 @@ namespace PayrollManager
 	        }
 	    }
 
-	    private void CalcBranchData()
+	    private void CalcBranchData(List<BranchPayrollItemSummaryLine> plist)
 	    {
 	        try
 	        {
-                if (_plist == null) return;
-	            _eb = _plist.Pivot(
+                if (plist == null) return;
+	            _eb = plist.Pivot(
 	                X => X.PayrollItems.GroupBy(p => p.PayrollJob.Branch.Name)
 	                        .Select(g => new BranchSummary {BranchName = g.Key, Total = g.Sum(p => p.Amount)}),
 	                X => X.BranchName, X => X.Total, true, null).ToList();

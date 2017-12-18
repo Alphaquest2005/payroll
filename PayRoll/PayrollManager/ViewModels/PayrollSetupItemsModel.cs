@@ -42,7 +42,8 @@ namespace PayrollManager
 		{
 			using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
 			{
-				if (CurrentPayrollSetupItem.PayrollSetupItemId == 0)
+                if (CurrentPayrollSetupItem == null) return;
+                if (CurrentPayrollSetupItem.PayrollSetupItemId == 0)
 				{
 					ctx.PayrollSetupItems.AddObject(CurrentPayrollSetupItem);
 				}
@@ -66,8 +67,8 @@ namespace PayrollManager
 
 		public void DeletePayrollSetupItem()
 		{
-
-			if (CurrentPayrollSetupItem.PayrollSetupItemId != 0)
+            if (CurrentPayrollSetupItem == null) return;
+            if (CurrentPayrollSetupItem.PayrollSetupItemId != 0)
 			{
 				using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
 				{

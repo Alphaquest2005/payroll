@@ -5,6 +5,7 @@ using System.Windows.Data;
 using System.ComponentModel;
 using System.Linq;
 using PayrollManager.DataLayer;
+using System.Data;
 
 namespace PayrollManager
 {
@@ -25,12 +26,26 @@ namespace PayrollManager
 
 	    public void SaveEmployeeAccount()
         {
+            if (CurrentEmployeeAccount == null) return;
 
+            using (var ctx = new PayrollDB(Properties.Settings.Default.PayrollDB))
+            {
+                
+                if (CurrentEmployeeAccount.AccountId == 0)
+                {
+                    ctx.Accounts.AddObject(CurrentEmployeeAccount);
+                }
+                else
+                {
+                    if (CurrentEmployeeAccount.EntityState == EntityState.Added) return;
+                    var ritm = ctx.Accounts.First(x => x.AccountId == CurrentEmployeeAccount.AccountId);
+                    ctx.Accounts.Attach(ritm);
+                    ctx.Accounts.ApplyCurrentValues(CurrentEmployeeAccount);
+                }
 
+                SaveDatabase(ctx);
+            }
 
-           // SaveDatabase(ctx);
-            base.CurrentAccount = _newEmployeeAccount;
-            _newEmployeeAccount = null;
 
 
             OnStaticPropertyChanged("CurrentEmployeeAccount");
@@ -70,34 +85,14 @@ namespace PayrollManager
             {
                 DataLayer.EmployeeAccount newemp = ctx.Accounts.CreateObject<DataLayer.EmployeeAccount>();
                 ctx.Accounts.AddObject(newemp);
-                _newEmployeeAccount = newemp;
-                OnPropertyChanged("CurrentEmployeeAccount");
+                CurrentEmployeeAccount = newemp;
+                
             }
         }
 
         
 
-        DataLayer.EmployeeAccount  _newEmployeeAccount;
-        public override DataLayer.EmployeeAccount CurrentEmployeeAccount
-        {
-            get
-            {
-                if (_newEmployeeAccount == null)
-                {
-                    return base.CurrentEmployeeAccount;
-                }
-                else
-                {
-                    return _newEmployeeAccount;
-                }
-            }
-            set
-            {
-                base.CurrentEmployeeAccount = value;
-                OnStaticPropertyChanged("EmployeeAccounts");
-            }
-        }
-
+       
 		#region INotifyPropertyChanged
 		public event PropertyChangedEventHandler PropertyChanged;
 

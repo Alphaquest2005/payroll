@@ -18,6 +18,7 @@ namespace PayrollManager
 
         public void DeletePayrollJob()
         {
+            if (CurrentPayrollJob == null) return;
             var res = MessageBox.Show(
                 "Are you sure you want to Delete this payroll Job? Have you checked all 'One Off' Payroll items?",
                 "Delete Payroll Job", MessageBoxButton.YesNo);

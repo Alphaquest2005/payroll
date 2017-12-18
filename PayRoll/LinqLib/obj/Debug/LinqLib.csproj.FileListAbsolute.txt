@@ -31,5 +31,5 @@ C:\Prism\GitRepositiory\payroll\PayRoll\LinqLib\obj\Debug\LinqLib.Properties.Res
 C:\Prism\GitRepositiory\payroll\PayRoll\LinqLib\obj\Debug\LinqLib.csproj.GenerateResource.Cache
 C:\Prism\GitRepositiory\payroll\PayRoll\LinqLib\obj\Debug\LinqLib.dll
 C:\Prism\GitRepositiory\payroll\PayRoll\LinqLib\obj\Debug\LinqLib.pdb
-C:\Prism\GitRepositiory\payroll\PayRoll\LinqLib\obj\Debug\LinqLib.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\payroll\PayRoll\LinqLib\obj\Debug\LinqLib.csproj.CoreCompileInputs.cache
+C:\Prism\GitRepositiory\payroll\PayRoll\LinqLib\obj\Debug\LinqLib.csprojResolveAssemblyReference.cache
